@@ -26,7 +26,7 @@ public struct Service {
     self.url = URL(string: api.baseURL + api.path)!
     self.method = method
     self.accessToken = accessToken
-    self.parameters = nil
+    self.parameters = parameters
   }
   
   public var request: URLRequest {

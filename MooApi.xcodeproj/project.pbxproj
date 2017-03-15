@@ -147,11 +147,11 @@
 		2DECC6F61E78341900FB815C = {
 			isa = PBXGroup;
 			children = (
-				2DECC7021E78341900FB815C /* MooApi */,
-				2DECC70D1E78341900FB815C /* MooApiTests */,
-				2DECC7011E78341900FB815C /* Products */,
-				D11BB3F9337A8951B63F6DC6 /* Pods */,
 				C3972CC81F7208F9E82194F7 /* Frameworks */,
+				D11BB3F9337A8951B63F6DC6 /* Pods */,
+				2DECC7011E78341900FB815C /* Products */,
+				2DECC7021E78341900FB815C /* Sources */,
+				2DECC70D1E78341900FB815C /* Tests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,96 +164,35 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2DECC7021E78341900FB815C /* MooApi */ = {
+		2DECC7021E78341900FB815C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				2DECC71A1E78342C00FB815C /* Network */,
-				2DECC7761E7834D400FB815C /* Supported files */,
+				2DECC7781E78EA3000FB815C /* core */,
+				2DECC77A1E78EA5900FB815C /* enum */,
+				2DECC7791E78EA4C00FB815C /* model */,
+				2DECC77C1E78EBE800FB815C /* network */,
+				2DECC77B1E78EA7D00FB815C /* protocol */,
+				2DECC7041E78341900FB815C /* Info.plist */,
+				2DECC7031E78341900FB815C /* MooApi.h */,
 			);
-			path = MooApi;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		2DECC70D1E78341900FB815C /* MooApiTests */ = {
+		2DECC70D1E78341900FB815C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				2DECC7751E7834B900FB815C /* resources */,
 				2DECC7551E78344300FB815C /* BookShelvesTests.swift */,
 				2DECC7561E78344300FB815C /* BookTests.swift */,
 				2DECC7571E78344300FB815C /* CategoryTests.swift */,
 				2DECC7581E78344300FB815C /* ContributorTests.swift */,
+				2DECC7101E78341900FB815C /* Info.plist */,
 				2DECC7591E78344300FB815C /* PublisherTests.swift */,
 				2DECC75A1E78344300FB815C /* ReadingTests.swift */,
 				2DECC75B1E78344300FB815C /* ReviewTests.swift */,
 				2DECC75C1E78344300FB815C /* SubscriptionTests.swift */,
-				2DECC7751E7834B900FB815C /* resources */,
-				2DECC7771E7834FF00FB815C /* Supported files */,
 			);
-			path = MooApiTests;
-			sourceTree = "<group>";
-		};
-		2DECC71A1E78342C00FB815C /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				2DECC7371E78342C00FB815C /* Service.swift */,
-				2DECC7381E78342C00FB815C /* ServiceApi.swift */,
-				2DECC7391E78342C00FB815C /* ServiceError.swift */,
-				2DECC7291E78342C00FB815C /* ResourceIdentifier.swift */,
-				2DECC71B1E78342C00FB815C /* apidocument */,
-				2DECC7211E78342C00FB815C /* enums */,
-				2DECC7271E78342C00FB815C /* protocols */,
-				2DECC72A1E78342C00FB815C /* resourcetypes */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		2DECC71B1E78342C00FB815C /* apidocument */ = {
-			isa = PBXGroup;
-			children = (
-				2DECC71C1E78342C00FB815C /* ApiDocument.swift */,
-				2DECC71D1E78342C00FB815C /* ApiDocumentEnvelope.swift */,
-				2DECC71E1E78342C00FB815C /* ApiDocumentInclusion.swift */,
-				2DECC71F1E78342C00FB815C /* ApiDocumentLinks.swift */,
-				2DECC7201E78342C00FB815C /* ApiDocumentMeta.swift */,
-			);
-			path = apidocument;
-			sourceTree = "<group>";
-		};
-		2DECC7211E78342C00FB815C /* enums */ = {
-			isa = PBXGroup;
-			children = (
-				2DECC7221E78342C00FB815C /* LanguageType.swift */,
-				2DECC7231E78342C00FB815C /* PrivacyState.swift */,
-				2DECC7241E78342C00FB815C /* ReadingState.swift */,
-				2DECC7251E78342C00FB815C /* RenditionType.swift */,
-				2DECC7261E78342C00FB815C /* SubscriptionProductType.swift */,
-			);
-			path = enums;
-			sourceTree = "<group>";
-		};
-		2DECC7271E78342C00FB815C /* protocols */ = {
-			isa = PBXGroup;
-			children = (
-				2DECC7281E78342C00FB815C /* ResourceType.swift */,
-			);
-			path = protocols;
-			sourceTree = "<group>";
-		};
-		2DECC72A1E78342C00FB815C /* resourcetypes */ = {
-			isa = PBXGroup;
-			children = (
-				2DECC72B1E78342C00FB815C /* Book.swift */,
-				2DECC72C1E78342C00FB815C /* Bookshelf.swift */,
-				2DECC72D1E78342C00FB815C /* Category.swift */,
-				2DECC72E1E78342C00FB815C /* Contributor.swift */,
-				2DECC72F1E78342C00FB815C /* Event.swift */,
-				2DECC7301E78342C00FB815C /* Marathon.swift */,
-				2DECC7311E78342C00FB815C /* Publisher.swift */,
-				2DECC7321E78342C00FB815C /* Reading.swift */,
-				2DECC7331E78342C00FB815C /* ReadingLog.swift */,
-				2DECC7341E78342C00FB815C /* Review.swift */,
-				2DECC7351E78342C00FB815C /* Subscription.swift */,
-				2DECC7361E78342C00FB815C /* Tag.swift */,
-			);
-			path = resourcetypes;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		2DECC7751E7834B900FB815C /* resources */ = {
@@ -268,24 +207,69 @@
 				2DECC7631E78344300FB815C /* ReviewInfo.json */,
 				2DECC7641E78344300FB815C /* SubscriptionInfo.json */,
 			);
-			name = resources;
+			path = resources;
 			sourceTree = "<group>";
 		};
-		2DECC7761E7834D400FB815C /* Supported files */ = {
+		2DECC7781E78EA3000FB815C /* core */ = {
 			isa = PBXGroup;
 			children = (
-				2DECC7031E78341900FB815C /* MooApi.h */,
-				2DECC7041E78341900FB815C /* Info.plist */,
+				2DECC71C1E78342C00FB815C /* ApiDocument.swift */,
+				2DECC71D1E78342C00FB815C /* ApiDocumentEnvelope.swift */,
+				2DECC71E1E78342C00FB815C /* ApiDocumentInclusion.swift */,
+				2DECC71F1E78342C00FB815C /* ApiDocumentLinks.swift */,
+				2DECC7201E78342C00FB815C /* ApiDocumentMeta.swift */,
 			);
-			name = "Supported files";
+			name = core;
 			sourceTree = "<group>";
 		};
-		2DECC7771E7834FF00FB815C /* Supported files */ = {
+		2DECC7791E78EA4C00FB815C /* model */ = {
 			isa = PBXGroup;
 			children = (
-				2DECC7101E78341900FB815C /* Info.plist */,
+				2DECC72B1E78342C00FB815C /* Book.swift */,
+				2DECC72C1E78342C00FB815C /* Bookshelf.swift */,
+				2DECC72D1E78342C00FB815C /* Category.swift */,
+				2DECC72E1E78342C00FB815C /* Contributor.swift */,
+				2DECC72F1E78342C00FB815C /* Event.swift */,
+				2DECC7301E78342C00FB815C /* Marathon.swift */,
+				2DECC7311E78342C00FB815C /* Publisher.swift */,
+				2DECC7321E78342C00FB815C /* Reading.swift */,
+				2DECC7331E78342C00FB815C /* ReadingLog.swift */,
+				2DECC7291E78342C00FB815C /* ResourceIdentifier.swift */,
+				2DECC7341E78342C00FB815C /* Review.swift */,
+				2DECC7351E78342C00FB815C /* Subscription.swift */,
+				2DECC7361E78342C00FB815C /* Tag.swift */,
 			);
-			name = "Supported files";
+			name = model;
+			sourceTree = "<group>";
+		};
+		2DECC77A1E78EA5900FB815C /* enum */ = {
+			isa = PBXGroup;
+			children = (
+				2DECC7221E78342C00FB815C /* LanguageType.swift */,
+				2DECC7231E78342C00FB815C /* PrivacyState.swift */,
+				2DECC7241E78342C00FB815C /* ReadingState.swift */,
+				2DECC7251E78342C00FB815C /* RenditionType.swift */,
+				2DECC7261E78342C00FB815C /* SubscriptionProductType.swift */,
+			);
+			name = enum;
+			sourceTree = "<group>";
+		};
+		2DECC77B1E78EA7D00FB815C /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				2DECC7281E78342C00FB815C /* ResourceType.swift */,
+			);
+			name = protocol;
+			sourceTree = "<group>";
+		};
+		2DECC77C1E78EBE800FB815C /* network */ = {
+			isa = PBXGroup;
+			children = (
+				2DECC7371E78342C00FB815C /* Service.swift */,
+				2DECC7381E78342C00FB815C /* ServiceApi.swift */,
+				2DECC7391E78342C00FB815C /* ServiceError.swift */,
+			);
+			name = network;
 			sourceTree = "<group>";
 		};
 		C3972CC81F7208F9E82194F7 /* Frameworks */ = {
@@ -375,8 +359,7 @@
 				TargetAttributes = {
 					2DECC6FF1E78341900FB815C = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 4WJQ6762GH;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					2DECC7081E78341900FB815C = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -672,12 +655,13 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 4WJQ6762GH;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = MooApi/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ecrowdmedia.MooApi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -692,12 +676,13 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 4WJQ6762GH;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = MooApi/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ecrowdmedia.MooApi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -712,7 +697,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 4WJQ6762GH;
-				INFOPLIST_FILE = MooApiTests/Info.plist;
+				INFOPLIST_FILE = "MooApiTests/Supported files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ecrowdmedia.MooApiTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -726,7 +711,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 4WJQ6762GH;
-				INFOPLIST_FILE = MooApiTests/Info.plist;
+				INFOPLIST_FILE = "MooApiTests/Supported files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ecrowdmedia.MooApiTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

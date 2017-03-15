@@ -1,0 +1,50 @@
+{
+  "data": {
+    "type": "categories",
+    "id": "182",
+    "attributes": {
+      "name": "財經企管"
+    },
+    "relationships": {
+      "parent": {
+        "data": {
+          "type": "categories",
+          "id": "181"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.readmoo.com/read/v2/categories/182"
+    }
+  },
+  "included": [
+    {
+      "type": "categories",
+      "id": "22",
+      "attributes": {
+        "name": "雜誌"
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/categories/22"
+      }
+    },
+    {
+      "type": "categories",
+      "id": "181",
+      "attributes": {
+        "name": "中文雜誌"
+      },
+      "relationships": {
+        "parent": {
+          "data": {
+            "type": "categories",
+            "id": "22"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/categories/181"
+      }
+    }
+  ]
+}

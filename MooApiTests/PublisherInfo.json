@@ -1,0 +1,12 @@
+{
+  "data": {
+    "type": "publishers",
+    "id": "111",
+    "attributes": {
+      "name": "iFit 愛瘦身"
+    },
+    "links": {
+      "self": "https://api.readmoo.com/read/v2/publishers/111"
+    }
+  }
+}

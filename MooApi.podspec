@@ -18,8 +18,8 @@ Pod::Spec.new do |s|
   s.compiler_flags = "-whole-module-optimization"
 
   s.dependency "Argo", "~> 4.1.2"
-  s.dependency "Curry", "~> 4.0.1"
-  s.dependency "Runes", "~> 3.0.0"
+  s.dependency "Curry", "~> 3.0.0"
+  s.dependency "Runes", "~> 4.0.1"
   s.dependency "Result", "~> 3.2.1"
 
   s.pod_target_xcconfig = { "SWIFT_VERSION" => "3.0" }

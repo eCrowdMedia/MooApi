@@ -13,7 +13,14 @@ public enum ServiceApi {
   case books(String)
   case categories(String)
   case contributors(String)
+  case fragmentsPaths(String)
+  case fragmentsRanges(String)
   case publishers(String)
+  case comments(String)
+  case meHighlights(String)
+  case meReadingsHighlights(String)
+  case me
+  case userId(String)
   
   var baseURL: String {
     return "https://api.readmoo.com"
@@ -43,8 +50,22 @@ public enum ServiceApi {
       return "/read/v2/categories/\(id)"
     case let .contributors(id):
       return "/read/v2/contributors/\(id)"
+    case let .fragmentsPaths(id):
+      return "/read/v2/fragments/paths/\(id)"
+    case let .fragmentsRanges(id):
+      return "/read/v2/fragments/ranges/\(id)"
     case let .publishers(id):
       return "/read/v2/publishers/\(id)"
+    case let .comments(id):
+      return "/read/v2/comments/\(id)"
+    case let .meHighlights(id):
+      return "/read/v2/me/highlights/\(id)"
+    case let .meReadingsHighlights(readingId):
+      return "/read/v2/me/readings/\(readingId)/highlights"
+    case .me:
+      return "/read/v2/me"
+    case let .userId(id):
+      return "/read/v2/users/\(id)"
     }
   }
   

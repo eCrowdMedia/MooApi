@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D01B2851E80DBFA00583A7C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D01B2841E80DBFA00583A7C /* User.swift */; };
+		2D01B2871E80DFBA00583A7C /* ImageMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D01B2861E80DFBA00583A7C /* ImageMeta.swift */; };
 		2DECC70A1E78341900FB815C /* MooApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DECC7001E78341900FB815C /* MooApi.framework */; };
 		2DECC7111E78341900FB815C /* MooApi.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DECC7031E78341900FB815C /* MooApi.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2DECC73A1E78342C00FB815C /* ApiDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DECC71C1E78342C00FB815C /* ApiDocument.swift */; };
@@ -66,6 +68,8 @@
 		110973FEE85D15DA6F97BB95 /* Pods-MooApiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MooApiTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MooApiTests/Pods-MooApiTests.release.xcconfig"; sourceTree = "<group>"; };
 		1912B8AFB0B5DB47E4381079 /* Pods_MooApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MooApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B902AC683F22B3462417513 /* Pods-MooApi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MooApi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MooApi/Pods-MooApi.debug.xcconfig"; sourceTree = "<group>"; };
+		2D01B2841E80DBFA00583A7C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2D01B2861E80DFBA00583A7C /* ImageMeta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageMeta.swift; sourceTree = "<group>"; };
 		2DECC7001E78341900FB815C /* MooApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MooApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DECC7031E78341900FB815C /* MooApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MooApi.h; sourceTree = "<group>"; };
 		2DECC7041E78341900FB815C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -227,6 +231,8 @@
 				2DECC7341E78342C00FB815C /* Review.swift */,
 				2DECC7351E78342C00FB815C /* Subscription.swift */,
 				2DECC7361E78342C00FB815C /* Tag.swift */,
+				2D01B2841E80DBFA00583A7C /* User.swift */,
+				2D01B2861E80DFBA00583A7C /* ImageMeta.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -475,6 +481,7 @@
 				2DECC7521E78342C00FB815C /* Service.swift in Sources */,
 				2DECC73C1E78342C00FB815C /* ApiDocumentInclusion.swift in Sources */,
 				2DECC7501E78342C00FB815C /* Subscription.swift in Sources */,
+				2D01B2871E80DFBA00583A7C /* ImageMeta.swift in Sources */,
 				2DECC7451E78342C00FB815C /* ResourceIdentifier.swift in Sources */,
 				2DECC74B1E78342C00FB815C /* Marathon.swift in Sources */,
 				2DECC7491E78342C00FB815C /* Contributor.swift in Sources */,
@@ -493,6 +500,7 @@
 				2DECC7461E78342C00FB815C /* Book.swift in Sources */,
 				2DECC74D1E78342C00FB815C /* Reading.swift in Sources */,
 				2DECC73D1E78342C00FB815C /* ApiDocumentLinks.swift in Sources */,
+				2D01B2851E80DBFA00583A7C /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

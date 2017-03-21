@@ -3,10 +3,19 @@ import Curry
 import Runes
 
 public struct Event: ResourceType {
+  
   public let type: String
   public let id: String
-  public let name: String
-  public let link: String
+  public let attributes: Attributes
+  public let links: Links
+
+  public struct Attributes {
+    public let name: String
+  }
+
+  public struct Links {
+    public let selfLink: String
+  }
 }
 
 // MARK: - Decodable
@@ -15,7 +24,7 @@ extension Event: Argo.Decodable {
     return curry(Event.init)
       <^> json <| "type"
       <*> json <| "id"
-      <*> json <| ["attributes", "name"]
-      <*> json <| ["links", "self"]
+      <*> json <| "attributes"
+      <*> json <| "links"
   }
 }

@@ -3,25 +3,28 @@ import Curry
 import Runes
 
 public struct Bookshelf: ResourceType {
-  
-  // MARK: - Attributes
 
   public let type: String
   public let id: String
-  public let action: String
-  public let isNew: Bool
-  public let privacy: String
-  public let isArchive: Bool
-  public let isSubscribable: Bool // if true is magazation, else is book.
+  public let attributes: Attributes
+  public let relationships: Relationships
   public let links: Links
-  
-  // MARK: - Relationship ids
-  
-  public var book: ResourceIdentifier?
-  public var review: ResourceIdentifier?
-  public var tags: [ResourceIdentifier]
-  public var reading: ResourceIdentifier?
-  
+
+  public struct Attributes {
+    public let action: String
+    public let isNew: Bool
+    public let privacy: String
+    public let isArchive: Bool
+    public let isSubscribable: Bool // if true is magazation, else is book.
+  }
+
+  public struct Relationships {
+    public let book: RelationshipObject
+    public let review: RelationshipObject?
+    public let reading: RelationshipObject?
+    public let tags: RelationshipObjectEnvelope?
+  }
+
   public struct Links {
     public let selfLink: String
     public let reader: String
@@ -36,20 +39,30 @@ extension Bookshelf: Argo.Decodable {
     let a = curry(Bookshelf.init)
       <^> json <| "type"
       <*> json <| "id"
-
-    let b = a 
-      <*> json <| ["attributes", "action"]
-      <*> json <| ["attributes", "new"]
-      <*> json <| ["attributes", "privacy"]
-      <*> json <| ["attributes", "archive"]
-      <*> json <| ["attributes", "subscribable"]
+      <*> json <| "attributes"
+      <*> json <| "relationships"
       <*> json <| "links"
+  }
+}
 
-    return b
-      <*> json <|? ["relationships", "book", "data"]
-      <*> json <|? ["relationships", "review", "data"]
-      <*> (json <|| ["relationships", "tags", "data"] <|> .success([]))
-      <*> json <|? ["relationships", "reading", "data"]
+extension Bookshelf.Attributes: Argo.Decodable {
+  public static func decode(_ json: JSON) -> Decoded<Bookshelf.Attributes> {
+    return curry(Bookshelf.Attributes.init)
+      <^> json <| "action"
+      <*> json <| "new"
+      <*> json <| "privacy"
+      <*> json <| "archive"
+      <*> json <| "subscribable"
+  }
+}
+
+extension Bookshelf.Relationships: Argo.Decodable {
+  public static func decode(_ json: JSON) -> Decoded<Bookshelf.Relationships> {
+    return curry(Bookshelf.Relationships.init)
+      <^> json <| "book"
+      <*> json <| "reading"
+      <*> json <|? "review"
+      <*> json <|? "tags"
   }
 }
 

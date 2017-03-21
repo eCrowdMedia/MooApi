@@ -4,15 +4,18 @@ import Runes
 
 public struct Tag: ResourceType {
   
-  // MARK: - Attributes
-
   public let type: String
   public let id: String
-  public let name: String
-  public let link: String
-  
-  // MARK: - Relationships
-  
+  public let attributes: Attributes
+  public let links: Links
+
+  public struct Attributes {
+    public let name: String
+  }
+
+  public struct Links {
+    public let selfLink: String
+  }
 }
 
 // MARK: - Decodable
@@ -21,7 +24,21 @@ extension Tag: Argo.Decodable {
     return curry(Tag.init)
       <^> json <| "type"
       <*> json <| "id"
-      <*> json <| ["attributes", "name"] // for test
-      <*> json <| ["links", "self"]
+      <*> json <| "attributes"
+      <*> json <| "links"
+  }
+}
+
+extension Tag.Attributes: Argo.Decodable {
+  public static func decode(_ json: JSON) -> Decoded<Tag.Attributes> {
+    return curry(Tag.Attributes.init)
+      <^> json <| "name"
+  }
+}
+
+extension Tag.Links: Argo.Decodable {
+  public static func decode(_ json: JSON) -> Decoded<Tag.Links> {
+    return curry(Tag.Links.init)
+      <^> json <| "self"
   }
 }

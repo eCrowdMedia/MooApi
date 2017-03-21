@@ -4,57 +4,70 @@ import Runes
 
 public struct Subscription: ResourceType {
   
-  // MARK: - Attributes
   public let type: String
   public let id: String
-  public let name: String
-  public let period: String
-  public let content: String
-  public let productType: String
-  public let isAdulyOnly: Bool
-  public let language: String
-  public let delivered: Int
-  public let remaining: Int
-  public let isAutoRenew: Bool
+  public let attributes: Attributes
+  public let relationships: Relationships
   public let links: Links
-  
-  // MARK: - Relationships
-  
-  public var publication: ResourceIdentifier?
-  public var mainSubject: ResourceIdentifier?
-  public var bookshelves: [ResourceIdentifier]
+
+  public struct Attributes {
+    public let name: String
+    public let period: String
+    public let content: String
+    public let productType: String
+    public let isAdulyOnly: Bool
+    public let language: String
+    public let delivered: Int
+    public let remaining: Int
+    public let isAutoRenew: Bool
+  }
+
+  public struct Relationships {
+    public let publication: RelationshipObject
+    public let mainSubject: RelationshipObject
+    public let bookshelves: RelationshipObjectEnvelope
+  }
 
   public struct Links {
     public let selfLink: String
     public let site: String
   }
+
 }
 
 // MARK: - Decodable
 extension Subscription: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Subscription> {
-    let a = curry(Subscription.init)
+    return curry(Subscription.init)
       <^> json <| "type"
       <*> json <| "id"
-
-    let b = a 
-      <*> json <| ["attributes", "name"]
-      <*> json <| ["attributes", "period"]
-      <*> json <| ["attributes", "content"]
-      <*> json <| ["attributes", "product_type"]
-      <*> json <| ["attributes", "adult_only"]
-      <*> json <| ["attributes", "language"]
-      <*> json <| ["attributes", "delivered"]
-      <*> json <| ["attributes", "remaining"]
-      <*> json <| ["attributes", "auto_renew"]
-
-    let c = b
+      <*> json <| "attributes"
+      <*> json <| "relationships"
       <*> json <| "links"
+  }
+}
 
-    return c
-      <*> json <|? ["relationships", "publisher", "data"]
-      <*> json <|? ["relationships", "main_subject", "data"]
-      <*> (json <|| ["relationships", "library_items", "data"] <|> .success([]))
+extension Subscription.Attributes: Argo.Decodable {
+  public static func decode(_ json: JSON) -> Decoded<Subscription.Attributes> {
+    return curry(Subscription.Attributes.init)
+      <^> json <| "name"
+      <*> json <| "period"
+      <*> json <| "content"
+      <*> json <| "product_type"
+      <*> json <| "adult_only"
+      <*> json <| "language"
+      <*> json <| "delivered"
+      <*> json <| "remaining"
+      <*> json <| "auto_renew"
+  }
+}
+
+extension Subscription.Relationships: Argo.Decodable {
+  public static func decode(_ json: JSON) -> Decoded<Subscription.Relationships> {
+    return curry(Subscription.Relationships.init)
+      <^> json <| "publisher"
+      <*> json <| "main_subject"
+      <*> json <| "library_items"
   }
 }
 
@@ -65,4 +78,3 @@ extension Subscription.Links: Argo.Decodable {
       <*> json <| "site"
   }
 }
-

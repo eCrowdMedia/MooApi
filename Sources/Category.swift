@@ -3,12 +3,25 @@ import Curry
 import Runes
 
 public struct Category: ResourceType {
+  
   public let type: String
   public let id: String
-  public let name: String
-  public let link: String
+  public let attributes: Attributes
+  public let relationships: Relationships
+  public let links: Links
 
-  public let parent: ResourceIdentifier?
+  public struct Attributes {
+    public let name: String
+  }
+
+  public struct Relationships {
+    public let parent: RelationshipObject?
+  }
+
+  public struct Links {
+    public let selfLink: String
+  }
+
 }
 
 // MARK: - Decodable
@@ -17,8 +30,8 @@ extension Category: Argo.Decodable {
     return curry(Category.init)
       <^> json <| "type"
       <*> json <| "id"
-      <*> json <| ["attributes", "name"]
-      <*> json <| ["links", "self"]
-      <*> json <|? ["relationships", "parent", "data"]
+      <*> json <| "attributes"
+      <*> json <| "relationships"
+      <*> json <| "links"
   }
 }

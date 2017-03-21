@@ -2,7 +2,7 @@ import Argo
 import Curry
 import Runes
 
-public struct ResourceIdentifier: ResourceType {
+public struct ResourceIdentifier {
   public let type: String
   public let id: String
 }

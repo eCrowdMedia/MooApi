@@ -4,11 +4,18 @@ import Runes
 
 public struct Publisher: ResourceType {
   
-  // MARK: - Attributes
   public let type: String
   public let id: String
-  public let name: String
-  public let link: String
+  public let attributes: Attributes
+  public let links: Links
+
+  public struct Attributes {
+    public let name: String
+  }
+
+  public struct Links {
+    public let selfLink: String
+  }
 }
 
 // MARK: - Decodable
@@ -17,7 +24,7 @@ extension Publisher: Argo.Decodable {
     return curry(Publisher.init)
       <^> json <| "type"
       <*> json <| "id"
-      <*> json <| ["attributes", "name"]
-      <*> json <| ["links", "self"]
+      <*> json <| "attributes"
+      <*> json <| "links"
   }
 }

@@ -168,7 +168,6 @@
 				2D01B28F1E8123B300583A7C /* ResourceLinks.swift */,
 				2D01B2901E8123B300583A7C /* ResourceMeta.swift */,
 			);
-			name = helper;
 			path = helper;
 			sourceTree = "<group>";
 		};
@@ -247,7 +246,6 @@
 				2DECC71F1E78342C00FB815C /* ApiDocumentLinks.swift */,
 				2DECC7201E78342C00FB815C /* ApiDocumentMeta.swift */,
 			);
-			name = core;
 			path = core;
 			sourceTree = "<group>";
 		};
@@ -271,7 +269,6 @@
 				2DECC7361E78342C00FB815C /* Tag.swift */,
 				2D01B2841E80DBFA00583A7C /* User.swift */,
 			);
-			name = model;
 			path = model;
 			sourceTree = "<group>";
 		};
@@ -280,7 +277,6 @@
 			children = (
 				2DECC7281E78342C00FB815C /* ResourceType.swift */,
 			);
-			name = protocol;
 			path = protocol;
 			sourceTree = "<group>";
 		};
@@ -291,7 +287,6 @@
 				2DECC7381E78342C00FB815C /* ServiceApi.swift */,
 				2DECC7391E78342C00FB815C /* ServiceError.swift */,
 			);
-			name = network;
 			path = network;
 			sourceTree = "<group>";
 		};

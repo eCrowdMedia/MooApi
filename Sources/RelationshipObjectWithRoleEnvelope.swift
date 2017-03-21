@@ -8,9 +8,9 @@ public struct RelationshipObjectWithRoleEnvelope {
   public let links: ResourceLinks?
 }
 
-extension RelationshipObjectEnvelope: Argo.Decodable {
-  public static func decode(_ json: JSON) -> Decoded<RelationshipObjectEnvelope> {
-    return curry(RelationshipObjectEnvelope.init)
+extension RelationshipObjectWithRoleEnvelope: Argo.Decodable {
+  public static func decode(_ json: JSON) -> Decoded<RelationshipObjectWithRoleEnvelope> {
+    return curry(RelationshipObjectWithRoleEnvelope.init)
       <^> (json <|| "data" <|> .success([]))
       <*> json <|? "meta"
       <*> json <|? "links"

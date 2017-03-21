@@ -23,7 +23,7 @@ public struct Book: ResourceType {
     public let fileSize: Int
     public let rendition: Rendition
     public let isSuspend: Bool
-    public let isOwn: Bool
+    public let isOwn: Bool?
     public let prices: [Price]
     public let count: Count
 
@@ -73,20 +73,26 @@ extension Book: Argo.Decodable {
 
 extension Book.Attributes: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Book.Attributes> {
-    return curry(Book.Attributes.init)
+    let tmp1 = curry(Book.Attributes.init)
       <^> json <| "title"
       <*> json <|? "sub_title"
       <*> json <| "author"
       <*> json <|? "short_description"
+    
+    let tmp2 = tmp1
       <*> json <|? "description"
       <*> json <|? "isbn"
       <*> json <| "language"
       <*> json <|? "publication_date"
+      
+    let tmp3 = tmp2
       <*> json <| "adult_only"
       <*> json <| "file_size"
       <*> json <| "rendition"
       <*> json <| "suspend"
-      <*> (json <|? "own" <|> .success(false))
+      
+    return tmp3 
+      <*> json <|? "own"
       <*> json <|| "prices"
       <*> json <| "count"
   }

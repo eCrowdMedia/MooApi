@@ -35,3 +35,24 @@ extension Category: Argo.Decodable {
       <*> json <| "links"
   }
 }
+
+extension Category.Attributes: Argo.Decodable {
+  public static func decode(_ json: JSON) -> Decoded<Category.Attributes> {
+    return curry(Category.Attributes.init)
+      <^> json <| "name"
+  }
+}
+
+extension Category.Relationships: Argo.Decodable {
+  public static func decode(_ json: JSON) -> Decoded<Category.Relationships> {
+    return curry(Category.Relationships.init)
+      <^> json <|? "parent"
+  }
+}
+
+extension Category.Links: Argo.Decodable {
+  public static func decode(_ json: JSON) -> Decoded<Category.Links> {
+    return curry(Category.Links.init)
+      <^> json <| "self"
+  }
+}

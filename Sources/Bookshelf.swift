@@ -21,7 +21,7 @@ public struct Bookshelf: ResourceType {
   public struct Relationships {
     public let book: RelationshipObject
     public let review: RelationshipObject?
-    public let reading: RelationshipObject?
+    public let reading: RelationshipObject
     public let tags: RelationshipObjectEnvelope?
   }
 
@@ -36,7 +36,7 @@ public struct Bookshelf: ResourceType {
 
 extension Bookshelf: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Bookshelf> {
-    let a = curry(Bookshelf.init)
+    return curry(Bookshelf.init)
       <^> json <| "type"
       <*> json <| "id"
       <*> json <| "attributes"
@@ -60,8 +60,8 @@ extension Bookshelf.Relationships: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Bookshelf.Relationships> {
     return curry(Bookshelf.Relationships.init)
       <^> json <| "book"
-      <*> json <| "reading"
       <*> json <|? "review"
+      <*> json <| "reading"
       <*> json <|? "tags"
   }
 }

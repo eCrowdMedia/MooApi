@@ -28,3 +28,17 @@ extension Publisher: Argo.Decodable {
       <*> json <| "links"
   }
 }
+
+extension Publisher.Attributes: Argo.Decodable {
+  public static func decode(_ json: JSON) -> Decoded<Publisher.Attributes> {
+    return curry(Publisher.Attributes.init)
+      <^> json <| "name"
+  }
+}
+
+extension Publisher.Links: Argo.Decodable {
+  public static func decode(_ json: JSON) -> Decoded<Publisher.Links> {
+    return curry(Publisher.Links.init)
+      <^> json <| "self"
+  }
+}

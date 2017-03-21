@@ -71,7 +71,7 @@ extension Reading.Relationships: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Reading.Relationships> {
     return curry(Reading.Relationships.init)
       <^> json <| "book"
-      <^> json <|? "review"
+      <*> json <|? "review"
   }
 }
 

@@ -28,3 +28,17 @@ extension Event: Argo.Decodable {
       <*> json <| "links"
   }
 }
+
+extension Event.Attributes: Argo.Decodable {
+  public static func decode(_ json: JSON) -> Decoded<Event.Attributes> {
+    return curry(Event.Attributes.init)
+      <^> json <| "name"
+  }
+}
+
+extension Event.Links: Argo.Decodable {
+  public static func decode(_ json: JSON) -> Decoded<Event.Links> {
+    return curry(Event.Links.init)
+      <^> json <| "self"
+  }
+}

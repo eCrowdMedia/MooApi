@@ -7,7 +7,7 @@ public struct Review: ResourceType {
   // MARK: - Attributes
   public let type: String
   public let id: String
-  public let privacy: PrivacyState
+  public let privacy: String
   public let title: String
   public let content: String
   public let commentsCount: Int

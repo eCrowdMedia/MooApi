@@ -12,7 +12,7 @@ public struct Book: ResourceType {
   public let author: String
   public let descriptionInfo: Description
   public let isbn: String?
-  public let language: LanguageType
+  public let language: String
   public let publicationDate: String?
   public let isAdultOnly: Bool
   public let fileSize: Int

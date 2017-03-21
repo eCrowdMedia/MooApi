@@ -10,7 +10,7 @@ public struct Bookshelf: ResourceType {
   public let id: String
   public let action: String
   public let isNew: Bool
-  public let privacy: PrivacyState
+  public let privacy: String
   public let isArchive: Bool
   public let isSubscribable: Bool // if true is magazation, else is book.
   public let links: Links

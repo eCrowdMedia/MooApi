@@ -10,9 +10,9 @@ public struct Subscription: ResourceType {
   public let name: String
   public let period: String
   public let content: String
-  public let productType: SubscriptionProductType
+  public let productType: String
   public let isAdulyOnly: Bool
-  public let language: LanguageType
+  public let language: String
   public let delivered: Int
   public let remaining: Int
   public let isAutoRenew: Bool

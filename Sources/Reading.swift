@@ -7,8 +7,8 @@ public struct Reading: ResourceType {
   // MARK: - Attributes
   public let type: String
   public let id: String
-  public let state: ReadingState
-  public let privacy: PrivacyState
+  public let state: String
+  public let privacy: String
   public let startedAt: String?
   public let touchedAt: String?
   public let endedAt: String?

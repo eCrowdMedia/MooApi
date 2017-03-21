@@ -159,6 +159,7 @@
 		2D01B29C1E8128DD00583A7C /* helper */ = {
 			isa = PBXGroup;
 			children = (
+				2D01B2861E80DFBA00583A7C /* ImageMeta.swift */,
 				2D01B28B1E8123B300583A7C /* RelationshipObject.swift */,
 				2D01B28C1E8123B300583A7C /* RelationshipObjectEnvelope.swift */,
 				2D01B28D1E8123B300583A7C /* RelationshipObjectWithRoleEnvelope.swift */,
@@ -166,9 +167,9 @@
 				2D01B28E1E8123B300583A7C /* ResourceIdentifierWithRole.swift */,
 				2D01B28F1E8123B300583A7C /* ResourceLinks.swift */,
 				2D01B2901E8123B300583A7C /* ResourceMeta.swift */,
-				2D01B2861E80DFBA00583A7C /* ImageMeta.swift */,
 			);
 			name = helper;
+			path = helper;
 			sourceTree = "<group>";
 		};
 		2DECC6F61E78341900FB815C = {
@@ -194,8 +195,8 @@
 		2DECC7021E78341900FB815C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				2D01B29C1E8128DD00583A7C /* helper */,
 				2DECC7781E78EA3000FB815C /* core */,
+				2D01B29C1E8128DD00583A7C /* helper */,
 				2DECC7791E78EA4C00FB815C /* model */,
 				2DECC77C1E78EBE800FB815C /* network */,
 				2DECC77B1E78EA7D00FB815C /* protocol */,
@@ -247,6 +248,7 @@
 				2DECC7201E78342C00FB815C /* ApiDocumentMeta.swift */,
 			);
 			name = core;
+			path = core;
 			sourceTree = "<group>";
 		};
 		2DECC7791E78EA4C00FB815C /* model */ = {
@@ -270,6 +272,7 @@
 				2D01B2841E80DBFA00583A7C /* User.swift */,
 			);
 			name = model;
+			path = model;
 			sourceTree = "<group>";
 		};
 		2DECC77B1E78EA7D00FB815C /* protocol */ = {
@@ -278,6 +281,7 @@
 				2DECC7281E78342C00FB815C /* ResourceType.swift */,
 			);
 			name = protocol;
+			path = protocol;
 			sourceTree = "<group>";
 		};
 		2DECC77C1E78EBE800FB815C /* network */ = {
@@ -288,6 +292,7 @@
 				2DECC7391E78342C00FB815C /* ServiceError.swift */,
 			);
 			name = network;
+			path = network;
 			sourceTree = "<group>";
 		};
 		C3972CC81F7208F9E82194F7 /* Frameworks */ = {

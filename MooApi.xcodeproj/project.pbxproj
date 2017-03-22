@@ -32,6 +32,10 @@
 		2DD0B2A31E825E330053B8F5 /* ReadingLogInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 2DD0B2A21E825E330053B8F5 /* ReadingLogInfo.json */; };
 		2DD0B2A61E826B5C0053B8F5 /* CommentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B2A41E826B190053B8F5 /* CommentTests.swift */; };
 		2DD0B2A91E8273600053B8F5 /* CommentInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 2DD0B2A71E826BC80053B8F5 /* CommentInfo.json */; };
+		2DD0B2AB1E8281BA0053B8F5 /* BookmarkInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 2DD0B2AA1E8281BA0053B8F5 /* BookmarkInfo.json */; };
+		2DD0B2AD1E8281E70053B8F5 /* BookmarkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B2AC1E8281E70053B8F5 /* BookmarkTests.swift */; };
+		2DD0B2B01E8282C20053B8F5 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B2AE1E8282270053B8F5 /* Bookmark.swift */; };
+		2DD0B2B21E8282E20053B8F5 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B2B11E8282E20053B8F5 /* Path.swift */; };
 		2DECC70A1E78341900FB815C /* MooApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DECC7001E78341900FB815C /* MooApi.framework */; };
 		2DECC7111E78341900FB815C /* MooApi.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DECC7031E78341900FB815C /* MooApi.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2DECC73A1E78342C00FB815C /* ApiDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DECC71C1E78342C00FB815C /* ApiDocument.swift */; };
@@ -116,6 +120,10 @@
 		2DD0B2A21E825E330053B8F5 /* ReadingLogInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ReadingLogInfo.json; sourceTree = "<group>"; };
 		2DD0B2A41E826B190053B8F5 /* CommentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTests.swift; sourceTree = "<group>"; };
 		2DD0B2A71E826BC80053B8F5 /* CommentInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CommentInfo.json; sourceTree = "<group>"; };
+		2DD0B2AA1E8281BA0053B8F5 /* BookmarkInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BookmarkInfo.json; sourceTree = "<group>"; };
+		2DD0B2AC1E8281E70053B8F5 /* BookmarkTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkTests.swift; sourceTree = "<group>"; };
+		2DD0B2AE1E8282270053B8F5 /* Bookmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
+		2DD0B2B11E8282E20053B8F5 /* Path.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		2DECC7001E78341900FB815C /* MooApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MooApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DECC7031E78341900FB815C /* MooApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MooApi.h; sourceTree = "<group>"; };
 		2DECC7041E78341900FB815C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -239,6 +247,7 @@
 				2DECC7101E78341900FB815C /* Info.plist */,
 				2DECC7551E78344300FB815C /* BookShelvesTests.swift */,
 				2DECC7561E78344300FB815C /* BookTests.swift */,
+				2DD0B2AC1E8281E70053B8F5 /* BookmarkTests.swift */,
 				2DECC7571E78344300FB815C /* CategoryTests.swift */,
 				2DD0B2A41E826B190053B8F5 /* CommentTests.swift */,
 				2DECC7581E78344300FB815C /* ContributorTests.swift */,
@@ -261,6 +270,7 @@
 			children = (
 				2DECC75D1E78344300FB815C /* BookInfo.json */,
 				2DECC75E1E78344300FB815C /* BookshelvesInfo.json */,
+				2DD0B2AA1E8281BA0053B8F5 /* BookmarkInfo.json */,
 				2DECC75F1E78344300FB815C /* CategoryInfo.json */,
 				2DD0B2A71E826BC80053B8F5 /* CommentInfo.json */,
 				2DECC7601E78344300FB815C /* ContributorInfo.json */,
@@ -295,6 +305,7 @@
 			children = (
 				2DECC72B1E78342C00FB815C /* Book.swift */,
 				2DECC72C1E78342C00FB815C /* Bookshelf.swift */,
+				2DD0B2AE1E8282270053B8F5 /* Bookmark.swift */,
 				2DECC72D1E78342C00FB815C /* Category.swift */,
 				2D01B2881E8123B300583A7C /* Comment.swift */,
 				2DECC72E1E78342C00FB815C /* Contributor.swift */,
@@ -303,6 +314,7 @@
 				2DECC7301E78342C00FB815C /* Marathon.swift */,
 				2D01B28A1E8123B300583A7C /* Me.swift */,
 				2DECC7311E78342C00FB815C /* Publisher.swift */,
+				2DD0B2B11E8282E20053B8F5 /* Path.swift */,
 				2DD0B2891E825AD10053B8F5 /* Range.swift */,
 				2DECC7321E78342C00FB815C /* Reading.swift */,
 				2DECC7331E78342C00FB815C /* ReadingLog.swift */,
@@ -469,6 +481,7 @@
 				2DECC76E1E78344300FB815C /* BookshelvesInfo.json in Resources */,
 				2DD0B2921E825B0A0053B8F5 /* MeInfo.json in Resources */,
 				2DECC7741E78344300FB815C /* SubscriptionInfo.json in Resources */,
+				2DD0B2AB1E8281BA0053B8F5 /* BookmarkInfo.json in Resources */,
 				2DD0B2931E825B0D0053B8F5 /* MarathonInfo.json in Resources */,
 				2DD0B2A91E8273600053B8F5 /* CommentInfo.json in Resources */,
 				2DD0B2951E825B390053B8F5 /* HighlightInfo.json in Resources */,
@@ -566,6 +579,7 @@
 				2DECC73C1E78342C00FB815C /* ApiDocumentInclusion.swift in Sources */,
 				2DECC7501E78342C00FB815C /* Subscription.swift in Sources */,
 				2D01B2961E8123B300583A7C /* RelationshipObjectEnvelope.swift in Sources */,
+				2DD0B2B01E8282C20053B8F5 /* Bookmark.swift in Sources */,
 				2D01B2951E8123B300583A7C /* RelationshipObject.swift in Sources */,
 				2D01B2871E80DFBA00583A7C /* ImageMeta.swift in Sources */,
 				2DECC7451E78342C00FB815C /* ResourceIdentifier.swift in Sources */,
@@ -594,6 +608,7 @@
 				2D01B2931E8123B300583A7C /* Highlight.swift in Sources */,
 				2DECC74D1E78342C00FB815C /* Reading.swift in Sources */,
 				2DECC73D1E78342C00FB815C /* ApiDocumentLinks.swift in Sources */,
+				2DD0B2B21E8282E20053B8F5 /* Path.swift in Sources */,
 				2D01B2851E80DBFA00583A7C /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -612,6 +627,7 @@
 				2DD0B29D1E825B720053B8F5 /* MeTests.swift in Sources */,
 				2DECC7661E78344300FB815C /* BookTests.swift in Sources */,
 				2DECC7681E78344300FB815C /* ContributorTests.swift in Sources */,
+				2DD0B2AD1E8281E70053B8F5 /* BookmarkTests.swift in Sources */,
 				2DD0B2A11E825E1C0053B8F5 /* ReadingLogTests.swift in Sources */,
 				2DECC76A1E78344300FB815C /* ReadingTests.swift in Sources */,
 				2DECC7671E78344300FB815C /* CategoryTests.swift in Sources */,

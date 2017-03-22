@@ -17,6 +17,8 @@ final public class ApiDocumentInclusion {
   public var reviews: [Review] = []
   public var events: [Event] = []
   public var users: [User] = []
+  public var ranges: [Range] = []
+  public var paths: [Path] = []
   
   fileprivate enum IncludedType: String {
     case bookshelves   = "library_items"
@@ -32,6 +34,8 @@ final public class ApiDocumentInclusion {
     case reviews       = "reviews"
     case events        = "events"
     case users         = "users"
+    case ranges        = "ranges"
+    case paths         = "paths"
   }
   
 }
@@ -102,6 +106,14 @@ extension ApiDocumentInclusion: Argo.Decodable {
       case .users:
         if let item = User.decode(jsonObject).value {
           included.users.append(item)
+        }
+      case .ranges:
+        if let item = Range.decode(jsonObject).value {
+          included.ranges.append(item)
+        }
+      case .paths:
+        if let item = Path.decode(jsonObject).value {
+          included.paths.append(item)
         }
       }
     }

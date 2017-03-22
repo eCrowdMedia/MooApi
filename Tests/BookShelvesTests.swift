@@ -58,11 +58,11 @@ final internal class BookShelvesTests: XCTestCase {
       return
     }
     
-    XCTAssertEqual(inclusion.publishers.count, 1)
-    XCTAssertEqual(inclusion.contributors.count, 3)
-    XCTAssertEqual(inclusion.books.count, 1)
-    XCTAssertEqual(inclusion.readings.count, 1)
-    XCTAssertEqual(inclusion.reviews.count, 0)
+    XCTAssertEqual(inclusion.publishers.isEmpty, false)
+    XCTAssertEqual(inclusion.contributors.isEmpty, false)
+    XCTAssertEqual(inclusion.books.isEmpty, false)
+    XCTAssertEqual(inclusion.readings.isEmpty, false)
+    XCTAssertEqual(inclusion.reviews.isEmpty, true)
   }
   
 }

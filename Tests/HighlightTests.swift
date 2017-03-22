@@ -54,6 +54,19 @@ final internal class HighlightTests: XCTestCase {
 
     // test links
     XCTAssertEqual(links.selfLink, "https://api.readmoo.com/read/v2/me/highlights/200197")
+
+    // Test included
+    guard let inclusion = result.value?.included else {
+      XCTFail()
+      return
+    }
+    
+    XCTAssertEqual(inclusion.publishers.isEmpty, false)
+    XCTAssertEqual(inclusion.contributors.isEmpty, false)
+    XCTAssertEqual(inclusion.books.isEmpty, false)
+    XCTAssertEqual(inclusion.readings.isEmpty, false)
+    XCTAssertEqual(inclusion.ranges.isEmpty, false)
+    XCTAssertEqual(inclusion.reviews.isEmpty, true)
   }
   
 }

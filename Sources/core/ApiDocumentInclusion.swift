@@ -16,6 +16,7 @@ final public class ApiDocumentInclusion {
   public var readingLogs: [ReadingLog] = []
   public var reviews: [Review] = []
   public var events: [Event] = []
+  public var users: [User] = []
   
   fileprivate enum IncludedType: String {
     case bookshelves   = "library_items"
@@ -30,6 +31,7 @@ final public class ApiDocumentInclusion {
     case readingLogs   = "readinglogs"
     case reviews       = "reviews"
     case events        = "events"
+    case users         = "users"
   }
   
 }
@@ -96,6 +98,10 @@ extension ApiDocumentInclusion: Argo.Decodable {
       case .events:
         if let item = Event.decode(jsonObject).value {
           included.events.append(item)
+        }
+      case .users:
+        if let item = User.decode(jsonObject).value {
+          included.users.append(item)
         }
       }
     }

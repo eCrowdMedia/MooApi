@@ -1,0 +1,17 @@
+{
+  "data": {
+    "type": "marathons",
+    "id": "american2017",
+    "attributes": {
+      "name": "美國主題書單馬拉松",
+      "description": "閱讀世界踩點任務：美國",
+      "started_at": "2017-03-14T16:00:00Z",
+      "ended_at": "2017-04-16T16:00:00Z"
+    },
+    "links": {
+      "self": "https://api.readmoo.com/read/v2/marathons/american2017",
+      "publications": "https://api.readmoo.com/read/v2/me/library/publications?filter%5Bmarathon%5D=american2017",
+      "site": "https://readmoo.com/campaign/2017/3/world_arround_america/index"
+    }
+  }
+}

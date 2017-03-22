@@ -1,0 +1,26 @@
+{
+  "type": "ranges",
+  "id": "307378",
+  "attributes": {
+    "file_version": "1.003",
+    "position": 0,
+    "chapter": 7,
+    "cfi": "/6/14!",
+    "title": null,
+    "pre_content": null,
+    "content": "悲哀是力不如人。只要塵世一如格言所云：",
+    "post_content": null,
+    "referenced_count": 1
+  },
+  "relationships": {
+    "book": {
+      "data": {
+        "type": "books",
+        "id": "210010466000101"
+      }
+    }
+  },
+  "links": {
+    "self": "https://api.readmoo.com/read/v2/ranges/307378"
+  }
+}

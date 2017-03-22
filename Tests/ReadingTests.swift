@@ -43,9 +43,12 @@ final internal class ReadingTests: XCTestCase {
     // Test relationships
     XCTAssertEqual(relationships.book.data?.type, "books")
     XCTAssertEqual(relationships.book.data?.id, "210010466000101")
-    XCTAssertEqual(relationships.bookmarks?.links?.related, "https://api.readmoo.com/read/v2/me/readings/51924/bookmarks")
-    XCTAssertEqual(relationships.highlights?.links?.related, "https://api.readmoo.com/read/v2/me/readings/51924/highlights")
-    XCTAssertNil(relationships.review?.data)
+    
+    XCTAssertEqual(relationships.bookmarks.links?.related, "https://api.readmoo.com/read/v2/me/readings/51924/bookmarks")
+    
+    XCTAssertEqual(relationships.highlights.links?.related, "https://api.readmoo.com/read/v2/me/readings/51924/highlights")
+    
+    XCTAssertNil(relationships.review.data)
 
     // Test links
     XCTAssertEqual(links.selfLink, "https://api.readmoo.com/read/v2/me/readings/51924")

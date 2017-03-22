@@ -17,14 +17,13 @@ public struct Comment: ResourceType {
 
   public struct Relationships {
     public let replyTo: RelationshipObject
-    public let user: RelationshipObject
-    public let highlight: RelationshipObject?
-    public let review: RelationshipObject?
+    public let commentator: RelationshipObject
+    public let highlight: RelationshipObject
+    public let review: RelationshipObject
   }
 
   public struct Links {
     public let selfLink: String
-    public let related: String
   }
 }
 
@@ -51,9 +50,9 @@ extension Comment.Relationships: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Comment.Relationships> {
     return curry(Comment.Relationships.init)
       <^> json <| "reply_to"
-      <*> json <| "user"
-      <*> json <|? "highlight"
-      <*> json <|? "review"
+      <*> json <| "commentator"
+      <*> json <| "highlight"
+      <*> json <| "review"
   }
 }
 
@@ -61,6 +60,5 @@ extension Comment.Links: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Comment.Links> {
     return curry(Comment.Links.init)
       <^> json <| "self"
-      <*> json <| "related"
   }
 }

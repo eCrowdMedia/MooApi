@@ -42,7 +42,7 @@ final internal class BookShelvesTests: XCTestCase {
       XCTAssertEqual(relationships.book.data?.id, "210068285000101")
       XCTAssertEqual(relationships.reading.data?.type, "readings")
       XCTAssertEqual(relationships.reading.data?.id, "784752")
-      XCTAssertNil(relationships.review?.data)
+      XCTAssertNil(relationships.review.data)
       XCTAssertNil(relationships.tags)
 
       // Test links

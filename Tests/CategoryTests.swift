@@ -29,8 +29,8 @@ final internal class CategoryTests: XCTestCase {
     XCTAssertEqual(attributes.name, "財經企管")
 
     // Test relationships
-    XCTAssertEqual(relationships.parent?.data?.type, "categories")
-    XCTAssertEqual(relationships.parent?.data?.id, "181")
+    XCTAssertEqual(relationships.parent.data?.type, "categories")
+    XCTAssertEqual(relationships.parent.data?.id, "181")
 
     // Test links
     XCTAssertEqual(links.selfLink, "https://api.readmoo.com/read/v2/categories/182")

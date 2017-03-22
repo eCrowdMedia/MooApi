@@ -24,8 +24,8 @@ public struct ReadingLog: ResourceType {
   }
 
   public struct Relationships {
-    public let event: RelationshipObject?
-    public let parent: RelationshipObject?
+    public let event: RelationshipObject
+    public let parent: RelationshipObject
     public let reading: RelationshipObject
   }
 
@@ -65,8 +65,8 @@ extension ReadingLog.Attributes: Argo.Decodable {
 extension ReadingLog.Relationships: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<ReadingLog.Relationships> {
     return curry(ReadingLog.Relationships.init)
-      <^> json <|? "event"
-      <*> json <|? "parent"
+      <^> json <| "event"
+      <*> json <| "parent"
       <*> json <| "reading"
   }
 }

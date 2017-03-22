@@ -1,0 +1,46 @@
+{
+  "data": {
+    "type": "readinglogs",
+    "id": "3272563",
+    "attributes": {
+      "identifier": "0035bc92-028b-11e7-93ae-92361f002671",
+      "cfi": "/6/12!/4/2/1:1",
+      "duration": 5,
+      "progress": 0,
+      "touched_at": "2016-19-12T03:16:25Z",
+      "user_agent": "string"
+    },
+    "relationships": {
+      "event": {
+        "data": {
+          "type": "events",
+          "id": "7"
+        },
+        "links": {
+          "related": "https://api.readmoo.com/read/v2/me/readinglogs/3272563/event"
+        }
+      },
+      "parent": {
+        "data": {
+          "type": "readinglogs",
+          "id": "629017"
+        },
+        "links": {
+          "related": "https://api.readmoo.com/read/v2/me/readinglogs/3272563/parent"
+        }
+      },
+      "reading": {
+        "data": {
+          "type": "readings",
+          "id": "51924"
+        },
+        "links": {
+          "related": "https://api.readmoo.com/read/v2/me/readinglogs/3272563/reading"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.readmoo.com/read/v2/me/readinglogs/3272563"
+    }
+  }
+}

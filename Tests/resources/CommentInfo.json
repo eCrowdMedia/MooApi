@@ -1,0 +1,65 @@
+{
+  "data": {
+    "type": "comments",
+    "id": "111",
+    "attributes": {
+      "content": "夏丏尊對教育發出的喟嘆，過了五十年再看，我們似乎仍然未跳出窠臼。",
+      "posted_at": "2012-09-14 21:54:42"
+    },
+    "relationships": {
+      "reply_to": {
+        "data": null
+      },
+      "commentator": {
+        "data": {
+          "type": "users",
+          "id": "bb7a74k84"
+        }
+      },
+      "highlight": {
+        "links": {
+          "related": "https://api.readmoo.com/read/v2/comments/111/highlight"
+        }
+      },
+      "review": {
+        "data": null
+      }
+    },
+    "links": {
+      "self": "https://api.readmoo.com/read/v2/comments/111"
+    }
+  },
+  "included": [
+    {
+      "type": "users",
+      "id": "bb7a74k84",
+      "attributes": {
+        "nickname": "黃文彥"
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/users/bb7a74k84",
+        "small": {
+          "href": "https://cdn.readmoo.com/avatar/bb/7a74k84_40.png?v=1436786548",
+          "meta": {
+            "width": 40,
+            "resize": "crop"
+          }
+        },
+        "medium": {
+          "href": "https://cdn.readmoo.com/avatar/bb/7a74k84_130.png?v=1436786548",
+          "meta": {
+            "width": 130,
+            "resize": "crop"
+          }
+        },
+        "large": {
+          "href": "https://cdn.readmoo.com/avatar/bb/7a74k84_200.png?v=1436786548",
+          "meta": {
+            "width": 200,
+            "resize": "crop"
+          }
+        }
+      }
+    }
+  ]
+}

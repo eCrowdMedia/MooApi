@@ -1,0 +1,294 @@
+{
+  "data": {
+    "type": "highlights",
+    "id": "200197",
+    "attributes": {
+      "privacy_type": "everyone",
+      "comments_count": 0,
+      "likes_count": 0,
+      "highlighted_at": "2017-01-04T02:58:25Z"
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "type": "books",
+          "id": "210010466000101"
+        }
+      },
+      "user": {
+        "data": {
+          "type": "users",
+          "id": "lljl9jqlh"
+        }
+      },
+      "reading": {
+        "data": {
+          "type": "readings",
+          "id": "51924"
+        }
+      },
+      "range": {
+        "data": {
+          "type": "ranges",
+          "id": "307378"
+        }
+      },
+      "comments": {
+        "links": {
+          "related": "https://api.readmoo.com/read/v2/me/highlights/200197/comments"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.readmoo.com/read/v2/me/highlights/200197"
+    }
+  },
+  "included": [
+    {
+      "type": "publishers",
+      "id": "147",
+      "attributes": {
+        "name": "遠景"
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/publishers/147"
+      }
+    },
+    {
+      "type": "contributors",
+      "id": "4576",
+      "attributes": {
+        "name": "夏目漱石"
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/contributors/4576"
+      }
+    },
+    {
+      "type": "categories",
+      "id": "3",
+      "attributes": {
+        "name": "文學小說"
+      },
+      "relationships": {
+        "parent": {
+          "data": null
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/categories/3"
+      }
+    },
+    {
+      "type": "categories",
+      "id": "29",
+      "attributes": {
+        "name": "文學"
+      },
+      "relationships": {
+        "parent": {
+          "data": {
+            "type": "categories",
+            "id": "3"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/categories/29"
+      }
+    },
+    {
+      "type": "books",
+      "id": "210010466000101",
+      "attributes": {
+        "title": "我是貓",
+        "subtitle": "",
+        "author": "夏目漱石",
+        "short_description": "1905年1月開始在《子規》雜誌上連載。當時只準備一期完結的短篇，卻因為編輯的勸說使他繼續寫下去。\n　　\n日俄戰後，日本由農村社會轉向工商業的資本主義。在這轉換過程中，興起了一批金權家，同時也出現一群知識份子。兩者互相對立、嘲諷，而社會風俗也趨向於沒有自我的趨炎附勢、名利爭逐。夏目潄石透過通靈奇貓的銳眼，以輕妙諷刺、滑稽的筆法，描繪出金權家的跋扈奢侈，以及知識份子意欲確立自我的苦澀無為。無可奈何之際，知識份子只有藉嘲弄金權家以滿足自己的無為，藉玩世不恭以抗拒社會風氣，以沙龍式的漫談抒發心情鬱悶，研究上吊力學與磨珠科學諷刺近代科學的無謂與繁瑣，這一切浮世萬象，在靈貓看來，無非嘲諷對象。她娓娓的獨白、冷冷的旁白、以及一針見血的插話，從頭到尾貫串全書，與形形色色知識份子的如珠妙語，相互輝映，構成濃厚趣味性，引人入勝。\n　　\n《我是貓》是一本討論「自我定位」的書，也是漱石過去三十年來生活體驗的總反省；是一部如何調適自我與日本明治社會的縮影，更是一切轉型社會的寫真作品。\n",
+        "description": "<p>夏目潄石(1867~1916)本名夏目金之助，生於東京。自幼喜歡漢學，14歲開始學習中國古籍。1889年，就讀東京帝國大學的期間的因為受好友影響而開始寫作，同年9月9日，他的漢文暑假遊記《木屑錄》完成。《木屑錄》不僅是夏目漱石最早彙集成冊的作品，並且署名為「漱石頑夫」，是他的正式筆名「夏目漱石」的來源。1899年，開始了在英國倫敦大學學院的留學生活。1902年歸國，歸國後，在母校東京帝大敎授英文，並開始文學創作。1905年的《我是貓》原本無心插柳卻令他一舉成名。1907年，開始為《朝日新聞》寫連載小說。1916年，因胃潰瘍去世。1984年，他的頭像被印在日元1000元的紙幣上。<br />\n　　<br />\n夏目漱石對東西雙方文化均有很高造詣，既是英文學者，又精擅俳句、漢詩和書法。寫小說時他擅長運用對句、幽默的語言和新穎的形式。他對個人心理的精確細微的描寫也開啟後世類似創作小說的風氣。在日本近代文學史上具有很高的地位，被稱為「國民作家」。</p>\n",
+        "isbn": "9789573902805",
+        "language": "zh-Hant",
+        "publication_date": "1998-01-01T00:00:00Z",
+        "adult_only": false,
+        "file_size": 1593722,
+        "rendition": {
+          "layout": "reflowable"
+        },
+        "suspend": false,
+        "own": true,
+        "prices": [
+          {
+            "PriceType": "02",
+            "PriceAmount": 144,
+            "CurrencyCode": "TWD"
+          },
+          {
+            "PriceType": "04",
+            "PriceAmount": 144,
+            "CurrencyCode": "TWD"
+          },
+          {
+            "PriceType": "99",
+            "PriceAmount": 240,
+            "CurrencyCode": "TWD"
+          }
+        ],
+        "count": {
+          "unit": "words",
+          "amount": 218223
+        }
+      },
+      "relationships": {
+        "publisher": {
+          "data": {
+            "type": "publishers",
+            "id": "147"
+          }
+        },
+        "contributors": {
+          "data": [
+            {
+              "type": "contributors",
+              "id": "4576",
+              "meta": {
+                "role": "A01",
+                "description": "作者"
+              }
+            }
+          ]
+        },
+        "main_subject": {
+          "data": {
+            "type": "categories",
+            "id": "29"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/books/210010466000101",
+        "site": "https://readmoo.com/book/210010466000101",
+        "small": {
+          "href": "https://cdn.readmoo.com/cover/8f/cf38l92_120x180.jpg?v=0",
+          "meta": {
+            "width": 120,
+            "resize": "fit"
+          }
+        },
+        "medium": {
+          "href": "https://cdn.readmoo.com/cover/8f/cf38l92_210x315.jpg?v=0",
+          "meta": {
+            "width": 210,
+            "resize": "fit"
+          }
+        },
+        "large": {
+          "href": "https://cdn.readmoo.com/cover/8f/cf38l92_460x580.jpg?v=0",
+          "meta": {
+            "width": 460,
+            "resize": "fit"
+          }
+        }
+      }
+    },
+    {
+      "type": "users",
+      "id": "lljl9jqlh",
+      "attributes": {
+        "nickname": "moo小編"
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/users/lljl9jqlh",
+        "small": {
+          "href": "https://cdn.readmoo.com/avatar/ll/jl9jqlh_40.png?v=1489027839",
+          "meta": {
+            "width": 40,
+            "resize": "crop"
+          }
+        },
+        "medium": {
+          "href": "https://cdn.readmoo.com/avatar/ll/jl9jqlh_130.png?v=1489027839",
+          "meta": {
+            "width": 130,
+            "resize": "crop"
+          }
+        },
+        "large": {
+          "href": "https://cdn.readmoo.com/avatar/ll/jl9jqlh_200.png?v=1489027839",
+          "meta": {
+            "width": 200,
+            "resize": "crop"
+          }
+        }
+      }
+    },
+    {
+      "type": "readings",
+      "id": "51924",
+      "attributes": {
+        "state": "finished",
+        "privacy": "everyone",
+        "started_at": "2013-12-12T03:55:14Z",
+        "touched_at": "2016-12-19T03:16:25Z",
+        "ended_at": "2015-12-15T07:33:23Z",
+        "duration": 61140,
+        "progress": 0.12,
+        "comments_count": 1,
+        "highlights_count": 11,
+        "position": 0.12,
+        "position_updated_at": "2016-12-19T03:16:25Z",
+        "location": "/6/12!/4/2/1:1",
+        "rating": 5
+      },
+      "relationships": {
+        "book": {
+          "data": {
+            "type": "books",
+            "id": "210010466000101"
+          }
+        },
+        "bookmarks": {
+          "links": {
+            "related": "https://api.readmoo.com/read/v2/me/readings/51924/bookmarks"
+          }
+        },
+        "highlights": {
+          "links": {
+            "related": "https://api.readmoo.com/read/v2/me/readings/51924/highlights"
+          }
+        },
+        "review": {
+          "data": null
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/me/readings/51924"
+      }
+    },
+    {
+      "type": "ranges",
+      "id": "307378",
+      "attributes": {
+        "file_version": "1.003",
+        "position": 0,
+        "chapter": 7,
+        "cfi": "/6/14!",
+        "title": null,
+        "pre_content": null,
+        "content": "悲哀是力不如人。只要塵世一如格言所云：",
+        "post_content": null,
+        "referenced_count": 1
+      },
+      "relationships": {
+        "book": {
+          "data": {
+            "type": "books",
+            "id": "210010466000101"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/ranges/307378"
+      }
+    }
+  ]
+}

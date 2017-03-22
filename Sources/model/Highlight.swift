@@ -19,14 +19,14 @@ public struct Highlight: ResourceType {
 
   public struct Relationships {
     public let book: RelationshipObject
-    public let reading: RelationshipObject?
+    public let reading: RelationshipObject
     public let range: RelationshipObject
-    public let comments: RelationshipObjectEnvelope?
+    public let comments: RelationshipObjectEnvelope
+    public let user: RelationshipObject
   }
 
   public struct Links {
     public let selfLink: String
-    public let related: String
   }
 }
 
@@ -44,7 +44,7 @@ extension Highlight: Argo.Decodable {
 extension Highlight.Attributes: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Highlight.Attributes> {
     return curry(Highlight.Attributes.init)
-      <^> json <| "privacy"
+      <^> json <| "privacy_type"
       <*> json <| "comments_count"
       <*> json <| "likes_count"
       <*> json <| "highlighted_at"
@@ -55,9 +55,10 @@ extension Highlight.Relationships: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Highlight.Relationships> {
     return curry(Highlight.Relationships.init)
       <^> json <| "book"
-      <*> json <|? "reaidng"
+      <*> json <| "reading"
       <*> json <| "range"
-      <*> json <|? "comments"
+      <*> json <| "comments"
+      <*> json <| "user"
   }
 }
 
@@ -65,6 +66,5 @@ extension Highlight.Links: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Highlight.Links> {
     return curry(Highlight.Links.init)
       <^> json <| "self"
-      <*> json <| "related"
   }
 }

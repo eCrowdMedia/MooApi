@@ -1,32 +1,47 @@
-// import XCTest
-// @testable import MooApi
-// import Argo
-// import Foundation
+import XCTest
+@testable import MooApi
+import Argo
+import Foundation
 
-// final internal class CategoryTests: XCTestCase {
+final internal class CategoryTests: XCTestCase {
   
-//   func testDatas() {
-//     let testBundle = Bundle(for: type(of: self))
-//     let path = testBundle.path(forResource: "CategoryInfo", ofType: "json")
-//     let data = try! Data(contentsOf: URL(fileURLWithPath: path!))
-//     let json = JSON(try! JSONSerialization.jsonObject(with: data, options: []))
-//     let result = ApiDocument<MooApi.Category>.decode(json)
-//     let value = result.value?.data
+  func testDatas() {
+    let testBundle = Bundle(for: type(of: self))
+    let path = testBundle.path(forResource: "CategoryInfo", ofType: "json")
+    let data = try! Data(contentsOf: URL(fileURLWithPath: path!))
+    let json = JSON(try! JSONSerialization.jsonObject(with: data, options: []))
+    let result = ApiDocument<MooApi.Category>.decode(json)
     
-//     // Test all results
-//     XCTAssertNil(result.error)
-//     XCTAssertNil(result.value?.meta)
-//     XCTAssertNil(result.value?.paginationLinks)
-//     XCTAssertNotNil(result.value?.included)
-    
-//     // Test data
-//     XCTAssertNotNil(value)
-//     XCTAssertEqual(value?.type, "categories")
-//     XCTAssertEqual(value?.id, "182")
-//     XCTAssertEqual(value?.name, "財經企管")
-//     XCTAssertEqual(value?.parent?.type, "categories")
-//     XCTAssertEqual(value?.parent?.id, "181")
-//     XCTAssertEqual(value?.link, "https://api.readmoo.com/read/v2/categories/182")
-//   }
+    guard let category = result.value?.data else {
+      XCTFail()
+      return
+    }
+
+    let attributes = category.attributes
+    let relationships = category.relationships
+    let links = category.links
+
+    // Test type and id
+    XCTAssertEqual(category.type, "categories")
+    XCTAssertEqual(category.id, "182")
+
+    // Test attributes
+    XCTAssertEqual(attributes.name, "財經企管")
+
+    // Test relationships
+    XCTAssertEqual(relationships.parent?.data?.type, "categories")
+    XCTAssertEqual(relationships.parent?.data?.id, "181")
+
+    // Test links
+    XCTAssertEqual(links.selfLink, "https://api.readmoo.com/read/v2/categories/182")
+
+    // Test included
+    guard let inclusion = result.value?.included else {
+      XCTFail()
+      return
+    }
+
+    XCTAssertEqual(inclusion.categories.count, 2)
+  }
   
-// }
+}

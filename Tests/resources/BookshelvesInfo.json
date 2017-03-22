@@ -1,98 +1,84 @@
 {
-  "meta": {
-    "total_count": 2335,
-    "page": {
-      "count": 1,
-      "offset": 0
-    }
-  },
-  "links": {
-    "self": "https://api.readmoo.com/read/v2/me/library/books?page%5Bcount%5D=1&page%5Boffset%5D=0",
-    "next": "https://api.readmoo.com/read/v2/me/library/books?page%5Bcount%5D=1&page%5Boffset%5D=1",
-    "last": "https://api.readmoo.com/read/v2/me/library/books?page%5Bcount%5D=1&page%5Boffset%5D=2334"
-  },
-  "data": [
-    {
-      "type": "library_items",
-      "id": "1040336",
-      "attributes": {
-        "action": "download",
-        "new": false,
-        "privacy": "everyone",
-        "archive": false,
-        "subscribable": false
-      },
-      "relationships": {
-        "book": {
-          "data": {
-            "type": "books",
-            "id": "210068715000101"
-          }
-        },
-        "reading": {
-          "data": {
-            "type": "readings",
-            "id": "804686"
-          }
-        },
-        "review": {
-          "data": null
+  "data": {
+    "type": "library_items",
+    "id": "1022197",
+    "attributes": {
+      "action": "download",
+      "new": false,
+      "privacy": "everyone",
+      "archive": false,
+      "subscribable": false
+    },
+    "relationships": {
+      "book": {
+        "data": {
+          "type": "books",
+          "id": "210068285000101"
         }
       },
-      "links": {
-        "self": "https://api.readmoo.com/read/v2/me/library/books/1040336",
-        "reader": "https://readmoo.com/api/reader/210068715000101",
-        "epub": "https://api.readmoo.com/epub/210068715000101",
-        "toc": "https://cdn.readmoo.com/book/toc/full/210068715000101.json"
+      "reading": {
+        "data": {
+          "type": "readings",
+          "id": "784752"
+        }
+      },
+      "review": {
+        "data": null
       }
+    },
+    "links": {
+      "self": "https://api.readmoo.com/read/v2/me/library/books/1022197",
+      "reader": "https://readmoo.com/api/reader/210068285000101",
+      "epub": "https://api.readmoo.com/epub/210068285000101",
+      "toc": "https://cdn.readmoo.com/book/toc/full/210068285000101.json"
     }
-  ],
+  },
   "included": [
     {
       "type": "publishers",
-      "id": "4",
+      "id": "2",
       "attributes": {
-        "name": "商周出版"
+        "name": "時報出版"
       },
       "links": {
-        "self": "https://api.readmoo.com/read/v2/publishers/4"
+        "self": "https://api.readmoo.com/read/v2/publishers/2"
       }
     },
     {
       "type": "contributors",
-      "id": "25244",
+      "id": "24984",
       "attributes": {
-        "name": "席薇亞．塔拉"
+        "name": "威廉．尤瑞"
       },
       "links": {
-        "self": "https://api.readmoo.com/read/v2/contributors/25244"
+        "self": "https://api.readmoo.com/read/v2/contributors/24984"
       }
     },
     {
       "type": "contributors",
-      "id": "25245",
+      "id": "24985",
       "attributes": {
-        "name": "Sylvia Tara"
+        "name": "William Ury"
       },
       "links": {
-        "self": "https://api.readmoo.com/read/v2/contributors/25245"
+        "self": "https://api.readmoo.com/read/v2/contributors/24985"
       }
     },
     {
       "type": "contributors",
-      "id": "20343",
+      "id": "11793",
       "attributes": {
-        "name": "張馨方"
+        "name": "沈維君"
       },
       "links": {
-        "self": "https://api.readmoo.com/read/v2/contributors/20343"
+        "self": "https://api.readmoo.com/read/v2/contributors/11793"
       }
     },
     {
       "type": "categories",
-      "id": "157",
+      "id": "1",
       "attributes": {
-        "name": "醫療保健"
+        "name": "商業理財"
       },
       "relationships": {
         "parent": {
@@ -100,40 +86,41 @@
         }
       },
       "links": {
-        "self": "https://api.readmoo.com/read/v2/categories/157"
+        "self": "https://api.readmoo.com/read/v2/categories/1"
       }
     },
     {
       "type": "categories",
-      "id": "221",
+      "id": "136",
       "attributes": {
-        "name": "醫學常識"
+        "name": "職場工作"
       },
       "relationships": {
         "parent": {
           "data": {
             "type": "categories",
-            "id": "157"
+            "id": "1"
           }
         }
       },
       "links": {
-        "self": "https://api.readmoo.com/read/v2/categories/221"
+        "self": "https://api.readmoo.com/read/v2/categories/136"
       }
     },
     {
       "type": "books",
-      "id": "210068715000101",
+      "id": "210068285000101",
       "attributes": {
-        "title": "脂肪的祕密生命",
-        "sub_title": "最不為人知的器官脂肪背後的科學與它對身體的影響",
-        "author": "席薇亞．塔拉",
-        "short_description": "脂肪不是你想的那樣！生物化學博士為你揭開出人意表的脂肪科學！\r\n\r\n脂肪不僅有助於「轉大人」，也會讓你思想變得更成熟？\r\n擁有肥胖基因就沒救了嗎？女人要瘦就是比男人困難？\r\n追求超低體脂率，當心骨質疏鬆、免疫力下降？\r\n怎麼做可以減去壞脂肪，增加好脂肪？\r\n少了脂肪，體重不只會增加兩倍，智力也會受影響？\r\n肥胖也可能會「傳染」？為何明明吃得不多，體重卻節節上升？\r\n稍胖的病人在接受重大手術的預後情況，反而比體重正常的病人好？\r\n",
-        "description": "<p><br>\r\n你或許不喜歡脂肪，但你的身體可不是如此。事實上，你的身體內建了許多緊捉住脂肪不放的防禦機制！例如，脂肪能利用幹細胞再生，在它感覺受到威脅時也會奮力提高食慾以防被消滅，甚至利用細菌、遺傳與病毒來擴張版圖！<br>\r\n想要瘦個十公斤？你得跟脂肪攜手合作，一味對抗絕非上策。塔拉博士解釋了你身上的脂肪如何影響你的食慾與意志力、它在受到攻擊時會如何頑強反抗，以及它為何總能快速重回你身上。<br>\r\n《脂肪的祕密生命》糅合歷史觀點與最尖端的科學研究，揭露了脂肪的真實身分：它是個內分泌器官，而且只要存量組成、貯存部位得當，其實對健康大有助益。脂肪能促發青春期、延長壽命、幫助傷口癒合、讓生殖與免疫系統正常運作，甚至足以影響大腦尺寸、左右你的思想與情緒！<br>\r\n塔拉闡述了遺傳、荷爾蒙、飲食、運動，以及歷史等複雜因素如何影響我們的體重。看完本書，你將大嘆，原來脂肪這個能將自己擴大千倍的器官擁有許多令人意外的功能與影響，也能從作者的個人經驗與書中所提個案中找到減重的可行方法。<br>\r\n<br>\r\n<br>\r\n各界讚譽<br>\r\n脂肪面前，人非生而平等。本書告訴你，同樣的減重療法與努力，為什麼有人成功，有人失敗。透過旁徵博引的科學證據，生化博士席薇亞．塔拉娓娓道來，哪些飲食、運動與休息的方式，可以克服肥胖基因的限制，戰勝因為年紀而荷爾蒙衰退的命運，治癒可能是「病毒或細菌所導致的肥胖 」。這是一本讓想要減重的人知其然，還能知其所以然的絕妙好書，本人按兩個讚大力推薦！<br>\r\n──台北榮總家庭醫學科肥胖諮詢門診醫師、前衛生署副署長 宋晏仁教授<br>\r\n<br>\r\n人類科技文明的進步為人類帶來幸福與便利的生活，作者運用生動的筆觸，將艱深的分子醫學以說故事的方式，賦予大眾望之卻步的「脂肪」嶄新的面貌，讓讀者輕鬆就對自己身體的構造之一「脂肪」有正確的認知，進而導正似是而非的觀念。本書兼具實用性、趣味性與可讀性，是值得一讀再讀的好書。<br>\r\n──高雄市營養師公會理事長、高雄榮民總醫院營養師 許慧雅<br>\r\n<br>\r\n本書透過簡潔但不失精準的章節編排與介紹，娓娓和大家道來，那我們喜歡的、討厭的、和我們一起度過歡笑也度過淚水的脂肪好朋友……相信等你看完這本書，你對這位「敵人」，一定會有一番完全不同的見解！<br>\r\n──健美女大生<br>\r\n<br>\r\n終於，有一本書揭開脂肪的神祕面紗，探究它扮演什麼角色、為何難以擺脫，以及在每個人身上如何有著不同運作……這本書肯定會令那些因體重而自怨自艾的人有所啟發。——《出版者週刊》<br>\r\n<br>\r\n如作者席薇亞．塔拉的精湛文字所述，體脂肪不僅僅是個來者不拒的熱量倉庫，它的功用遠大於此。看完這本書，你會逐漸接受脂肪，一個飽受誤解卻對人體舉足輕重的器官。——大衛．路德維希（David Ludwig），哈佛醫學院博士、紐約時報評選暢銷書《減肥者的兩難》（Always Hungry?）作者<br>\r\n<br>\r\n多年來，我們一直認為體脂肪僅供儲存能量之用，但現代科學卻證明了它是人體最龐大的內分泌腺。這項如謎的器官傳達許多悖論與驚喜，對身體有害與否還視所在部位、顏色和基因組成而定。作者席薇亞．塔拉深入挖掘脂肪的奧祕，以詳盡且巧妙的闡述構成一本精彩之作。——歐薩瑪．哈姆迪（Osama Hamdy），喬斯林糖尿病中心醫務主任、《糖尿病的突破》（The Diabetes Breakthrough）作者<br>\r\n<br>\r\n若要智取體脂肪，你必須先了解它！透過正確的生活習慣、飲食及運動，你也能輕鬆減重並維持身材。這部令人愛不釋手且大開眼界的作品將帶領你走向聰明減重的道路。——麥可．丹辛傑（Michael Dansinger），波士頓塔芙茨醫學中心（Tufts Medical Center）糖尿病治療計畫創辦人<br>\r\n<br>\r\n席薇亞．塔拉博士在書中闡明與肥胖症的發展、預防與治療相關的重要觀念。對於有志研究脂肪與肥胖的非專業人士及學者，這本書不容錯過。——卡爾．拉維（Carl Lavie），醫學博士、《肥胖悖論》（The Obesity Paradox）作者<br>\r\n<br>\r\n身為一名生物化學家，席薇亞．塔拉藉由關於相撲選手、誇大其實的減重產業及基因組成等生動敘述，為讀者揭露了脂肪不為人知的祕密。讀完這本著作，你會發現在形形色色的身材中，脂肪都替我們扛下了許多重擔。——東尼．米桑聶克（Tony Miksanek），《書單》雜誌<br>\r\n<br>\r\n作者用淺顯易懂的文字解釋人體代謝機制，並將自己對最新肥胖研究的透徹考證穿插其中。本書除了寫給正與脂肪奮鬥的減重者，也值得其他讀者一窺究竟。——《科克斯書評》<br>\r\n </p>\r\n\r\n<p><b>作者簡介<br>\r\n<br>\r\n席薇亞．塔拉（Sylvia Tara）</b><br>\r\n加州大學聖地牙哥分校生物化學博士，華頓商學院工商管理碩士。曾任麥肯錫公司醫藥產業顧問，及全球最大生物技術公司基因泰克（Genentech）和安進（Amgen）科學專員。現居洛杉磯。<br>\r\n<br>\r\n<b>譯者簡介</b><br>\r\n<br>\r\n<b>張馨方</b><br>\r\n政大阿拉伯語文學系畢，英國愛丁堡翻譯研究碩士。專職譯者，熱愛旅行與翻譯，渴望在文字藝術中持續成長。譯文賜教：nurachang@gmail.com。<br>\r\n<br>\r\n相關著作:《恨意、精神分析與羅夏克墨漬測驗：紐倫堡審判以來犯罪心理研究的演變》《讓你更了解自己的心理之書：專業又有趣的心理遊戲、心理問卷與心理測驗發展史》</p>\r\n",
-        "isbn": "9789864771905",
+        "title": "說服自己，就是最聰明的談判力",
+        "sub_title": "哈佛頂尖談判專家最強效的溝通心理學",
+        "author": "威廉．尤瑞",
+        "short_description": "全球暢銷超過1300萬冊《哈佛這樣教談判力》的前傳\r\n說服別人、成功溝通最重要的第一步，\r\n關鍵不在於學會各種說話術，而是你自己！\r\n \r\n「如何才能說服別人？」\r\n「如何才能在談判中獲得滿意的結果？」\r\n「如何才能在溝通中避免與人發生衝突？」\r\n\r\n我們跟每個有所接觸的人幾乎都無可避免會發生衝突，從同事與主管、配偶與伴侶、客戶與顧客，到孩子與家人皆是如此。該如何化解這些衝突？我們如何在得到真心想要的東西時，也兼顧到生命中其他人的需求？這大概是所有人進退兩難的困境中，最普遍、卻也最艱鉅的挑戰了。\r\n",
+        "description": "<p><b>先說動自己，就能讓別人贊同你<br>\r\n如何才能讓別人贊同你？</b></p>\r\n\r\n<p>我們每天都需要與同事與主管、配偶與伴侶、客戶與顧客、孩子與家人進行無數次的溝通，當面對談判、對立、衝突或爭執時，我們常陷入敵對的「輸贏」心態中，導致無法心平氣和的解決問題。<br>\r\n<br>\r\n要達到有效溝通，最大的障礙並非對方有多難纏，或是必須學會各種讓人心服口服的說話術，擁有三十多年豐富談判經驗的哈佛頂尖談判專家威廉‧尤瑞從個人經歷與在全球調解衝突的專業談判中發現，我們往往才是自己最大的絆腳石。<br>\r\n<br>\r\n哈佛頂尖談判專家威廉‧尤瑞在書中提出一套改變自己內在的六大心法，讓我們學會達到自我認同，如此我們才能順利改變對外談判的遊戲規則。畢竟，要是我們不能先說服自己，又怎麼能期待說動別人呢？<br>\r\n<br>\r\n當我們愈有能力達到內心的自我認同，愈能避免不必要的衝突，提高事業成功的機率，同時獲得更深刻的內在滿足，圓滿自己與他人，創造共利的雙贏局面，乃至獲取整體大局勝利的三贏局面。<br>\r\n  <br>\r\n從認同自己、認同人生，進而認同別人的六步驟<br>\r\n<br>\r\n【照顧自己，感受自己的感覺】──少點自責，多聽自己<br>\r\n花時間聆聽並了解自己的需求，而非總是批評、打擊自己。<br>\r\n <br>\r\n【想好B計畫，此路不通就轉彎】──少怪別人，多靠自己<br>\r\n建立能照顧自我需求的態度，而非總是怪罪或歸咎別人。<br>\r\n <br>\r\n【別拒絕人生，只要換個角度看待】──少點不足，多點知足<br>\r\n學會感恩與快樂，而非總活在擔心匱乏的焦慮與恐懼中。<br>\r\n <br>\r\n【活在當下，接受就會帶來平靜】──放開煩憂，抓緊現在<br>\r\n專注於現在，而非耗費心力後悔過去和擔憂未來。<br>\r\n <br>\r\n【尊重，是代價最低的讓步】──少點反擊，多點包容<br>\r\n當對方難以相處時，仍要展現尊重和包容，而非以牙還牙，以暴制暴。<br>\r\n <br>\r\n【願意付出，你會獲得更多】──不爭輸贏，要爭都贏<br>\r\n用「先給後拿」來創造「你贏我贏大家贏」的三贏局面，而非總是落入「非贏即輸」的陷阱。</p>\r\n\r\n<p><b>作者簡介<br>\r\n<br>\r\n威廉‧尤瑞 William Ury</b><br>\r\n<br>\r\n聞名全球的談判專家。耶魯大學學士、哈佛大學博士，受過社會人類學家訓練。哈佛談判專案中心（Harvard Negotiation Project）的共同創辦人，也是全球暢銷超過一千三百萬冊《哈佛這樣教談判力》的共同作者。另著有《突破拒絕》、《學會說不》等七本著作。<br>\r\n<br>\r\n尤瑞長達三十五年擔任談判顧問與調解人，處理過的衝突範圍涵蓋極廣，包括董事會鬥爭、煤礦工人罷工到中東地區、拉丁美洲與高加索地區的戰爭等。他在全世界的企業、政府與公民社會，教導成千上萬的領導人如何談判與調解糾紛。<br>\r\n<br>\r\n尤瑞也是「亞伯拉罕之路」計畫的創始人。這個計畫開發了一條橫跨中東地區的長途步道，重現亞伯拉罕及其家人曾經走過的旅程，並期望藉此為當地帶來包容、繁榮與希望。<br>\r\n<br>\r\n<b>譯者簡介<br>\r\n<br>\r\n沈維君</b><br>\r\n<br>\r\n長榮大學翻譯系畢業，曾在編輯的世界享受難以言喻的快樂與痛苦，如今在翻譯的世界與文字玩大風吹。譯有：《人本獲利時代》、《成為賈伯斯》（合譯）、《關於人生，我確實知道……──歐普拉的生命智慧》、《簡單生活，生命中的快樂小事》、《ICARE！傳奇式服務，讓你的顧客愛死你》、《讓自己適應壞世界》等書。<br>\r\n<br>\r\n賜教信箱：echo.wind1215@gmail.com</p>\r\n",
+        "isbn": "9789571365985",
         "language": "zh-Hant",
+        "publication_date": "2016-04-21T16:00:00Z",
         "adult_only": false,
-        "file_size": 6129564,
+        "file_size": 583858,
         "rendition": {
           "layout": "reflowable"
         },
@@ -142,42 +129,37 @@
         "prices": [
           {
             "PriceType": "02",
-            "PriceAmount": 252,
+            "PriceAmount": 210,
             "CurrencyCode": "TWD"
           },
           {
             "PriceType": "04",
-            "PriceAmount": 252,
+            "PriceAmount": 210,
             "CurrencyCode": "TWD"
           },
           {
             "PriceType": "99",
-            "PriceAmount": 360,
-            "CurrencyCode": "TWD"
-          },
-          {
-            "PriceType": "12",
-            "PriceAmount": 250,
+            "PriceAmount": 300,
             "CurrencyCode": "TWD"
           }
         ],
         "count": {
           "unit": "words",
-          "amount": 120289
+          "amount": 68939
         }
       },
       "relationships": {
         "publisher": {
           "data": {
             "type": "publishers",
-            "id": "4"
+            "id": "2"
           }
         },
         "contributors": {
           "data": [
             {
               "type": "contributors",
-              "id": "25244",
+              "id": "24984",
               "meta": {
                 "role": "A01",
                 "description": "作者"
@@ -185,7 +167,7 @@
             },
             {
               "type": "contributors",
-              "id": "25245",
+              "id": "24985",
               "meta": {
                 "role": "A38",
                 "description": "原文作者"
@@ -193,7 +175,7 @@
             },
             {
               "type": "contributors",
-              "id": "20343",
+              "id": "11793",
               "meta": {
                 "role": "B06",
                 "description": "譯者"
@@ -204,29 +186,29 @@
         "main_subject": {
           "data": {
             "type": "categories",
-            "id": "221"
+            "id": "136"
           }
         }
       },
       "links": {
-        "self": "https://api.readmoo.com/read/v2/books/210068715000101",
-        "site": "https://readmoo.com/book/210068715000101",
+        "self": "https://api.readmoo.com/read/v2/books/210068285000101",
+        "site": "https://readmoo.com/book/210068285000101",
         "small": {
-          "href": "https://cdn.readmoo.com/cover/jg/cnnnrfo_120x180.jpg?v=0",
+          "href": "https://cdn.readmoo.com/cover/mr/dqjqtph_120x180.jpg?v=0",
           "meta": {
             "width": 120,
             "resize": "fit"
           }
         },
         "medium": {
-          "href": "https://cdn.readmoo.com/cover/jg/cnnnrfo_210x315.jpg?v=0",
+          "href": "https://cdn.readmoo.com/cover/mr/dqjqtph_210x315.jpg?v=0",
           "meta": {
             "width": 210,
             "resize": "fit"
           }
         },
         "large": {
-          "href": "https://cdn.readmoo.com/cover/jg/cnnnrfo_460x580.jpg?v=0",
+          "href": "https://cdn.readmoo.com/cover/mr/dqjqtph_460x580.jpg?v=0",
           "meta": {
             "width": 460,
             "resize": "fit"
@@ -236,26 +218,36 @@
     },
     {
       "type": "readings",
-      "id": "804686",
+      "id": "784752",
       "attributes": {
         "state": "reading",
         "privacy": "everyone",
-        "started_at": "2017-03-16T08:00:34Z",
-        "touched_at": "2017-03-21T06:11:20Z",
-        "duration": 1440,
-        "progress": 0.61,
+        "started_at": "2017-02-16T07:21:43Z",
+        "touched_at": "2017-02-16T07:26:43Z",
+        "duration": 300,
+        "progress": 0,
         "comments_count": 0,
         "highlights_count": 0,
-        "position": 0.61,
-        "position_updated_at": "2017-03-21T06:11:20Z",
-        "location": "/6/34!/4[BU0134-15]/2/50/1:81",
+        "position": 0,
+        "position_updated_at": "2017-02-16T07:26:43Z",
+        "location": "/6/2!/4/2/1:0",
         "rating": 0
       },
       "relationships": {
         "book": {
           "data": {
             "type": "books",
-            "id": "210068715000101"
+            "id": "210068285000101"
+          }
+        },
+        "bookmarks": {
+          "links": {
+            "related": "https://api.readmoo.com/read/v2/me/readings/784752/bookmarks"
+          }
+        },
+        "highlights": {
+          "links": {
+            "related": "https://api.readmoo.com/read/v2/me/readings/784752/highlights"
           }
         },
         "review": {
@@ -263,7 +255,7 @@
         }
       },
       "links": {
-        "self": "https://api.readmoo.com/read/v2/me/readings/804686"
+        "self": "https://api.readmoo.com/read/v2/me/readings/784752"
       }
     }
   ]

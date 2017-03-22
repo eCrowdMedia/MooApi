@@ -22,7 +22,7 @@ public struct Review: ResourceType {
 
   public struct Relationships {
     public let book: RelationshipObject
-    public let reading: RelationshipObject?
+    public let reading: RelationshipObject
   }
 
   public struct Links {
@@ -58,7 +58,7 @@ extension Review.Relationships: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Review.Relationships> {
     return curry(Review.Relationships.init)
       <^> json <| "book"
-      <*> json <|? "reading"
+      <*> json <| "reading"
   }
 }
 

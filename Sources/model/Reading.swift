@@ -28,6 +28,8 @@ public struct Reading: ResourceType {
 
   public struct Relationships {
     public let book: RelationshipObject
+    public let bookmarks: RelationshipObject?
+    public let highlights: RelationshipObject?
     public let review: RelationshipObject?
   }
 
@@ -71,6 +73,8 @@ extension Reading.Relationships: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Reading.Relationships> {
     return curry(Reading.Relationships.init)
       <^> json <| "book"
+      <*> json <|? "bookmarks"
+      <*> json <|? "highlights"
       <*> json <|? "review"
   }
 }

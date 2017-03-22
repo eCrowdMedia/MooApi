@@ -17,6 +17,12 @@
           "type": "books",
           "id": "210060444000101"
         }
+      },
+      "reading": {
+        "data": {
+          "type": "readings",
+          "id": "800409"
+        }
       }
     },
     "links": {
@@ -32,6 +38,67 @@
       },
       "links": {
         "self": "https://api.readmoo.com/read/v2/publishers/731"
+      }
+    },
+    {
+      "type": "contributors",
+      "id": "20360",
+      "attributes": {
+        "name": "上官鼎"
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/contributors/20360"
+      }
+    },
+    {
+      "type": "categories",
+      "id": "3",
+      "attributes": {
+        "name": "文學小說"
+      },
+      "relationships": {
+        "parent": {
+          "data": null
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/categories/3"
+      }
+    },
+    {
+      "type": "categories",
+      "id": "127",
+      "attributes": {
+        "name": "小說"
+      },
+      "relationships": {
+        "parent": {
+          "data": {
+            "type": "categories",
+            "id": "3"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/categories/127"
+      }
+    },
+    {
+      "type": "categories",
+      "id": "32",
+      "attributes": {
+        "name": "武俠小說"
+      },
+      "relationships": {
+        "parent": {
+          "data": {
+            "type": "categories",
+            "id": "127"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/categories/32"
       }
     },
     {
@@ -125,6 +192,52 @@
             "resize": "fit"
           }
         }
+      }
+    },
+    {
+      "type": "readings",
+      "id": "800409",
+      "attributes": {
+        "state": "finished",
+        "privacy": "everyone",
+        "started_at": "2017-03-07T10:28:05Z",
+        "touched_at": "2017-03-15T07:41:58Z",
+        "ended_at": "2017-03-07T10:29:18Z",
+        "duration": 4140,
+        "progress": 0,
+        "comments_count": 0,
+        "highlights_count": 0,
+        "position": 0,
+        "position_updated_at": "2017-03-15T07:41:58Z",
+        "location": "/6/10!/4[x9789573273677]/2/52/1:0",
+        "rating": 3
+      },
+      "relationships": {
+        "book": {
+          "data": {
+            "type": "books",
+            "id": "210060444000101"
+          }
+        },
+        "bookmarks": {
+          "links": {
+            "related": "https://api.readmoo.com/read/v2/me/readings/800409/bookmarks"
+          }
+        },
+        "highlights": {
+          "links": {
+            "related": "https://api.readmoo.com/read/v2/me/readings/800409/highlights"
+          }
+        },
+        "review": {
+          "data": {
+            "type": "reviews",
+            "id": "1971"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/me/readings/800409"
       }
     }
   ]

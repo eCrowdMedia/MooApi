@@ -4,7 +4,7 @@ import Runes
 
 final public class ApiDocumentInclusion {
   
-  public var bookshelfs: [Bookshelf] = []
+  public var bookshelves: [Bookshelf] = []
   public var books: [Book] = []
   public var publishers: [Publisher] = []
   public var readings: [Reading] = []
@@ -51,7 +51,7 @@ extension ApiDocumentInclusion: Argo.Decodable {
       switch type {
       case .bookshelves:
         if let item = Bookshelf.decode(jsonObject).value {
-          included.bookshelfs.append(item)
+          included.bookshelves.append(item)
         }
       case .books:
         if let item = Book.decode(jsonObject).value {
@@ -103,19 +103,3 @@ extension ApiDocumentInclusion: Argo.Decodable {
     return pure(included)
   }
 }
-
-// MARK: - CustomStringConvertible
-//extension ApiDocumentInclusion: CountableStringConvertible {
-//  public var countableDescription: String {
-//    let mirror = Mirror(reflecting: self)
-//    
-//    var displayText = ""
-//    
-//    for case let (label, value) in mirror.children {
-//      guard let label = label, let array = value as? Array<Any> else { continue }
-//      displayText += "\n\(label) count: \(array.count)"
-//    }
-//    
-//    return displayText
-//  }
-//}

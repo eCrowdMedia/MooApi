@@ -15,7 +15,7 @@ public struct Subscription: ResourceType {
     public let period: String
     public let content: String
     public let productType: String
-    public let isAdulyOnly: Bool
+    public let isAdultOnly: Bool
     public let language: String
     public let delivered: Int
     public let remaining: Int
@@ -23,7 +23,7 @@ public struct Subscription: ResourceType {
   }
 
   public struct Relationships {
-    public let publication: RelationshipObject
+    public let publisher: RelationshipObject
     public let mainSubject: RelationshipObject
     public let bookshelves: RelationshipObjectEnvelope
   }

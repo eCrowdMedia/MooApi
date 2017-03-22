@@ -6,15 +6,15 @@
       "state": "finished",
       "privacy": "everyone",
       "started_at": "2013-12-12T03:55:14Z",
-      "touched_at": "2017-03-13T08:35:12Z",
+      "touched_at": "2016-12-19T03:16:25Z",
       "ended_at": "2015-12-15T07:33:23Z",
-      "duration": 60840,
-      "progress": 0,
+      "duration": 61140,
+      "progress": 0.12,
       "comments_count": 1,
       "highlights_count": 11,
-      "position": 0,
-      "position_updated_at": "2017-03-13T08:35:12Z",
-      "location": "/6/4!/4/10/1:1",
+      "position": 0.12,
+      "position_updated_at": "2016-12-19T03:16:25Z",
+      "location": "/6/12!/4/2/1:1",
       "rating": 5
     },
     "relationships": {
@@ -23,6 +23,19 @@
           "type": "books",
           "id": "210010466000101"
         }
+      },
+      "bookmarks": {
+        "links": {
+          "related": "https://api.readmoo.com/read/v2/me/readings/51924/bookmarks"
+        }
+      },
+      "highlights": {
+        "links": {
+          "related": "https://api.readmoo.com/read/v2/me/readings/51924/highlights"
+        }
+      },
+      "review": {
+        "data": null
       }
     },
     "links": {
@@ -52,9 +65,32 @@
     },
     {
       "type": "categories",
+      "id": "3",
+      "attributes": {
+        "name": "文學小說"
+      },
+      "relationships": {
+        "parent": {
+          "data": null
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/categories/3"
+      }
+    },
+    {
+      "type": "categories",
       "id": "29",
       "attributes": {
         "name": "文學"
+      },
+      "relationships": {
+        "parent": {
+          "data": {
+            "type": "categories",
+            "id": "3"
+          }
+        }
       },
       "links": {
         "self": "https://api.readmoo.com/read/v2/categories/29"

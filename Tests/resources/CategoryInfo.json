@@ -24,6 +24,11 @@
       "attributes": {
         "name": "雜誌"
       },
+      "relationships": {
+        "parent": {
+          "data": null
+        }
+      },
       "links": {
         "self": "https://api.readmoo.com/read/v2/categories/22"
       }

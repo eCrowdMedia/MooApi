@@ -1,27 +1,34 @@
-// import XCTest
-// @testable import MooApi
-// import Argo
-// import Foundation
+import XCTest
+@testable import MooApi
+import Argo
+import Foundation
 
-// final internal class PublisherTests: XCTestCase {
+final internal class PublisherTests: XCTestCase {
   
-//   func testDatas() {
-//     let testBundle = Bundle(for: type(of: self))
-//     let path = testBundle.path(forResource: "PublisherInfo", ofType: "json")
-//     let data = try! Data(contentsOf: URL(fileURLWithPath: path!))
-//     let json = JSON(try! JSONSerialization.jsonObject(with: data, options: []))
-//     let result = ApiDocument<MooApi.Publisher>.decode(json)
-//     let value = result.value?.data
+  func testDatas() {
+    let testBundle = Bundle(for: type(of: self))
+    let path = testBundle.path(forResource: "PublisherInfo", ofType: "json")
+    let data = try! Data(contentsOf: URL(fileURLWithPath: path!))
+    let json = JSON(try! JSONSerialization.jsonObject(with: data, options: []))
+    let result = ApiDocument<MooApi.Publisher>.decode(json)
     
-//     // Test all results
-//     XCTAssertNil(result.error)
+    guard let publisher = result.value?.data else {
+      XCTFail()
+      return
+    }
+
+    let attributes = publisher.attributes
+    let links = publisher.links
+
+    // Test type and id
+    XCTAssertEqual(publisher.type, "publishers")
+    XCTAssertEqual(publisher.id, "111")
     
-//     // Test data
-//     XCTAssertNotNil(value)
-//     XCTAssertEqual(value?.type, "publishers")
-//     XCTAssertEqual(value?.id, "111")
-//     XCTAssertEqual(value?.name, "iFit 愛瘦身")
-//     XCTAssertEqual(value?.link, "https://api.readmoo.com/read/v2/publishers/111")
-//   }
+    // Test attributes
+    XCTAssertEqual(attributes.name, "iFit 愛瘦身")
+
+    // test links
+    XCTAssertEqual(links.selfLink, "https://api.readmoo.com/read/v2/publishers/111")
+  }
   
-// }
+}

@@ -88,21 +88,21 @@
       "small": {
         "href": "https://cdn.readmoo.com/cover/mr/dqjqtph_120x180.jpg?v=0",
         "meta": {
-          "width": 0,
+          "width": 120,
           "resize": "fit"
         }
       },
       "medium": {
         "href": "https://cdn.readmoo.com/cover/mr/dqjqtph_210x315.jpg?v=0",
         "meta": {
-          "width": 0,
+          "width": 210,
           "resize": "fit"
         }
       },
       "large": {
         "href": "https://cdn.readmoo.com/cover/mr/dqjqtph_460x580.jpg?v=0",
         "meta": {
-          "width": 0,
+          "width": 460,
           "resize": "fit"
         }
       }
@@ -151,9 +151,32 @@
     },
     {
       "type": "categories",
+      "id": "1",
+      "attributes": {
+        "name": "商業理財"
+      },
+      "relationships": {
+        "parent": {
+          "data": null
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/categories/1"
+      }
+    },
+    {
+      "type": "categories",
       "id": "136",
       "attributes": {
         "name": "職場工作"
+      },
+      "relationships": {
+        "parent": {
+          "data": {
+            "type": "categories",
+            "id": "1"
+          }
+        }
       },
       "links": {
         "self": "https://api.readmoo.com/read/v2/categories/136"

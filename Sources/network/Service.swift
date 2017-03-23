@@ -179,6 +179,7 @@ extension Service {
         } catch {
           // Checking if decoded result is null
           switch JSON(jsonObject) {
+          // Bug here
           case .array:
             completion(.failure(.dataNotExisted))
           default:

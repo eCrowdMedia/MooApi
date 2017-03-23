@@ -79,31 +79,52 @@ extension Service {
   {
     DispatchQueue.global(qos: .utility).async {
       let task = URLSession.shared.dataTask(with: self.request) { data, response, error in
+        // Checking if network error
         guard let data = data, let httpResponse = response as? HTTPURLResponse, error == nil else {
           completion(.failure(ServiceError.network(error: error!)))
           return
         }
-        
-        let statusCode = httpResponse.statusCode
-        
-        guard 200..<300 ~= statusCode else {
-          completion(.failure(ServiceError.serverError(statusCode: statusCode, data: data)))
+
+        // Checking if json serialize error
+        guard let jsonObject = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) else {
+          completion(.failure(.serializeJSONFailed))
           return
         }
         
+        let statusCode = httpResponse.statusCode
+
+        // Checking if server failed
+        if statusCode >= 500 {
+          let reason = try? ApiDocumentErrorEnvelope.decode(JSON(jsonObject)).dematerialize()
+          completion(.failure(.serverFailedToReach(statusCode: statusCode, reason: reason)))
+          return
+        }
+        
+        // Checking if api failed
+        if 400 ..< 500 ~= statusCode {
+          let reason = try? ApiDocumentErrorEnvelope.decode(JSON(jsonObject)).dematerialize()
+          completion(.failure(.apiExecitionFailed(statusCode: statusCode, reason: reason)))
+          return
+        }
+        
+        // Checking if api with successful response
+        guard 200..<300 ~= statusCode else {
+          let reason = try? ApiDocumentErrorEnvelope.decode(JSON(jsonObject)).dematerialize()
+          completion(.failure(.invalidApi(statusCode: statusCode, reason: reason)))
+          return
+        }
+
         do {
-          let jsonObject = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-          let decodedObject = ApiDocument<T>.decode(JSON(jsonObject))
-          
-          guard let value = decodedObject.value else {
-            completion(.failure(ServiceError.decodedError(error: decodedObject.error!)))
-            return
-          }
-          
-          completion(.success(value))
-          
+          let decodedObject = try ApiDocument<T>.decode(JSON(jsonObject)).dematerialize()
+          completion(.success(decodedObject))
         } catch {
-          completion(.failure(ServiceError.serializeJSON(error: error)))
+          // Checking if decoded result is null
+          switch JSON(jsonObject) {
+          case .null:
+            completion(.failure(.dataNotExisted))
+          default:
+            completion(.failure(.decodedError(error as! DecodeError)))
+          }
         }
       }
       
@@ -117,31 +138,52 @@ extension Service {
   {
     DispatchQueue.global(qos: .utility).async {
       let task = URLSession.shared.dataTask(with: self.request) { data, response, error in
+        // Checking if network error
         guard let data = data, let httpResponse = response as? HTTPURLResponse, error == nil else {
           completion(.failure(ServiceError.network(error: error!)))
           return
         }
         
+        // Checking if json serialize error
+        guard let jsonObject = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) else {
+          completion(.failure(.serializeJSONFailed))
+          return
+        }
+        
         let statusCode = httpResponse.statusCode
         
+        // Checking if server failed
+        if statusCode >= 500 {
+          let reason = try? ApiDocumentErrorEnvelope.decode(JSON(jsonObject)).dematerialize()
+          completion(.failure(.serverFailedToReach(statusCode: statusCode, reason: reason)))
+          return
+        }
+        
+        // Checking if api failed
+        if 400 ..< 500 ~= statusCode {
+          let reason = try? ApiDocumentErrorEnvelope.decode(JSON(jsonObject)).dematerialize()
+          completion(.failure(.apiExecitionFailed(statusCode: statusCode, reason: reason)))
+          return
+        }
+        
+        // Checking if api with successful response
         guard 200..<300 ~= statusCode else {
-          completion(.failure(ServiceError.serverError(statusCode: statusCode, data: data)))
+          let reason = try? ApiDocumentErrorEnvelope.decode(JSON(jsonObject)).dematerialize()
+          completion(.failure(.invalidApi(statusCode: statusCode, reason: reason)))
           return
         }
         
         do {
-          let jsonObject = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-          let decodedObject = ApiDocumentEnvelope<T>.decode(JSON(jsonObject))
-          
-          guard let value = decodedObject.value else {
-            completion(.failure(ServiceError.decodedError(error: decodedObject.error!)))
-            return
-          }
-          
-          completion(.success(value))
-          
+          let decodedObject = try ApiDocumentEnvelope<T>.decode(JSON(jsonObject)).dematerialize()
+          completion(.success(decodedObject))
         } catch {
-          completion(.failure(ServiceError.serializeJSON(error: error)))
+          // Checking if decoded result is null
+          switch JSON(jsonObject) {
+          case .array:
+            completion(.failure(.dataNotExisted))
+          default:
+            completion(.failure(.decodedError(error as! DecodeError)))
+          }
         }
       }
       

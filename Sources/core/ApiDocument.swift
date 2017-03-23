@@ -11,12 +11,10 @@ public struct ApiDocument<T: Argo.Decodable> where T == T.DecodedType {
 
 extension ApiDocument: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<ApiDocument> {
-    let tmp = curry(ApiDocument.init)
+    return curry(ApiDocument.init)
       <^> json <| "data"
       <*> json <|? "meta"
       <*> json <|? "links"
-    
-    return tmp
       <*> json <|? "included"
   }
 }

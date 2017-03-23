@@ -11,18 +11,10 @@ public struct ApiDocumentEnvelope<T: Decodable> where T == T.DecodedType  {
 
 extension ApiDocumentEnvelope: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<ApiDocumentEnvelope> {
-    let tmp = curry(ApiDocumentEnvelope.init)
-      <^> json <|| "data"
+    return curry(ApiDocumentEnvelope.init)
+      <^> (json <|| "data" <|> .success([]))
       <*> json <|? "meta"
       <*> json <|? "links"
-    
-    return tmp
       <*> json <|? "included"
   }
 }
-
-//extension ApiDocumentEnvelope: CountableStringConvertible {
-//  public var countableDescription: String {
-//    return "data count: \(data.count)"
-//  }
-//}

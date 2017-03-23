@@ -3,8 +3,10 @@ import enum Argo.DecodeError
 
 public enum ServiceError: Error {
   case network(error: Error)
-  case serializeJSON(error: Error)
-  case serverError(statusCode: Int, data: Data?)
-  case decodedError(error: DecodeError)
-  case unknown(error: Error)
+  case serializeJSONFailed
+  case serverFailedToReach(statusCode: Int, reason: ApiDocumentErrorEnvelope?)
+  case apiExecitionFailed(statusCode: Int, reason: ApiDocumentErrorEnvelope?)
+  case decodedError(DecodeError)
+  case dataNotExisted
+  case invalidApi(statusCode: Int, reason: ApiDocumentErrorEnvelope?)
 }

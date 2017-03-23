@@ -36,6 +36,7 @@
 		2DD0B2AD1E8281E70053B8F5 /* BookmarkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B2AC1E8281E70053B8F5 /* BookmarkTests.swift */; };
 		2DD0B2B01E8282C20053B8F5 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B2AE1E8282270053B8F5 /* Bookmark.swift */; };
 		2DD0B2B21E8282E20053B8F5 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B2B11E8282E20053B8F5 /* Path.swift */; };
+		2DD0B2B51E8375BC0053B8F5 /* ApiDocumentErrorEnvelope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0B2B41E8375BC0053B8F5 /* ApiDocumentErrorEnvelope.swift */; };
 		2DECC70A1E78341900FB815C /* MooApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DECC7001E78341900FB815C /* MooApi.framework */; };
 		2DECC7111E78341900FB815C /* MooApi.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DECC7031E78341900FB815C /* MooApi.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2DECC73A1E78342C00FB815C /* ApiDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DECC71C1E78342C00FB815C /* ApiDocument.swift */; };
@@ -124,6 +125,7 @@
 		2DD0B2AC1E8281E70053B8F5 /* BookmarkTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkTests.swift; sourceTree = "<group>"; };
 		2DD0B2AE1E8282270053B8F5 /* Bookmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
 		2DD0B2B11E8282E20053B8F5 /* Path.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
+		2DD0B2B41E8375BC0053B8F5 /* ApiDocumentErrorEnvelope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiDocumentErrorEnvelope.swift; sourceTree = "<group>"; };
 		2DECC7001E78341900FB815C /* MooApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MooApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DECC7031E78341900FB815C /* MooApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MooApi.h; sourceTree = "<group>"; };
 		2DECC7041E78341900FB815C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 				2DECC71E1E78342C00FB815C /* ApiDocumentInclusion.swift */,
 				2DECC71F1E78342C00FB815C /* ApiDocumentLinks.swift */,
 				2DECC7201E78342C00FB815C /* ApiDocumentMeta.swift */,
+				2DD0B2B41E8375BC0053B8F5 /* ApiDocumentErrorEnvelope.swift */,
 			);
 			path = core;
 			sourceTree = "<group>";
@@ -602,6 +605,7 @@
 				2DECC7441E78342C00FB815C /* ResourceType.swift in Sources */,
 				2D01B2991E8123B300583A7C /* ResourceLinks.swift in Sources */,
 				2DECC74F1E78342C00FB815C /* Review.swift in Sources */,
+				2DD0B2B51E8375BC0053B8F5 /* ApiDocumentErrorEnvelope.swift in Sources */,
 				2D01B2941E8123B300583A7C /* Me.swift in Sources */,
 				2DECC74C1E78342C00FB815C /* Publisher.swift in Sources */,
 				2DECC7461E78342C00FB815C /* Book.swift in Sources */,

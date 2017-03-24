@@ -4,38 +4,44 @@ import Runes
 
 final public class ApiDocumentInclusion {
   
-  public var bookshelves: [Bookshelf] = []
-  public var books: [Book] = []
-  public var publishers: [Publisher] = []
-  public var readings: [Reading] = []
-  public var tags: [Tag] = []
-  public var subscriptions: [Subscription] = []
-  public var marathons: [Marathon] = []
-  public var categories: [Category] = []
-  public var contributors: [Contributor] = []
-  public var readingLogs: [ReadingLog] = []
-  public var reviews: [Review] = []
-  public var events: [Event] = []
-  public var users: [User] = []
-  public var ranges: [Range] = []
-  public var paths: [Path] = []
+  public internal(set) var books         = [Book]()
+  public internal(set) var bookshelves   = [Bookshelf]()
+  public internal(set) var bookmarks     = [Bookmark]()
+  public internal(set) var categories    = [Category]()
+  public internal(set) var comments      = [Comment]()
+  public internal(set) var contributors  = [Contributor]()
+  public internal(set) var events        = [Event]()
+  public internal(set) var highlights    = [Highlight]()
+  public internal(set) var marathons     = [Marathon]()
+  public internal(set) var publishers    = [Publisher]()
+  public internal(set) var paths         = [Path]()
+  public internal(set) var ranges        = [Range]()
+  public internal(set) var readings      = [Reading]()
+  public internal(set) var readingLogs   = [ReadingLog]()
+  public internal(set) var reviews       = [Review]()
+  public internal(set) var subscriptions = [Subscription]()
+  public internal(set) var tags          = [Tag]()
+  public internal(set) var users         = [User]()
   
   fileprivate enum IncludedType: String {
-    case bookshelves   = "library_items"
     case books         = "books"
-    case publishers    = "publishers"
-    case readings      = "readings"
-    case tags          = "tags"
-    case subscriptions = "subscriptions"
-    case marathons     = "marathons"
+    case bookshelves   = "library_items"
+    case bookmarks     = "bookmarks"
     case categories    = "categories"
+    case comments      = "comments"
     case contributors  = "contributors"
+    case events        = "events"
+    case highlights    = "highlights"
+    case marathons     = "marathons"
+    case publishers    = "publishers"
+    case paths         = "paths"
+    case ranges        = "ranges"
+    case readings      = "readings"
     case readingLogs   = "readinglogs"
     case reviews       = "reviews"
-    case events        = "events"
+    case subscriptions = "subscriptions"
+    case tags          = "tags"
     case users         = "users"
-    case ranges        = "ranges"
-    case paths         = "paths"
   }
   
 }
@@ -51,45 +57,63 @@ extension ApiDocumentInclusion: Argo.Decodable {
     let included = ApiDocumentInclusion()
     
     for jsonObject in jsonArray {
-      guard let rawValue: String = (jsonObject <| "type").value,
-        let type = ApiDocumentInclusion.IncludedType(rawValue: rawValue) else { continue }
+      guard
+        let rawValue: String = (jsonObject <| "type").value,
+        let type = ApiDocumentInclusion.IncludedType(rawValue: rawValue)
+      else { continue }
       
       switch type {
-      case .bookshelves:
-        if let item = Bookshelf.decode(jsonObject).value {
-          included.bookshelves.append(item)
-        }
       case .books:
         if let item = Book.decode(jsonObject).value {
           included.books.append(item)
         }
-      case .publishers:
-        if let item = Publisher.decode(jsonObject).value {
-          included.publishers.append(item)
+      case .bookshelves:
+        if let item = Bookshelf.decode(jsonObject).value {
+          included.bookshelves.append(item)
         }
-      case .readings:
-        if let item = Reading.decode(jsonObject).value {
-          included.readings.append(item)
-        }
-      case .tags:
-        if let item = Tag.decode(jsonObject).value {
-          included.tags.append(item)
-        }
-      case .subscriptions:
-        if let item = Subscription.decode(jsonObject).value {
-          included.subscriptions.append(item)
-        }
-      case .marathons:
-        if let item = Marathon.decode(jsonObject).value {
-          included.marathons.append(item)
+      case .bookmarks:
+        if let item = Bookmark.decode(jsonObject).value {
+          included.bookmarks.append(item)
         }
       case .categories:
         if let item = Category.decode(jsonObject).value {
           included.categories.append(item)
         }
+      case .comments:
+        if let item = Comment.decode(jsonObject).value {
+          included.comments.append(item)
+        }
       case .contributors:
         if let item = Contributor.decode(jsonObject).value {
           included.contributors.append(item)
+        }
+      case .events:
+        if let item = Event.decode(jsonObject).value {
+          included.events.append(item)
+        }
+      case .highlights:
+        if let item = Highlight.decode(jsonObject).value {
+          included.highlights.append(item)
+        }
+      case .marathons:
+        if let item = Marathon.decode(jsonObject).value {
+          included.marathons.append(item)
+        }
+      case .publishers:
+        if let item = Publisher.decode(jsonObject).value {
+          included.publishers.append(item)
+        }
+      case .paths:
+        if let item = Path.decode(jsonObject).value {
+          included.paths.append(item)
+        }
+      case .ranges:
+        if let item = Range.decode(jsonObject).value {
+          included.ranges.append(item)
+        }
+      case .readings:
+        if let item = Reading.decode(jsonObject).value {
+          included.readings.append(item)
         }
       case .readingLogs:
         if let item = ReadingLog.decode(jsonObject).value {
@@ -99,21 +123,17 @@ extension ApiDocumentInclusion: Argo.Decodable {
         if let item = Review.decode(jsonObject).value {
           included.reviews.append(item)
         }
-      case .events:
-        if let item = Event.decode(jsonObject).value {
-          included.events.append(item)
+      case .subscriptions:
+        if let item = Subscription.decode(jsonObject).value {
+          included.subscriptions.append(item)
+        }
+      case .tags:
+        if let item = Tag.decode(jsonObject).value {
+          included.tags.append(item)
         }
       case .users:
         if let item = User.decode(jsonObject).value {
           included.users.append(item)
-        }
-      case .ranges:
-        if let item = Range.decode(jsonObject).value {
-          included.ranges.append(item)
-        }
-      case .paths:
-        if let item = Path.decode(jsonObject).value {
-          included.paths.append(item)
         }
       }
     }

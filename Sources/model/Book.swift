@@ -20,17 +20,23 @@ public struct Book: ResourceType {
     public let language: String
     public let publicationDate: String?
     public let isAdultOnly: Bool
-    public let fileSize: Int
-    public let rendition: Rendition
+    public let epub: Epub
     public let isSuspend: Bool
     public let isOwn: Bool?
     public let prices: [Price]
     public let count: Count
 
-    public struct Rendition {
-      public let layout: String
+    public struct Epub {
+      public let rendition: Rendition
+      public let fileSize: Int
+      public let latestVersion: String
+      public let lastModifiedAt: String
+
+      public struct Rendition {
+        public let layout: String
+      }
     }
-    
+
     public struct Price {
       // e.g. "02", "04", "12", "99"
       public let type: String
@@ -75,7 +81,7 @@ extension Book.Attributes: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Book.Attributes> {
     let tmp1 = curry(Book.Attributes.init)
       <^> json <| "title"
-      <*> json <|? "sub_title"
+      <*> json <|? "subtitle"
       <*> json <| "author"
       <*> json <|? "short_description"
     
@@ -87,8 +93,7 @@ extension Book.Attributes: Argo.Decodable {
       
     let tmp3 = tmp2
       <*> json <| "adult_only"
-      <*> json <| "file_size"
-      <*> json <| "rendition"
+      <*> json <| "epub"
       <*> json <| "suspend"
       
     return tmp3 
@@ -98,9 +103,19 @@ extension Book.Attributes: Argo.Decodable {
   }
 }
 
-extension Book.Attributes.Rendition: Argo.Decodable {
-  public static func decode(_ json: JSON) -> Decoded<Book.Attributes.Rendition> {
-    return curry(Book.Attributes.Rendition.init)
+extension Book.Attributes.Epub: Argo.Decodable {
+  public static func decode(_ json: JSON) -> Decoded<Book.Attributes.Epub> {
+    return curry(Book.Attributes.Epub.init)
+      <^> json <| "rendition"
+      <*> json <| "filesize"
+      <*> json <| "latest_version"
+      <*> json <| "last_modified_at"
+  }
+}
+
+extension Book.Attributes.Epub.Rendition: Argo.Decodable {
+  public static func decode(_ json: JSON) -> Decoded<Book.Attributes.Epub.Rendition> {
+    return curry(Book.Attributes.Epub.Rendition.init)
       <^> json <| "layout"
   }
 }

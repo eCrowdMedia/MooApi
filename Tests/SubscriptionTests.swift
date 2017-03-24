@@ -54,7 +54,7 @@ final internal class SubscriptionTests: XCTestCase {
     }
 
     XCTAssertEqual(inclusion.publishers.isEmpty, false)
-    XCTAssertEqual(inclusion.categories.count, 3)
+    XCTAssertEqual(inclusion.categories.isEmpty, false)
     XCTAssertEqual(inclusion.books.isEmpty, false)
     XCTAssertEqual(inclusion.bookshelves.isEmpty, false)
     XCTAssertEqual(inclusion.readings.isEmpty, false)

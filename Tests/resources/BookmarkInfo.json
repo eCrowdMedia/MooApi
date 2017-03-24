@@ -102,9 +102,13 @@
         "language": "zh-Hant",
         "publication_date": "1998-01-01T00:00:00Z",
         "adult_only": false,
-        "file_size": 1593722,
-        "rendition": {
-          "layout": "reflowable"
+        "epub": {
+          "rendition": {
+            "layout": "reflowable"
+          },
+          "filesize": 1593722,
+          "latest_version": "1.003",
+          "last_modified_at": "2013-12-12T06:31:58Z"
         },
         "suspend": false,
         "own": true,

@@ -65,7 +65,7 @@
       "type": "publishers",
       "id": "499",
       "attributes": {
-        "name": "群出版"
+        "name": "登峰國際(NOVA)"
       },
       "links": {
         "self": "https://api.readmoo.com/read/v2/publishers/499"
@@ -134,7 +134,7 @@
       "id": "220068178000101",
       "attributes": {
         "title": "NOVA情報誌 02月號/2017 第175期",
-        "sub_title": "",
+        "subtitle": "",
         "author": "NOVA情報誌編輯部",
         "short_description": "本期封面人物是-葉瑋庭\r\n\r\n特別企劃：虛擬實境下凡間 內容爆發關鍵年-「VR」展翅 94狂！\r\n\r\nSports運動風：重低音入魂 燃燒戰鬥力！運動貼聲教練 動感不絕於耳！數位鑑定團：無死角「鑑」！360度4K全景攝神：Nikon KeyMission 360運動攝影機！Gaming紅不讓：日本經典PRG新手遊 超萌怪物群陪伴冒險：「勇者鬥惡龍 怪物狂歡派對」！BUY家不敗家：導航記錄胎壓 汽機車行安特助-維安三兄弟 護駕總動員！柯P玩App：電商購物APP大PK&本月精選星特搜推薦\r\n\r\n \r\n",
         "description": "<p>★數位星情—葉瑋庭<br>\r\n★特別企劃：虛擬實境下凡間 內容爆發關鍵年-「VR」展翅 94狂！<br>\r\n2017年VR趨勢話題再攀峰～在微軟領軍衝鋒整合下，各PC大廠陸續加入戰局，還有數量前景可期的VR內容平台大爆發，全面性跳躍發展引領新眼球革命～<br>\r\n★Go Shopping!名店特集-NOVA名店達人嚴選筆電、GPS&記錄器<br>\r\n★嘿！好樣的：「智能」家電一點靈<br>\r\n★Sports運動風：重低音入魂 燃燒戰鬥力！運動貼聲教練 動感不絕於耳<br>\r\n運動耳機翻新命定強撼重低音，齊力推播激發無限潛能！同時傳承耐汗防水基因、穩固舒適與繽紛色系，化身健身「型」男靓女全力放頌動感「音」波～ <br>\r\n★數位鑑定團：無死角「鑑」！360度4K全景攝神：Nikon KeyMission 360運動攝影機<br>\r\n獨特對稱式雙魚眼鏡頭，360度全景完美拍攝，4K UHD超畫質解析，無需加裝防水盒，賦予鋼鐵人般強悍四防，並能透過手機來搖控拍攝…這等開創錄影情境新思維的話題創新咖，當然逃不過數位鑑定團的鎖定！達人們出列，管叫Nikon KeyMission 360是吧？元宵納福開鑑！<br>\r\n★Gaming紅不讓：日本經典PRG新手遊 超萌怪物群陪伴冒險：「勇者鬥惡龍 怪物狂歡派對」<br>\r\n繁中版「勇鬥」系列手遊正式攻台，一款讓六、七年級生重溫RPG冒險回憶，讓新世代手遊族邊戰鬥邊笑的超萌系經典又創新遊戲，等你來體驗！<br>\r\n★BUY家不敗家：導航記錄胎壓 汽機車行安特助！維安三兄弟 護駕總動員<br>\r\n車用三皇軟硬體加碼特化！道「錄」雙助理鷹眼抓漏、路癡救星導航再添智慧安全示警、保「胎」防爆小組出勤，包準一路順風安全上道～ <br>\r\n★柯P玩App:電商購物APP大PK&本月精選星特搜推薦<br>\r\n本期柯P整理了幾款「APP」要超級比一比～有提供個人完整健身指引的「Keep移動健身教練」，藉由觀賞廣告賺取點數換取貼圖或虛寶「小豬出任務」，外交部領事事務局所推出的「旅外救助指南」，以及只要刺青不要痛的「INKHUNTER」…全都逃不過犀利柯P推薦&評鑑！<br>\r\n★主播台<br>\r\n蒐集最新上市的商品與當月促銷訊息，是您快速採購的指南。</p>\r\n",
@@ -142,9 +142,13 @@
         "language": "zh-Hant",
         "publication_date": "2017-01-31T16:00:00Z",
         "adult_only": false,
-        "file_size": 42650876,
-        "rendition": {
-          "layout": "pre-paginated"
+        "epub": {
+          "rendition": {
+            "layout": "pre-paginated"
+          },
+          "filesize": 42650876,
+          "latest_version": "1.000",
+          "last_modified_at": "2017-02-07T08:01:57Z"
         },
         "suspend": false,
         "own": true,
@@ -263,11 +267,13 @@
       "type": "library_items",
       "id": "1012636",
       "attributes": {
-        "action": "download",
         "new": false,
         "privacy": "everyone",
         "archive": false,
-        "subscribable": true
+        "subscribable": true,
+        "conditions": null,
+        "created_at": null,
+        "last_modified_at": null
       },
       "relationships": {
         "book": {
@@ -298,7 +304,7 @@
       "id": "220067694000101",
       "attributes": {
         "title": "NOVA情報誌 01月號/2017 第174期",
-        "sub_title": "",
+        "subtitle": "",
         "author": "NOVA情報誌編輯部",
         "short_description": "特別企劃：2017行動趨勢大預測\r\n\r\n「行動支付」春燕到  雙鏡美攝」大對決\r\n\r\n開春新「雞」來報喜～第三方支付可望底定，相機檔次全面好攝提升，還有創新AR擴增手機、美艷搶眼精品外觀與行動智慧居家生活整合大加值，精采的啦！\r\n",
         "description": "<p><b>特別企劃：2017行動趨勢大預測</b></p>\r\n\r\n<p><b>「行動支付」春燕到  雙鏡美攝」大對決</b></p>\r\n\r\n<p>開春新「雞」來報喜～第三方支付可望底定，相機檔次全面好攝提升，還有創新AR擴增手機、美艷搶眼精品外觀與行動智慧居家生活整合大加值，精采的啦！</p>\r\n\r\n<p> </p>\r\n\r\n<p><b>Go Shopping!名店特集</b></p>\r\n\r\n<p>NOVA名店達人嚴選智慧手機、家電娛樂特推</p>\r\n\r\n<p> </p>\r\n\r\n<p><b>嘿！好樣的</b></p>\r\n\r\n<p>春節環遊趣</p>\r\n\r\n<p> </p>\r\n\r\n<p><b>Sports運動風：韓版速度與激情 馳騁雪地樂奔Fun</b></p>\r\n\r\n<p>韓冬滑雪癮Joy 銀白世界趣味行</p>\r\n\r\n<p>冬季哈韓雪之國，迫不「急」待踏上Ski與Snow「速」戰雪場，「滑」出一段「雪」中奇緣～同時縱情冰天「雪祭」，體驗冰釣樂趣與限定慶典，共享韓流五重天！</p>\r\n\r\n<p> </p>\r\n\r\n<p><b>數位鑑定團：「二代徠卡」新攝神降臨？！</b></p>\r\n\r\n<p>HUAWEI Mate 9 迎春喀嚓「鑑」 </p>\r\n\r\n<p>搭載技術更進化二代徠卡雙鏡頭，5.9吋超大廣色域艷麗螢幕，全金屬精緻工藝機身，旗艦頂規硬體效能&獨家客製優化系統，還有4000豪安培大容量與超級閃充技術…這等充滿話題且鋒芒畢露的神字輩新咖，正是鑑定團天菜，達人們集合，HUAWEI Mate 9是吧？迎春賀歲鑑！</p>\r\n\r\n<p> </p>\r\n\r\n<p><b>Gaming紅不讓：沉浸體驗大呼過癮   三十款遊戲任遨遊</b></p>\r\n\r\n<p>刺激．娛樂 「PS VR」陪你過年</p>\r\n\r\n<p>驚奇！驚豔！前所未有撼動心靈、宛如置身另一世界～「PS VR」將以最親民姿態、最豐富VR遊戲內容，讓客廳再度成為全家人聚焦歡樂幸福之處！</p>\r\n\r\n<p> </p>\r\n\r\n<p><b>BUY家不敗家：備存+分享事半功Bay！</b></p>\r\n\r\n<p>自建雲之王 NAS樂隨享</p>\r\n\r\n<p>特級儲備良師NAS個人雲，整裝配備HDMI、SPDIF傳送門，串連4K多媒體影音娛樂請命入室，還有優異圖形介面與多元應用，一網打盡「 贏」接IoT數位家庭！ </p>\r\n\r\n<p> </p>\r\n\r\n<p><b>柯P玩App：廣播APP大PK&本月精選星特搜推薦</b></p>\r\n\r\n<p>本期柯P整理了幾款「廣播APP」要超級比一比～還有可訂做專屬放鬆音樂的「TaoMix 2」，詳盡無障礙公益服務「友善台北好捷運」，電子書迷不能錯過的「樂天Kobo–全球中外文暢銷電子書」，以及能為照片畫龍點睛的「美圖文字」…全都逃不過犀利柯P推薦&評鑑！</p>\r\n\r\n<p> </p>\r\n\r\n<p><b>主播台</b></p>\r\n\r\n<p>蒐集最新上市的商品與當月促銷訊息，是您快速採購的指南。</p>\r\n",
@@ -306,9 +312,13 @@
         "language": "zh-Hant",
         "publication_date": "2017-01-04T16:00:00Z",
         "adult_only": false,
-        "file_size": 36549614,
-        "rendition": {
-          "layout": "pre-paginated"
+        "epub": {
+          "rendition": {
+            "layout": "pre-paginated"
+          },
+          "filesize": 36549614,
+          "latest_version": "1.000",
+          "last_modified_at": "2017-01-05T02:22:56Z"
         },
         "suspend": false,
         "own": true,
@@ -427,11 +437,13 @@
       "type": "library_items",
       "id": "994273",
       "attributes": {
-        "action": "download",
         "new": false,
         "privacy": "everyone",
         "archive": false,
-        "subscribable": true
+        "subscribable": true,
+        "conditions": null,
+        "created_at": null,
+        "last_modified_at": null
       },
       "relationships": {
         "book": {
@@ -462,7 +474,7 @@
       "id": "220067187000101",
       "attributes": {
         "title": "NOVA情報誌 12月號/2016 第173期",
-        "sub_title": "",
+        "subtitle": "",
         "author": "NOVA情報誌編輯部",
         "short_description": "特別企劃：勒索毒駭 麥擱來！\r\n\r\n四大天王誓師反恐   築牆攔截固若金湯\r\n\r\n守護全家人資安「靠這套」！2017年新版精英反恐部隊攜上更強力啟發攔截武器&銅牆鐵壁堅強堡壘，要讓各路毒駭威脅拒門外、OUT！\r\n",
         "description": "<p><b>特別企劃：勒索毒駭 麥擱來！</b></p>\r\n\r\n<p><b>四大天王誓師反恐   築牆攔截固若金湯</b></p>\r\n\r\n<p>守護全家人資安「靠這套」！2017年新版精英反恐部隊攜上更強力啟發攔截武器&銅牆鐵壁堅強堡壘，要讓各路毒駭威脅拒門外、OUT！</p>\r\n\r\n<p> </p>\r\n\r\n<p><b>Go Shopping!名店特集</b></p>\r\n\r\n<p>NOVA名店達人嚴選筆電、穿戴裝置</p>\r\n\r\n<p> </p>\r\n\r\n<p><b>嘿！好樣的：</b>Romantic！耶誕羅曼禮</p>\r\n\r\n<p> </p>\r\n\r\n<p><b>Sports運動風：「電動平衡車」 四海飄泊熱</b></p>\r\n\r\n<p><b>智能新思維 遨遊綠載具</b></p>\r\n\r\n<p>當代「綠具能」領航再進化，娛樂代步價優三管齊下！雙輪簡易入門、獨輪玲瓏吸睛，一同自在上演輕功路上飄，接力翻轉出行新體驗～</p>\r\n\r\n<p> </p>\r\n\r\n<p><b>數位鑑定團：「1公分有找」世界超薄王！</b></p>\r\n\r\n<p><b>Acer Swift 7極限夢幻立「鑑」 </b> </p>\r\n\r\n<p>買尬，Acer輕薄美學「電」暈指數續登峰，這次玩超大，不、是玩超「薄」，挾0.99公分夢幻薄刃身軀、低調奢華質感、9小時電力續航…一推出即驚艷業界與行動商務族！這般夢幻出鋒頭話題聖機，當然是大審婆的必「鑑」天菜！四大鑑定達人集合，Acer Swift 7是吧？迎冬開鍘！</p>\r\n\r\n<p> </p>\r\n\r\n<p><b>Gaming紅不讓：LOL迷最熟悉戰略攻防  5v5即刻開戰拼輸贏          </b></p>\r\n\r\n<p><b>「Garena傳說對決」嗨翻電競咖！</b></p>\r\n\r\n<p>風靡年輕學子，下載率發燒破表的MOBA戰略最新大作，要用電競迷最熟悉的5v5揪團連線頂尖對決，外加刺激、好玩、欲罷不能魔力，開創掌上電競「傳說」！</p>\r\n\r\n<p> </p>\r\n\r\n<p><b>BUY家不敗家：大銀幕看電影才過癮  投影機選購攻略！</b></p>\r\n\r\n<p><b>4K巨「投」在你家</b></p>\r\n\r\n<p>今年家用影院「投」下4K超清震撼彈，全品項齊全到位！更帶「投」大玩光雕藝術、內建Android「智」趣橫生，「睛」喜連連榮登新「視」界～</p>\r\n\r\n<p> </p>\r\n\r\n<p><b>柯P玩App：新聞APP大PK&本月精選星特搜推薦</b></p>\r\n\r\n<p>本期柯P整理了幾款「新聞APP」要超級比一比～還有女孩專屬手機影音平台「C CHANNEL」，隨下即用運動與健康記錄的「動動」，舊照片翻拍成數位相片的「PhotoScan」以及個人即時翻譯助理「講話和翻譯」…全都逃不過犀利柯P推薦&評鑑！</p>\r\n\r\n<p> </p>\r\n\r\n<p><b>主播台</b></p>\r\n\r\n<p>蒐集最新上市的商品與當月促銷訊息，是您快速採購的指南。</p>\r\n",
@@ -470,9 +482,13 @@
         "language": "zh-Hant",
         "publication_date": "2016-12-04T16:00:00Z",
         "adult_only": false,
-        "file_size": 40408958,
-        "rendition": {
-          "layout": "pre-paginated"
+        "epub": {
+          "rendition": {
+            "layout": "pre-paginated"
+          },
+          "filesize": 40408958,
+          "latest_version": "1.000",
+          "last_modified_at": "2016-12-05T01:25:23Z"
         },
         "suspend": false,
         "own": true,
@@ -591,11 +607,13 @@
       "type": "library_items",
       "id": "979764",
       "attributes": {
-        "action": "download",
         "new": false,
         "privacy": "everyone",
         "archive": false,
-        "subscribable": true
+        "subscribable": true,
+        "conditions": null,
+        "created_at": null,
+        "last_modified_at": null
       },
       "relationships": {
         "book": {
@@ -626,7 +644,7 @@
       "id": "220066788000101",
       "attributes": {
         "title": "NOVA情報誌 11月號/2016 第172期",
-        "sub_title": "",
+        "subtitle": "",
         "author": "NOVA情報誌編輯部",
         "short_description": "特別企劃：超神奇VR背包主機  超驚豔21吋曲面螢幕\n\n夢幻「電競」風\n\n歲末年終，在nVIDIA、Intel晶片雙虎齊逞威下，電競筆電&電競周邊將掀起新一波夢幻之旅，要用超頻、創新、刷新地表最強效能，挑戰玩家感官視覺極限！\n",
         "description": "<p><b>特別企劃：超神奇VR背包主機  超驚豔21吋曲面螢幕</b></p>\n\n<p><b>夢幻「電競」風</b></p>\n\n<p>歲末年終，在nVIDIA、Intel晶片雙虎齊逞威下，電競筆電&電競周邊將掀起新一波夢幻之旅，要用超頻、創新、刷新地表最強效能，挑戰玩家感官視覺極限！</p>\n\n<p> </p>\n\n<p><b>Go Shopping!名店特集</b></p>\n\n<p>NOVA名店達人嚴選智慧手機、電競特推</p>\n\n<p> </p>\n\n<p><b>嘿！好樣的</b>：萌寵智慧寶</p>\n\n<p> </p>\n\n<p><b>Sports運動風：穿戴助威 燃燒運動魂</b></p>\n\n<p><b>三鐵錶出師  海陸雙霸主</b></p>\n\n<p>心率「錶」王精銳輩出，菁英「鐵」人智慧教練～頂尖LED光學心跳感測、優秀長征電力續航與全能訓練模式，分秒必爭、「贏」接挑戰！</p>\n\n<p> </p>\n\n<p><b>數位鑑定團：七代「黑蘋果」好吃嗎?!</b></p>\n\n<p><b>iPhone 7 Plus開箱「鑑」 </b></p>\n\n<p>挾全新晶亮金屬奢華「曜石黑」，首款導入防水防塵，系列機中首度搭載雙鏡頭架構，標榜更犀利攝功與2倍光學變焦，還有5.5吋超艷麗廣色域大螢幕…一出手又讓果粉陷入瘋狂！大審婆速召業界四大專業達人，iPhone 7 Plus赤裸盛大開鑑！</p>\n\n<p> </p>\n\n<p><b>Gaming紅不讓：瘋狂連擊燒腦破表  武將橫行技術為王  </b></p>\n\n<p>「42聖靈」尬COMBO無雙！</p>\n\n<p>首創各國諸神&三國英雄隨召喚，激爽COMBO浮空連擊痛快打，一款愈玩愈夠過癮的RPG策略戰鬥手遊，挑戰你燒腦指數與指尖速度！</p>\n\n<p> </p>\n\n<p><b>BUY家不敗家：平價機王&旗艦巨擘 孝親自用兩相宜</b></p>\n\n<p>行動愛寵 智慧人來Phone</p>\n\n<p>智慧型手機三足鼎立，創世巨作「高顏值」與「閃充」電眼新星！更首創五軸防手震、IP防水防塵與高效八核心，連環吹起智慧旋Phone～ </p>\n\n<p> </p>\n\n<p><b>柯P玩App：APP大PK&本月精選星特搜推薦</b></p>\n\n<p>本期柯P整理了幾款「C2C拍賣APP」要超級比一比～還有讓手機變成行動第四台的「愛奇藝」，可免費撥打全球電話的「WhatsCall」，幫你自動規劃旅程好幫手「Google Trips」以及一手掌握即時新聞的「TVBS新聞」…全都逃不過犀利柯P推薦&評鑑！</p>\n\n<p> </p>\n\n<p><b>主播台</b></p>\n\n<p>蒐集最新上市的商品與當月促銷訊息，是您快速採購的指南。</p>\n",
@@ -634,9 +652,13 @@
         "language": "zh-Hant",
         "publication_date": "2016-11-06T16:00:00Z",
         "adult_only": false,
-        "file_size": 42956821,
-        "rendition": {
-          "layout": "pre-paginated"
+        "epub": {
+          "rendition": {
+            "layout": "pre-paginated"
+          },
+          "filesize": 42956821,
+          "latest_version": "1.000",
+          "last_modified_at": "2016-11-08T08:45:13Z"
         },
         "suspend": false,
         "own": true,
@@ -751,11 +773,13 @@
       "type": "library_items",
       "id": "966650",
       "attributes": {
-        "action": "download",
         "new": false,
         "privacy": "everyone",
         "archive": false,
-        "subscribable": true
+        "subscribable": true,
+        "conditions": null,
+        "created_at": null,
+        "last_modified_at": null
       },
       "relationships": {
         "book": {
@@ -786,7 +810,7 @@
       "id": "220066297000101",
       "attributes": {
         "title": "NOVA情報誌 10月號/2016 第171期",
-        "sub_title": "",
+        "subtitle": "",
         "author": "NOVA情報誌編輯部",
         "short_description": "本期特別企劃：家電萬物皆聯網  應用情境無限威\n\n「IoT物聯網」策馬入廳！\n\n智慧家庭夢想成真～IoT物聯網打造的居家監控、安全防災、老人照護、懶人大爺生活模式宣告啟航，無限愜意想像生活、已然來臨～\n",
         "description": "<p><b>·特別企劃：家電萬物皆聯網  應用情境無限威</b></p>\n\n<p><b>「IoT物聯網」策馬入廳！</b></p>\n\n<p>智慧家庭夢想成真～IoT物聯網打造的居家監控、安全防災、老人照護、懶人大爺生活模式宣告啟航，無限愜意想像生活、已然來臨～</p>\n\n<p> </p>\n\n<p><b>·Go Shopping!名店特集</b></p>\n\n<p>NOVA名店達人嚴選微單相機、寶可夢特推</p>\n\n<p> </p>\n\n<p><b>·嘿！好樣的：</b>初秋 霓彩誘色</p>\n\n<p> </p>\n\n<p><b>·Sports運動風：抓寶訓練師良伴 隨機飆動感</b></p>\n\n<p>運動耳機 健身樂不疲</p>\n\n<p>運動類耳機特立獨行、美學工法標新立異！集防水、輕盈與超群舒適感於一身，結合專屬App健身教練，打造「耳」目一新智慧健康新生活～</p>\n\n<p> </p>\n\n<p><b>·數位鑑定團：二代印速更快 感動更美!？</b></p>\n\n<p>富士SHARE SP-2手機拍立「審」</p>\n\n<p>短短10秒讓手機照片「實體成真」，相片解析畫質雙雙大升級讓「感動更美」，還有更新版App提供多元趣味框模板，能直連社群臉書&IG列印，新增照片創意拼貼/分割與客製化濾鏡效果…這富士二代SP-2手機印相機話題十足玩真格，不赤裸開審怎對得起粉絲！達人們集合，迎秋立鑑！</p>\n\n<p> </p>\n\n<p><b>·Gaming紅不讓：激爽三消策略排棋  PVP對戰欲罷不能</b></p>\n\n<p>日系「元素物語」強勢登台！</p>\n\n<p>好玩度激增三消COMBO結合策略排棋發大絕招，同類遊戲首創之線上即時PK捉對廝殺，還能揪好友四人協力共鬥與五星稀有騎寵養成…新鮮、刺激、趣味，讓你一滑上癮！</p>\n\n<p> </p>\n\n<p><b>·BUY家不敗家：單眼大小事 觸動新視界</b></p>\n\n<p>美拍機皇機后 攝錄鏡收眼底</p>\n\n<p>全新微型單眼與DSLR並駕邁向取「精」之路，問鼎高規全片幅、高畫質4K錄影與輕巧翻玩創意，一同微觀鏡頭下新美學影像！</p>\n\n<p> </p>\n\n<p><b>·柯P玩App：APP大PK&本月精選星特搜推薦</b></p>\n\n<p>本期柯P整理了幾款「美食餐廳APP」要超級比一比～還有說解決當下續攤或約會空閒需求的「FunNow瘋哪裡」、即時察看地圖上寶可夢分布狀況的「Poké5566」、手機免費第四台「免費電視」、以及手機常用網址集成「小鴨瀏覽器」…全都逃不過犀利柯P推薦&評鑑！</p>\n\n<p> </p>\n\n<p><b>·主播台</b></p>\n\n<p>蒐集最新上市的商品與當月促銷訊息，是您快速採購的指南。</p>\n",
@@ -794,9 +818,13 @@
         "language": "zh-Hant",
         "publication_date": "2016-10-04T16:00:00Z",
         "adult_only": false,
-        "file_size": 41366658,
-        "rendition": {
-          "layout": "pre-paginated"
+        "epub": {
+          "rendition": {
+            "layout": "pre-paginated"
+          },
+          "filesize": 41366658,
+          "latest_version": "1.000",
+          "last_modified_at": "2016-10-07T01:49:05Z"
         },
         "suspend": false,
         "own": true,
@@ -915,11 +943,13 @@
       "type": "library_items",
       "id": "946536",
       "attributes": {
-        "action": "download",
         "new": false,
         "privacy": "everyone",
         "archive": false,
-        "subscribable": true
+        "subscribable": true,
+        "conditions": null,
+        "created_at": null,
+        "last_modified_at": null
       },
       "relationships": {
         "book": {
@@ -950,7 +980,7 @@
       "id": "220060719000101",
       "attributes": {
         "title": "NOVA情報誌 09月號/2016 第170期",
-        "sub_title": "",
+        "subtitle": "",
         "author": "NOVA情報誌編輯部",
         "short_description": "特別企劃：導航胎壓記錄全進化 上道維安做好做滿\n\n三車神 智慧駕安全！\n\n行車護駕三兄弟真不是蓋的，持續帶來創新與突破，安全係數法力更無邊，庇護領域更精更廣泛，絕對是你安心又保險的護駕秘書好麻吉！\n",
         "description": "<p><b>特別企劃：導航胎壓記錄全進化 上道維安做好做滿</b></p>\n\n<p><b>三車神 智慧駕安全！</b></p>\n\n<p>行車護駕三兄弟真不是蓋的，持續帶來創新與突破，安全係數法力更無邊，庇護領域更精更廣泛，絕對是你安心又保險的護駕秘書好麻吉！</p>\n\n<p> </p>\n\n<p><b>Go Shopping!名店特集</b></p>\n\n<p>NOVA名店達人嚴選運動耳機、GPS+記錄器</p>\n\n<p> </p>\n\n<p><b>嘿！好樣的：</b>月圓‧微賞秋</p>\n\n<p> </p>\n\n<p><b>Sports運動風：抓寶訓練師良伴 隨機飆動感</b></p>\n\n<p>運動耳機 健身樂不疲</p>\n\n<p>運動類耳機特立獨行、美學工法標新立異！集防水、輕盈與超群舒適感於一身，結合專屬App健身教練，打造「耳」目一新智慧健康新生活～</p>\n\n<p> </p>\n\n<p><b>數位鑑定團：首創機體整合一卡通晶片！</b></p>\n\n<p>驚鑑Garmin vivosmart HR心率手環 </p>\n\n<p>乖乖不得了！穿戴手環搭載心率偵測晶片24小時監控心跳已夠屌，居然還將一卡通晶片直接整合機體，日常行動支付一嗶搞定，還可直接查詢餘額與交易記錄…！哇、居然有這等事，方便性不就無限上綱，趕緊速召業界四大鑑定專家，Garmin vivosmart HR一卡通版是吧，迎秋開鑑～</p>\n\n<p> </p>\n\n<p><b>Gaming紅不讓：無賴絕招俠緣互動  創新玩法百玩不膩</b></p>\n\n<p>RPG武俠新猷「極江湖」！</p>\n\n<p>惟肖惟妙古裝細膩畫風、極盡華麗聲光絢麗效果，有趣KUSO撒石灰、噴毒霧等無賴賤招，前所未見互動交流創新玩法，包準讓你百玩不膩！</p>\n\n<p> </p>\n\n<p><b>BUY家不敗家：全民印世代 聰明省荷包</b></p>\n\n<p>鮮肉級相印&連供雙IN漢</p>\n\n<p>全新革命性新秀「連供印表機」，大展深厚「印」底子！綜覽極速效率、完美輸出與耐用性，更享無線入魂行動印等多合一應用～</p>\n\n<p> </p>\n\n<p><b>柯P玩App：</b>APP大PK&本月精選星特搜推薦</p>\n\n<p>確保手機出事，珍貴照片還能毫髮無傷，就是一定要備份！柯P整理了幾款「手機雲端備份」要超級比一比～還有追劇迷新選擇「KKTV-難以抗劇」、查詢九項職業運動聯盟賽比分的「即時比分」、走到哪看到哪的手機直播平台「皮克直播」、來自手機的號外「Jaybo捷報」…全都逃不過犀利柯P推薦&評鑑！</p>\n\n<p> </p>\n\n<p><b>主播台</b></p>\n\n<p>蒐集最新上市的商品與當月促銷訊息，是您快速採購的指南。</p>\n",
@@ -958,9 +988,13 @@
         "language": "zh-Hant",
         "publication_date": "2016-09-05T16:00:00Z",
         "adult_only": false,
-        "file_size": 32000481,
-        "rendition": {
-          "layout": "pre-paginated"
+        "epub": {
+          "rendition": {
+            "layout": "pre-paginated"
+          },
+          "filesize": 32000481,
+          "latest_version": "1.000",
+          "last_modified_at": "2016-09-06T09:02:22Z"
         },
         "suspend": false,
         "own": true,
@@ -1079,11 +1113,13 @@
       "type": "library_items",
       "id": "929382",
       "attributes": {
-        "action": "download",
         "new": false,
         "privacy": "everyone",
         "archive": false,
-        "subscribable": true
+        "subscribable": true,
+        "conditions": null,
+        "created_at": null,
+        "last_modified_at": null
       },
       "relationships": {
         "book": {

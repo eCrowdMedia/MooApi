@@ -11,11 +11,18 @@ public struct Bookshelf: ResourceType {
   public let links: Links
 
   public struct Attributes {
-    public let action: String
     public let isNew: Bool
     public let privacy: String
     public let isArchive: Bool
     public let isSubscribable: Bool // if true is magazation, else is book.
+    public let conditions: Conditions?
+    public let createdAt: String
+    public let lastModifiedAt: String
+
+    public struct Conditions {
+      public let notBefore: String?
+      public let notAfter: String?
+    }
   }
 
   public struct Relationships {
@@ -47,12 +54,24 @@ extension Bookshelf: Argo.Decodable {
 
 extension Bookshelf.Attributes: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Bookshelf.Attributes> {
-    return curry(Bookshelf.Attributes.init)
-      <^> json <| "action"
-      <*> json <| "new"
+    let tmp1 = curry(Bookshelf.Attributes.init)
+      <^> json <| "new"
       <*> json <| "privacy"
       <*> json <| "archive"
+    
+    return tmp1
       <*> json <| "subscribable"
+      <*> json <|? "conditions"
+      <*> json <| "created_at"
+      <*> json <| "last_modified_at"
+  }
+}
+
+extension Bookshelf.Attributes.Conditions: Argo.Decodable {
+  public static func decode(_ json: JSON) -> Decoded<Bookshelf.Attributes.Conditions> {
+    return curry(Bookshelf.Attributes.Conditions.init)
+      <^> json <|? "not_before"
+      <*> json <|? "not_after"
   }
 }
 

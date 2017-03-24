@@ -31,11 +31,14 @@ final internal class BookShelvesTests: XCTestCase {
       XCTAssertEqual(bookshelf.id, "1022197")
 
       // Test attributes
-      XCTAssertEqual(attributes.action, "download")
       XCTAssertEqual(attributes.isNew, false)
       XCTAssertEqual(attributes.privacy, "everyone")
       XCTAssertEqual(attributes.isArchive, false)
       XCTAssertEqual(attributes.isSubscribable, false)
+      XCTAssertEqual(attributes.conditions?.notBefore, "2016-04-21T16:00:00Z")
+      XCTAssertEqual(attributes.conditions?.notAfter, "2016-04-21T16:00:00Z")
+      XCTAssertEqual(attributes.createdAt, "2016-04-21T16:00:00Z")
+      XCTAssertEqual(attributes.lastModifiedAt, "2016-04-21T16:00:00Z")
 
       // Test relationships
       XCTAssertEqual(relationships.book.data?.type, "books")

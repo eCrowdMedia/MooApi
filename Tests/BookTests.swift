@@ -11,9 +11,11 @@ final internal class BookTests: XCTestCase {
     let data = try! Data(contentsOf: URL(fileURLWithPath: path!))
     let json = JSON(try! JSONSerialization.jsonObject(with: data, options: []))
     let result = ApiDocument<Book>.decode(json)
-    let book = result.value?.data
     
-    XCTAssertNotNil(book)
+    guard let book = result.value?.data else {
+      XCTFail("\(result.error!)")
+      return
+    }
 
     // Test all results
     XCTAssertNil(result.error)
@@ -22,53 +24,57 @@ final internal class BookTests: XCTestCase {
     XCTAssertNotNil(result.value?.included)
     
     // Test data
-    let attributes = book?.attributes
-    let relationships = book?.relationships
-    let links = book?.links
-    XCTAssertEqual(book?.type, "books")
-    XCTAssertEqual(book?.id, "210068285000101")
-    XCTAssertEqual(attributes?.title, "說服自己，就是最聰明的談判力")
-    XCTAssertEqual(attributes?.subtitle, "哈佛頂尖談判專家最強效的溝通心理學")
-    XCTAssertEqual(attributes?.author, "威廉．尤瑞")
-    XCTAssertNotNil(attributes?.shortDescription)
-    XCTAssertNotNil(attributes?.largeDescription)
-    XCTAssertEqual(attributes?.isbn, "9789571365985")
-    XCTAssertEqual(attributes?.language, "zh-Hant")
-    XCTAssertEqual(attributes?.publicationDate, "2016-04-21T16:00:00Z")
-    XCTAssertEqual(attributes?.isAdultOnly, false)
-    XCTAssertEqual(attributes?.fileSize, 583858)
-    XCTAssertEqual(attributes?.rendition.layout, "reflowable")
-    XCTAssertEqual(attributes?.isSuspend, false)
-    XCTAssertEqual(attributes?.isOwn, true)
+    let attributes = book.attributes
+    let relationships = book.relationships
+    let links = book.links
+    
+    XCTAssertEqual(book.type, "books")
+    XCTAssertEqual(book.id, "210068285000101")
+    XCTAssertEqual(attributes.title, "說服自己，就是最聰明的談判力")
+    XCTAssertEqual(attributes.subtitle, "哈佛頂尖談判專家最強效的溝通心理學")
+    XCTAssertEqual(attributes.author, "威廉．尤瑞")
+    XCTAssertNotNil(attributes.shortDescription)
+    XCTAssertNotNil(attributes.largeDescription)
+    XCTAssertEqual(attributes.isbn, "9789571365985")
+    XCTAssertEqual(attributes.language, "zh-Hant")
+    XCTAssertEqual(attributes.publicationDate, "2016-04-21T16:00:00Z")
+    XCTAssertEqual(attributes.isAdultOnly, false)
+    XCTAssertEqual(attributes.epub.rendition.layout, "reflowable")
+    XCTAssertEqual(attributes.epub.fileSize, 583858) 
+    XCTAssertEqual(attributes.epub.latestVersion, "1.000") 
+    XCTAssertEqual(attributes.epub.lastModifiedAt, "2016-04-21T16:00:00Z") 
+    
+    XCTAssertEqual(attributes.isSuspend, false)
+    XCTAssertEqual(attributes.isOwn, true)
     
     let prices = [
       ("02", 210, "TWD"),
       ("04", 210, "TWD"),
       ("99", 300, "TWD")
     ]
-    for (index, p) in attributes!.prices.enumerated() {
+    for (index, p) in attributes.prices.enumerated() {
       XCTAssertEqual(p.type, prices[index].0)
       XCTAssertEqual(p.amount, prices[index].1)
       XCTAssertEqual(p.currentyCode, prices[index].2)
     }
     
-    XCTAssertEqual(attributes?.count.unit, "words")
-    XCTAssertEqual(attributes?.count.amount, 68939)
+    XCTAssertEqual(attributes.count.unit, "words")
+    XCTAssertEqual(attributes.count.amount, 68939)
     
-    XCTAssertEqual(links?.selfLink, "https://api.readmoo.com/read/v2/books/210068285000101")
-    XCTAssertEqual(links?.site, "https://readmoo.com/book/210068285000101")
-    XCTAssertEqual(links?.smallImage.href, "https://cdn.readmoo.com/cover/mr/dqjqtph_120x180.jpg?v=0")
-    XCTAssertEqual(links?.mediumImage.href, "https://cdn.readmoo.com/cover/mr/dqjqtph_210x315.jpg?v=0")
-    XCTAssertEqual(links?.largeImage.href, "https://cdn.readmoo.com/cover/mr/dqjqtph_460x580.jpg?v=0")
+    XCTAssertEqual(links.selfLink, "https://api.readmoo.com/read/v2/books/210068285000101")
+    XCTAssertEqual(links.site, "https://readmoo.com/book/210068285000101")
+    XCTAssertEqual(links.smallImage.href, "https://cdn.readmoo.com/cover/mr/dqjqtph_120x180.jpg?v=0")
+    XCTAssertEqual(links.mediumImage.href, "https://cdn.readmoo.com/cover/mr/dqjqtph_210x315.jpg?v=0")
+    XCTAssertEqual(links.largeImage.href, "https://cdn.readmoo.com/cover/mr/dqjqtph_460x580.jpg?v=0")
     
-    XCTAssertEqual(relationships?.publisher.data?.type, "publishers")
-    XCTAssertEqual(relationships?.publisher.data?.id, "2")
-    XCTAssertEqual(relationships?.mainSubject.data?.type, "categories")
-    XCTAssertEqual(relationships?.mainSubject.data?.id, "136")
-    XCTAssertEqual(relationships?.contributors.data.count, 3)
+    XCTAssertEqual(relationships.publisher.data?.type, "publishers")
+    XCTAssertEqual(relationships.publisher.data?.id, "2")
+    XCTAssertEqual(relationships.mainSubject.data?.type, "categories")
+    XCTAssertEqual(relationships.mainSubject.data?.id, "136")
+    XCTAssertEqual(relationships.contributors.data.count, 3)
     
     let cArray = ["24984", "24985", "11793"]
-    for (index, c) in relationships!.contributors.data.enumerated() {
+    for (index, c) in relationships.contributors.data.enumerated() {
       XCTAssertEqual(c.type, "contributors")
       XCTAssertEqual(c.id, cArray[index])
     }

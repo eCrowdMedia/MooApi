@@ -7,7 +7,6 @@ public struct Path: ResourceType {
   public let type: String
   public let id: String
   public let attributes: Attributes
-  public let relationships: Relationships
   public let links: Links
   
   public struct Attributes {
@@ -21,11 +20,7 @@ public struct Path: ResourceType {
     public let postContent: String?
     public let referencedCount: Int
   }
-  
-  public struct Relationships {
-    public let book: RelationshipObject
-  }
-  
+
   public struct Links {
     public let selfLink: String
   }
@@ -39,7 +34,6 @@ extension Path: Argo.Decodable {
       <^> json <| "type"
       <*> json <| "id"
       <*> json <| "attributes"
-      <*> json <| "relationships"
       <*> json <| "links"
   }
 }
@@ -56,13 +50,6 @@ extension Path.Attributes: Argo.Decodable {
       <*> json <| "content"
       <*> json <|? "post_content"
       <*> json <| "referenced_count"
-  }
-}
-
-extension Path.Relationships: Argo.Decodable {
-  public static func decode(_ json: JSON) -> Decoded<Path.Relationships> {
-    return curry(Path.Relationships.init)
-      <^> json <| "book"
   }
 }
 

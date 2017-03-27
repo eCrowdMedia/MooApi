@@ -236,7 +236,8 @@
         "position": 0.8,
         "position_updated_at": "2017-03-02T02:05:18Z",
         "location": "/6/110!/4",
-        "rating": 0
+        "rating": 0,
+        "created_at": "2017-02-08T01:32:16Z"
       },
       "relationships": {
         "book": {
@@ -272,8 +273,8 @@
         "archive": false,
         "subscribable": true,
         "conditions": null,
-        "created_at": null,
-        "last_modified_at": null
+        "created_at": "2017-02-08T01:32:07Z",
+        "touched_at": "ArrayZ"
       },
       "relationships": {
         "book": {
@@ -287,9 +288,6 @@
             "type": "readings",
             "id": "774744"
           }
-        },
-        "review": {
-          "data": null
         }
       },
       "links": {
@@ -406,7 +404,8 @@
         "position": 0.76,
         "position_updated_at": "2017-01-14T14:07:40Z",
         "location": "/6/116!/4/2[pf34]/2/2@0:0",
-        "rating": 0
+        "rating": 0,
+        "created_at": "2017-01-05T18:06:24Z"
       },
       "relationships": {
         "book": {
@@ -442,8 +441,8 @@
         "archive": false,
         "subscribable": true,
         "conditions": null,
-        "created_at": null,
-        "last_modified_at": null
+        "created_at": "2017-01-05T18:06:15Z",
+        "touched_at": "ArrayZ"
       },
       "relationships": {
         "book": {
@@ -457,9 +456,6 @@
             "type": "readings",
             "id": "754597"
           }
-        },
-        "review": {
-          "data": null
         }
       },
       "links": {
@@ -576,7 +572,8 @@
         "position": 0.42,
         "position_updated_at": "2016-12-27T01:22:14Z",
         "location": "/6/58!/4",
-        "rating": 0
+        "rating": 0,
+        "created_at": "2016-12-05T18:06:26Z"
       },
       "relationships": {
         "book": {
@@ -612,8 +609,8 @@
         "archive": false,
         "subscribable": true,
         "conditions": null,
-        "created_at": null,
-        "last_modified_at": null
+        "created_at": "2016-12-05T18:06:19Z",
+        "touched_at": "ArrayZ"
       },
       "relationships": {
         "book": {
@@ -627,9 +624,6 @@
             "type": "readings",
             "id": "738834"
           }
-        },
-        "review": {
-          "data": null
         }
       },
       "links": {
@@ -742,7 +736,8 @@
         "comments_count": 0,
         "highlights_count": 0,
         "position": 0,
-        "rating": 0
+        "rating": 0,
+        "created_at": "2016-11-08T18:05:44Z"
       },
       "relationships": {
         "book": {
@@ -778,8 +773,8 @@
         "archive": false,
         "subscribable": true,
         "conditions": null,
-        "created_at": null,
-        "last_modified_at": null
+        "created_at": "2016-11-08T18:05:43Z",
+        "touched_at": "ArrayZ"
       },
       "relationships": {
         "book": {
@@ -793,9 +788,6 @@
             "type": "readings",
             "id": "723825"
           }
-        },
-        "review": {
-          "data": null
         }
       },
       "links": {
@@ -912,7 +904,8 @@
         "position": 0.203,
         "position_updated_at": "2016-11-24T12:23:30Z",
         "location": "/6/30!/4",
-        "rating": 0
+        "rating": 0,
+        "created_at": "2016-10-07T01:52:45Z"
       },
       "relationships": {
         "book": {
@@ -948,8 +941,8 @@
         "archive": false,
         "subscribable": true,
         "conditions": null,
-        "created_at": null,
-        "last_modified_at": null
+        "created_at": "2016-10-07T01:52:44Z",
+        "touched_at": "ArrayZ"
       },
       "relationships": {
         "book": {
@@ -963,9 +956,6 @@
             "type": "readings",
             "id": "702362"
           }
-        },
-        "review": {
-          "data": null
         }
       },
       "links": {
@@ -1082,7 +1072,8 @@
         "position": 0,
         "position_updated_at": "2016-09-19T09:07:22Z",
         "location": "/6/8!/4/2",
-        "rating": 0
+        "rating": 0,
+        "created_at": "2016-09-06T09:06:37Z"
       },
       "relationships": {
         "book": {
@@ -1118,8 +1109,8 @@
         "archive": false,
         "subscribable": true,
         "conditions": null,
-        "created_at": null,
-        "last_modified_at": null
+        "created_at": "2016-09-06T09:06:35Z",
+        "touched_at": "ArrayZ"
       },
       "relationships": {
         "book": {
@@ -1133,9 +1124,6 @@
             "type": "readings",
             "id": "685000"
           }
-        },
-        "review": {
-          "data": null
         }
       },
       "links": {

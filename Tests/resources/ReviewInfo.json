@@ -11,20 +11,6 @@
       "created_at": "2017-03-07T10:29:04Z",
       "latest_modified_at": "2017-03-07T10:29:29Z"
     },
-    "relationships": {
-      "book": {
-        "data": {
-          "type": "books",
-          "id": "210060444000101"
-        }
-      },
-      "reading": {
-        "data": {
-          "type": "readings",
-          "id": "800409"
-        }
-      }
-    },
     "links": {
       "self": "https://api.readmoo.com/read/v2/me/reviews/1971"
     }

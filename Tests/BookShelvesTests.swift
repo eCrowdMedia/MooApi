@@ -35,18 +35,16 @@ final internal class BookShelvesTests: XCTestCase {
       XCTAssertEqual(attributes.privacy, "everyone")
       XCTAssertEqual(attributes.isArchive, false)
       XCTAssertEqual(attributes.isSubscribable, false)
-      XCTAssertEqual(attributes.conditions?.notBefore, "2016-04-21T16:00:00Z")
-      XCTAssertEqual(attributes.conditions?.notAfter, "2016-04-21T16:00:00Z")
+      XCTAssertEqual(attributes.conditions?.before, "2016-04-21T16:00:00Z")
+      XCTAssertEqual(attributes.conditions?.after, "2016-04-21T16:00:00Z")
       XCTAssertEqual(attributes.createdAt, "2016-04-21T16:00:00Z")
-      XCTAssertEqual(attributes.lastModifiedAt, "2016-04-21T16:00:00Z")
+      XCTAssertEqual(attributes.touchedAt, "2016-04-21T16:00:00Z")
 
       // Test relationships
       XCTAssertEqual(relationships.book.data?.type, "books")
       XCTAssertEqual(relationships.book.data?.id, "210068285000101")
       XCTAssertEqual(relationships.reading.data?.type, "readings")
       XCTAssertEqual(relationships.reading.data?.id, "784752")
-      XCTAssertNil(relationships.review.data)
-      XCTAssertNil(relationships.tags)
 
       // Test links
       XCTAssertEqual(links.selfLink, "https://api.readmoo.com/read/v2/me/library/books/1022197")

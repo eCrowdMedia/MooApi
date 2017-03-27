@@ -18,7 +18,6 @@ final internal class ReviewTests: XCTestCase {
     }
 
     let attributes = review.attributes
-    let relationships = review.relationships
     let links = review.links
 
     // Test type and id
@@ -32,14 +31,8 @@ final internal class ReviewTests: XCTestCase {
     XCTAssertEqual(attributes.commentsCount, 0)
     XCTAssertEqual(attributes.likesCount, 0)
     XCTAssertEqual(attributes.createdAt, "2017-03-07T10:29:04Z")
-    XCTAssertEqual(attributes.lastestModifiedAt, "2017-03-07T10:29:29Z")
+    XCTAssertEqual(attributes.latestModifiedAt, "2017-03-07T10:29:29Z")
 
-    // Test relationships
-    XCTAssertEqual(relationships.book.data?.type, "books")
-    XCTAssertEqual(relationships.book.data?.id, "210060444000101")
-    XCTAssertEqual(relationships.reading.data?.type, "readings")
-    XCTAssertEqual(relationships.reading.data?.id, "800409")
-    
     // Test links
     XCTAssertEqual(links.selfLink, "https://api.readmoo.com/read/v2/me/reviews/1971")
 

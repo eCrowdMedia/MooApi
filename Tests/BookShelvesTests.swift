@@ -33,8 +33,8 @@ final internal class BookShelvesTests: XCTestCase {
       XCTAssertEqual(attributes.isArchive, false)
       XCTAssertEqual(attributes.isSubscribable, false)
       XCTAssertEqual(attributes.policy?.type, "ticket")
-      XCTAssertNotNil(attributes.policy?.permissions)
-      XCTAssertNotNil(attributes.policy?.prohibitions)
+      XCTAssertEqual(attributes.policy?.permissions.isEmpty, true)
+      XCTAssertEqual(attributes.policy?.prohibitions.isEmpty, false)
 
       // Test relationships
       XCTAssertEqual(relationships.reading.type, "readings")

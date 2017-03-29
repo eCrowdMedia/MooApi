@@ -88,7 +88,7 @@ extension Bookshelf.Attributes.Permission: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Bookshelf.Attributes.Permission> {
     return curry(Bookshelf.Attributes.Permission.init)
       <^> json <| "action"
-      <*> json <|| "constraints"
+      <*> (json <|| "constraints" <|> .success([]))
   }
 }
 
@@ -96,7 +96,7 @@ extension Bookshelf.Attributes.Prohibition: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Bookshelf.Attributes.Prohibition> {
     return curry(Bookshelf.Attributes.Prohibition.init)
       <^> json <| "action"
-      <*> json <|| "constraints"
+      <*> (json <|| "constraints" <|> .success([]))
   }
 }
 

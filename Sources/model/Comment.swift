@@ -49,10 +49,10 @@ extension Comment.Attributes: Argo.Decodable {
 extension Comment.Relationships: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Comment.Relationships> {
     return curry(Comment.Relationships.init)
-      <^> json <|? "reply_to"
-      <*> json <| "commentator"
-      <*> json <| "highlight"
-      <*> json <|? "review"
+      <^> json <|? ["reply_to", "data"]
+      <*> json <| ["commentator", "data"]
+      <*> json <| ["highlight", "links"]
+      <*> json <|? ["review", "data"]
   }
 }
 

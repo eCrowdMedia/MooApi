@@ -13,7 +13,7 @@ final internal class MarathonTests: XCTestCase {
     let result = ApiDocument<MooApi.Marathon>.decode(json)
     
     guard let marathon = result.value?.data else {
-      XCTFail()
+      XCTFail("\(result.error.debugDescription)")
       return
     }
 

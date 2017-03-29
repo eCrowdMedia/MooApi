@@ -49,10 +49,10 @@ extension Bookmark.Attributes: Argo.Decodable {
 extension Bookmark.Relationships: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Bookmark.Relationships> {
     return curry(Bookmark.Relationships.init)
-      <^> json <| "book"
-      <*> json <| "user"
-      <*> json <| "reading"
-      <*> json <| "path"
+      <^> json <| ["book", "data"]
+      <*> json <| ["user", "data"]
+      <*> json <| ["reading", "data"]
+      <*> json <| ["path", "data"]
   }
 }
 

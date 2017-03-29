@@ -11,13 +11,10 @@ final internal class BookShelvesTests: XCTestCase {
     let data = try! Data(contentsOf: URL(fileURLWithPath: path!))
     let json = JSON(try! JSONSerialization.jsonObject(with: data, options: []))
     let result = ApiDocument<Bookshelf>.decode(json)
-    
-    // Test all results
-    XCTAssertNil(result.error)
 
     // Test data
     guard let bookshelf = result.value?.data else {
-      XCTFail()
+      XCTFail("\(result.error.debugDescription)")
       return
     }
 
@@ -35,13 +32,13 @@ final internal class BookShelvesTests: XCTestCase {
       XCTAssertEqual(attributes.privacy, "everyone")
       XCTAssertEqual(attributes.isArchive, false)
       XCTAssertEqual(attributes.isSubscribable, false)
-      XCTAssertEqual(attributes.policy.type, "ticket")
-      XCTAssertNil(attributes.policy.permissions)
-      XCTAssertNotNil(attributes.policy.prohibitions)
+      XCTAssertEqual(attributes.policy?.type, "ticket")
+      XCTAssertNotNil(attributes.policy?.permissions)
+      XCTAssertNotNil(attributes.policy?.prohibitions)
 
       // Test relationships
-      XCTAssertEqual(relationships.reading.data?.type, "readings")
-      XCTAssertEqual(relationships.reading.data?.id, "784752")
+      XCTAssertEqual(relationships.reading.type, "readings")
+      XCTAssertEqual(relationships.reading.id, "784752")
 
       // Test links
       XCTAssertEqual(links.selfLink, "https://api.readmoo.com/read/v2/me/library/books/1022197")

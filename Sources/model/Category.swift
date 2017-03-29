@@ -46,7 +46,7 @@ extension Category.Attributes: Argo.Decodable {
 extension Category.Relationships: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Category.Relationships> {
     return curry(Category.Relationships.init)
-      <^> json <|? "parent"
+      <^> json <|? ["parent", "data"]
   }
 }
 

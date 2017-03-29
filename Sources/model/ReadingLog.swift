@@ -65,9 +65,9 @@ extension ReadingLog.Attributes: Argo.Decodable {
 extension ReadingLog.Relationships: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<ReadingLog.Relationships> {
     return curry(ReadingLog.Relationships.init)
-      <^> json <| "event"
-      <*> json <|? "parent"
-      <*> json <| "reading"
+      <^> json <| ["event", "data"]
+      <*> json <|? ["parent", "data"]
+      <*> json <| ["reading", "data"]
   }
 }
 

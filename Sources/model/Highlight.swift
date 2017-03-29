@@ -54,11 +54,11 @@ extension Highlight.Attributes: Argo.Decodable {
 extension Highlight.Relationships: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Highlight.Relationships> {
     return curry(Highlight.Relationships.init)
-      <^> json <| "book"
-      <*> json <| "reading"
-      <*> json <| "range"
-      <*> json <| "comments"
-      <*> json <| "user"
+      <^> json <| ["book", "data"]
+      <*> json <| ["reading", "data"]
+      <*> json <| ["range", "data"]
+      <*> json <| ["comments", "links"]
+      <*> json <| ["user", "data"]
   }
 }
 

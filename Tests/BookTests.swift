@@ -42,7 +42,7 @@ final internal class BookTests: XCTestCase {
     XCTAssertEqual(attributes.epub.rendition.layout, "reflowable")
     XCTAssertEqual(attributes.epub.fileSize, 583858) 
     XCTAssertEqual(attributes.epub.latestVersion, "1.000") 
-    XCTAssertEqual(attributes.epub.lastModifiedAt, "2016-04-21T16:00:00Z") 
+    XCTAssertEqual(attributes.epub.lastModifiedAt, "2017-02-15T07:12:57Z") 
     
     XCTAssertEqual(attributes.isSuspend, false)
     XCTAssertEqual(attributes.isOwn, true)
@@ -67,14 +67,14 @@ final internal class BookTests: XCTestCase {
     XCTAssertEqual(links.mediumImage.href, "https://cdn.readmoo.com/cover/mr/dqjqtph_210x315.jpg?v=0")
     XCTAssertEqual(links.largeImage.href, "https://cdn.readmoo.com/cover/mr/dqjqtph_460x580.jpg?v=0")
     
-    XCTAssertEqual(relationships.publisher.data?.type, "publishers")
-    XCTAssertEqual(relationships.publisher.data?.id, "2")
-    XCTAssertEqual(relationships.mainSubject.data?.type, "categories")
-    XCTAssertEqual(relationships.mainSubject.data?.id, "136")
-    XCTAssertEqual(relationships.contributors.data.count, 3)
+    XCTAssertEqual(relationships.publisher.type, "publishers")
+    XCTAssertEqual(relationships.publisher.id, "2")
+    XCTAssertEqual(relationships.mainSubject.type, "categories")
+    XCTAssertEqual(relationships.mainSubject.id, "136")
+    XCTAssertEqual(relationships.contributors.count, 3)
     
     let cArray = ["24984", "24985", "11793"]
-    for (index, c) in relationships.contributors.data.enumerated() {
+    for (index, c) in relationships.contributors.enumerated() {
       XCTAssertEqual(c.type, "contributors")
       XCTAssertEqual(c.id, cArray[index])
     }

@@ -140,9 +140,9 @@ extension Book.Attributes.Count: Argo.Decodable {
 extension Book.Relationships: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Book.Relationships> {
     return curry(Book.Relationships.init)
-      <^> json <| "publisher"
-      <*> json <|| "contributors"
-      <*> json <| "main_subject"
+      <^> json <| ["publisher", "data"]
+      <*> json <|| ["contributors", "data"]
+      <*> json <| ["main_subject", "data"]
   }
 }
 

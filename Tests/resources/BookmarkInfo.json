@@ -27,7 +27,7 @@
       "path": {
         "data": {
           "type": "paths",
-          "id": "116445"
+          "id": "49107"
         }
       }
     },
@@ -223,6 +223,7 @@
       "attributes": {
         "state": "finished",
         "privacy": "everyone",
+        "created_at": "2013-12-12T03:55:14Z",
         "started_at": "2013-12-12T03:55:14Z",
         "touched_at": "2016-12-19T03:16:25Z",
         "ended_at": "2015-12-15T07:33:23Z",
@@ -262,28 +263,20 @@
     },
     {
       "type": "paths",
-      "id": "116445",
+      "id": "49107",
       "attributes": {
         "file_version": "1.003",
-        "position": 0.17,
+        "position": 0.071,
         "chapter": 5,
         "cfi": "/6/10!/4/748/82[fn2-41]/2/2@0:0",
-        "title": null,
+        "title": "02",
         "pre_content": null,
         "content": "",
         "post_content": null,
-        "referenced_count": 1
-      },
-      "relationships": {
-        "book": {
-          "data": {
-            "type": "books",
-            "id": "210010466000101"
-          }
-        }
+        "referenced_count": 2
       },
       "links": {
-        "self": "https://api.readmoo.com/read/v2/paths/116445"
+        "self": "https://api.readmoo.com/read/v2/paths/49107"
       }
     }
   ]

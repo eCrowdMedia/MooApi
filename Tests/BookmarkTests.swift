@@ -13,7 +13,7 @@ final internal class BookmarkTests: XCTestCase {
     let result = ApiDocument<MooApi.Bookmark>.decode(json)
     
     guard let bookmark = result.value?.data else {
-      XCTFail()
+      XCTFail("\(result.error.debugDescription)")
       return
     }
     
@@ -29,17 +29,17 @@ final internal class BookmarkTests: XCTestCase {
     XCTAssertEqual(attributes.bookmarkedAt, "2015-12-18T11:28:52Z")
     
     // Test relationships
-    XCTAssertEqual(relationships.book.data?.type, "books")
-    XCTAssertEqual(relationships.book.data?.id, "210010466000101")
+    XCTAssertEqual(relationships.book.type, "books")
+    XCTAssertEqual(relationships.book.id, "210010466000101")
 
-    XCTAssertEqual(relationships.user.data?.type, "users")
-    XCTAssertEqual(relationships.user.data?.id, "lljl9jqlh")
+    XCTAssertEqual(relationships.user.type, "users")
+    XCTAssertEqual(relationships.user.id, "lljl9jqlh")
 
-    XCTAssertEqual(relationships.reading.data?.type, "readings")
-    XCTAssertEqual(relationships.reading.data?.id, "51924")
+    XCTAssertEqual(relationships.reading.type, "readings")
+    XCTAssertEqual(relationships.reading.id, "51924")
 
-    XCTAssertEqual(relationships.path.data?.type, "paths")
-    XCTAssertEqual(relationships.path.data?.id, "116445")
+    XCTAssertEqual(relationships.path.type, "paths")
+    XCTAssertEqual(relationships.path.id, "49107")
     
     // Test links
     XCTAssertEqual(links.selfLink, "https://api.readmoo.com/read/v2/me/bookmarks/47600")

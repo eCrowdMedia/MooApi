@@ -13,7 +13,7 @@ final internal class ReadingTests: XCTestCase {
     let result = ApiDocument<Reading>.decode(json)
     
     guard let reading = result.value?.data else {
-      XCTFail()
+      XCTFail("\(result.error.debugDescription)")
       return
     }
 
@@ -28,6 +28,7 @@ final internal class ReadingTests: XCTestCase {
     // Test attributes
     XCTAssertEqual(attributes.state, "finished")
     XCTAssertEqual(attributes.privacy, "everyone")
+    XCTAssertEqual(attributes.startedAt, "2013-12-12T03:55:14Z")
     XCTAssertEqual(attributes.createdAt, "2013-12-12T03:55:14Z")
     XCTAssertEqual(attributes.startedAt, "2013-12-12T03:55:14Z")
     XCTAssertEqual(attributes.touchedAt, "2016-12-19T03:16:25Z")
@@ -42,14 +43,14 @@ final internal class ReadingTests: XCTestCase {
     XCTAssertEqual(attributes.rating, 5)
 
     // Test relationships
-    XCTAssertEqual(relationships.book.data?.type, "books")
-    XCTAssertEqual(relationships.book.data?.id, "210010466000101")
+    XCTAssertEqual(relationships.book.type, "books")
+    XCTAssertEqual(relationships.book.id, "210010466000101")
     
-    XCTAssertEqual(relationships.bookmarks.links?.related, "https://api.readmoo.com/read/v2/me/readings/51924/bookmarks")
+    XCTAssertEqual(relationships.bookmarks.related, "https://api.readmoo.com/read/v2/me/readings/51924/bookmarks")
     
-    XCTAssertEqual(relationships.highlights.links?.related, "https://api.readmoo.com/read/v2/me/readings/51924/highlights")
+    XCTAssertEqual(relationships.highlights.related, "https://api.readmoo.com/read/v2/me/readings/51924/highlights")
     
-    XCTAssertNil(relationships.review.data)
+    XCTAssertNil(relationships.review)
 
     // Test links
     XCTAssertEqual(links.selfLink, "https://api.readmoo.com/read/v2/me/readings/51924")

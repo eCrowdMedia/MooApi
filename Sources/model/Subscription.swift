@@ -65,9 +65,9 @@ extension Subscription.Attributes: Argo.Decodable {
 extension Subscription.Relationships: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Subscription.Relationships> {
     return curry(Subscription.Relationships.init)
-      <^> json <| "publisher"
-      <*> json <| "main_subject"
-      <*> (json <|| "library_items" <|> .success([]))
+      <^> json <| ["publisher", "data"]
+      <*> json <| ["main_subject", "data"]
+      <*> (json <|| ["library_items", "data"] <|> .success([]))
   }
 }
 

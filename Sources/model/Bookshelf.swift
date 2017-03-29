@@ -15,19 +15,33 @@ public struct Bookshelf: ResourceType {
     public let privacy: String
     public let isArchive: Bool
     public let isSubscribable: Bool // if true is magazation, else is book.
-    public let conditions: Conditions?
-    public let createdAt: String
-    public let touchedAt: String
-
-    public struct Conditions {
-      public let after: String?
-      public let before: String?
+    public let policy: Policy?
+    
+    public struct Policy {
+      public let type: String
+      public let permissions: [Permission]
+      public let prohibitions: [Prohibition]
+    }
+    
+    public struct Permission {
+      public let action: String
+      public let constraints: [Constraint]
+    }
+    
+    public struct Prohibition {
+      public let action: String
+      public let constraints: [Constraint]
+    }
+    
+    public struct Constraint {
+      public let name: String?
+      public let constraintOperator: String
+      public let rightOperand: String?
     }
   }
 
   public struct Relationships {
-    public let book: RelationshipObject
-    public let reading: RelationshipObject
+    public let reading: ResourceIdentifier
   }
 
   public struct Links {
@@ -52,32 +66,53 @@ extension Bookshelf: Argo.Decodable {
 
 extension Bookshelf.Attributes: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Bookshelf.Attributes> {
-    let tmp1 = curry(Bookshelf.Attributes.init)
+    return curry(Bookshelf.Attributes.init)
       <^> json <| "new"
       <*> json <| "privacy"
       <*> json <| "archive"
-    
-    return tmp1
       <*> json <| "subscribable"
-      <*> json <|? "conditions"
-      <*> json <| "created_at"
-      <*> json <| "touched_at"
+      <*> json <|? "policy"
   }
 }
 
-extension Bookshelf.Attributes.Conditions: Argo.Decodable {
-  public static func decode(_ json: JSON) -> Decoded<Bookshelf.Attributes.Conditions> {
-    return curry(Bookshelf.Attributes.Conditions.init)
-      <^> json <|? "after"
-      <*> json <|? "before"
+extension Bookshelf.Attributes.Policy: Argo.Decodable {
+  public static func decode(_ json: JSON) -> Decoded<Bookshelf.Attributes.Policy> {
+    return curry(Bookshelf.Attributes.Policy.init)
+      <^> json <| "type"
+      <*> json <|| "permissions"
+      <*> json <|| "prohibitions"
+  }
+}
+
+extension Bookshelf.Attributes.Permission: Argo.Decodable {
+  public static func decode(_ json: JSON) -> Decoded<Bookshelf.Attributes.Permission> {
+    return curry(Bookshelf.Attributes.Permission.init)
+      <^> json <| "action"
+      <*> json <|| "constraints"
+  }
+}
+
+extension Bookshelf.Attributes.Prohibition: Argo.Decodable {
+  public static func decode(_ json: JSON) -> Decoded<Bookshelf.Attributes.Prohibition> {
+    return curry(Bookshelf.Attributes.Prohibition.init)
+      <^> json <| "action"
+      <*> json <|| "constraints"
+  }
+}
+
+extension Bookshelf.Attributes.Constraint: Argo.Decodable {
+  public static func decode(_ json: JSON) -> Decoded<Bookshelf.Attributes.Constraint> {
+    return curry(Bookshelf.Attributes.Constraint.init)
+      <^> json <|? "name"
+      <*> json <| "operator"
+      <*> json <|? "rightoperand"
   }
 }
 
 extension Bookshelf.Relationships: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Bookshelf.Relationships> {
     return curry(Bookshelf.Relationships.init)
-      <^> json <| "book"
-      <*> json <| "reading"
+      <^> json <| "reading"
   }
 }
 

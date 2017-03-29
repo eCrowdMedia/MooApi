@@ -12,9 +12,6 @@
 		2D01B2921E8123B300583A7C /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D01B2881E8123B300583A7C /* Comment.swift */; };
 		2D01B2931E8123B300583A7C /* Highlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D01B2891E8123B300583A7C /* Highlight.swift */; };
 		2D01B2941E8123B300583A7C /* Me.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D01B28A1E8123B300583A7C /* Me.swift */; };
-		2D01B2951E8123B300583A7C /* RelationshipObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D01B28B1E8123B300583A7C /* RelationshipObject.swift */; };
-		2D01B2961E8123B300583A7C /* RelationshipObjectEnvelope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D01B28C1E8123B300583A7C /* RelationshipObjectEnvelope.swift */; };
-		2D01B2971E8123B300583A7C /* RelationshipObjectWithRoleEnvelope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D01B28D1E8123B300583A7C /* RelationshipObjectWithRoleEnvelope.swift */; };
 		2D01B2981E8123B300583A7C /* ResourceIdentifierWithRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D01B28E1E8123B300583A7C /* ResourceIdentifierWithRole.swift */; };
 		2D01B2991E8123B300583A7C /* ResourceLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D01B28F1E8123B300583A7C /* ResourceLinks.swift */; };
 		2D01B29A1E8123B300583A7C /* ResourceMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D01B2901E8123B300583A7C /* ResourceMeta.swift */; };
@@ -101,9 +98,6 @@
 		2D01B2881E8123B300583A7C /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		2D01B2891E8123B300583A7C /* Highlight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Highlight.swift; sourceTree = "<group>"; };
 		2D01B28A1E8123B300583A7C /* Me.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Me.swift; sourceTree = "<group>"; };
-		2D01B28B1E8123B300583A7C /* RelationshipObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationshipObject.swift; sourceTree = "<group>"; };
-		2D01B28C1E8123B300583A7C /* RelationshipObjectEnvelope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationshipObjectEnvelope.swift; sourceTree = "<group>"; };
-		2D01B28D1E8123B300583A7C /* RelationshipObjectWithRoleEnvelope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationshipObjectWithRoleEnvelope.swift; sourceTree = "<group>"; };
 		2D01B28E1E8123B300583A7C /* ResourceIdentifierWithRole.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceIdentifierWithRole.swift; sourceTree = "<group>"; };
 		2D01B28F1E8123B300583A7C /* ResourceLinks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceLinks.swift; sourceTree = "<group>"; };
 		2D01B2901E8123B300583A7C /* ResourceMeta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceMeta.swift; sourceTree = "<group>"; };
@@ -198,9 +192,6 @@
 			isa = PBXGroup;
 			children = (
 				2D01B2861E80DFBA00583A7C /* ImageMeta.swift */,
-				2D01B28B1E8123B300583A7C /* RelationshipObject.swift */,
-				2D01B28C1E8123B300583A7C /* RelationshipObjectEnvelope.swift */,
-				2D01B28D1E8123B300583A7C /* RelationshipObjectWithRoleEnvelope.swift */,
 				2DECC7291E78342C00FB815C /* ResourceIdentifier.swift */,
 				2D01B28E1E8123B300583A7C /* ResourceIdentifierWithRole.swift */,
 				2D01B28F1E8123B300583A7C /* ResourceLinks.swift */,
@@ -581,9 +572,7 @@
 				2DECC7521E78342C00FB815C /* Service.swift in Sources */,
 				2DECC73C1E78342C00FB815C /* ApiDocumentInclusion.swift in Sources */,
 				2DECC7501E78342C00FB815C /* Subscription.swift in Sources */,
-				2D01B2961E8123B300583A7C /* RelationshipObjectEnvelope.swift in Sources */,
 				2DD0B2B01E8282C20053B8F5 /* Bookmark.swift in Sources */,
-				2D01B2951E8123B300583A7C /* RelationshipObject.swift in Sources */,
 				2D01B2871E80DFBA00583A7C /* ImageMeta.swift in Sources */,
 				2DECC7451E78342C00FB815C /* ResourceIdentifier.swift in Sources */,
 				2D01B29A1E8123B300583A7C /* ResourceMeta.swift in Sources */,
@@ -601,7 +590,6 @@
 				2DECC73B1E78342C00FB815C /* ApiDocumentEnvelope.swift in Sources */,
 				2DECC7531E78342C00FB815C /* ServiceApi.swift in Sources */,
 				2DECC7481E78342C00FB815C /* Category.swift in Sources */,
-				2D01B2971E8123B300583A7C /* RelationshipObjectWithRoleEnvelope.swift in Sources */,
 				2DECC7441E78342C00FB815C /* ResourceType.swift in Sources */,
 				2D01B2991E8123B300583A7C /* ResourceLinks.swift in Sources */,
 				2DECC74F1E78342C00FB815C /* Review.swift in Sources */,

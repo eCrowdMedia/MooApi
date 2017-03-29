@@ -23,9 +23,9 @@ public struct Subscription: ResourceType {
   }
 
   public struct Relationships {
-    public let publisher: RelationshipObject
-    public let mainSubject: RelationshipObject
-    public let bookshelves: RelationshipObjectEnvelope
+    public let publisher: ResourceIdentifier
+    public let mainSubject: ResourceIdentifier
+    public let bookshelves: [ResourceIdentifier]
   }
 
   public struct Links {
@@ -67,7 +67,7 @@ extension Subscription.Relationships: Argo.Decodable {
     return curry(Subscription.Relationships.init)
       <^> json <| "publisher"
       <*> json <| "main_subject"
-      <*> json <| "library_items"
+      <*> (json <|| "library_items" <|> .success([]))
   }
 }
 

@@ -7,12 +7,17 @@
       "privacy": "everyone",
       "archive": false,
       "subscribable": false,
-      "conditions": {
-        "after": "2016-04-21T16:00:00Z",
-        "before": "2016-04-21T16:00:00Z"
-      },
-      "created_at": "2016-04-21T16:00:00Z",
-      "touched_at": "2016-04-21T16:00:00Z"
+      "policy": {
+        "type": "ticket",
+        "prohibitions": [
+          {
+            "action": "textToSpeech"
+          },
+          {
+            "action": "translate"
+          }
+        ]
+      }
     },
     "relationships": {
       "book": {

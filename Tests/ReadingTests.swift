@@ -28,6 +28,7 @@ final internal class ReadingTests: XCTestCase {
     // Test attributes
     XCTAssertEqual(attributes.state, "finished")
     XCTAssertEqual(attributes.privacy, "everyone")
+    XCTAssertEqual(attributes.createdAt, "2013-12-12T03:55:14Z")
     XCTAssertEqual(attributes.startedAt, "2013-12-12T03:55:14Z")
     XCTAssertEqual(attributes.touchedAt, "2016-12-19T03:16:25Z")
     XCTAssertEqual(attributes.endedAt, "2015-12-15T07:33:23Z")

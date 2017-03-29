@@ -16,10 +16,10 @@ public struct Comment: ResourceType {
   }
 
   public struct Relationships {
-    public let replyTo: RelationshipObject
-    public let commentator: RelationshipObject
-    public let highlight: RelationshipObject
-    public let review: RelationshipObject
+    public let replyTo: ResourceIdentifier?
+    public let commentator: ResourceIdentifier
+    public let highlight: ResourceLinks
+    public let review: ResourceIdentifier?
   }
 
   public struct Links {
@@ -49,10 +49,10 @@ extension Comment.Attributes: Argo.Decodable {
 extension Comment.Relationships: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Comment.Relationships> {
     return curry(Comment.Relationships.init)
-      <^> json <| "reply_to"
+      <^> json <|? "reply_to"
       <*> json <| "commentator"
       <*> json <| "highlight"
-      <*> json <| "review"
+      <*> json <|? "review"
   }
 }
 

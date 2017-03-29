@@ -22,7 +22,7 @@ public struct Book: ResourceType {
     public let isAdultOnly: Bool
     public let epub: Epub
     public let isSuspend: Bool
-    public let isOwn: Bool?
+    public let isOwn: Bool
     public let prices: [Price]
     public let count: Count
 
@@ -51,9 +51,9 @@ public struct Book: ResourceType {
   }
 
   public struct Relationships {
-    public let publisher: RelationshipObject
-    public let contributors: RelationshipObjectWithRoleEnvelope
-    public let mainSubject: RelationshipObject
+    public let publisher: ResourceIdentifier
+    public let contributors: [ResourceIdentifierWithRole]
+    public let mainSubject: ResourceIdentifier
   }
 
   public struct Links {
@@ -97,7 +97,7 @@ extension Book.Attributes: Argo.Decodable {
       <*> json <| "suspend"
       
     return tmp3 
-      <*> json <|? "own"
+      <*> (json <| "own" <|> .success(false))
       <*> json <|| "prices"
       <*> json <| "count"
   }
@@ -141,7 +141,7 @@ extension Book.Relationships: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Book.Relationships> {
     return curry(Book.Relationships.init)
       <^> json <| "publisher"
-      <*> json <| "contributors"
+      <*> json <|| "contributors"
       <*> json <| "main_subject"
   }
 }

@@ -15,10 +15,10 @@ public struct Bookmark: ResourceType {
   }
   
   public struct Relationships {
-    public let book: RelationshipObject
-    public let user: RelationshipObject
-    public let reading: RelationshipObject
-    public let path: RelationshipObject
+    public let book: ResourceIdentifier
+    public let user: ResourceIdentifier
+    public let reading: ResourceIdentifier
+    public let path: ResourceIdentifier
   }
   
   public struct Links {

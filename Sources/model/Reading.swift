@@ -13,6 +13,7 @@ public struct Reading: ResourceType {
   public struct Attributes {
     public let state: String
     public let privacy: String
+    public let createdAt: String
     public let startedAt: String?
     public let touchedAt: String?
     public let endedAt: String?
@@ -27,10 +28,10 @@ public struct Reading: ResourceType {
   }
 
   public struct Relationships {
-    public let book: RelationshipObject
-    public let bookmarks: RelationshipObject
-    public let highlights: RelationshipObject
-    public let review: RelationshipObject
+    public let book: ResourceIdentifier
+    public let bookmarks: ResourceLinks
+    public let highlights: ResourceLinks
+    public let review: ResourceIdentifier?
   }
 
   public struct Links {
@@ -52,12 +53,15 @@ extension Reading: Argo.Decodable {
 
 extension Reading.Attributes: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Reading.Attributes> {
-    return curry(Reading.Attributes.init)
+    let tmp1 = curry(Reading.Attributes.init)
       <^> json <| "state"
       <*> json <| "privacy"
+      <*> json <| "created_at"
       <*> json <|? "started_at"
       <*> json <|? "touched_at"
       <*> json <|? "ended_at"
+    
+    return tmp1
       <*> json <| "duration"
       <*> json <| "progress"
       <*> json <| "comments_count"
@@ -75,7 +79,7 @@ extension Reading.Relationships: Argo.Decodable {
       <^> json <| "book"
       <*> json <| "bookmarks"
       <*> json <| "highlights"
-      <*> json <| "review"
+      <*> json <|? "review"
   }
 }
 

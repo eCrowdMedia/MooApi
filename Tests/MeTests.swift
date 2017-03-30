@@ -13,7 +13,7 @@ final internal class MeTests: XCTestCase {
     let result = ApiDocument<MooApi.Me>.decode(json)
     
     guard let me = result.value?.data else {
-      XCTFail()
+      XCTFail("\(result.error.debugDescription)")
       return
     }
 

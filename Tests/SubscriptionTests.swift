@@ -13,7 +13,7 @@ final internal class SubscriptionTests: XCTestCase {
     let result = ApiDocument<Subscription>.decode(json)
 
     guard let subscription = result.value?.data else {
-      XCTFail()
+      XCTFail("\(result.error.debugDescription)")
       return
     }
 
@@ -37,11 +37,11 @@ final internal class SubscriptionTests: XCTestCase {
     XCTAssertEqual(attributes.isAutoRenew, false)
 
     // Test relationships
-    XCTAssertEqual(relationships.publisher.data?.type, "publishers")
-    XCTAssertEqual(relationships.publisher.data?.id, "499")
-    XCTAssertEqual(relationships.mainSubject.data?.type, "categories")
-    XCTAssertEqual(relationships.mainSubject.data?.id, "184")
-    XCTAssertEqual(relationships.bookshelves.data.count, 6)
+    XCTAssertEqual(relationships.publisher.type, "publishers")
+    XCTAssertEqual(relationships.publisher.id, "499")
+    XCTAssertEqual(relationships.mainSubject.type, "categories")
+    XCTAssertEqual(relationships.mainSubject.id, "184")
+    XCTAssertEqual(relationships.bookshelves.count, 6)
 
     // Test links
     XCTAssertEqual(links.selfLink, "https://api.readmoo.com/read/v2/me/library/subscriptions/185")

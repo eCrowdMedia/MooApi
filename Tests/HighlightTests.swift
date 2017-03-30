@@ -13,8 +13,7 @@ final internal class HighlightTests: XCTestCase {
     let result = ApiDocument<MooApi.Highlight>.decode(json)
  
     guard result.error == nil else {
-      print("HighlightTests error: \(result.error.debugDescription)")
-      XCTFail()
+      XCTFail("\(result.error.debugDescription)")
       return
     }
     
@@ -29,31 +28,31 @@ final internal class HighlightTests: XCTestCase {
 
     // Test type and id
     XCTAssertEqual(highlight.type, "highlights")
-    XCTAssertEqual(highlight.id, "200197")
+    XCTAssertEqual(highlight.id, "200194")
     
     // Test attributes
     XCTAssertEqual(attributes.privacy, "everyone")
     XCTAssertEqual(attributes.commentsCount, 0)
     XCTAssertEqual(attributes.likesCount, 0)
-    XCTAssertEqual(attributes.highlightedAt, "2017-01-04T02:58:25Z")
+    XCTAssertEqual(attributes.highlightedAt, "2017-01-04T02:58:10Z")
 
     // Test relationships
-    XCTAssertEqual(relationships.book.data?.type, "books")
-    XCTAssertEqual(relationships.book.data?.id, "210010466000101")
+    XCTAssertEqual(relationships.book.type, "books")
+    XCTAssertEqual(relationships.book.id, "210010466000101")
 
-    XCTAssertEqual(relationships.reading.data?.type, "readings")
-    XCTAssertEqual(relationships.reading.data?.id, "51924")
+    XCTAssertEqual(relationships.reading.type, "readings")
+    XCTAssertEqual(relationships.reading.id, "51924")
 
-    XCTAssertEqual(relationships.range.data?.type, "ranges")
-    XCTAssertEqual(relationships.range.data?.id, "307378")
+    XCTAssertEqual(relationships.range.type, "ranges")
+    XCTAssertEqual(relationships.range.id, "307375")
 
-    XCTAssertEqual(relationships.comments.links?.related, "https://api.readmoo.com/read/v2/me/highlights/200197/comments")
+    XCTAssertEqual(relationships.comments.related, "https://api.readmoo.com/read/v2/me/highlights/200194/comments")
 
-    XCTAssertEqual(relationships.user.data?.type, "users")
-    XCTAssertEqual(relationships.user.data?.id, "lljl9jqlh")
+    XCTAssertEqual(relationships.user.type, "users")
+    XCTAssertEqual(relationships.user.id, "lljl9jqlh")
 
     // test links
-    XCTAssertEqual(links.selfLink, "https://api.readmoo.com/read/v2/me/highlights/200197")
+    XCTAssertEqual(links.selfLink, "https://api.readmoo.com/read/v2/me/highlights/200194")
 
     // Test included
     guard let inclusion = result.value?.included else {

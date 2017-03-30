@@ -11,13 +11,10 @@ final internal class BookShelvesTests: XCTestCase {
     let data = try! Data(contentsOf: URL(fileURLWithPath: path!))
     let json = JSON(try! JSONSerialization.jsonObject(with: data, options: []))
     let result = ApiDocument<Bookshelf>.decode(json)
-    
-    // Test all results
-    XCTAssertNil(result.error)
 
     // Test data
     guard let bookshelf = result.value?.data else {
-      XCTFail()
+      XCTFail("\(result.error.debugDescription)")
       return
     }
 
@@ -35,16 +32,13 @@ final internal class BookShelvesTests: XCTestCase {
       XCTAssertEqual(attributes.privacy, "everyone")
       XCTAssertEqual(attributes.isArchive, false)
       XCTAssertEqual(attributes.isSubscribable, false)
-      XCTAssertEqual(attributes.conditions?.before, "2016-04-21T16:00:00Z")
-      XCTAssertEqual(attributes.conditions?.after, "2016-04-21T16:00:00Z")
-      XCTAssertEqual(attributes.createdAt, "2016-04-21T16:00:00Z")
-      XCTAssertEqual(attributes.touchedAt, "2016-04-21T16:00:00Z")
+      XCTAssertEqual(attributes.policy?.type, "ticket")
+      XCTAssertEqual(attributes.policy?.permissions.isEmpty, true)
+      XCTAssertEqual(attributes.policy?.prohibitions.isEmpty, false)
 
       // Test relationships
-      XCTAssertEqual(relationships.book.data?.type, "books")
-      XCTAssertEqual(relationships.book.data?.id, "210068285000101")
-      XCTAssertEqual(relationships.reading.data?.type, "readings")
-      XCTAssertEqual(relationships.reading.data?.id, "784752")
+      XCTAssertEqual(relationships.reading.type, "readings")
+      XCTAssertEqual(relationships.reading.id, "784752")
 
       // Test links
       XCTAssertEqual(links.selfLink, "https://api.readmoo.com/read/v2/me/library/books/1022197")

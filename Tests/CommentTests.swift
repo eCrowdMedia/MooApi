@@ -13,8 +13,7 @@ final internal class CommentTests: XCTestCase {
     let result = ApiDocument<MooApi.Comment>.decode(json)
     
     guard result.error == nil else {
-      print("CommentTests error: \(result.error.debugDescription)")
-      XCTFail()
+      XCTFail("\(result.error.debugDescription)")
       return
     }
     
@@ -33,17 +32,17 @@ final internal class CommentTests: XCTestCase {
     
     // Test attributes
     XCTAssertEqual(attributes.content, "夏丏尊對教育發出的喟嘆，過了五十年再看，我們似乎仍然未跳出窠臼。")
-    XCTAssertEqual(attributes.postedAt, "2012-09-14 21:54:42")
+    XCTAssertEqual(attributes.postedAt, "2012-09-14T21:54:42Z")
     
     // Test relationships
-    XCTAssertNil(relationships.replyTo.data)
+    XCTAssertNil(relationships.replyTo)
 
-    XCTAssertEqual(relationships.commentator.data?.type, "users")
-    XCTAssertEqual(relationships.commentator.data?.id, "bb7a74k84")
+    XCTAssertEqual(relationships.commentator.type, "users")
+    XCTAssertEqual(relationships.commentator.id, "bb7a74k84")
 
-    XCTAssertEqual(relationships.highlight.links?.related, "https://api.readmoo.com/read/v2/comments/111/highlight")
+    XCTAssertEqual(relationships.highlight.related, "https://api.readmoo.com/read/v2/comments/111/highlight")
 
-    XCTAssertNil(relationships.review.data)
+    XCTAssertNil(relationships.review)
     
     // Test links
     XCTAssertEqual(links.selfLink, "https://api.readmoo.com/read/v2/comments/111")

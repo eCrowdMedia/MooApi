@@ -15,10 +15,10 @@ public struct Bookmark: ResourceType {
   }
   
   public struct Relationships {
-    public let book: RelationshipObject
-    public let user: RelationshipObject
-    public let reading: RelationshipObject
-    public let path: RelationshipObject
+    public let book: ResourceIdentifier
+    public let user: ResourceIdentifier
+    public let reading: ResourceIdentifier
+    public let path: ResourceIdentifier
   }
   
   public struct Links {
@@ -49,10 +49,10 @@ extension Bookmark.Attributes: Argo.Decodable {
 extension Bookmark.Relationships: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Bookmark.Relationships> {
     return curry(Bookmark.Relationships.init)
-      <^> json <| "book"
-      <*> json <| "user"
-      <*> json <| "reading"
-      <*> json <| "path"
+      <^> json <| ["book", "data"]
+      <*> json <| ["user", "data"]
+      <*> json <| ["reading", "data"]
+      <*> json <| ["path", "data"]
   }
 }
 

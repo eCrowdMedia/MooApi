@@ -13,7 +13,7 @@ final internal class PublisherTests: XCTestCase {
     let result = ApiDocument<MooApi.Publisher>.decode(json)
     
     guard let publisher = result.value?.data else {
-      XCTFail()
+      XCTFail("\(result.error.debugDescription)")
       return
     }
 

@@ -13,7 +13,7 @@ final internal class ReviewTests: XCTestCase {
     let result = ApiDocument<Review>.decode(json)
     
     guard let review = result.value?.data else {
-      XCTFail()
+      XCTFail("\(result.error.debugDescription)")
       return
     }
 
@@ -35,18 +35,6 @@ final internal class ReviewTests: XCTestCase {
 
     // Test links
     XCTAssertEqual(links.selfLink, "https://api.readmoo.com/read/v2/me/reviews/1971")
-
-    // Test included
-    guard let inclusion = result.value?.included else {
-      XCTFail("no included data")
-      return
-    }
-
-    XCTAssertEqual(inclusion.publishers.count, 1)
-    XCTAssertEqual(inclusion.contributors.isEmpty, false)
-    XCTAssertEqual(inclusion.categories.isEmpty, false)
-    XCTAssertEqual(inclusion.books.count, 1)
-    XCTAssertEqual(inclusion.readings.count, 1)
   }
   
 }

@@ -13,8 +13,7 @@ final internal class ReadingLogTests: XCTestCase {
     let result = ApiDocument<MooApi.ReadingLog>.decode(json)
  
     guard result.error == nil else {
-      print("error: \(result.error.debugDescription)")
-      XCTFail()
+      XCTFail("\(result.error.debugDescription)")
       return
     }
     
@@ -44,17 +43,17 @@ final internal class ReadingLogTests: XCTestCase {
     XCTAssertNil(attributes.longitude) // null
 
     // Test relationships
-    XCTAssertEqual(relationships.event.data?.type, "events")
-    XCTAssertEqual(relationships.event.data?.id, "7")
-    XCTAssertEqual(relationships.event.links?.related, "https://api.readmoo.com/read/v2/me/readinglogs/3272563/event")
+    XCTAssertEqual(relationships.event.type, "events")
+    XCTAssertEqual(relationships.event.id, "7")
+//    XCTAssertEqual(relationships.event.links?.related, "https://api.readmoo.com/read/v2/me/readinglogs/3272563/event")
 
-    XCTAssertEqual(relationships.parent.data?.type, "readinglogs")
-    XCTAssertEqual(relationships.parent.data?.id, "629017")
-    XCTAssertEqual(relationships.parent.links?.related, "https://api.readmoo.com/read/v2/me/readinglogs/3272563/parent")
+    XCTAssertEqual(relationships.parent?.type, "readinglogs")
+    XCTAssertEqual(relationships.parent?.id, "629017")
+//    XCTAssertEqual(relationships.parent.links?.related, "https://api.readmoo.com/read/v2/me/readinglogs/3272563/parent")
 
-    XCTAssertEqual(relationships.reading.data?.type, "readings")
-    XCTAssertEqual(relationships.reading.data?.id, "51924")
-    XCTAssertEqual(relationships.reading.links?.related, "https://api.readmoo.com/read/v2/me/readinglogs/3272563/reading")
+    XCTAssertEqual(relationships.reading.type, "readings")
+    XCTAssertEqual(relationships.reading.id, "51924")
+//    XCTAssertEqual(relationships.reading.links?.related, "https://api.readmoo.com/read/v2/me/readinglogs/3272563/reading")
 
     // test links
     XCTAssertEqual(links.selfLink, "https://api.readmoo.com/read/v2/me/readinglogs/3272563")

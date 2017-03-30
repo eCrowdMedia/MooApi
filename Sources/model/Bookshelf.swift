@@ -34,8 +34,8 @@ public struct Bookshelf: ResourceType {
     }
     
     public struct Constraint {
-      public let name: String?
-      public let constraintOperator: String
+      public let name: String
+      public let constraintOperator: String?
       public let rightOperand: String?
     }
   }
@@ -103,8 +103,8 @@ extension Bookshelf.Attributes.Prohibition: Argo.Decodable {
 extension Bookshelf.Attributes.Constraint: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Bookshelf.Attributes.Constraint> {
     return curry(Bookshelf.Attributes.Constraint.init)
-      <^> json <|? "name"
-      <*> json <| "operator"
+      <^> json <| "name"
+      <*> json <|? "operator"
       <*> json <|? "rightoperand"
   }
 }

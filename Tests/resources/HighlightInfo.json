@@ -1,12 +1,12 @@
 {
   "data": {
     "type": "highlights",
-    "id": "200197",
+    "id": "200194",
     "attributes": {
       "privacy_type": "everyone",
       "comments_count": 0,
       "likes_count": 0,
-      "highlighted_at": "2017-01-04T02:58:25Z"
+      "highlighted_at": "2017-01-04T02:58:10Z"
     },
     "relationships": {
       "book": {
@@ -30,17 +30,17 @@
       "range": {
         "data": {
           "type": "ranges",
-          "id": "307378"
+          "id": "307375"
         }
       },
       "comments": {
         "links": {
-          "related": "https://api.readmoo.com/read/v2/me/highlights/200197/comments"
+          "related": "https://api.readmoo.com/read/v2/me/highlights/200194/comments"
         }
       }
     },
     "links": {
-      "self": "https://api.readmoo.com/read/v2/me/highlights/200197"
+      "self": "https://api.readmoo.com/read/v2/me/highlights/200194"
     }
   },
   "included": [
@@ -231,6 +231,7 @@
       "attributes": {
         "state": "finished",
         "privacy": "everyone",
+        "created_at": "2013-12-12T03:55:14Z",
         "started_at": "2013-12-12T03:55:14Z",
         "touched_at": "2016-12-19T03:16:25Z",
         "ended_at": "2015-12-15T07:33:23Z",
@@ -270,7 +271,7 @@
     },
     {
       "type": "ranges",
-      "id": "307378",
+      "id": "307375",
       "attributes": {
         "file_version": "1.003",
         "position": 0,
@@ -278,20 +279,12 @@
         "cfi": "/6/14!",
         "title": null,
         "pre_content": null,
-        "content": "悲哀是力不如人。只要塵世一如格言所云：",
+        "content": "，我想反問人類一下。人類為什麼要從口中吸煙，從鼻子吐出呢？煙既不能飽腹，又",
         "post_content": null,
-        "referenced_count": 1
-      },
-      "relationships": {
-        "book": {
-          "data": {
-            "type": "books",
-            "id": "210010466000101"
-          }
-        }
+        "referenced_count": 4
       },
       "links": {
-        "self": "https://api.readmoo.com/read/v2/ranges/307378"
+        "self": "https://api.readmoo.com/read/v2/ranges/307375"
       }
     }
   ]

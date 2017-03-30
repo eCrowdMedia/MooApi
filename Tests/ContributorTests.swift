@@ -14,7 +14,7 @@ final internal class ContributorTests: XCTestCase {
     
     
     guard let contributor = result.value?.data else {
-      XCTFail()
+      XCTFail("\(result.error.debugDescription)")
       return
     }
 

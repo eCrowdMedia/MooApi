@@ -12,7 +12,7 @@ public struct Subscription: ResourceType {
 
   public struct Attributes {
     public let name: String
-    public let period: String
+    public let period: String?
     public let content: String
     public let productType: String
     public let isAdultOnly: Bool
@@ -51,7 +51,7 @@ extension Subscription.Attributes: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Subscription.Attributes> {
     return curry(Subscription.Attributes.init)
       <^> json <| "name"
-      <*> json <| "period"
+      <*> json <|? "period"
       <*> json <| "content"
       <*> json <| "product_type"
       <*> json <| "adult_only"

@@ -38,14 +38,18 @@ extension Range: Argo.Decodable {
 
 extension Range.Attributes: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Range.Attributes> {
-    return curry(Range.Attributes.init)
+    let tmp1 = curry(Range.Attributes.init)
       <^> json <| "file_version"
       <*> json <| "position"
       <*> json <| "chapter"
+    
+    let tmp2 = tmp1
       <*> json <| "cfi"
       <*> json <|? "title"
       <*> json <|? "pre_content"
       <*> json <| "content"
+    
+    return tmp2
       <*> json <|? "post_content"
       <*> json <| "referenced_count"
   }

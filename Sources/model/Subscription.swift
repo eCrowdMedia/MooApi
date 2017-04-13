@@ -49,15 +49,19 @@ extension Subscription: Argo.Decodable {
 
 extension Subscription.Attributes: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Subscription.Attributes> {
-    return curry(Subscription.Attributes.init)
+    let tmp1 = curry(Subscription.Attributes.init)
       <^> json <| "name"
       <*> json <|? "period"
       <*> json <| "content"
       <*> json <| "product_type"
+    
+    let tmp2 = tmp1
       <*> json <| "adult_only"
       <*> json <| "language"
       <*> json <| "delivered"
       <*> json <| "remaining"
+      
+    return tmp2
       <*> json <| "auto_renew"
   }
 }

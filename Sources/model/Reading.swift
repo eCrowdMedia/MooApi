@@ -58,16 +58,20 @@ extension Reading.Attributes: Argo.Decodable {
       <*> json <| "privacy"
       <*> json <| "created_at"
       <*> json <|? "started_at"
+      
+    let tmp2 = tmp1
       <*> json <|? "touched_at"
       <*> json <|? "ended_at"
-    
-    return tmp1
       <*> json <| "duration"
       <*> json <| "progress"
+    
+    let tmp3 = tmp2
       <*> json <| "comments_count"
       <*> json <| "highlights_count"
       <*> json <| "position"
       <*> json <|? "position_updated_at"
+    
+    return tmp3
       <*> json <|? "location"
       <*> json <| "rating"
   }

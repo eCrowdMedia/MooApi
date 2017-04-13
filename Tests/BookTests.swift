@@ -37,6 +37,7 @@ final internal class BookTests: XCTestCase {
     XCTAssertNotNil(attributes.largeDescription)
     XCTAssertEqual(attributes.isbn, "9789571365985")
     XCTAssertEqual(attributes.language, "zh-Hant")
+    XCTAssertEqual(attributes.mainSubject, "商業理財")
     XCTAssertEqual(attributes.publicationDate, "2016-04-21T16:00:00Z")
     XCTAssertEqual(attributes.isAdultOnly, false)
     XCTAssertEqual(attributes.epub.rendition.layout, "reflowable")
@@ -62,6 +63,9 @@ final internal class BookTests: XCTestCase {
     XCTAssertEqual(attributes.count.amount, 68939)
     
     XCTAssertEqual(links.selfLink, "https://api.readmoo.com/read/v2/books/210068285000101")
+    XCTAssertEqual(links.epub, "https://cdn.readmoo.com/book/preview/210068285000101.epub")
+    XCTAssertEqual(links.toc, "https://cdn.readmoo.com/book/toc/preview/210068285000101.json")
+    XCTAssertEqual(links.reader, "https://readmoo.com/api/Statistics/preview_log/210068285000101")
     XCTAssertEqual(links.site, "https://readmoo.com/book/210068285000101")
     XCTAssertEqual(links.smallImage.href, "https://cdn.readmoo.com/cover/mr/dqjqtph_120x180.jpg?v=0")
     XCTAssertEqual(links.mediumImage.href, "https://cdn.readmoo.com/cover/mr/dqjqtph_210x315.jpg?v=0")
@@ -69,9 +73,8 @@ final internal class BookTests: XCTestCase {
     
     XCTAssertEqual(relationships.publisher.type, "publishers")
     XCTAssertEqual(relationships.publisher.id, "2")
-    XCTAssertEqual(relationships.mainSubject.type, "categories")
-    XCTAssertEqual(relationships.mainSubject.id, "136")
     XCTAssertEqual(relationships.contributors.count, 3)
+    XCTAssertEqual(relationships.categories.count, 1)
     
     let cArray = ["24984", "24985", "11793"]
     for (index, c) in relationships.contributors.enumerated() {

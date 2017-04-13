@@ -40,14 +40,18 @@ extension Path: Argo.Decodable {
 
 extension Path.Attributes: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Path.Attributes> {
-    return curry(Path.Attributes.init)
+    let tmp1 = curry(Path.Attributes.init)
       <^> json <| "file_version"
       <*> json <| "position"
       <*> json <| "chapter"
       <*> json <| "cfi"
+    
+    let tmp2 = tmp1
       <*> json <|? "title"
       <*> json <|? "pre_content"
       <*> json <| "content"
+    
+    return tmp2 
       <*> json <|? "post_content"
       <*> json <| "referenced_count"
   }

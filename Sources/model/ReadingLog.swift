@@ -48,15 +48,19 @@ extension ReadingLog: Argo.Decodable {
 
 extension ReadingLog.Attributes: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<ReadingLog.Attributes> {
-    return curry(ReadingLog.Attributes.init)
+    let tmp1 = curry(ReadingLog.Attributes.init)
       <^> json <| "identifier"
       <*> json <| "cfi"
       <*> json <|? "chapter"
       <*> json <| "duration"
+    
+    let tmp2 = tmp1
       <*> json <| "progress"
       <*> json <|? "touched_at"
       <*> json <| "user_agent"
       <*> json <|? "ip"
+    
+    return tmp2
       <*> json <|? "latitude"
       <*> json <|? "longitude"
   }

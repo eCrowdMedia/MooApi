@@ -18,6 +18,7 @@ public struct Book: ResourceType {
     public let largeDescription: String?
     public let isbn: String?
     public let language: String
+    public let mainSubject: String
     public let publicationDate: String?
     public let isAdultOnly: Bool
     public let epub: Epub
@@ -53,11 +54,14 @@ public struct Book: ResourceType {
   public struct Relationships {
     public let publisher: ResourceIdentifier
     public let contributors: [ResourceIdentifierWithRole]
-    public let mainSubject: ResourceIdentifier
+    public let categories: [ResourceIdentifier]
   }
 
   public struct Links {
     public let selfLink: String
+    public let epub: String
+    public let toc: String
+    public let reader: String
     public let site: String
     public let smallImage: ImageMeta
     public let mediumImage: ImageMeta
@@ -89,6 +93,7 @@ extension Book.Attributes: Argo.Decodable {
       <*> json <|? "description"
       <*> json <|? "isbn"
       <*> json <| "language"
+      <*> json <| "main_subject"
       <*> json <|? "publication_date"
       
     let tmp3 = tmp2
@@ -141,17 +146,24 @@ extension Book.Relationships: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Book.Relationships> {
     return curry(Book.Relationships.init)
       <^> json <| ["publisher", "data"]
-      <*> json <|| ["contributors", "data"]
-      <*> json <| ["main_subject", "data"]
+      <*> (json <|| ["contributors", "data"] <|> .success([]))
+      <*> (json <|| ["categories", "data"] <|> .success([]))
   }
 }
 
 extension Book.Links: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Book.Links> {
-    return curry(Book.Links.init)
+    let tmp1 = curry(Book.Links.init)
       <^> json <| "self"
+      <*> json <| "epub"
+      <*> json <| "toc"
+    
+    let tmp2 = tmp1
+      <*> json <| "reader"
       <*> json <| "site"
       <*> json <| "small"
+      
+    return tmp2
       <*> json <| "medium"
       <*> json <| "large"
   }

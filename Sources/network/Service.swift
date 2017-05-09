@@ -84,10 +84,11 @@ public struct Service {
 extension Service {
   
   public func fetchJSONModel<T: Argo.Decodable>(
+    queue: DispatchQueue?,
     completion: @escaping (Result<ApiDocument<T>, ServiceError>) -> Void)
     where T == T.DecodedType
   {
-    DispatchQueue.global(qos: .utility).async {
+    (queue ?? DispatchQueue.global(qos: .utility)).async {
       let task = URLSession.shared.dataTask(with: self.request) { data, response, error in
         // Checking if network error
         guard let data = data, let httpResponse = response as? HTTPURLResponse, error == nil else {
@@ -143,10 +144,11 @@ extension Service {
   }
   
   public func fetchJSONModels<T: Argo.Decodable>(
+    queue: DispatchQueue?,
     completion: @escaping (Result<ApiDocumentEnvelope<T>, ServiceError>) -> Void)
     where T == T.DecodedType
   {
-    DispatchQueue.global(qos: .utility).async {
+    (queue ?? DispatchQueue.global(qos: .utility)).async {
       let task = URLSession.shared.dataTask(with: self.request) { data, response, error in
         // Checking if network error
         guard let data = data, let httpResponse = response as? HTTPURLResponse, error == nil else {

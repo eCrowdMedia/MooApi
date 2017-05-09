@@ -12,27 +12,37 @@ public enum ServiceMethod: String {
 public struct Service {
   public let url: URL
   public let method: ServiceMethod
-  public let accessToken: String
+  public let authorization: Authorization
   public let parameters: [String: String]?
   
-  public init(_ method: ServiceMethod, url: URL, accessToken: String, parameters: [String: String]? = nil) {
+  public init(
+    _ method: ServiceMethod,
+    url: URL, 
+    authorization: Authorization, 
+    parameters: [String: String]? = nil)
+  {
     self.url = url
     self.method = method
-    self.accessToken = accessToken
+    self.authorization = authorization
     self.parameters = parameters
   }
   
-  public init(_ method: ServiceMethod, api: ServiceApi, accessToken: String, parameters: [String: String]? = nil) {
+  public init(
+    _ method: ServiceMethod,
+    api: ServiceApi,
+    authorization: Authorization,
+    parameters: [String: String]? = nil)
+  {
     self.url = URL(string: api.baseURL + api.path)!
     self.method = method
-    self.accessToken = accessToken
+    self.authorization = authorization
     self.parameters = parameters
   }
   
   public var request: URLRequest {
     var request = URLRequest(url: urlComponents.url!)
     request.httpMethod = method.rawValue
-    request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+    request.setValue(authorization.header.value, forHTTPHeaderField: authorization.header.field)
     
     httpHeaders.forEach { (dict) in
       let headerField = dict.key

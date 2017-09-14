@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "MooApi"
-  s.version      = "0.2.1"
+  s.version      = "0.2.2"
 
   s.summary      = "Readmoo JSON:API framework for iOS in Swift."
   s.homepage     = "https://github.com/eCrowdMedia/MooApi"
@@ -17,11 +17,11 @@ Pod::Spec.new do |s|
   s.requires_arc   = true
   s.compiler_flags = "-whole-module-optimization"
 
-  s.dependency "Argo", "~> 4.1"
-  s.dependency "Curry", "~> 3.0"
-  s.dependency "Runes", "~> 4.0"
-  s.dependency "Result", "~> 3.2"
+  s.dependency "Argo", "~> 4.1.2"
+  s.dependency "Curry", "~> 3.0.0"
+  s.dependency "Runes", "~> 4.1.0"
+  s.dependency "Result", "~> 3.2.3"
 
-  s.pod_target_xcconfig = { "SWIFT_VERSION" => "3.0" }
+  s.pod_target_xcconfig = { "SWIFT_VERSION" => "4.0" }
 
 end

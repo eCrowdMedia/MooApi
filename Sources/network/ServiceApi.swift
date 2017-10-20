@@ -24,13 +24,13 @@ public enum ServiceApi {
   case meHighlights(highlightId: String)
   case meReadingsHighlights(readingId: String)
   case meReadingLogs(readingLogId: String)
-
+  
   var baseURL: String {
-    #if DEVELOPMENT
-      return "https://api.readmoo.tw/read/v2"
-    #else
-      return "https://api.readmoo.com/read/v2"
-    #endif
+    return "https://api.readmoo.com/read/v2"
+    
+  }
+  var developBaseURL: String {
+    return "https://api.readmoo.tw/read/v2"
   }
   
   var path: String {

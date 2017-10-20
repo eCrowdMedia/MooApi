@@ -26,55 +26,59 @@ public enum ServiceApi {
   case meReadingLogs(readingLogId: String)
 
   var baseURL: String {
-    return "https://api.readmoo.com"
+    #if DEVELOPMENT
+      return "https://api.readmoo.tw/read/v2"
+    #else
+      return "https://api.readmoo.com/read/v2"
+    #endif
   }
   
   var path: String {
     switch self {
     case let .meLibraryBooks(id):
-      return "/read/v2/me/library/books" + format(id)
+      return "/me/library/books" + format(id)
     case let .meLibraryMagazines(id):
-      return "/read/v2/me/library/magazines" + format(id)
+      return "/me/library/magazines" + format(id)
     case .meLibraryPublications:
-      return "/read/v2/me/library/publications"
+      return "/me/library/publications"
     case let .meLibrarySubscriptions(id):
-      return "/read/v2/me/library/subscriptions" + format(id)
+      return "/me/library/subscriptions" + format(id)
     case let .marathons(id):
-      return "/read/v2/marathons" + format(id)
+      return "/marathons" + format(id)
     case let .meReadings(id):
-      return "/read/v2/me/readings" + format(id)
+      return "/me/readings" + format(id)
     case .meActivity:
-      return "/read/v2/me/activity"
+      return "/me/activity"
     case let .meReviews(id):
-      return "/read/v2/me/reviews/\(id)"
+      return "/me/reviews/\(id)"
     case let .books(id):
-      return "/read/v2/books/\(id)"
+      return "/books/\(id)"
     case let .categories(id):
-      return "/read/v2/categories/\(id)"
+      return "/categories/\(id)"
     case let .contributors(id):
-      return "/read/v2/contributors/\(id)"
+      return "/contributors/\(id)"
     case let .fragmentsPaths(id):
-      return "/read/v2/fragments/paths/\(id)"
+      return "/fragments/paths/\(id)"
     case let .fragmentsRanges(id):
-      return "/read/v2/fragments/ranges/\(id)"
+      return "/fragments/ranges/\(id)"
     case let .publishers(id):
-      return "/read/v2/publishers/\(id)"
+      return "/publishers/\(id)"
     case let .comments(id):
-      return "/read/v2/comments/\(id)"
+      return "/comments/\(id)"
     case .me:
-      return "/read/v2/me"
+      return "/me"
     case let .userId(id):
-      return "/read/v2/users/\(id)"
+      return "/users/\(id)"
     case let .meBookmarks(id):
-      return "/read/v2/me/bookmarks/\(id)"
+      return "/me/bookmarks/\(id)"
     case let .meReadingsBookmarks(id):
-      return "/read/v2/me/readings/\(id)/bookmarks"
+      return "/me/readings/\(id)/bookmarks"
     case let .meHighlights(id):
-      return "/read/v2/me/highlights/\(id)"
+      return "/me/highlights/\(id)"
     case let .meReadingsHighlights(id):
-      return "/read/v2/me/readings/\(id)/highlights"
+      return "/me/readings/\(id)/highlights"
     case let .meReadingLogs(id):
-      return "/read/v2/me/readinglogs/\(id)"
+      return "/me/readinglogs/\(id)"
     }
   }
   

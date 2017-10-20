@@ -6,7 +6,7 @@ public struct User: ResourceType {
   
   public let type: String
   public let id: String
-  public let attributes: Attributes
+  public let attributes: Attributes?
   public let links: Links
   
   public struct Attributes {
@@ -15,9 +15,9 @@ public struct User: ResourceType {
   
   public struct Links {
     public let selfLink: String
-    public let smallImage: ImageMeta
-    public let mediumImage: ImageMeta
-    public let largeImage: ImageMeta
+    public let smallImage: ImageMeta?
+    public let mediumImage: ImageMeta?
+    public let largeImage: ImageMeta?
   }
 }
 
@@ -26,7 +26,7 @@ extension User: Argo.Decodable {
     return curry(User.init)
       <^> json <| "type"
       <*> json <| "id"
-      <*> json <| "attributes"
+      <*> json <|? "attributes"
       <*> json <| "links"
   }
 }
@@ -42,8 +42,8 @@ extension User.Links: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<User.Links> {
     return curry(User.Links.init)
       <^> json <| "self"
-      <*> json <| "small"
-      <*> json <| "medium"
-      <*> json <| "large"
+      <*> json <|? "small"
+      <*> json <|? "medium"
+      <*> json <|? "large"
   }
 }

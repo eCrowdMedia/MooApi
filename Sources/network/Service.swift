@@ -116,20 +116,20 @@ public struct Service {
 
 extension Service {
   
-  public func fetchJSONRaw (
+  public func fetchJSONRaw(with request: URLRequest,
     queue: DispatchQueue?,
-    completion: @escaping (Result<Any, ServiceError>) -> Void) {
+    completion: @escaping (Any?, ServiceError?) -> Void) {
     (queue ?? DispatchQueue.global(qos: .utility)).async {
-      let task = URLSession.shared.dataTask(with: self.request) { data, response, error in
+      let task = URLSession.shared.dataTask(with: request) { data, response, error in
         // Checking if network error
         guard let data = data, let httpResponse = response as? HTTPURLResponse, error == nil else {
-          completion(.failure(ServiceError.network(error: error!)))
+          completion(nil, .network(error: error!))
           return
         }
         
         // Checking if json serialize error
         guard let jsonObject = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) else {
-          completion(.failure(.serializeJSONFailed))
+          completion(nil, .serializeJSONFailed)
           return
         }
         
@@ -138,25 +138,24 @@ extension Service {
         // Checking if server failed
         if statusCode >= 500 {
           let reason = try? ApiDocumentErrorEnvelope.decode(JSON(jsonObject)).dematerialize()
-          completion(.failure(.serverFailedToReach(statusCode: statusCode, reason: reason)))
+          completion(nil, .serverFailedToReach(statusCode: statusCode, reason: reason))
           return
         }
         
         // Checking if api failed
         if 400 ..< 500 ~= statusCode {
           let reason = try? ApiDocumentErrorEnvelope.decode(JSON(jsonObject)).dematerialize()
-          completion(.failure(.apiExecitionFailed(statusCode: statusCode, reason: reason)))
+          completion(nil, .apiExecitionFailed(statusCode: statusCode, reason: reason))
           return
         }
         
         // Checking if api with successful response
         guard 200..<300 ~= statusCode else {
           let reason = try? ApiDocumentErrorEnvelope.decode(JSON(jsonObject)).dematerialize()
-          completion(.failure(.invalidApi(statusCode: statusCode, reason: reason)))
+          completion(nil, .invalidApi(statusCode: statusCode, reason: reason))
           return
         }
-        
-        completion(.success(jsonObject))
+        completion(jsonObject, nil)
       }
       
       task.resume()
@@ -166,7 +165,6 @@ extension Service {
   public func fetchJSONModel<T: Argo.Decodable>(
     queue: DispatchQueue?,
     completion: @escaping (Result<ApiDocument<T>, ServiceError>) -> Void)
-    where T == T.DecodedType
   {
     (queue ?? DispatchQueue.global(qos: .utility)).async {
       let task = URLSession.shared.dataTask(with: self.request) { data, response, error in
@@ -226,7 +224,6 @@ extension Service {
   public func fetchJSONModels<T: Argo.Decodable>(
     queue: DispatchQueue?,
     completion: @escaping (Result<ApiDocumentEnvelope<T>, ServiceError>) -> Void)
-    where T == T.DecodedType
   {
     (queue ?? DispatchQueue.global(qos: .utility)).async {
       let task = URLSession.shared.dataTask(with: self.request) { data, response, error in

@@ -32,6 +32,22 @@ public struct Service {
   
   public init(
     _ method: ServiceMethod,
+    api: MemberApi,
+    authorization: Authorization,
+    parameters: [String: String]? = nil,
+    httpBody: Data? = nil,
+    isDevelopMent: Bool = false)
+  {
+    let baseURL = isDevelopMent ? api.developMemberURL : api.memberURL
+    self.url = URL(string: baseURL + api.path)!
+    self.method = method
+    self.authorization = authorization
+    self.parameters = parameters
+    self.httpBody = httpBody
+  }
+  
+  public init(
+    _ method: ServiceMethod,
     api: ServiceApi,
     authorization: Authorization,
     parameters: [String: String]? = nil,
@@ -44,6 +60,15 @@ public struct Service {
     self.authorization = authorization
     self.parameters = parameters
     self.httpBody = httpBody
+  }
+  
+  public var oauthRequest: URLRequest {
+    var request = URLRequest(url: urlComponents.url!)
+    request.httpMethod = method.rawValue
+    request.setValue(authorization.header.value, forHTTPHeaderField: authorization.header.field)
+    request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+    request.httpBody = httpBody
+    return request
   }
   
   public var request: URLRequest {

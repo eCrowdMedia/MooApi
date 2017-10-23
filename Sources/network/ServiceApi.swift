@@ -25,10 +25,12 @@ public enum ServiceApi {
   case meReadingsHighlights(readingId: String)
   case meReadingLogs(readingLogId: String)
   
+  
   var baseURL: String {
     return "https://api.readmoo.com/read/v2"
     
   }
+  
   var developBaseURL: String {
     return "https://api.readmoo.tw/read/v2"
   }

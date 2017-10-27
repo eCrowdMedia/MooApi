@@ -25,10 +25,10 @@ public enum ServiceApi {
   case meReadingsHighlights(readingId: String)
   case meReadingLogs(readingLogId: String)
   case mePublickey(uuid: String)
+  case meLibraryCompare(clientId: String)
   
   var baseURL: String {
     return "https://api.readmoo.com/read/v2"
-    
   }
   
   var developBaseURL: String {
@@ -83,6 +83,8 @@ public enum ServiceApi {
       return "/me/readinglogs/\(id)"
     case let .mePublickey(uuid):
       return "/me/devices/\(uuid)/publickey"
+    case let .meLibraryCompare(id):
+      return "/me/library/compare?extra=reading&client_id=\(id)"
     }
   }
   

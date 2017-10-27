@@ -8,22 +8,25 @@
 
 import Foundation
 
-public enum MemberApi {
+public enum MemberApi: ApiProtocol {
   case oauthToken
   
-  var memberURL: String {
-    return "https://member.readmoo.com"
-  }
-  
-  var developMemberURL: String {
+  public var developURI: String {
     return "https://member.readmoo.tw"
   }
   
-  var path: String {
+  public var baseURI: String {
+    return "https://member.readmoo.com"
+  }
+  
+  public var path: String {
     switch self {
     case .oauthToken:
       return "/oauth/access_token"
     }
   }
   
+  var type: String {
+    return String(describing: self.self)
+  }
 }

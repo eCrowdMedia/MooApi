@@ -1,6 +1,6 @@
 import Foundation
 
-public enum ServiceApi {
+public enum ServiceApi: ApiProtocol {
   
   case meLibraryBooks(String?)
   case meLibraryMagazines(String?)
@@ -27,15 +27,15 @@ public enum ServiceApi {
   case mePublickey(uuid: String)
   case meLibraryCompare(clientId: String)
   
-  var baseURL: String {
-    return "https://api.readmoo.com/read/v2"
-  }
-  
-  var developBaseURL: String {
+  public var developURI: String {
     return "https://api.readmoo.tw/read/v2"
   }
   
-  var path: String {
+  public var baseURI: String {
+    return "https://api.readmoo.com/read/v2"
+  }
+  
+  public var path: String {
     switch self {
     case let .meLibraryBooks(id):
       return "/me/library/books" + format(id)
@@ -87,7 +87,6 @@ public enum ServiceApi {
       return "/me/library/compare?extra=reading&client_id=\(id)"
     }
   }
-  
 
   private func format(_ id: String?) -> String {
     switch id {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		18A586F31F9DC2E70086799C /* MemberApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A586F21F9DC2E70086799C /* MemberApi.swift */; };
+		18C9193E1FA32C2700236B77 /* ApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C9193D1FA32C2700236B77 /* ApiProtocol.swift */; };
 		2D01B2851E80DBFA00583A7C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D01B2841E80DBFA00583A7C /* User.swift */; };
 		2D01B2871E80DFBA00583A7C /* ImageMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D01B2861E80DFBA00583A7C /* ImageMeta.swift */; };
 		2D01B2921E8123B300583A7C /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D01B2881E8123B300583A7C /* Comment.swift */; };
@@ -94,6 +95,7 @@
 		0E33F782E0073799ADBED2B9 /* Pods-MooApiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MooApiTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MooApiTests/Pods-MooApiTests.debug.xcconfig"; sourceTree = "<group>"; };
 		110973FEE85D15DA6F97BB95 /* Pods-MooApiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MooApiTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MooApiTests/Pods-MooApiTests.release.xcconfig"; sourceTree = "<group>"; };
 		18A586F21F9DC2E70086799C /* MemberApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberApi.swift; sourceTree = "<group>"; };
+		18C9193D1FA32C2700236B77 /* ApiProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProtocol.swift; sourceTree = "<group>"; };
 		1912B8AFB0B5DB47E4381079 /* Pods_MooApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MooApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B902AC683F22B3462417513 /* Pods-MooApi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MooApi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MooApi/Pods-MooApi.debug.xcconfig"; sourceTree = "<group>"; };
 		2D01B2841E80DBFA00583A7C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				2DECC7371E78342C00FB815C /* Service.swift */,
+				18C9193D1FA32C2700236B77 /* ApiProtocol.swift */,
 				2DECC7381E78342C00FB815C /* ServiceApi.swift */,
 				18A586F21F9DC2E70086799C /* MemberApi.swift */,
 				2DECC7391E78342C00FB815C /* ServiceError.swift */,
@@ -621,6 +624,7 @@
 				2DECC74C1E78342C00FB815C /* Publisher.swift in Sources */,
 				2DECC7461E78342C00FB815C /* Book.swift in Sources */,
 				2D01B2931E8123B300583A7C /* Highlight.swift in Sources */,
+				18C9193E1FA32C2700236B77 /* ApiProtocol.swift in Sources */,
 				2DECC74D1E78342C00FB815C /* Reading.swift in Sources */,
 				2DECC73D1E78342C00FB815C /* ApiDocumentLinks.swift in Sources */,
 				2DD0B2B21E8282E20053B8F5 /* Path.swift in Sources */,

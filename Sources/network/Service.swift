@@ -32,31 +32,15 @@ public struct Service {
     self.httpBody = httpBody
   }
   
-  public init(
+  public init<T: ApiProtocol>(
     _ method: ServiceMethod,
-    api: MemberApi,
+    api: T,
     authorization: Authorization,
     parameters: [String: String]? = nil,
     httpBody: Data? = nil,
     isDevelopMent: Bool = false)
   {
-    let baseURL = isDevelopMent ? api.developMemberURL : api.memberURL
-    self.url = URL(string: baseURL + api.path)!
-    self.method = method
-    self.authorization = authorization
-    self.parameters = parameters
-    self.httpBody = httpBody
-  }
-  
-  public init(
-    _ method: ServiceMethod,
-    api: ServiceApi,
-    authorization: Authorization,
-    parameters: [String: String]? = nil,
-    httpBody: Data? = nil,
-    isDevelopMent: Bool = false)
-  {
-    let baseURL = isDevelopMent ? api.developBaseURL : api.baseURL
+    let baseURL = isDevelopMent ? api.developURI : api.baseURI
     self.url = URL(string: baseURL + api.path)!
     self.method = method
     self.authorization = authorization

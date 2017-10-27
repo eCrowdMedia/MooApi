@@ -6,11 +6,13 @@ public struct User: ResourceType {
   
   public let type: String
   public let id: String
-  public let attributes: Attributes?
+  public let attributes: Attributes
   public let links: Links
   
   public struct Attributes {
     public let nickname: String
+    public let email: String
+    public let activateStatus: String
   }
   
   public struct Links {
@@ -26,7 +28,7 @@ extension User: Argo.Decodable {
     return curry(User.init)
       <^> json <| "type"
       <*> json <| "id"
-      <*> json <|? "attributes"
+      <*> json <| "attributes"
       <*> json <| "links"
   }
 }
@@ -35,6 +37,8 @@ extension User.Attributes: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<User.Attributes> {
     return curry(User.Attributes.init)
       <^> json <| "nickname"
+      <*> json <| "email"
+      <*> json <| "activate_status"
   }
 }
 

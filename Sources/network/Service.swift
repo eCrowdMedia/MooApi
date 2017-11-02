@@ -10,8 +10,7 @@ public enum ServiceMethod: String {
 }
 
 public struct Service {
-  public static let clientID = "d9aef1ec929da662e92e34434825bc5c"
-  public static let clientSecret = "7747bcea1ab134d1674aee5ed3b8c2c2"
+  
   public let url: URL
   public let method: ServiceMethod
   public let authorization: Authorization

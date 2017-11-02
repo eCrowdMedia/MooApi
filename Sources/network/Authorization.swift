@@ -20,3 +20,12 @@ extension Authorization {
   }
   
 }
+
+extension Authorization: Equatable {
+
+  public static func ==(lhs: Authorization, rhs: Authorization) -> Bool {
+    return lhs.header.value == rhs.header.value
+  }
+
+}
+

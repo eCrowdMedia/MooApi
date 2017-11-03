@@ -4,6 +4,12 @@ public struct DownloadEpubMission {
   public let bookId: String
   public let bookURL: URL
   public let authorization: Authorization
+  
+  public init(bookId: String, bookURL: URL, authorization: Authorization) {
+    self.bookId = bookId
+    self.bookURL = bookURL
+    self.authorization = authorization
+  }
 }
 
 extension DownloadEpubMission: Equatable {

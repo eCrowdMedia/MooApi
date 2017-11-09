@@ -63,8 +63,8 @@ extension DownloadEpubManager: DownloadEpubOperationDelegate {
     didCompleteWithError error: Error?,
     with mission: DownloadEpubMission)
   {
-    for o in observers {
-      o.downloadQueue(downloadQueue, didCompleteWithError: error, withMission: mission)
+    for observer in observers {
+      observer.downloadQueue(downloadQueue, didCompleteWithError: error, withMission: mission)
     }
   }
   
@@ -73,8 +73,8 @@ extension DownloadEpubManager: DownloadEpubOperationDelegate {
     didFinishDownloadingTo location: URL,
     with mission: DownloadEpubMission)
   {
-    for o in observers {
-      o.downloadQueue(downloadQueue, didFinishDownloadingTo: location, withMission: mission)
+    for observer in observers {
+      observer.downloadQueue(downloadQueue, didFinishDownloadingTo: location, withMission: mission)
     }
   }
   
@@ -85,8 +85,8 @@ extension DownloadEpubManager: DownloadEpubOperationDelegate {
     totalBytesExpectedToWrite: Int64,
     with mission: DownloadEpubMission)
   {
-    for o in observers {
-      o.downloadQueue(
+    for observer in observers {
+      observer.downloadQueue(
         downloadQueue,
         didWriteData: bytesWritten,
         totalBytesWritten: totalBytesWritten, 

@@ -4,6 +4,7 @@ public struct DownloadEpubMission {
   public let bookId: String
   public let bookURL: URL
   public let authorization: Authorization
+  //TODO: 為了續傳準備 now byte ＆ tatal byte ＆ checksum 需要紀錄
   
   public init(bookId: String, bookURL: URL, authorization: Authorization) {
     self.bookId = bookId

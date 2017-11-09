@@ -25,7 +25,6 @@ public enum ServiceApi: ApiProtocol {
   case meReadingsHighlights(readingId: String)
   case meReadingLogs(readingLogId: String)
   case mePublickey(uuid: String)
-  case meLibraryCompare(clientId: String)
   
   public var developURI: String {
     return "https://api.readmoo.tw/read/v2"
@@ -83,8 +82,6 @@ public enum ServiceApi: ApiProtocol {
       return "/me/readinglogs/\(id)"
     case let .mePublickey(uuid):
       return "/me/devices/\(uuid)/publickey"
-    case let .meLibraryCompare(id):
-      return "/me/library/compare?extra=reading&client_id=\(id)"
     }
   }
 

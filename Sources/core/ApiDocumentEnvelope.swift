@@ -2,7 +2,7 @@ import Argo
 import Curry
 import Runes
 
-public struct ApiDocumentEnvelope<T: Decodable> where T == T.DecodedType  {
+public struct ApiDocumentEnvelope<T: Argo.Decodable> where T == T.DecodedType  {
   public let data: [T]
   public let meta: ApiDocumentMeta?
   public let paginationLinks: ApiDocumentLinks?

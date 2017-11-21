@@ -10,33 +10,50 @@ public enum ServiceMethod: String {
 }
 
 public struct Service {
+  
   public let url: URL
   public let method: ServiceMethod
   public let authorization: Authorization
   public let parameters: [String: String]?
+  public let httpBody: Data?
   
   public init(
     _ method: ServiceMethod,
     url: URL, 
     authorization: Authorization, 
-    parameters: [String: String]? = nil)
+    parameters: [String: String]? = nil,
+    httpBody: Data? = nil)
   {
     self.url = url
     self.method = method
     self.authorization = authorization
     self.parameters = parameters
+    self.httpBody = httpBody
   }
   
-  public init(
+  public init<T: ApiProtocol>(
     _ method: ServiceMethod,
-    api: ServiceApi,
+    api: T,
     authorization: Authorization,
-    parameters: [String: String]? = nil)
+    parameters: [String: String]? = nil,
+    httpBody: Data? = nil,
+    isDevelopMent: Bool = false)
   {
-    self.url = URL(string: api.baseURL + api.path)!
+    let baseURL = isDevelopMent ? api.developURI : api.baseURI
+    self.url = URL(string: baseURL + api.path)!
     self.method = method
     self.authorization = authorization
     self.parameters = parameters
+    self.httpBody = httpBody
+  }
+  
+  public var oauthRequest: URLRequest {
+    var request = URLRequest(url: urlComponents.url!)
+    request.httpMethod = method.rawValue
+    request.setValue(authorization.header.value, forHTTPHeaderField: authorization.header.field)
+    request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+    request.httpBody = httpBody
+    return request
   }
   
   public var request: URLRequest {
@@ -50,6 +67,7 @@ public struct Service {
       request.setValue(headerValue, forHTTPHeaderField: headerField)
     }
     
+    request.httpBody = httpBody
     return request
   }
   
@@ -83,10 +101,55 @@ public struct Service {
 
 extension Service {
   
+  public func fetchJSONRaw(with request: URLRequest,
+    queue: DispatchQueue?,
+    completion: @escaping (Any?, ServiceError?) -> Void) {
+    (queue ?? DispatchQueue.global(qos: .utility)).async {
+      let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        // Checking if network error
+        guard let data = data, let httpResponse = response as? HTTPURLResponse, error == nil else {
+          completion(nil, .network(error: error!))
+          return
+        }
+        
+        // Checking if json serialize error
+        guard let jsonObject = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) else {
+          completion(nil, .serializeJSONFailed)
+          return
+        }
+        
+        let statusCode = httpResponse.statusCode
+        
+        // Checking if server failed
+        if statusCode >= 500 {
+          let reason = try? ApiDocumentErrorEnvelope.decode(JSON(jsonObject)).dematerialize()
+          completion(nil, .serverFailedToReach(statusCode: statusCode, reason: reason))
+          return
+        }
+        
+        // Checking if api failed
+        if 400 ..< 500 ~= statusCode {
+          let reason = try? ApiDocumentErrorEnvelope.decode(JSON(jsonObject)).dematerialize()
+          completion(nil, .apiExecitionFailed(statusCode: statusCode, reason: reason))
+          return
+        }
+        
+        // Checking if api with successful response
+        guard 200..<300 ~= statusCode else {
+          let reason = try? ApiDocumentErrorEnvelope.decode(JSON(jsonObject)).dematerialize()
+          completion(nil, .invalidApi(statusCode: statusCode, reason: reason))
+          return
+        }
+        completion(jsonObject, nil)
+      }
+      
+      task.resume()
+    }
+  }
+  
   public func fetchJSONModel<T: Argo.Decodable>(
     queue: DispatchQueue?,
     completion: @escaping (Result<ApiDocument<T>, ServiceError>) -> Void)
-    where T == T.DecodedType
   {
     (queue ?? DispatchQueue.global(qos: .utility)).async {
       let task = URLSession.shared.dataTask(with: self.request) { data, response, error in
@@ -146,7 +209,6 @@ extension Service {
   public func fetchJSONModels<T: Argo.Decodable>(
     queue: DispatchQueue?,
     completion: @escaping (Result<ApiDocumentEnvelope<T>, ServiceError>) -> Void)
-    where T == T.DecodedType
   {
     (queue ?? DispatchQueue.global(qos: .utility)).async {
       let task = URLSession.shared.dataTask(with: self.request) { data, response, error in

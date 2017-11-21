@@ -11,13 +11,15 @@ public struct User: ResourceType {
   
   public struct Attributes {
     public let nickname: String
+    public let email: String
+    public let activateStatus: String
   }
   
   public struct Links {
     public let selfLink: String
-    public let smallImage: ImageMeta
-    public let mediumImage: ImageMeta
-    public let largeImage: ImageMeta
+    public let smallImage: ImageMeta?
+    public let mediumImage: ImageMeta?
+    public let largeImage: ImageMeta?
   }
 }
 
@@ -35,6 +37,8 @@ extension User.Attributes: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<User.Attributes> {
     return curry(User.Attributes.init)
       <^> json <| "nickname"
+      <*> json <| "email"
+      <*> json <| "activate_status"
   }
 }
 
@@ -42,8 +46,8 @@ extension User.Links: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<User.Links> {
     return curry(User.Links.init)
       <^> json <| "self"
-      <*> json <| "small"
-      <*> json <| "medium"
-      <*> json <| "large"
+      <*> json <|? "small"
+      <*> json <|? "medium"
+      <*> json <|? "large"
   }
 }

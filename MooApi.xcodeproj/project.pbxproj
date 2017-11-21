@@ -13,6 +13,7 @@
 		183EFB381FAC2A1500C84CD5 /* DownloadEpubOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183EFB341FAC2A1500C84CD5 /* DownloadEpubOperation.swift */; };
 		18A586F31F9DC2E70086799C /* MemberApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A586F21F9DC2E70086799C /* MemberApi.swift */; };
 		18C9193E1FA32C2700236B77 /* ApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C9193D1FA32C2700236B77 /* ApiProtocol.swift */; };
+		18CB970B1FC3FF12007D5405 /* Devices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB970A1FC3FF12007D5405 /* Devices.swift */; };
 		2D01B2851E80DBFA00583A7C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D01B2841E80DBFA00583A7C /* User.swift */; };
 		2D01B2871E80DFBA00583A7C /* ImageMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D01B2861E80DFBA00583A7C /* ImageMeta.swift */; };
 		2D01B2921E8123B300583A7C /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D01B2881E8123B300583A7C /* Comment.swift */; };
@@ -104,6 +105,7 @@
 		183EFB341FAC2A1500C84CD5 /* DownloadEpubOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadEpubOperation.swift; sourceTree = "<group>"; };
 		18A586F21F9DC2E70086799C /* MemberApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberApi.swift; sourceTree = "<group>"; };
 		18C9193D1FA32C2700236B77 /* ApiProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProtocol.swift; sourceTree = "<group>"; };
+		18CB970A1FC3FF12007D5405 /* Devices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Devices.swift; sourceTree = "<group>"; };
 		1912B8AFB0B5DB47E4381079 /* Pods_MooApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MooApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B902AC683F22B3462417513 /* Pods-MooApi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MooApi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MooApi/Pods-MooApi.debug.xcconfig"; sourceTree = "<group>"; };
 		2D01B2841E80DBFA00583A7C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 				2DECC7351E78342C00FB815C /* Subscription.swift */,
 				2DECC7361E78342C00FB815C /* Tag.swift */,
 				2D01B2841E80DBFA00583A7C /* User.swift */,
+				18CB970A1FC3FF12007D5405 /* Devices.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -615,6 +618,7 @@
 				2DECC7451E78342C00FB815C /* ResourceIdentifier.swift in Sources */,
 				2D01B29A1E8123B300583A7C /* ResourceMeta.swift in Sources */,
 				2DECC74B1E78342C00FB815C /* Marathon.swift in Sources */,
+				18CB970B1FC3FF12007D5405 /* Devices.swift in Sources */,
 				2DECC7491E78342C00FB815C /* Contributor.swift in Sources */,
 				2DECC74E1E78342C00FB815C /* ReadingLog.swift in Sources */,
 				2DECC74A1E78342C00FB815C /* Event.swift in Sources */,

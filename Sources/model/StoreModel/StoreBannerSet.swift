@@ -22,20 +22,7 @@ public struct StoreBannerSet: StoreDataProtocal {
   public var image: String
   public var startTime: String
   public var endTime: String
-  public var page: PageItem
+  public var page: StoreDataBasePageItem
  
 }
 
-extension StoreBannerSet {
-  
-  public struct PageItem: Decodable {
-    public enum CodingKeys: String, CodingKey {
-      case type = "type"
-      case id = "id"
-    }
-    
-    public var type: String
-    public var id: String
-  }
-  
-}

@@ -16,19 +16,5 @@ public struct StoreNavCircle: StoreDataProtocal {
   }
   
   public let title: String
-  public let page: PageItem
-}
-
-extension StoreNavCircle {
-  
-  public struct PageItem: Decodable {
-    public enum CodingKeys: String, CodingKey {
-      case type = "type"
-      case id = "id"
-    }
-    
-    public var type: String
-    public var id: String
-  }
-  
+  public let page: StoreDataBasePageItem
 }

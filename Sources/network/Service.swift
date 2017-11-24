@@ -100,6 +100,94 @@ public struct Service {
 }
 
 extension Service {
+  //MARK: Native
+  public func fetchJSONModel<T: ApiDecodable>(
+    queue: DispatchQueue?,
+    completion: @escaping (T?, ServiceError?) -> Void)
+  {
+    (queue ?? DispatchQueue.global(qos: .utility)).async {
+      let task = URLSession.shared.dataTask(with: self.request) { data, response, error in
+        // Checking if network error
+        guard let data = data, let httpResponse = response as? HTTPURLResponse, error == nil else {
+          completion(nil, .network(error: error!))
+          return
+        }
+        
+        let statusCode = httpResponse.statusCode
+        
+        // Checking if server failed
+        if statusCode >= 500 {
+          completion(nil, .serverFailedToReach(statusCode: statusCode, reason: nil))
+          return
+        }
+        
+        // Checking if api failed
+        if 400 ..< 500 ~= statusCode {
+          completion(nil, .apiExecitionFailed(statusCode: statusCode, reason: nil))
+          return
+        }
+        
+        // Checking if api with successful response
+        guard 200..<300 ~= statusCode else {
+          completion(nil, .invalidApi(statusCode: statusCode, reason: nil))
+          return
+        }
+        let decoder = JSONDecoder()
+        do {
+          let result = try decoder.decode(T.self, from: data)
+          completion(result, nil)
+        } catch {
+          completion(nil, .nativeDecodedError(error: error))
+        }
+      }
+      
+      task.resume()
+    }
+  }
+  
+  public func fetchJSONModels<T: ApiDecodable>(
+    queue: DispatchQueue?,
+    completion: @escaping ([T]?, ServiceError?) -> Void)
+  {
+    (queue ?? DispatchQueue.global(qos: .utility)).async {
+      let task = URLSession.shared.dataTask(with: self.request) { data, response, error in
+        // Checking if network error
+        guard let data = data, let httpResponse = response as? HTTPURLResponse, error == nil else {
+          completion(nil, .network(error: error!))
+          return
+        }
+        
+        let statusCode = httpResponse.statusCode
+        
+        // Checking if server failed
+        if statusCode >= 500 {
+          completion(nil, .serverFailedToReach(statusCode: statusCode, reason: nil))
+          return
+        }
+        
+        // Checking if api failed
+        if 400 ..< 500 ~= statusCode {
+          completion(nil, .apiExecitionFailed(statusCode: statusCode, reason: nil))
+          return
+        }
+        
+        // Checking if api with successful response
+        guard 200..<300 ~= statusCode else {
+          completion(nil, .invalidApi(statusCode: statusCode, reason: nil))
+          return
+        }
+        let decoder = JSONDecoder()
+        do {
+          let result = try decoder.decode([T].self, from: data)
+          completion(result, nil)
+        } catch {
+          completion(nil, .nativeDecodedError(error: error))
+        }
+      }
+      
+      task.resume()
+    }
+  }
   
   public func fetchJSONRaw(with request: URLRequest,
     queue: DispatchQueue?,
@@ -146,7 +234,7 @@ extension Service {
       task.resume()
     }
   }
-  
+  //MARK: Argo
   public func fetchJSONModel<T: Argo.Decodable>(
     queue: DispatchQueue?,
     completion: @escaping (Result<ApiDocument<T>, ServiceError>) -> Void)

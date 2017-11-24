@@ -18,18 +18,6 @@ public struct StoreFooter: StoreDataProtocal {
   }
   
   public let title: String
-  public let page: PageItem
+  public let page: StoreDataBasePageItem
 }
 
-extension StoreFooter {
-  
-  public struct PageItem: Decodable {
-    public enum CodingKeys: String, CodingKey {
-      case type = "type"
-      case id = "id"
-    }
-    
-    public var type: String
-    public var id: String
-  }
-}

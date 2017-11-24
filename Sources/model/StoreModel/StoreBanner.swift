@@ -18,18 +18,5 @@ public struct StoreBanner: StoreDataProtocal {
   
   public let title: String
   public let image: String
-  public let page: PageItem
-}
-
-extension StoreBanner {
-  
-  public struct PageItem: Decodable {
-    public enum CodingKeys: String, CodingKey {
-      case type = "type"
-      case id = "id"
-    }
-    
-    public var type: String
-    public var id: String
-  }
+  public let page: StoreDataBasePageItem
 }

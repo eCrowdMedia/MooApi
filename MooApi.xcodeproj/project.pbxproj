@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181C80FD1FC8200000BE280B /* StoreDataBaseBookItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181C80FC1FC8200000BE280B /* StoreDataBaseBookItem.swift */; };
+		181C80FF1FC821FE00BE280B /* StoreDataBasePageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181C80FE1FC821FE00BE280B /* StoreDataBasePageItem.swift */; };
 		183EFB351FAC2A1500C84CD5 /* DownloadEpubManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183EFB311FAC2A1400C84CD5 /* DownloadEpubManager.swift */; };
 		183EFB361FAC2A1500C84CD5 /* DonwloadEpubObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183EFB321FAC2A1400C84CD5 /* DonwloadEpubObserver.swift */; };
 		183EFB371FAC2A1500C84CD5 /* DownloadEpubMission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183EFB331FAC2A1500C84CD5 /* DownloadEpubMission.swift */; };
@@ -112,6 +114,8 @@
 /* Begin PBXFileReference section */
 		0E33F782E0073799ADBED2B9 /* Pods-MooApiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MooApiTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MooApiTests/Pods-MooApiTests.debug.xcconfig"; sourceTree = "<group>"; };
 		110973FEE85D15DA6F97BB95 /* Pods-MooApiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MooApiTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MooApiTests/Pods-MooApiTests.release.xcconfig"; sourceTree = "<group>"; };
+		181C80FC1FC8200000BE280B /* StoreDataBaseBookItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDataBaseBookItem.swift; sourceTree = "<group>"; };
+		181C80FE1FC821FE00BE280B /* StoreDataBasePageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDataBasePageItem.swift; sourceTree = "<group>"; };
 		183EFB311FAC2A1400C84CD5 /* DownloadEpubManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadEpubManager.swift; sourceTree = "<group>"; };
 		183EFB321FAC2A1400C84CD5 /* DonwloadEpubObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonwloadEpubObserver.swift; sourceTree = "<group>"; };
 		183EFB331FAC2A1500C84CD5 /* DownloadEpubMission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadEpubMission.swift; sourceTree = "<group>"; };
@@ -233,10 +237,12 @@
 		18CB97101FC424F8007D5405 /* StoreModel */ = {
 			isa = PBXGroup;
 			children = (
+				18CB97591FC5621F007D5405 /* StoreBaseType.swift */,
 				18CB975E1FC5621F007D5405 /* StoreBaseItem.swift */,
+				181C80FC1FC8200000BE280B /* StoreDataBaseBookItem.swift */,
+				181C80FE1FC821FE00BE280B /* StoreDataBasePageItem.swift */,
 				18CB97581FC5621F007D5405 /* StoreBanner.swift */,
 				18CB975C1FC5621F007D5405 /* StoreBannerSet.swift */,
-				18CB97591FC5621F007D5405 /* StoreBaseType.swift */,
 				18CB975F1FC5621F007D5405 /* StoreDataColumn.swift */,
 				18CB975D1FC5621F007D5405 /* StoreDataProtocal.swift */,
 				18CB975B1FC5621F007D5405 /* StoreDataRow.swift */,
@@ -657,6 +663,7 @@
 				2DECC7511E78342C00FB815C /* Tag.swift in Sources */,
 				18CB970D1FC41072007D5405 /* StoreApi.swift in Sources */,
 				18CB97641FC56220007D5405 /* StoreBaseType.swift in Sources */,
+				181C80FD1FC8200000BE280B /* StoreDataBaseBookItem.swift in Sources */,
 				2DECC7521E78342C00FB815C /* Service.swift in Sources */,
 				183EFB371FAC2A1500C84CD5 /* DownloadEpubMission.swift in Sources */,
 				2DECC73C1E78342C00FB815C /* ApiDocumentInclusion.swift in Sources */,
@@ -690,6 +697,7 @@
 				2D5C3B181EC1783C000F01C1 /* Authorization.swift in Sources */,
 				2DECC73B1E78342C00FB815C /* ApiDocumentEnvelope.swift in Sources */,
 				2DECC7531E78342C00FB815C /* ServiceApi.swift in Sources */,
+				181C80FF1FC821FE00BE280B /* StoreDataBasePageItem.swift in Sources */,
 				18CB97631FC56220007D5405 /* StoreBanner.swift in Sources */,
 				2DECC7481E78342C00FB815C /* Category.swift in Sources */,
 				2DECC7441E78342C00FB815C /* ResourceType.swift in Sources */,

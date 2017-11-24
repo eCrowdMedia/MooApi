@@ -8,18 +8,18 @@
 
 import Foundation
 
-struct StoreBaseItem: ApiDecodable {
+public struct StoreBaseItem: ApiDecodable {
   
   public enum CodingKeys: String, CodingKey {
     case partial = "partial"
     case data = "data"
   }
   
-  var partial: String
-  var data: [StoreDataProtocal]
-  var type: StoreBaseType
+  public var partial: String
+  public var data: [StoreDataProtocal]
+  public var type: StoreBaseType
   
-  init(from decoder: Decoder) throws {
+  public init(from decoder: Decoder) throws {
     let value = try decoder.container(keyedBy: CodingKeys.self)
     partial = try value.decode(String.self, forKey: .partial)
     type = StoreBaseType(partial)

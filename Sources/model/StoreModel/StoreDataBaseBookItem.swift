@@ -27,7 +27,7 @@ public struct StoreDataBaseBookItem: Decodable {
   public let author: String
   public let publisher: String
   public let shortDescription: String
-  public let covers: Covers
+  public let covers: StoreBookCoverItem
   
   public init(from decoder: Decoder) throws {
     let value = try decoder.container(keyedBy: CodingKeys.self)
@@ -37,32 +37,7 @@ public struct StoreDataBaseBookItem: Decodable {
     author = try value.decode(String.self, forKey: .author)
     publisher = try value.decode(String.self, forKey: .publisher)
     shortDescription = try value.decode(String.self, forKey: .shortDescription)
-    covers = try value.decode(Covers.self, forKey: .covers)
-  }
-}
-
-extension StoreDataBaseBookItem {
-  public struct Covers: Decodable {
-    public enum CodingKeys: String, CodingKey {
-      case small = "small"
-      case medium = "medium"
-      case large = "large"
-    }
-    
-    public let small: String
-    public let medium: String
-    public let large: String
-  }
-}
-
-extension StoreDataBaseBookItem {
-  
-  public struct Rendition: Decodable {
-    public enum CodingKeys: String, CodingKey {
-      case layout = "layout"
-    }
-    
-    public let layout: String
+    covers = try value.decode(StoreBookCoverItem.self, forKey: .covers)
   }
 }
 

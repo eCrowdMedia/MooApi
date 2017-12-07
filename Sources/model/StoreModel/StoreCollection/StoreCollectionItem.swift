@@ -10,7 +10,7 @@ import Foundation
 
 public struct StoreCollectionItem: ApiDecodable {
   public let title: String
-  public let description: String
+  public let description: String?
   public let logo: String
   public let total: Int
   public let pagination: StoreCollectionPagination

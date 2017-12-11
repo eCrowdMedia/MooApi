@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct StoreCollectionCategoryItem {
+public struct StoreCollectionCategoryItem: ApiDecodable {
   
   public enum CodingKeys: String, CodingKey {
     case title = "title"

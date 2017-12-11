@@ -9,5 +9,5 @@
 import Foundation
 
 public struct StoreCollectionPagination: ApiDecodable {
-  public let next: String
+  public let next: String?
 }

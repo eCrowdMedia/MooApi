@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct StoreBookPages: StoreDataProtocal {
+public struct StoreBookPages: Decodable {
   public let type: String
   public let total: Int
 }

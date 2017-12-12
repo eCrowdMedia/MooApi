@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct StoreBookPrice: StoreDataProtocal {
+public struct StoreBookPrice: Decodable {
   
   public enum CodingKeys: String, CodingKey {
     case priceType = "PriceType"

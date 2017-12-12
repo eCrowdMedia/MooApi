@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct StoreDetailBook: StoreDataProtocal {
+public struct StoreDetailBook: ApiDecodable {
   public enum CodingKeys: String, CodingKey {
     case isOwn = "own"
     case type = "type"
@@ -23,10 +23,13 @@ public struct StoreDetailBook: StoreDataProtocal {
     case isSuspend = "suspend"
     case shipping = "shipping"
     case pageCount = "page_count"
+    case showPreviewButton = "show_preview_button"
     case shortDescription = "short_description"
     case description = "description"
     case publicationDate = "publication_date"
     case onSaleDate = "on_sale_date"
+    case language = "language"
+    case isbn = "isbn"
   }
   
   public let isOwn: Bool
@@ -42,10 +45,13 @@ public struct StoreDetailBook: StoreDataProtocal {
   public let isSuspend: Bool
   public let shipping: Int
   public let pageCount: StoreBookPages
-  
+  public let showPreviewButton: Bool
   public let shortDescription: String
   public let description: String
-  
   public let publicationDate: String
   public let onSaleDate: String?
+  public let language: String
+  public let isbn: String
+  
+  
 }

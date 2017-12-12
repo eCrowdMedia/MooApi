@@ -15,29 +15,32 @@ public enum StoreApi: ApiProtocol {
   case category(String)
   case contributor(String)
   case ranks(String)
+  case books(String)
   
   public var developURI: String {
-    return "https://api.readmoo.tw/v2/navigation"
+    return "https://api.readmoo.tw/v2"
   }
   
   public var baseURI: String {
-    return "https://api.readmoo.com/v2/navigation"
+    return "https://api.readmoo.com/v2"
   }
   
   public var path: String {
     switch self {
     case .home:
-      return "/home?version=2&banner_type=mobile"
+      return "/navigation/home?version=2&banner_type=mobile"
     case .collection(let id):
-      return "/collection/\(id)"
+      return "/navigation/collection/\(id)"
     case .block(let id):
-      return "/block/\(id)"
+      return "/navigation/block/\(id)"
     case let .category(id):
-      return "/category/\(id)"
+      return "/navigation/category/\(id)"
     case .contributor(let id):
-      return "/contributor/\(id)"
+      return "/navigation/contributor/\(id)"
     case .ranks(let id):
-      return "/ranks/\(id)"
+      return "/navigation/ranks/\(id)"
+    case .books(let id):
+      return "/books/\(id)"
     }
   }
   

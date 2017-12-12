@@ -16,6 +16,7 @@
 		1842E7F31FDE472F00C1C671 /* StoreDetailBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842E7F21FDE472F00C1C671 /* StoreDetailBook.swift */; };
 		1842E7F51FDE5AB900C1C671 /* StoreBookPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842E7F41FDE5AB900C1C671 /* StoreBookPrice.swift */; };
 		1842E7F71FDE5D8200C1C671 /* StoreBookPages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842E7F61FDE5D8200C1C671 /* StoreBookPages.swift */; };
+		1842E7FF1FDF6F6B00C1C671 /* StoreDetailBookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842E7FE1FDF6F6B00C1C671 /* StoreDetailBookData.swift */; };
 		1878043B1FD6A68D0087AB74 /* StoreCollectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878043A1FD6A68D0087AB74 /* StoreCollectionItem.swift */; };
 		1878043D1FD6A7BB0087AB74 /* StoreCollectionPagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878043C1FD6A7BB0087AB74 /* StoreCollectionPagination.swift */; };
 		187804411FD6AA1D0087AB74 /* StoreBookCoverItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187804401FD6AA1D0087AB74 /* StoreBookCoverItem.swift */; };
@@ -131,6 +132,7 @@
 		1842E7F21FDE472F00C1C671 /* StoreDetailBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailBook.swift; sourceTree = "<group>"; };
 		1842E7F41FDE5AB900C1C671 /* StoreBookPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreBookPrice.swift; sourceTree = "<group>"; };
 		1842E7F61FDE5D8200C1C671 /* StoreBookPages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreBookPages.swift; sourceTree = "<group>"; };
+		1842E7FE1FDF6F6B00C1C671 /* StoreDetailBookData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailBookData.swift; sourceTree = "<group>"; };
 		1878043A1FD6A68D0087AB74 /* StoreCollectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCollectionItem.swift; sourceTree = "<group>"; };
 		1878043C1FD6A7BB0087AB74 /* StoreCollectionPagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCollectionPagination.swift; sourceTree = "<group>"; };
 		187804401FD6AA1D0087AB74 /* StoreBookCoverItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreBookCoverItem.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				18CB97601FC5621F007D5405 /* StoreNavCircle.swift */,
 				18CB97611FC56220007D5405 /* StoreNavRectangle.swift */,
 				18CB975A1FC5621F007D5405 /* StoreRank.swift */,
+				1842E7FE1FDF6F6B00C1C671 /* StoreDetailBookData.swift */,
 				1842E7F21FDE472F00C1C671 /* StoreDetailBook.swift */,
 			);
 			path = StoreModel;
@@ -745,6 +748,7 @@
 				2D01B2941E8123B300583A7C /* Me.swift in Sources */,
 				2DECC74C1E78342C00FB815C /* Publisher.swift in Sources */,
 				2DECC7461E78342C00FB815C /* Book.swift in Sources */,
+				1842E7FF1FDF6F6B00C1C671 /* StoreDetailBookData.swift in Sources */,
 				183EFB361FAC2A1500C84CD5 /* DonwloadEpubObserver.swift in Sources */,
 				1878043D1FD6A7BB0087AB74 /* StoreCollectionPagination.swift in Sources */,
 				18CB97671FC56220007D5405 /* StoreBannerSet.swift in Sources */,

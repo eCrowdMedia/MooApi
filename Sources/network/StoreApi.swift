@@ -16,6 +16,9 @@ public enum StoreApi: ApiProtocol {
   case contributor(String)
   case ranks(String)
   case books(String)
+  case searchKeyword
+  case searchSuggest
+  case searchTopKeyword
   
   public var developURI: String {
     return "https://api.readmoo.tw/v2"
@@ -41,6 +44,12 @@ public enum StoreApi: ApiProtocol {
       return "/navigation/ranks/\(id)"
     case .books(let id):
       return "/books/\(id)"
+    case .searchKeyword:
+      return "/books"
+    case .searchSuggest:
+      return "/books"
+    case .searchTopKeyword:
+      return "/navigation/top_keyword"
     }
   }
   

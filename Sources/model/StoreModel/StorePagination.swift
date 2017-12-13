@@ -8,6 +8,6 @@
 
 import Foundation
 
-public struct StoreCollectionPagination: ApiDecodable {
+public struct StorePagination: ApiDecodable {
   public let next: String?
 }

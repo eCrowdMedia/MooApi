@@ -15,6 +15,7 @@ public enum StoreApi: ApiProtocol {
   case category(String)
   case contributor(String)
   case ranks(String)
+  case publisher(String)
   case books(String)
   case searchKeyword
   case searchSuggest
@@ -42,6 +43,8 @@ public enum StoreApi: ApiProtocol {
       return "/navigation/contributor/\(id)"
     case .ranks(let id):
       return "/navigation/ranks/\(id)"
+    case .publisher(let id):
+      return "/navigation/publisher/\(id)"
     case .books(let id):
       return "/books/\(id)"
     case .searchKeyword:

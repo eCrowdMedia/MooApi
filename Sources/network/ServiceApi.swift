@@ -24,7 +24,8 @@ public enum ServiceApi: ApiProtocol {
   case meHighlights(highlightId: String)
   case meReadingsHighlights(readingId: String)
   case meReadingLogs(readingLogId: String)
-  case meDevices(deviceId: String?)
+  case getMeDevices
+  case putMeDevices(deviceId: String)
   
   public var developURI: String {
     return "https://api.readmoo.tw/read/v2"
@@ -80,11 +81,9 @@ public enum ServiceApi: ApiProtocol {
       return "/me/readings/\(id)/highlights"
     case let .meReadingLogs(id):
       return "/me/readinglogs/\(id)"
-    case let .meDevices(deviceId):
-      //Note: 如果有id是走註冊裝置帳號
-      guard let id = deviceId else {
-        return "/me/devices"
-      }
+    case .getMeDevices:
+      return "/me/devices"
+    case let .putMeDevices(id):
       return "/me/devices/\(id)"
     }
   }

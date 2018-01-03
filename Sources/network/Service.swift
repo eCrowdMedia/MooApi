@@ -7,6 +7,7 @@ public enum ServiceMethod: String {
   case post   = "POST"
   case patch  = "PATCH"
   case delete = "DELETE"
+  case put    = "PUT"
 }
 
 public struct Service {
@@ -93,6 +94,8 @@ public struct Service {
     case .patch:
       return ["Accept": "application/vnd.api+json", "Content-Type": "application/vnd.api+json"]
     case .delete:
+      return ["Accept": "application/vnd.api+json", "Content-Type": "application/vnd.api+json"]
+    case .put:
       return ["Accept": "application/vnd.api+json", "Content-Type": "application/vnd.api+json"]
     }
   }

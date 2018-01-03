@@ -11,5 +11,5 @@ import Foundation
 public struct StoreSearchKeyword: ApiDecodable {
   public let total: Int
   public let pagination: StorePagination
-  public let data: StoreSearchBook
+  public let data: [StoreSearchBook]
 }

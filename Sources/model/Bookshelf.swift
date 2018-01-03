@@ -47,7 +47,7 @@ public struct Bookshelf: ResourceType {
   public struct Links {
     public let selfLink: String
     public let reader: String
-    public let epub: String
+    public let license: String
     public let toc: String
   }
 
@@ -121,7 +121,7 @@ extension Bookshelf.Links: Argo.Decodable {
     return curry(Bookshelf.Links.init)
       <^> json <| "self"
       <*> json <| "reader"
-      <*> json <| "epub"
       <*> json <| "toc"
+      <*> json <| "license"
   }
 }

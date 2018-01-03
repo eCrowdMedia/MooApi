@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18074E3B1FFC95F30005C40D /* LCPL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18074E3A1FFC95F30005C40D /* LCPL.swift */; };
+		18074E3E1FFC975A0005C40D /* LCPLEncryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18074E3D1FFC975A0005C40D /* LCPLEncryption.swift */; };
+		18074E401FFCAA4E0005C40D /* LCPLLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18074E3F1FFCAA4E0005C40D /* LCPLLink.swift */; };
 		181C80FD1FC8200000BE280B /* StoreDataBaseBookItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181C80FC1FC8200000BE280B /* StoreDataBaseBookItem.swift */; };
 		181C80FF1FC821FE00BE280B /* StoreDataBasePageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181C80FE1FC821FE00BE280B /* StoreDataBasePageItem.swift */; };
 		183EFB351FAC2A1500C84CD5 /* DownloadEpubManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183EFB311FAC2A1400C84CD5 /* DownloadEpubManager.swift */; };
@@ -126,6 +129,9 @@
 /* Begin PBXFileReference section */
 		0E33F782E0073799ADBED2B9 /* Pods-MooApiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MooApiTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MooApiTests/Pods-MooApiTests.debug.xcconfig"; sourceTree = "<group>"; };
 		110973FEE85D15DA6F97BB95 /* Pods-MooApiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MooApiTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MooApiTests/Pods-MooApiTests.release.xcconfig"; sourceTree = "<group>"; };
+		18074E3A1FFC95F30005C40D /* LCPL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCPL.swift; sourceTree = "<group>"; };
+		18074E3D1FFC975A0005C40D /* LCPLEncryption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCPLEncryption.swift; sourceTree = "<group>"; };
+		18074E3F1FFCAA4E0005C40D /* LCPLLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCPLLink.swift; sourceTree = "<group>"; };
 		181C80FC1FC8200000BE280B /* StoreDataBaseBookItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDataBaseBookItem.swift; sourceTree = "<group>"; };
 		181C80FE1FC821FE00BE280B /* StoreDataBasePageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDataBasePageItem.swift; sourceTree = "<group>"; };
 		183EFB311FAC2A1400C84CD5 /* DownloadEpubManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadEpubManager.swift; sourceTree = "<group>"; };
@@ -258,6 +264,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18074E3C1FFC97220005C40D /* LCPL */ = {
+			isa = PBXGroup;
+			children = (
+				18074E3A1FFC95F30005C40D /* LCPL.swift */,
+				18074E3D1FFC975A0005C40D /* LCPLEncryption.swift */,
+				18074E3F1FFCAA4E0005C40D /* LCPLLink.swift */,
+			);
+			path = LCPL;
+			sourceTree = "<group>";
+		};
 		187804391FD6A5D60087AB74 /* StoreCollection */ = {
 			isa = PBXGroup;
 			children = (
@@ -444,6 +460,7 @@
 				2DECC7361E78342C00FB815C /* Tag.swift */,
 				2D01B2841E80DBFA00583A7C /* User.swift */,
 				18CB970A1FC3FF12007D5405 /* Devices.swift */,
+				18074E3C1FFC97220005C40D /* LCPL */,
 				18CB97101FC424F8007D5405 /* StoreModel */,
 			);
 			path = model;
@@ -766,7 +783,9 @@
 				1842E7F71FDE5D8200C1C671 /* StoreBookPages.swift in Sources */,
 				181C80FF1FC821FE00BE280B /* StoreDataBasePageItem.swift in Sources */,
 				18CB97631FC56220007D5405 /* StoreBanner.swift in Sources */,
+				18074E401FFCAA4E0005C40D /* LCPLLink.swift in Sources */,
 				2DECC7481E78342C00FB815C /* Category.swift in Sources */,
+				18074E3E1FFC975A0005C40D /* LCPLEncryption.swift in Sources */,
 				2DECC7441E78342C00FB815C /* ResourceType.swift in Sources */,
 				2D01B2991E8123B300583A7C /* ResourceLinks.swift in Sources */,
 				18CB976C1FC56220007D5405 /* StoreNavRectangle.swift in Sources */,
@@ -782,6 +801,7 @@
 				2D01B2931E8123B300583A7C /* Highlight.swift in Sources */,
 				18C06D3E1FE0CDE400FC211C /* StoreSearchKeyword.swift in Sources */,
 				18C9193E1FA32C2700236B77 /* ApiProtocol.swift in Sources */,
+				18074E3B1FFC95F30005C40D /* LCPL.swift in Sources */,
 				2DECC74D1E78342C00FB815C /* Reading.swift in Sources */,
 				1842E7F51FDE5AB900C1C671 /* StoreBookPrice.swift in Sources */,
 				18CB97661FC56220007D5405 /* StoreDataRow.swift in Sources */,

@@ -48,7 +48,7 @@ public struct StoreDetailBook: ApiDecodable {
   public let showPreviewButton: Bool
   public let shortDescription: String
   public let description: String
-  public let publicationDate: String
+  public let publicationDate: String?
   public let onSaleDate: String?
   public let language: String
   public let isbn: String

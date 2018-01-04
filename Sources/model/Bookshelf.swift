@@ -121,7 +121,8 @@ extension Bookshelf.Links: Argo.Decodable {
     return curry(Bookshelf.Links.init)
       <^> json <| "self"
       <*> json <| "reader"
-      <*> json <| "toc"
       <*> json <| "license"
+      <*> json <| "toc"
+    
   }
 }

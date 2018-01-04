@@ -17,9 +17,9 @@ public struct LCPL: ApiDecodable {
     case links      = "links"
   }
   
-  let id: String
-  let provider: String
-  let encryption: LCPLEncryption
-  let links: [LCPLLink]
+  public let id: String
+  public let provider: String
+  public let encryption: LCPLEncryption
+  public let links: [LCPLLink]
 }
 

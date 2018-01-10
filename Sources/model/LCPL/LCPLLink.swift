@@ -21,6 +21,7 @@ public struct LCPLLink: ApiDecodable {
   public let rel: String
   public let href: String
   public let type: String
+  ///單位： Byte
   public let length: Int?
   public let hash: String?
 }

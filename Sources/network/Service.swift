@@ -148,7 +148,7 @@ extension Service {
     }
   }
   
-  public func fetchJSONModels<T: ApiDecodable>(
+  public func fetchJSONModelArray<T: ApiDecodable>(
     queue: DispatchQueue?,
     completion: @escaping ([T]?, ServiceError?) -> Void)
   {
@@ -237,6 +237,43 @@ extension Service {
       task.resume()
     }
   }
+  
+  public func fetchRawData(with request: URLRequest,
+                           queue: DispatchQueue?,
+                           completion: @escaping (Data?, ServiceError?) -> Void) {
+    (queue ?? DispatchQueue.global(qos: .utility)).async {
+      let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        // Checking if network error
+        guard let data = data, let httpResponse = response as? HTTPURLResponse, error == nil else {
+          completion(nil, .network(error: error!))
+          return
+        }
+        
+        let statusCode = httpResponse.statusCode
+        
+        // Checking if server failed
+        if statusCode >= 500 {
+          completion(nil, .serverFailedToReach(statusCode: statusCode, reason: nil))
+          return
+        }
+        
+        // Checking if api failed
+        if 400 ..< 500 ~= statusCode {
+          completion(nil, .apiExecitionFailed(statusCode: statusCode, reason: nil))
+          return
+        }
+        
+        // Checking if api with successful response
+        guard 200..<300 ~= statusCode else {
+          completion(nil, .invalidApi(statusCode: statusCode, reason: nil))
+          return
+        }
+        completion(data, nil)
+      }
+      
+      task.resume()
+    }
+  }
   //MARK: Argo
   public func fetchJSONModel<T: Argo.Decodable>(
     queue: DispatchQueue?,
@@ -297,7 +334,7 @@ extension Service {
     }
   }
   
-  public func fetchJSONModels<T: Argo.Decodable>(
+  public func fetchJSONModelArray<T: Argo.Decodable>(
     queue: DispatchQueue?,
     completion: @escaping (Result<ApiDocumentEnvelope<T>, ServiceError>) -> Void)
   {

@@ -11,6 +11,10 @@ public struct Bookmark: ResourceType {
   public let links: Links
   
   public struct Attributes {
+    public let title: String?
+    public let emoji: String?
+    public let color: String?
+    public let device: String
     public let bookmarkedAt: String
   }
   
@@ -42,7 +46,11 @@ extension Bookmark: Argo.Decodable {
 extension Bookmark.Attributes: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Bookmark.Attributes> {
     return curry(Bookmark.Attributes.init)
-      <^> json <| "bookmarked_at"
+      <^> json <|? "title"
+      <*> json <|? "emoji"
+      <*> json <|? "color"
+      <*> json <|  "device"
+      <*> json <| "bookmarked_at"
   }
 }
 

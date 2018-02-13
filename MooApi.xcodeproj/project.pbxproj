@@ -112,6 +112,7 @@
 		2DECC7721E78344300FB815C /* ReadingInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 2DECC7621E78344300FB815C /* ReadingInfo.json */; };
 		2DECC7731E78344300FB815C /* ReviewInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 2DECC7631E78344300FB815C /* ReviewInfo.json */; };
 		2DECC7741E78344300FB815C /* SubscriptionInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 2DECC7641E78344300FB815C /* SubscriptionInfo.json */; };
+		4475B83B2032A3A00046AE08 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4475B83A2032A3A00046AE08 /* ApiManager.swift */; };
 		5E502D504847D3B53A1DC0E9 /* Pods_MooApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1912B8AFB0B5DB47E4381079 /* Pods_MooApi.framework */; };
 		A339B429A5D2887CE6AD42DB /* Pods_MooApiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5A744F978B0521FE178C904 /* Pods_MooApiTests.framework */; };
 /* End PBXBuildFile section */
@@ -240,6 +241,7 @@
 		2DECC7631E78344300FB815C /* ReviewInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ReviewInfo.json; sourceTree = "<group>"; };
 		2DECC7641E78344300FB815C /* SubscriptionInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SubscriptionInfo.json; sourceTree = "<group>"; };
 		2FA47103586D6779DFDE92C8 /* Pods-MooApi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MooApi.release.xcconfig"; path = "Pods/Target Support Files/Pods-MooApi/Pods-MooApi.release.xcconfig"; sourceTree = "<group>"; };
+		4475B83A2032A3A00046AE08 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		E5A744F978B0521FE178C904 /* Pods_MooApiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MooApiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -488,6 +490,7 @@
 				183EFB311FAC2A1400C84CD5 /* DownloadEpubManager.swift */,
 				183EFB331FAC2A1500C84CD5 /* DownloadEpubMission.swift */,
 				183EFB341FAC2A1500C84CD5 /* DownloadEpubOperation.swift */,
+				4475B83A2032A3A00046AE08 /* ApiManager.swift */,
 			);
 			path = network;
 			sourceTree = "<group>";
@@ -755,6 +758,7 @@
 				2D01B2871E80DFBA00583A7C /* ImageMeta.swift in Sources */,
 				2DECC7451E78342C00FB815C /* ResourceIdentifier.swift in Sources */,
 				2D01B29A1E8123B300583A7C /* ResourceMeta.swift in Sources */,
+				4475B83B2032A3A00046AE08 /* ApiManager.swift in Sources */,
 				18CB976A1FC56220007D5405 /* StoreDataColumn.swift in Sources */,
 				18CB976E1FC5835F007D5405 /* ApiDecodable.swift in Sources */,
 				2DECC74B1E78342C00FB815C /* Marathon.swift in Sources */,

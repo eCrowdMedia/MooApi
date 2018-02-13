@@ -104,6 +104,37 @@ public struct Service {
 
 extension Service {
   //MARK: Native
+  public func uploadJSONData(queue: DispatchQueue?,
+                             completion: @escaping (Data?, ServiceError?) -> Void)
+  {
+    (queue ?? DispatchQueue.global(qos: .utility)).async {
+      let task = URLSession.shared.dataTask(with: self.request, completionHandler: { (data, response, error) in
+        let statusCode = httpResponse.statusCode
+        
+        // Checking if server failed
+        if statusCode >= 500 {
+          completion(nil, .serverFailedToReach(statusCode: statusCode, reason: nil))
+          return
+        }
+        
+        // Checking if api failed
+        if 400 ..< 500 ~= statusCode {
+          completion(nil, .apiExecitionFailed(statusCode: statusCode, reason: nil))
+          return
+        }
+        
+        // Checking if api with successful response
+        guard 200..<300 ~= statusCode else {
+          completion(nil, .invalidApi(statusCode: statusCode, reason: nil))
+          return
+        }
+        
+        completion(data, nil)
+      })
+      task.resume()
+    }
+  }
+  
   public func fetchJSONModel<T: ApiDecodable>(
     queue: DispatchQueue?,
     completion: @escaping (T?, ServiceError?) -> Void)

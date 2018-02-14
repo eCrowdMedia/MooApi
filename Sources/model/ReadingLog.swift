@@ -16,7 +16,7 @@ public struct ReadingLog: ResourceType {
     public let chapter: Int?
     public let duration: Int
     public let progress: Double // 0.0 ~ 1.0
-    public let touchedAt: String?
+    public let touchedAt: String
     public let userAgent: String
     public let ip: String?
     public let latitude: Double?
@@ -56,7 +56,7 @@ extension ReadingLog.Attributes: Argo.Decodable {
     
     let tmp2 = tmp1
       <*> json <| "progress"
-      <*> json <|? "touched_at"
+      <*> json <| "touched_at"
       <*> json <| "user_agent"
       <*> json <|? "ip"
     

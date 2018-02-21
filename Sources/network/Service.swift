@@ -105,31 +105,44 @@ public struct Service {
 extension Service {
   //MARK: Native
   public func uploadJSONData(queue: DispatchQueue?,
-                             completion: @escaping (Data?, ServiceError?) -> Void)
+                             completion: @escaping (Data?, [AnyHashable : Any]?, ServiceError?) -> Void)
   {
     (queue ?? DispatchQueue.global(qos: .utility)).async {
       let task = URLSession.shared.dataTask(with: self.request, completionHandler: { (data, response, error) in
+        
+        // Checking if network error
+        guard let data = data, let httpResponse = response as? HTTPURLResponse, error == nil else {
+          completion(nil, nil, .network(error: error!))
+          return
+        }
+        
         let statusCode = httpResponse.statusCode
         
         // Checking if server failed
         if statusCode >= 500 {
-          completion(nil, .serverFailedToReach(statusCode: statusCode, reason: nil))
+          completion(nil, nil, .serverFailedToReach(statusCode: statusCode, reason: nil))
           return
         }
         
         // Checking if api failed
         if 400 ..< 500 ~= statusCode {
-          completion(nil, .apiExecitionFailed(statusCode: statusCode, reason: nil))
+          // Checking if json serialize error
+          if let jsonObject = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
+            let reason = try? ApiDocumentErrorEnvelope.decode(JSON(jsonObject)).dematerialize()
+            completion(nil, nil, .apiExecitionFailed(statusCode: statusCode, reason: reason))
+          } else {
+            completion(nil, nil, .apiExecitionFailed(statusCode: statusCode, reason: nil))
+          }
           return
         }
         
         // Checking if api with successful response
         guard 200..<300 ~= statusCode else {
-          completion(nil, .invalidApi(statusCode: statusCode, reason: nil))
+          completion(nil, nil, .invalidApi(statusCode: statusCode, reason: nil))
           return
         }
         
-        completion(data, nil)
+        completion(data, httpResponse.allHeaderFields, nil)
       })
       task.resume()
     }

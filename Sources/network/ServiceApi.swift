@@ -23,6 +23,7 @@ public enum ServiceApi: ApiProtocol {
   case meReadingsBookmarks(readingId: String)
   case meHighlights(highlightId: String)
   case meReadingsHighlights(readingId: String)
+  case meReadingsReadinglogs(readingId: String)
   case meReadingLogs(readingLogId: String)
   case getMeDevices
   case putMeDevices(deviceId: String)
@@ -79,6 +80,8 @@ public enum ServiceApi: ApiProtocol {
       return "/me/highlights/\(id)"
     case let .meReadingsHighlights(id):
       return "/me/readings/\(id)/highlights"
+    case let .meReadingsReadinglogs(id):
+      return "/me/readings/\(id)/readinglogs"
     case let .meReadingLogs(id):
       return "/me/readinglogs/\(id)"
     case .getMeDevices:

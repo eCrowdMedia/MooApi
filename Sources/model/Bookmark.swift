@@ -12,6 +12,7 @@ public struct Bookmark: ResourceType {
   
   public struct Attributes {
     public let title: String?
+    public let content: String?
     public let emoji: String?
     public let color: String?
     public let device: String
@@ -47,6 +48,7 @@ extension Bookmark.Attributes: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Bookmark.Attributes> {
     return curry(Bookmark.Attributes.init)
       <^> json <|? "title"
+      <*> json <|? "content"
       <*> json <|? "emoji"
       <*> json <|? "color"
       <*> json <|  "device"

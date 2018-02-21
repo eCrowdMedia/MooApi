@@ -15,7 +15,6 @@ public struct Highlight: ResourceType {
     public let emoji: String?
     public let color: String
     public let style: String
-    public let device: String?
     public let privacy: String
     public let commentsCount: Int
     public let likesCount: Int
@@ -53,7 +52,6 @@ extension Highlight.Attributes: Argo.Decodable {
       <*> json <|? "emoji"
       <*> json <|  "color"
       <*> json <|  "style"
-      <*> json <|? "device"
       <*> json <|  "privacy_type"
       <*> json <|  "comments_count"
       <*> json <|  "likes_count"

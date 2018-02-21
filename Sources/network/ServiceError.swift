@@ -9,5 +9,7 @@ public enum ServiceError: Error {
   case decodedError(DecodeError)
   case nativeDecodedError(error: Error)
   case dataNotExisted
+  case headerDataNotExisted
   case invalidApi(statusCode: Int, reason: ApiDocumentErrorEnvelope?)
+  case nextPageUrlFailure
 }

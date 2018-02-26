@@ -14,6 +14,7 @@ public struct Range: ResourceType {
     public let position: Double
     public let chapter: Int
     public let cfi: String
+    public let loc: Int?
     public let title: String?
     public let preContent: String?
     public let content: String
@@ -44,10 +45,11 @@ extension Range.Attributes: Argo.Decodable {
       <*> json <| "chapter"
     
     let tmp2 = tmp1
-      <*> json <| "cfi"
+      <*> json <|  "cfi"
+      <*> json <|?  "loc"
       <*> json <|? "title"
       <*> json <|? "pre_content"
-      <*> json <| "content"
+      <*> json <|  "content"
     
     return tmp2
       <*> json <|? "post_content"

@@ -12,6 +12,7 @@ public struct Highlight: ResourceType {
 
   public struct Attributes {
     public let title: String?
+    public let annotation: String?
     public let emoji: String?
     public let color: String
     public let style: String
@@ -49,6 +50,7 @@ extension Highlight.Attributes: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Highlight.Attributes> {
     return curry(Highlight.Attributes.init)
       <^> json <|? "title"
+      <*> json <|? "annotation"
       <*> json <|? "emoji"
       <*> json <|  "color"
       <*> json <|  "style"

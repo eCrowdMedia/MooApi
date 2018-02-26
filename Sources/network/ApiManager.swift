@@ -15,8 +15,8 @@ public class ApiManager {
   public class ApiHighlight {
     
     public struct HighlightResult {
-      let highlightArray: [Highlight]
-      var inclusion: ApiDocumentInclusion?
+      public let highlightArray: [Highlight]
+      public var inclusion: ApiDocumentInclusion?
       
       init(highlightArray: [Highlight],
            inclusion: ApiDocumentInclusion?)
@@ -205,8 +205,8 @@ public class ApiManager {
   public class ApiBookmark {
     
     public struct BookmarkResult {
-      let bookmarkArray: [Bookmark]
-      var inclusion: ApiDocumentInclusion?
+      public let bookmarkArray: [Bookmark]
+      public var inclusion: ApiDocumentInclusion?
       
       init(bookmarkArray: [Bookmark],
            inclusion: ApiDocumentInclusion?)
@@ -414,8 +414,8 @@ public class ApiManager {
   public class ApiReading {
     
     public struct ReadingResult {
-      let reading: Reading
-      var inclusion: ApiDocumentInclusion?
+      public let reading: Reading
+      public var inclusion: ApiDocumentInclusion?
       
       init(reading: Reading,
            inclusion: ApiDocumentInclusion?)
@@ -428,7 +428,8 @@ public class ApiManager {
     public static func sync(readingId: String,
                             auth: Authorization,
                             isDevelopMent: Bool = false,
-                            completion: @escaping (ReadingResult?, ServiceError?) -> Void) {
+                            failure: @escaping (ServiceError) -> Void,
+                            success: @escaping (ReadingResult) -> Void) {
       
       let service: Service = Service(ServiceMethod.get,
                                      api: ServiceApi.meReadings(readingId),
@@ -438,10 +439,10 @@ public class ApiManager {
       service.fetchJSONModel(queue: nil) { (result: Result<ApiDocument<Reading>, ServiceError>) in
         switch result {
         case .failure(let error):
-          completion(nil, error)
+          failure(error)
         case .success(let value):
           let result = ReadingResult(reading: value.data, inclusion: value.included)
-          completion(result, nil)
+          success(result)
         }
       }
     }

@@ -14,6 +14,7 @@ public struct Path: ResourceType {
     public let position: Double
     public let chapter: Int
     public let cfi: String
+    public let loc: Int?
     public let title: String?
     public let preContent: String?
     public let content: String
@@ -45,6 +46,7 @@ extension Path.Attributes: Argo.Decodable {
       <*> json <| "position"
       <*> json <| "chapter"
       <*> json <| "cfi"
+      <*> json <|? "loc"
     
     let tmp2 = tmp1
       <*> json <|? "title"

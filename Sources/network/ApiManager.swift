@@ -339,16 +339,16 @@ public class ApiManager {
     }
     
     public static func modify(serverId: String,
-                              highlightData: Data,
+                              bookmarkData: Data,
                               auth: Authorization,
                               isDevelopMent: Bool = false,
                               completion: @escaping (ServiceError?) -> Void)
     {
       
       let service = Service(ServiceMethod.patch,
-                            api: ServiceApi.meHighlights(highlightId: serverId),
+                            api: ServiceApi.meBookmarks(bookmarkId: serverId),
                             authorization: auth,
-                            httpBody: highlightData,
+                            httpBody: bookmarkData,
                             isDevelopMent: isDevelopMent)
       
       service.uploadJSONData(queue: nil) { (data, headers, error) in

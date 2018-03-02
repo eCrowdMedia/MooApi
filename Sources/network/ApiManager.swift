@@ -12,7 +12,7 @@ import Result
 
 public class ApiManager {
   
-  public class ApiHighlight {
+  public class HighlightApi {
     
     public struct HighlightResult {
       public let highlightArray: [Highlight]
@@ -59,16 +59,17 @@ public class ApiManager {
             return
           }
           
-          downloadHighlight(auth: auth,
-                            nextURL: nextPageUrl,
-                            results: resultArray,
-                            isDevelopMent: isDevelopMent,
-                            failure: { (error) in
-                              failure(error)
-                            },
-                            then: { (closureRessultArray) in
-                              success(closureRessultArray)
-                            })
+          downloadHighlight(
+            auth: auth,
+            nextURL: nextPageUrl,
+            results: resultArray,
+            isDevelopMent: isDevelopMent,
+            failure: { (error) in
+              failure(error)
+            },
+            then: { (closureRessultArray) in
+              success(closureRessultArray)
+          })
         }
       }
       
@@ -109,16 +110,17 @@ public class ApiManager {
             return
           }
           
-          downloadHighlight(auth: auth,
-                            nextURL: nextPageUrl,
-                            results: newResults,
-                            isDevelopMent: isDevelopMent,
-                            failure: { (error) in
-                              failure(error)
-                            },
-                            then: { (closureResults) in
-                              then(closureResults)
-                            })
+          downloadHighlight(
+            auth: auth,
+            nextURL: nextPageUrl,
+            results: newResults,
+            isDevelopMent: isDevelopMent,
+            failure: { (error) in
+              failure(error)
+            },
+            then: { (closureResults) in
+              then(closureResults)
+            })
         }
       }
     }
@@ -202,7 +204,7 @@ public class ApiManager {
     
   }
   
-  public class ApiBookmark {
+  public class BookmarkApi {
     
     public struct BookmarkResult {
       public let bookmarkArray: [Bookmark]
@@ -385,7 +387,7 @@ public class ApiManager {
     }
   }
   
-  public class ApiReadingPing {
+  public class ReadingPingApi {
     
     public static func append(readingId: String,
                               pingData: Data,
@@ -411,7 +413,7 @@ public class ApiManager {
     }
   }
   
-  public class ApiReading {
+  public class ReadingApi {
     
     public struct ReadingResult {
       public let reading: Reading

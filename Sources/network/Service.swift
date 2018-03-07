@@ -438,4 +438,64 @@ extension Service {
     }
   }
   
+  public func fetchJSONModelArrayAndHeader<T: Argo.Decodable>(
+    queue: DispatchQueue?,
+    completion: @escaping (Result<ApiDocumentEnvelope<T>, ServiceError>,[AnyHashable : Any]?) -> Void)
+  {
+    (queue ?? DispatchQueue.global(qos: .utility)).async {
+      let task = URLSession.shared.dataTask(with: self.request) { data, response, error in
+        // Checking if network error
+        guard let data = data, let httpResponse = response as? HTTPURLResponse, error == nil else {
+          completion(.failure(ServiceError.network(error: error!)), nil)
+          return
+        }
+        let header = httpResponse.allHeaderFields
+        // Checking if json serialize error
+        guard let jsonObject = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) else {
+          completion(.failure(.serializeJSONFailed), header)
+          return
+        }
+        
+        let statusCode = httpResponse.statusCode
+        
+        // Checking if server failed
+        if statusCode >= 500 {
+          let reason = try? ApiDocumentErrorEnvelope.decode(JSON(jsonObject)).dematerialize()
+          completion(.failure(.serverFailedToReach(statusCode: statusCode, reason: reason)), header)
+          return
+        }
+        
+        // Checking if api failed
+        if 400 ..< 500 ~= statusCode {
+          let reason = try? ApiDocumentErrorEnvelope.decode(JSON(jsonObject)).dematerialize()
+          completion(.failure(.apiExecitionFailed(statusCode: statusCode, reason: reason)), header)
+          return
+        }
+        
+        // Checking if api with successful response
+        guard 200..<300 ~= statusCode else {
+          let reason = try? ApiDocumentErrorEnvelope.decode(JSON(jsonObject)).dematerialize()
+          completion(.failure(.invalidApi(statusCode: statusCode, reason: reason)), header)
+          return
+        }
+        
+        do {
+          let decodedObject = try ApiDocumentEnvelope<T>.decode(JSON(jsonObject)).dematerialize()
+          completion(.success(decodedObject), header)
+        } catch {
+          // Checking if decoded result is null
+          switch JSON(jsonObject) {
+          // Bug here
+          case .array:
+            completion(.failure(.dataNotExisted), header)
+          default:
+            completion(.failure(.decodedError(error as! DecodeError)), header)
+          }
+        }
+      }
+      
+      task.resume()
+    }
+  }
+  
 }

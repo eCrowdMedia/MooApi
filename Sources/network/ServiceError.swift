@@ -12,4 +12,5 @@ public enum ServiceError: Error {
   case headerDataNotExisted
   case invalidApi(statusCode: Int, reason: ApiDocumentErrorEnvelope?)
   case nextPageUrlFailure
+  case dateNotFound
 }

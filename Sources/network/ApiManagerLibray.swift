@@ -16,21 +16,21 @@ extension ApiManager {
     
     public struct BookshelfResult {
       public let bookshelfArray: [Bookshelf]
-      public var inclusion: ApiDocumentInclusion?
+      public let inclusion: ApiDocumentInclusion
       
       init(bookshelfArray: [Bookshelf],
-           inclusion: ApiDocumentInclusion?)
+           inclusion: ApiDocumentInclusion)
       {
         self.bookshelfArray = bookshelfArray
         self.inclusion = inclusion
       }
     }
-    ///取得使用者書櫃內全部書籍的資料
-    public static func syncLibrary(auth: Authorization,
-                                   lastModifiedTime: String?,
-                                   isDevelopMent: Bool = false,
-                                   failure: @escaping (ServiceError) -> Void,
-                                   success: @escaping ([BookshelfResult]) -> Void)
+    ///取得使用者書櫃內全部書籍的資料 success：回傳 BookshelfResult Array & syncDateString
+    public static func syncPublications(auth: Authorization,
+                                        lastModifiedTime: String?,
+                                        isDevelopMent: Bool = false,
+                                        failure: @escaping (ServiceError) -> Void,
+                                        success: @escaping ([BookshelfResult], String) -> Void)
     {
       var params:[String: String] = ["page[count]": "500"]
       if let modifiedTime = lastModifiedTime {
@@ -43,13 +43,26 @@ extension ApiManager {
                             parameters: params,
                             isDevelopMent: isDevelopMent)
       
-      service.fetchJSONModelArray(queue: nil) { (result: Result<ApiDocumentEnvelope<Bookshelf>, ServiceError>) in
+      service.fetchJSONModelArrayAndHeader(queue: nil) { (result: Result<ApiDocumentEnvelope<Bookshelf>, ServiceError>, allHeader) in
+        
+        guard let allHeader = allHeader, let syncDate = allHeader["Date"] as? String else {
+          failure(ServiceError.dateNotFound)
+          return
+        }
+        
         switch result {
         case .success(let value):
+          
+          guard let includedData = value.included else {
+            failure(ServiceError.dataNotExisted)
+            return
+          }
+          
           let resultArray:[BookshelfResult] = [BookshelfResult(bookshelfArray: value.data,
-                                                               inclusion: value.included)]
+                                                               inclusion: includedData)]
+          
           guard let nextUrlString = value.paginationLinks?.next else {
-            success(resultArray)
+            success(resultArray, syncDate)
             return
           }
           
@@ -67,12 +80,13 @@ extension ApiManager {
               failure(error)
             },
             then: { (closureResults) in
-              success(closureResults)
+              success(closureResults, syncDate)
             })
         case .failure(let error):
           failure(error)
         }
       }
+      
     }
     
     static func downloadBooks(auth: Authorization,
@@ -93,9 +107,14 @@ extension ApiManager {
           failure(error)
         case .success(let value):
           
+          guard let includedData = value.included else {
+            failure(ServiceError.dataNotExisted)
+            return
+          }
+          
           var newResults = results
           let result = BookshelfResult(bookshelfArray: value.data,
-                                       inclusion: value.included)
+                                       inclusion: includedData)
           newResults.append(result)
           
           guard let nextUrlString = value.paginationLinks?.next else {

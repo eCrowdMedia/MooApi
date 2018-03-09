@@ -52,7 +52,12 @@ extension ApiManager {
         
         switch result {
         case .success(let value):
-          
+          //代表 lastSync 沒資料可以更新，也是成功
+          if value.data.count == 0 {
+            success([], syncDate)
+            return
+          }
+          // 有 data 沒 included 在書櫃不應該發生
           guard let includedData = value.included else {
             failure(ServiceError.dataNotExisted)
             return

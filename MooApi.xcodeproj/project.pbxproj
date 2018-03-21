@@ -113,6 +113,14 @@
 		2DECC7731E78344300FB815C /* ReviewInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 2DECC7631E78344300FB815C /* ReviewInfo.json */; };
 		2DECC7741E78344300FB815C /* SubscriptionInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 2DECC7641E78344300FB815C /* SubscriptionInfo.json */; };
 		442EDA2920492B87008C8D76 /* ApiManagerLibray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442EDA2820492B87008C8D76 /* ApiManagerLibray.swift */; };
+		444803D02060E560009B0014 /* ApiManagerUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444803CF2060E560009B0014 /* ApiManagerUser.swift */; };
+		444803D12060E560009B0014 /* ApiManagerUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444803CF2060E560009B0014 /* ApiManagerUser.swift */; };
+		444803D4206108F3009B0014 /* CharacterSet+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444803D3206108F3009B0014 /* CharacterSet+Extension.swift */; };
+		444803D5206108F3009B0014 /* CharacterSet+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444803D3206108F3009B0014 /* CharacterSet+Extension.swift */; };
+		444803DA20610E6A009B0014 /* DeviceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444803D920610E6A009B0014 /* DeviceData.swift */; };
+		444803DB20610E6A009B0014 /* DeviceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444803D920610E6A009B0014 /* DeviceData.swift */; };
+		444803DD20611ABF009B0014 /* AccountData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444803DC20611ABF009B0014 /* AccountData.swift */; };
+		444803DE20611ABF009B0014 /* AccountData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444803DC20611ABF009B0014 /* AccountData.swift */; };
 		4475B83B2032A3A00046AE08 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4475B83A2032A3A00046AE08 /* ApiManager.swift */; };
 		5E502D504847D3B53A1DC0E9 /* Pods_MooApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1912B8AFB0B5DB47E4381079 /* Pods_MooApi.framework */; };
 		A339B429A5D2887CE6AD42DB /* Pods_MooApiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5A744F978B0521FE178C904 /* Pods_MooApiTests.framework */; };
@@ -243,6 +251,10 @@
 		2DECC7641E78344300FB815C /* SubscriptionInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SubscriptionInfo.json; sourceTree = "<group>"; };
 		2FA47103586D6779DFDE92C8 /* Pods-MooApi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MooApi.release.xcconfig"; path = "Pods/Target Support Files/Pods-MooApi/Pods-MooApi.release.xcconfig"; sourceTree = "<group>"; };
 		442EDA2820492B87008C8D76 /* ApiManagerLibray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManagerLibray.swift; sourceTree = "<group>"; };
+		444803CF2060E560009B0014 /* ApiManagerUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManagerUser.swift; sourceTree = "<group>"; };
+		444803D3206108F3009B0014 /* CharacterSet+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterSet+Extension.swift"; sourceTree = "<group>"; };
+		444803D920610E6A009B0014 /* DeviceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceData.swift; sourceTree = "<group>"; };
+		444803DC20611ABF009B0014 /* AccountData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountData.swift; sourceTree = "<group>"; };
 		4475B83A2032A3A00046AE08 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		E5A744F978B0521FE178C904 /* Pods_MooApiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MooApiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -342,6 +354,8 @@
 				2D01B28E1E8123B300583A7C /* ResourceIdentifierWithRole.swift */,
 				2D01B28F1E8123B300583A7C /* ResourceLinks.swift */,
 				2D01B2901E8123B300583A7C /* ResourceMeta.swift */,
+				444803D920610E6A009B0014 /* DeviceData.swift */,
+				444803DC20611ABF009B0014 /* AccountData.swift */,
 			);
 			path = helper;
 			sourceTree = "<group>";
@@ -369,6 +383,7 @@
 		2DECC7021E78341900FB815C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				444803D2206108E0009B0014 /* Extension */,
 				2DECC7781E78EA3000FB815C /* core */,
 				2D01B29C1E8128DD00583A7C /* helper */,
 				2DECC7791E78EA4C00FB815C /* model */,
@@ -494,8 +509,17 @@
 				183EFB341FAC2A1500C84CD5 /* DownloadEpubOperation.swift */,
 				4475B83A2032A3A00046AE08 /* ApiManager.swift */,
 				442EDA2820492B87008C8D76 /* ApiManagerLibray.swift */,
+				444803CF2060E560009B0014 /* ApiManagerUser.swift */,
 			);
 			path = network;
+			sourceTree = "<group>";
+		};
+		444803D2206108E0009B0014 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				444803D3206108F3009B0014 /* CharacterSet+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		C3972CC81F7208F9E82194F7 /* Frameworks */ = {
@@ -791,9 +815,11 @@
 				1842E7F71FDE5D8200C1C671 /* StoreBookPages.swift in Sources */,
 				181C80FF1FC821FE00BE280B /* StoreDataBasePageItem.swift in Sources */,
 				18CB97631FC56220007D5405 /* StoreBanner.swift in Sources */,
+				444803D4206108F3009B0014 /* CharacterSet+Extension.swift in Sources */,
 				18074E401FFCAA4E0005C40D /* LCPLLink.swift in Sources */,
 				2DECC7481E78342C00FB815C /* Category.swift in Sources */,
 				18074E3E1FFC975A0005C40D /* LCPLEncryption.swift in Sources */,
+				444803D02060E560009B0014 /* ApiManagerUser.swift in Sources */,
 				2DECC7441E78342C00FB815C /* ResourceType.swift in Sources */,
 				2D01B2991E8123B300583A7C /* ResourceLinks.swift in Sources */,
 				18CB976C1FC56220007D5405 /* StoreNavRectangle.swift in Sources */,
@@ -812,9 +838,11 @@
 				18074E3B1FFC95F30005C40D /* LCPL.swift in Sources */,
 				2DECC74D1E78342C00FB815C /* Reading.swift in Sources */,
 				1842E7F51FDE5AB900C1C671 /* StoreBookPrice.swift in Sources */,
+				444803DD20611ABF009B0014 /* AccountData.swift in Sources */,
 				18CB97661FC56220007D5405 /* StoreDataRow.swift in Sources */,
 				2DECC73D1E78342C00FB815C /* ApiDocumentLinks.swift in Sources */,
 				2DD0B2B21E8282E20053B8F5 /* Path.swift in Sources */,
+				444803DA20610E6A009B0014 /* DeviceData.swift in Sources */,
 				187804451FD6AF6F0087AB74 /* StoreCollectionCategoryItem.swift in Sources */,
 				2D01B2851E80DBFA00583A7C /* User.swift in Sources */,
 			);
@@ -827,14 +855,18 @@
 				2DD0B29F1E825B7B0053B8F5 /* UserTests.swift in Sources */,
 				2DD0B2991E825B600053B8F5 /* HighlightTests.swift in Sources */,
 				2DD0B29C1E825B720053B8F5 /* MarathonTests.swift in Sources */,
+				444803D12060E560009B0014 /* ApiManagerUser.swift in Sources */,
 				2DECC76C1E78344300FB815C /* SubscriptionTests.swift in Sources */,
 				2DECC76B1E78344300FB815C /* ReviewTests.swift in Sources */,
 				2DECC7651E78344300FB815C /* BookShelvesTests.swift in Sources */,
 				2DECC7691E78344300FB815C /* PublisherTests.swift in Sources */,
+				444803D5206108F3009B0014 /* CharacterSet+Extension.swift in Sources */,
 				2DD0B29D1E825B720053B8F5 /* MeTests.swift in Sources */,
 				2DECC7661E78344300FB815C /* BookTests.swift in Sources */,
 				2DECC7681E78344300FB815C /* ContributorTests.swift in Sources */,
 				2DD0B2AD1E8281E70053B8F5 /* BookmarkTests.swift in Sources */,
+				444803DB20610E6A009B0014 /* DeviceData.swift in Sources */,
+				444803DE20611ABF009B0014 /* AccountData.swift in Sources */,
 				2DD0B2A11E825E1C0053B8F5 /* ReadingLogTests.swift in Sources */,
 				2DECC76A1E78344300FB815C /* ReadingTests.swift in Sources */,
 				2DECC7671E78344300FB815C /* CategoryTests.swift in Sources */,

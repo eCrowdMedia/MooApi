@@ -13,4 +13,6 @@ public enum ServiceError: Error {
   case invalidApi(statusCode: Int, reason: ApiDocumentErrorEnvelope?)
   case nextPageUrlFailure
   case dateNotFound
+  case apiParametersNotFound
+  case apiBodyDataNotFound
 }

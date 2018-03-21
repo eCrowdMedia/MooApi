@@ -1,11 +1,3 @@
-//
-//  ApiManagerLibray.swift
-//  MooApi
-//
-//  Created by Developer Readmoo on 2018/3/2.
-//  Copyright © 2018年 ecrowdmedia.com. All rights reserved.
-//
-
 import Foundation
 import Argo
 import Result

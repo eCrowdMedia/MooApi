@@ -43,7 +43,6 @@ final internal class BookShelvesTests: XCTestCase {
       // Test links
       XCTAssertEqual(links.selfLink, "https://api.readmoo.com/read/v2/me/library/books/1022197")
       XCTAssertEqual(links.reader, "https://readmoo.com/api/reader/210068285000101")
-      XCTAssertEqual(links.epub, "https://api.readmoo.com/epub/210068285000101")
       XCTAssertEqual(links.toc, "https://cdn.readmoo.com/book/toc/full/210068285000101.json")
     }
 

@@ -6,26 +6,39 @@
       "nickname": "moo小編",
       "email": "editor@readmoo.com",
       "activate_status": "activated",
-      "device_account": false
+      "device_account": false,
+      "applications": {
+        "document": {
+          "activated": true,
+          "quota": 1024,
+          "usage": 86.33,
+          "count": 19,
+          "started_at": "2017-05-24T16:00:00Z",
+          "ended_at": "2018-05-25T16:00:00Z"
+        },
+        "writemoo": {
+          "activated": false
+        }
+      }
     },
     "links": {
       "self": "https://api.readmoo.com/read/v2/me",
       "small": {
-        "href": "https://cdn.readmoo.com/avatar/ll/jl9jqlh_40.png?v=1489027839",
+        "href": "https://cdn.readmoo.com/avatar/ll/jl9jqlh_40.png?v=1520494335",
         "meta": {
           "width": 40,
           "resize": "crop"
         }
       },
       "medium": {
-        "href": "https://cdn.readmoo.com/avatar/ll/jl9jqlh_130.png?v=1489027839",
+        "href": "https://cdn.readmoo.com/avatar/ll/jl9jqlh_130.png?v=1520494335",
         "meta": {
           "width": 130,
           "resize": "crop"
         }
       },
       "large": {
-        "href": "https://cdn.readmoo.com/avatar/ll/jl9jqlh_200.png?v=1489027839",
+        "href": "https://cdn.readmoo.com/avatar/ll/jl9jqlh_200.png?v=1520494335",
         "meta": {
           "width": 200,
           "resize": "crop"

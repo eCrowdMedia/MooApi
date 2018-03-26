@@ -1,0 +1,68 @@
+{
+  "data": {
+    "type": "documents",
+    "id": "120455",
+    "attributes": {
+      "title": "注音字型檔＋rb",
+      "cover": {
+        "medium": {
+          "href": "https://cdn.readmoo.com/d/9735/32e4/85a623da72a2feb12ab0d2014d/images/cover_210x315.jpg?Expires=1837391347&Signature=TC-HWnzV~-IylAlKjr-Z0JwLU5C0hZYeYei7G24WFyiNZE79s8lisd1XNFIa7Gdnk37b3rLMwIfp6mdJ1~GzwPjufGVKisHEW43Alk3dwCszvS2z5i8~JkQe1IDeF4b~qc3rYaCQnzXFXUu5aIlvqZ9GlRbXLgpKnhSmkFD0vFweDBEV6OJzc46-1REMJ2dug6apwssFacEM3~xv829s0D8KgIFs2sKxmBj-YeCfLxk3VxdijCzLuHas4DZDWemWu8dA8KK~7IR3C3t-BMpHG4bRsP1wGeWmQiuxOoEgPnfn9LyhOdbS2esZpNwcvc4M4a3K68-4AULOjT7WuE3LHQ__&Key-Pair-Id=APKAJLIHITVNV2K77LNA",
+          "meta": {
+            "width": 210,
+            "resize": "fit"
+          }
+        }
+      },
+      "language": "zh-TW",
+      "file": {
+        "filename": "san.epub",
+        "filesize": 8373067,
+        "file_extension": "epub",
+        "status": "finished",
+        "created_at": "2018-03-20T09:48:38Z"
+      },
+      "epub": {
+        "rendition": {
+          "layout": "reflowable"
+        },
+        "filesize": 8373067,
+        "latest_version": "1.000",
+        "last_modified_at": "2018-03-20T09:48:38Z"
+      },
+      "count": {
+        "unit": "words",
+        "amount": 297788
+      },
+      "reading": {
+        "state": "reading",
+        "privacy": "self",
+        "created_at": "2018-03-20T09:48:38Z",
+        "started_at": null,
+        "touched_at": "2018-03-20T10:04:00Z",
+        "ended_at": null,
+        "duration": 645,
+        "progress": 0.11,
+        "chapter": 7,
+        "position": 0.11,
+        "position_updated_at": "2018-03-20T10:04:00Z",
+        "location": "/6/14!/4/40/1:0",
+        "rating": 0
+      }
+    },
+    "relationships": {
+      "bookmarks": {
+        "links": {
+          "related": "https://api.readmoo.com/read/v2/me/documents/120455/bookmarks"
+        }
+      },
+      "highlights": {
+        "links": {
+          "related": "https://api.readmoo.com/read/v2/me/documents/120455/highlights"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.readmoo.com/read/v2/me/documents/120455"
+    }
+  }
+}

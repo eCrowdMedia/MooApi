@@ -6,26 +6,9 @@ public struct Reading: ResourceType {
   
   public let type: String
   public let id: String
-  public let attributes: Attributes
+  public let attributes: ReadingAttributes
   public let relationships: Relationships
   public let links: Links
-
-  public struct Attributes {
-    public let state: String
-    public let privacy: String
-    public let createdAt: String
-    public let startedAt: String?
-    public let touchedAt: String?
-    public let endedAt: String?
-    public let duration: Int
-    public let progress: Double
-    public let commentsCount: Int
-    public let highlightedCount: Int
-    public let position: Double
-    public let positionUpdatedAt: String?
-    public let location: String?
-    public let rating: Int
-  }
 
   public struct Relationships {
     public let book: ResourceIdentifier
@@ -48,32 +31,6 @@ extension Reading: Argo.Decodable {
       <*> json <| "attributes"
       <*> json <| "relationships"
       <*> json <| "links"
-  }
-}
-
-extension Reading.Attributes: Argo.Decodable {
-  public static func decode(_ json: JSON) -> Decoded<Reading.Attributes> {
-    let tmp1 = curry(Reading.Attributes.init)
-      <^> json <| "state"
-      <*> json <| "privacy"
-      <*> json <| "created_at"
-      <*> json <|? "started_at"
-      
-    let tmp2 = tmp1
-      <*> json <|? "touched_at"
-      <*> json <|? "ended_at"
-      <*> json <| "duration"
-      <*> json <| "progress"
-    
-    let tmp3 = tmp2
-      <*> json <| "comments_count"
-      <*> json <| "highlights_count"
-      <*> json <| "position"
-      <*> json <|? "position_updated_at"
-    
-    return tmp3
-      <*> json <|? "location"
-      <*> json <| "rating"
   }
 }
 

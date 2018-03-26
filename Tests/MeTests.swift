@@ -10,7 +10,7 @@ final internal class MeTests: XCTestCase {
     let path = testBundle.path(forResource: "MeInfo", ofType: "json")
     let data = try! Data(contentsOf: URL(fileURLWithPath: path!))
     let json = JSON(try! JSONSerialization.jsonObject(with: data, options: []))
-    let result = ApiDocument<MooApi.Me>.decode(json)
+    let result = ApiDocument<Me>.decode(json)
     
     guard (result.value?.data) != nil else {
       XCTFail("\(result.error.debugDescription)")

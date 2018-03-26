@@ -20,7 +20,7 @@ extension ApiManager {
     ///取得使用者書櫃內全部書籍的資料 success：回傳 BookshelfResult Array & syncDateString
     public static func syncPublications(auth: Authorization,
                                         lastModifiedTime: String?,
-                                        isDevelopMent: Bool = false,
+                                        isDevelopment: Bool = false,
                                         failure: @escaping (ServiceError) -> Void,
                                         success: @escaping ([BookshelfResult], String) -> Void)
     {
@@ -33,7 +33,7 @@ extension ApiManager {
                             api: ServiceApi.meLibraryPublications,
                             authorization: auth,
                             parameters: params,
-                            isDevelopMent: isDevelopMent)
+                            isDevelopment: isDevelopment)
       
       service.fetchJSONModelArrayAndHeader(queue: nil) { (result: Result<ApiDocumentEnvelope<Bookshelf>, ServiceError>, allHeader) in
         
@@ -72,7 +72,7 @@ extension ApiManager {
             auth: auth,
             nextURL: nextPageUrl,
             results: resultArray,
-            isDevelopMent: isDevelopMent,
+            isDevelopment: isDevelopment,
             failure: { (error) in
               failure(error)
             },
@@ -89,7 +89,7 @@ extension ApiManager {
     static func downloadBooks(auth: Authorization,
                               nextURL: URL,
                               results: [BookshelfResult],
-                              isDevelopMent: Bool = false,
+                              isDevelopment: Bool = false,
                               failure: @escaping (ServiceError) -> Void,
                               then: @escaping ([BookshelfResult]) -> Void)
     {
@@ -128,7 +128,7 @@ extension ApiManager {
             auth: auth,
             nextURL: nextPageUrl,
             results: newResults,
-            isDevelopMent: isDevelopMent,
+            isDevelopment: isDevelopment,
             failure: { (error) in
               failure(error)
             },

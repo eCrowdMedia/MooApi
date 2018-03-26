@@ -71,16 +71,18 @@ extension Book.Attributes: Argo.Decodable {
       <*> json <|? "short_description"
       <*> json <|? "description"
       <*> json <|? "isbn"
-      <*> json <| "language"
-      <*> json <| "main_subject"
       
     let tmp3 = tmp2
+      <*> json <| "language"
+      <*> json <| "main_subject"
       <*> json <|? "publication_date"
+    
+    let tmp4 = tmp3
       <*> json <| "adult_only"
       <*> json <| "epub"
       <*> json <| "suspend"
-      
-    return tmp3 
+    
+    return tmp4
       <*> (json <| "own" <|> .success(false))
       <*> json <|| "prices"
       <*> json <| "count"

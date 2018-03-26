@@ -7,7 +7,7 @@ extension ApiManager {
   public class OAuthApi {
     ///使用帳密獲取使用者的 Token
     public static func getToken(accountData: AccountData,
-                                isDevelopMent: Bool = false,
+                                isDevelopment: Bool = false,
                                 failure: @escaping (ServiceError) -> Void,
                                 success: @escaping (String) -> Void)
     {
@@ -23,7 +23,7 @@ extension ApiManager {
                             authorization: auth,
                             parameters: nil,
                             httpBody: optionalBody,
-                            isDevelopMent: isDevelopMent)
+                            isDevelopment: isDevelopment)
       
       
       service.fetchJSONRaw(with: service.oauthRequest, queue: nil) { (json, error) in
@@ -48,7 +48,7 @@ extension ApiManager {
     
     ///取得使用者的相關資訊
     public static func getMe(auth: Authorization,
-                             isDevelopMent: Bool = false,
+                             isDevelopment: Bool = false,
                              failure: @escaping (ServiceError) -> Void,
                              success: @escaping (Me) -> Void)
     {
@@ -56,7 +56,7 @@ extension ApiManager {
                             api: ServiceApi.me,
                             authorization: auth,
                             parameters: nil,
-                            isDevelopMent: isDevelopMent)
+                            isDevelopment: isDevelopment)
       
       service.fetchJSONModel(queue: nil) { (result: Result<ApiDocument<Me>, ServiceError>) in
         switch result {
@@ -72,7 +72,7 @@ extension ApiManager {
     public static func putDeviceId(auth: Authorization,
                                    deviceData: DeviceData,
                                    uuid: String,
-                                   isDevelopMent: Bool = false,
+                                   isDevelopment: Bool = false,
                                    failure: @escaping (ServiceError) -> Void,
                                    success: @escaping () -> Void)
     {
@@ -86,7 +86,7 @@ extension ApiManager {
                             authorization: auth,
                             parameters: nil,
                             httpBody: jsonData,
-                            isDevelopMent: isDevelopMent)
+                            isDevelopment: isDevelopment)
       
       service.fetchJSONRaw(with: service.request, queue: nil, completion: { (json, error) in
         if error != nil {

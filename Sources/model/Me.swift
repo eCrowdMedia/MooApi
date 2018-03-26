@@ -30,7 +30,7 @@ public struct Me: ResourceType {
   
   public struct Document {
     //文件上傳服務啟用狀態
-    public let activated: Bool?
+    public let activated: Bool
     //雲端空間（MB）
     public let quota: Int?
     //已使用之雲端空間（MB）
@@ -45,7 +45,7 @@ public struct Me: ResourceType {
   
   public struct Writemoo {
     //Writemoo 服務開通狀態
-    public let activated: Bool?
+    public let activated: Bool
   }
 }
 
@@ -92,7 +92,7 @@ extension Me.Document: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Me.Document>
   {
     return curry(Me.Document.init)
-      <^> json <|? "activated"
+      <^> json <| "activated"
       <*> json <|? "quota"
       <*> json <|? "usage"
       <*> json <|? "count"
@@ -105,7 +105,7 @@ extension Me.Writemoo: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Me.Writemoo>
   {
     return curry(Me.Writemoo.init)
-      <^> json <|? "activated"
+      <^> json <| "activated"
   }
 }
 

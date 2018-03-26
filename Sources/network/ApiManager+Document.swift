@@ -20,7 +20,7 @@ extension ApiManager {
     
     public static func sync(auth: Authorization,
                             lastModifiedTime: String?,
-                            isDevelopMent: Bool = false,
+                            isDevelopment: Bool = false,
                             failure: @escaping (ServiceError) -> Void,
                             success: @escaping ([DocumentResult]) -> Void)
     {
@@ -33,7 +33,7 @@ extension ApiManager {
                             api: ServiceApi.meDocuments(nil),
                             authorization: auth,
                             parameters: params,
-                            isDevelopMent: isDevelopMent)
+                            isDevelopment: isDevelopment)
       
       service.fetchJSONModelArray(queue: nil) { (result: Result<ApiDocumentEnvelope<Document>, ServiceError>) in
         switch result {
@@ -62,7 +62,7 @@ extension ApiManager {
             auth: auth,
             nextURL: nextPageUrl,
             results: resultArray,
-            isDevelopMent: isDevelopMent,
+            isDevelopment: isDevelopment,
             failure: { (error) in
               failure(error)
           },
@@ -80,7 +80,7 @@ extension ApiManager {
   static func downloadDocument(auth: Authorization,
                                nextURL: URL,
                                results: [DocumentResult],
-                               isDevelopMent: Bool = false,
+                               isDevelopment: Bool = false,
                                failure: @escaping (ServiceError) -> Void,
                                then: @escaping ([DocumentResult]) -> Void)
   {
@@ -113,7 +113,7 @@ extension ApiManager {
           auth: auth,
           nextURL: nextPageUrl,
           results: newResults,
-          isDevelopMent: isDevelopMent,
+          isDevelopment: isDevelopment,
           failure: { (error) in
             failure(error)
         },

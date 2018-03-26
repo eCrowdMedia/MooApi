@@ -21,7 +21,7 @@ public class ApiManager {
     public static func sync(readingId: String,
                             auth: Authorization,
                             params: [String: String]? = ["page[count]": "100"],
-                            isDevelopMent: Bool = false,
+                            isDevelopment: Bool = false,
                             failure: @escaping (ServiceError) -> Void,
                             success: @escaping ([HighlightResult]) -> Void)
     {
@@ -30,7 +30,7 @@ public class ApiManager {
                             api: ServiceApi.meReadingsHighlights(readingId: readingId),
                             authorization: auth,
                             parameters: params,
-                            isDevelopMent: isDevelopMent)
+                            isDevelopment: isDevelopment)
       
       service.fetchJSONModelArray(queue: nil) { (result: Result<ApiDocumentEnvelope<Highlight>, ServiceError>) in
         
@@ -55,7 +55,7 @@ public class ApiManager {
             auth: auth,
             nextURL: nextPageUrl,
             results: resultArray,
-            isDevelopMent: isDevelopMent,
+            isDevelopment: isDevelopment,
             failure: { (error) in
               failure(error)
             },
@@ -71,7 +71,7 @@ public class ApiManager {
       auth: Authorization,
       nextURL: URL,
       results: [HighlightResult],
-      isDevelopMent: Bool = false,
+      isDevelopment: Bool = false,
       failure: @escaping (ServiceError) -> Void,
       then: @escaping ([HighlightResult]) -> Void)
     {
@@ -106,7 +106,7 @@ public class ApiManager {
             auth: auth,
             nextURL: nextPageUrl,
             results: newResults,
-            isDevelopMent: isDevelopMent,
+            isDevelopment: isDevelopment,
             failure: { (error) in
               failure(error)
             },
@@ -120,7 +120,7 @@ public class ApiManager {
     public static func append(readingId: String,
                               highlightData: Data,
                               auth: Authorization,
-                              isDevelopMent: Bool = false,
+                              isDevelopment: Bool = false,
                               completion: @escaping (String?, ServiceError?) -> Void)
     {
       
@@ -129,7 +129,7 @@ public class ApiManager {
                             authorization: auth,
                             parameters: nil,
                             httpBody: highlightData,
-                            isDevelopMent: isDevelopMent)
+                            isDevelopment: isDevelopment)
       
       service.uploadJSONData(queue: nil) { (data, headers, error) in
         if error != nil {
@@ -149,7 +149,7 @@ public class ApiManager {
     public static func modify(serverId: String,
                               highlightData: Data,
                               auth: Authorization,
-                              isDevelopMent: Bool = false,
+                              isDevelopment: Bool = false,
                               completion: @escaping (ServiceError?) -> Void)
     {
       
@@ -158,7 +158,7 @@ public class ApiManager {
                             authorization: auth,
                             parameters: nil,
                             httpBody: highlightData,
-                            isDevelopMent: isDevelopMent)
+                            isDevelopment: isDevelopment)
       
       service.uploadJSONData(queue: nil) { (data, headers, error) in
         
@@ -174,14 +174,14 @@ public class ApiManager {
     
     public static func remove(serverId: String,
                               auth: Authorization,
-                              isDevelopMent: Bool = false,
+                              isDevelopment: Bool = false,
                               completion: @escaping (ServiceError?) -> Void)
     {
       
       let service = Service(ServiceMethod.delete,
                             api: ServiceApi.meHighlights(highlightId: serverId),
                             authorization: auth,
-                            isDevelopMent: isDevelopMent)
+                            isDevelopment: isDevelopment)
       
       service.uploadJSONData(queue: nil) { (data, headers, error) in
         
@@ -213,7 +213,7 @@ public class ApiManager {
     public static func sync(readingId: String,
                             auth: Authorization,
                             params: [String: String]? = ["page[count]": "100"],
-                            isDevelopMent: Bool = false,
+                            isDevelopment: Bool = false,
                             failure: @escaping (ServiceError) -> Void,
                             success: @escaping ([BookmarkResult]) -> Void)
     {
@@ -222,7 +222,7 @@ public class ApiManager {
                             api: ServiceApi.meReadingsBookmarks(readingId: readingId),
                             authorization: auth,
                             parameters: params,
-                            isDevelopMent: isDevelopMent)
+                            isDevelopment: isDevelopment)
       
       service.fetchJSONModelArray(queue: nil) { (result: Result<ApiDocumentEnvelope<Bookmark>, ServiceError>) in
         
@@ -262,7 +262,7 @@ public class ApiManager {
       auth: Authorization,
       nextURL: URL,
       results: [BookmarkResult],
-      isDevelopMent: Bool = false,
+      isDevelopment: Bool = false,
       failure: @escaping (ServiceError) -> Void,
       then: @escaping ([BookmarkResult]) -> Void)
     {
@@ -308,7 +308,7 @@ public class ApiManager {
     public static func append(readingId: String,
                               bookmarkData: Data,
                               auth: Authorization,
-                              isDevelopMent: Bool = false,
+                              isDevelopment: Bool = false,
                               completion: @escaping (String?, ServiceError?) -> Void)
     {
       
@@ -316,7 +316,7 @@ public class ApiManager {
                             api: ServiceApi.meReadingsBookmarks(readingId: readingId),
                             authorization: auth,
                             httpBody: bookmarkData,
-                            isDevelopMent: isDevelopMent)
+                            isDevelopment: isDevelopment)
       
       service.uploadJSONData(queue: nil) { (data, headers, error) in
         if error != nil {
@@ -335,7 +335,7 @@ public class ApiManager {
     public static func modify(serverId: String,
                               bookmarkData: Data,
                               auth: Authorization,
-                              isDevelopMent: Bool = false,
+                              isDevelopment: Bool = false,
                               completion: @escaping (ServiceError?) -> Void)
     {
       
@@ -343,7 +343,7 @@ public class ApiManager {
                             api: ServiceApi.meBookmarks(bookmarkId: serverId),
                             authorization: auth,
                             httpBody: bookmarkData,
-                            isDevelopMent: isDevelopMent)
+                            isDevelopment: isDevelopment)
       
       service.uploadJSONData(queue: nil) { (data, headers, error) in
         
@@ -358,14 +358,14 @@ public class ApiManager {
     
     public static func remove(serverId: String,
                               auth: Authorization,
-                              isDevelopMent: Bool = false,
+                              isDevelopment: Bool = false,
                               completion: @escaping (ServiceError?) -> Void)
     {
       
       let service = Service(ServiceMethod.delete,
                             api: ServiceApi.meBookmarks(bookmarkId: serverId),
                             authorization: auth,
-                            isDevelopMent: isDevelopMent)
+                            isDevelopment: isDevelopment)
       
       service.uploadJSONData(queue: nil) { (data, headers, error) in
         
@@ -384,7 +384,7 @@ public class ApiManager {
     public static func append(readingId: String,
                               pingData: Data,
                               auth: Authorization,
-                              isDevelopMent: Bool = false,
+                              isDevelopment: Bool = false,
                               completion: @escaping (ServiceError?) -> Void)
     {
       
@@ -392,7 +392,7 @@ public class ApiManager {
                             api: ServiceApi.meReadingsReadinglogs(readingId: readingId),
                             authorization: auth,
                             httpBody: pingData,
-                            isDevelopMent: isDevelopMent)
+                            isDevelopment: isDevelopment)
       
       service.uploadJSONData(queue: nil) { (data, headers, error) in
         if error != nil {
@@ -421,14 +421,14 @@ public class ApiManager {
     
     public static func sync(readingId: String,
                             auth: Authorization,
-                            isDevelopMent: Bool = false,
+                            isDevelopment: Bool = false,
                             failure: @escaping (ServiceError) -> Void,
                             success: @escaping (ReadingResult) -> Void) {
       
       let service: Service = Service(ServiceMethod.get,
                                      api: ServiceApi.meReadings(readingId),
                                      authorization: auth,
-                                     isDevelopMent: isDevelopMent)
+                                     isDevelopment: isDevelopment)
       
       service.fetchJSONModel(queue: nil) { (result: Result<ApiDocument<Reading>, ServiceError>) in
         switch result {

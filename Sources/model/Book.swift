@@ -13,6 +13,7 @@ public struct Book: ResourceType {
   public struct Attributes {
     public let title: String
     public let subtitle: String?
+    public let cover: CoverData
     public let author: String
     public let shortDescription: String?
     public let largeDescription: String?
@@ -21,33 +22,17 @@ public struct Book: ResourceType {
     public let mainSubject: String
     public let publicationDate: String?
     public let isAdultOnly: Bool
-    public let epub: Epub
+    public let epub: EpubData
     public let isSuspend: Bool
     public let isOwn: Bool
     public let prices: [Price]
-    public let count: Count
-
-    public struct Epub {
-      public let rendition: Rendition
-      public let fileSize: Int
-      public let latestVersion: String
-      public let lastModifiedAt: String
-
-      public struct Rendition {
-        public let layout: String
-      }
-    }
+    public let count: CountData
 
     public struct Price {
       // e.g. "02", "04", "12", "99"
       public let type: String
       public let amount: Int
       public let currentyCode: String
-    }
-    
-    public struct Count {
-      public let unit: String
-      public let amount: Int
     }
   }
 
@@ -59,13 +44,6 @@ public struct Book: ResourceType {
 
   public struct Links {
     public let selfLink: String
-    public let epub: String
-    public let toc: String
-    public let reader: String
-    public let site: String
-    public let smallImage: ImageMeta
-    public let mediumImage: ImageMeta
-    public let largeImage: ImageMeta
   }
 
 }
@@ -86,42 +64,28 @@ extension Book.Attributes: Argo.Decodable {
     let tmp1 = curry(Book.Attributes.init)
       <^> json <| "title"
       <*> json <|? "subtitle"
+      <*> json <| "cover"
       <*> json <| "author"
-      <*> json <|? "short_description"
     
     let tmp2 = tmp1
+      <*> json <|? "short_description"
       <*> json <|? "description"
       <*> json <|? "isbn"
+      
+    let tmp3 = tmp2
       <*> json <| "language"
       <*> json <| "main_subject"
       <*> json <|? "publication_date"
-      
-    let tmp3 = tmp2
+    
+    let tmp4 = tmp3
       <*> json <| "adult_only"
       <*> json <| "epub"
       <*> json <| "suspend"
-      
-    return tmp3 
+    
+    return tmp4
       <*> (json <| "own" <|> .success(false))
       <*> json <|| "prices"
       <*> json <| "count"
-  }
-}
-
-extension Book.Attributes.Epub: Argo.Decodable {
-  public static func decode(_ json: JSON) -> Decoded<Book.Attributes.Epub> {
-    return curry(Book.Attributes.Epub.init)
-      <^> json <| "rendition"
-      <*> json <| "filesize"
-      <*> json <| "latest_version"
-      <*> json <| "last_modified_at"
-  }
-}
-
-extension Book.Attributes.Epub.Rendition: Argo.Decodable {
-  public static func decode(_ json: JSON) -> Decoded<Book.Attributes.Epub.Rendition> {
-    return curry(Book.Attributes.Epub.Rendition.init)
-      <^> json <| "layout"
   }
 }
 
@@ -131,14 +95,6 @@ extension Book.Attributes.Price: Argo.Decodable {
       <^> json <| "PriceType"
       <*> json <| "PriceAmount"
       <*> json <| "CurrencyCode"
-  }
-}
-
-extension Book.Attributes.Count: Argo.Decodable {
-  public static func decode(_ json: JSON) -> Decoded<Book.Attributes.Count> {
-    return curry(Book.Attributes.Count.init)
-      <^> json <| "unit"
-      <*> json <| "amount"
   }
 }
 
@@ -153,18 +109,7 @@ extension Book.Relationships: Argo.Decodable {
 
 extension Book.Links: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Book.Links> {
-    let tmp1 = curry(Book.Links.init)
+    return curry(Book.Links.init)
       <^> json <| "self"
-      <*> json <| "epub"
-      <*> json <| "toc"
-    
-    let tmp2 = tmp1
-      <*> json <| "reader"
-      <*> json <| "site"
-      <*> json <| "small"
-      
-    return tmp2
-      <*> json <| "medium"
-      <*> json <| "large"
   }
 }

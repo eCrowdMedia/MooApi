@@ -3,19 +3,20 @@ import XCTest
 import Argo
 import Foundation
 
-final internal class ReadingTests: XCTestCase {
+final internal class DocumentTests: XCTestCase {
   
-  func testDatas() {
+  func testParsing() {
     let testBundle = Bundle(for: type(of: self))
-    let path = testBundle.path(forResource: "ReadingInfo", ofType: "json")
+    let path = testBundle.path(forResource: "DocumentInfo", ofType: "json")
     let data = try! Data(contentsOf: URL(fileURLWithPath: path!))
     let json = JSON(try! JSONSerialization.jsonObject(with: data, options: []))
-    let result = ApiDocument<Reading>.decode(json)
+    let result = ApiDocument<Document>.decode(json)
     
-    guard (result.value?.data) != nil else {
+    // Test data
+    if result.value?.data == nil {
       XCTFail("\(result.error.debugDescription)")
-      return
     }
+    
   }
-  
+    
 }

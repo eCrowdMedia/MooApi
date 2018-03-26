@@ -16,6 +16,7 @@ public struct Document: ResourceType {
     //enum [ zh-Hant, zh-Hans, en, ja, fr ]
     public let language: String?
     public let file: File
+    public let urls: Urls
     public let epub: EpubData
     public let count: CountData
     public let reading: ReadingAttributes
@@ -28,6 +29,12 @@ public struct Document: ResourceType {
       public let createdAt: String
     }
     
+    public struct Urls {
+      public let toc: String
+      public let reader: String
+      public let license: String
+      public let epub: String
+    }
   }
   
   public struct Links {
@@ -56,6 +63,7 @@ extension Document.Attributes: Argo.Decodable {
     
     return tmp1
       <*> json <| "file"
+      <*> json <| "urls"
       <*> json <| "epub"
       <*> json <| "count"
       <*> json <| "reading"
@@ -71,6 +79,16 @@ extension Document.Attributes.File: Argo.Decodable {
       <*> json <| "file_extension"
       <*> json <| "status"
       <*> json <| "created_at"
+  }
+}
+
+extension Document.Attributes.Urls: Argo.Decodable {
+  public static func decode(_ json: JSON) -> Decoded<Document.Attributes.Urls> {
+    return curry(Document.Attributes.Urls.init)
+      <^> json <| "toc"
+      <*> json <| "reader"
+      <*> json <| "license"
+      <*> json <| "epub"
   }
 }
 

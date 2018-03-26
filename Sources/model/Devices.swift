@@ -1,10 +1,3 @@
-//
-//  Devices.swift
-//  MooApi
-//
-//  Created by Apple on 2017/11/21.
-//  Copyright © 2017年 ecrowdmedia.com. All rights reserved.
-//
 import Argo
 import Curry
 import Runes

@@ -12,15 +12,24 @@ public struct Bookshelf: ResourceType {
 
   public struct Attributes {
     public let isNew: Bool
+    ///[ everyone, friends, self ]
     public let privacy: String
     public let isArchive: Bool
     public let isSubscribable: Bool // if true is magazation, else is book.
-    public let policy: Policy?
+    public let policy: Policy
+    public let urls: Urls
     
     public struct Policy {
       public let type: String
       public let permissions: [Permission]
       public let prohibitions: [Prohibition]
+    }
+    
+    public struct Urls {
+      public let toc: String
+      public let reader: String
+      public let license: String
+      public let epub: String
     }
     
     public struct Permission {
@@ -46,9 +55,6 @@ public struct Bookshelf: ResourceType {
 
   public struct Links {
     public let selfLink: String
-    public let reader: String
-    public let license: String
-    public let toc: String
   }
 
 }
@@ -71,7 +77,8 @@ extension Bookshelf.Attributes: Argo.Decodable {
       <*> json <| "privacy"
       <*> json <| "archive"
       <*> json <| "subscribable"
-      <*> json <|? "policy"
+      <*> json <| "policy"
+      <*> json <| "urls"
   }
 }
 
@@ -81,6 +88,17 @@ extension Bookshelf.Attributes.Policy: Argo.Decodable {
       <^> json <| "type"
       <*> (json <|| "permissions" <|> .success([]))
       <*> (json <|| "prohibitions" <|> .success([]))
+  }
+}
+
+extension Bookshelf.Attributes.Urls: Argo.Decodable {
+  public static func decode(_ json: JSON) -> Decoded<Bookshelf.Attributes.Urls> {
+    return curry(Bookshelf.Attributes.Urls.init)
+      <^> json <| "toc"
+      <*> json <| "reader"
+      <*> json <| "license"
+      <*> json <| "epub"
+    
   }
 }
 
@@ -120,9 +138,5 @@ extension Bookshelf.Links: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Bookshelf.Links> {
     return curry(Bookshelf.Links.init)
       <^> json <| "self"
-      <*> json <| "reader"
-      <*> json <| "license"
-      <*> json <| "toc"
-    
   }
 }

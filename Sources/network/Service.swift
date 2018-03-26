@@ -38,9 +38,9 @@ public struct Service {
     authorization: Authorization,
     parameters: [String: String]? = nil,
     httpBody: Data? = nil,
-    isDevelopMent: Bool = false)
+    isDevelopment: Bool = false)
   {
-    let baseURL = isDevelopMent ? api.developURI : api.baseURI
+    let baseURL = isDevelopment ? api.developURI : api.baseURI
     self.url = URL(string: baseURL + api.path)!
     self.method = method
     self.authorization = authorization

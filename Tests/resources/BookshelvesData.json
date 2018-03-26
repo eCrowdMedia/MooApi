@@ -1,0 +1,260 @@
+{
+  "meta": {
+    "total_count": 68,
+    "page": {
+      "count": 1,
+      "offset": 0
+    }
+  },
+  "links": {
+    "self": "https://api.readmoo.com/read/v2/me/library/books?sort=smart&page%5Bcount%5D=1&page%5Boffset%5D=0",
+    "next": "https://api.readmoo.com/read/v2/me/library/books?sort=smart&page%5Bcount%5D=1&page%5Boffset%5D=1",
+    "last": "https://api.readmoo.com/read/v2/me/library/books?sort=smart&page%5Bcount%5D=1&page%5Boffset%5D=67"
+  },
+  "data": [
+    {
+      "type": "library_items",
+      "id": "1338960",
+      "attributes": {
+        "new": false,
+        "privacy": "self",
+        "archive": false,
+        "subscribable": false,
+        "policy": {
+          "type": "ticket",
+          "permissions": [],
+          "prohibitions": [
+            {
+              "action": "textToSpeech"
+            },
+            {
+              "action": "translate"
+            }
+          ]
+        },
+        "urls": {
+          "toc": "https://cdn.readmoo.com/book/toc/full/210073506000101.json",
+          "reader": "https://readmoo.com/api/reader/210073506000101",
+          "license": "https://api.readmoo.com/lcpl/210073506000101",
+          "epub": "https://api.readmoo.com/epub/210073506000101"
+        }
+      },
+      "relationships": {
+        "reading": {
+          "data": {
+            "type": "readings",
+            "id": "1138372"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/me/library/books/1338960"
+      }
+    }
+  ],
+  "included": [
+    {
+      "type": "publishers",
+      "id": "211",
+      "attributes": {
+        "name": "釀出版"
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/publishers/211"
+      }
+    },
+    {
+      "type": "categories",
+      "id": "3",
+      "attributes": {
+        "name": "文學小說"
+      },
+      "relationships": {
+        "parent": {
+          "data": null
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/categories/3"
+      }
+    },
+    {
+      "type": "categories",
+      "id": "127",
+      "attributes": {
+        "name": "小說"
+      },
+      "relationships": {
+        "parent": {
+          "data": {
+            "type": "categories",
+            "id": "3"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/categories/127"
+      }
+    },
+    {
+      "type": "contributors",
+      "id": "27710",
+      "attributes": {
+        "name": "徐訏"
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/contributors/27710"
+      }
+    },
+    {
+      "type": "books",
+      "id": "210073506000101",
+      "attributes": {
+        "title": "風蕭蕭（上）",
+        "subtitle": "",
+        "cover": {
+          "small": {
+            "href": "https://cdn.readmoo.com/cover/8g/67dalfg_120x180.jpg?v=0",
+            "meta": {
+              "width": 120,
+              "resize": "fit"
+            }
+          },
+          "medium": {
+            "href": "https://cdn.readmoo.com/cover/8g/67dalfg_210x315.jpg?v=0",
+            "meta": {
+              "width": 210,
+              "resize": "fit"
+            }
+          },
+          "large": {
+            "href": "https://cdn.readmoo.com/cover/8g/67dalfg_460x580.jpg?v=0",
+            "meta": {
+              "width": 460,
+              "resize": "fit"
+            }
+          }
+        },
+        "author": "徐訏",
+        "short_description": "四○年代上海孤島驚險諜報愛情故事 五十萬字一氣呵成 兩度改拍電視劇\r\n",
+        "description": "<p>一部將海派文學注入現代性的巔峰之作－－四○年代的上海租界孤島，是戰火洗禮下的紙醉金迷，風流不羈的公子哥史蒂芬、豔麗逼人的梅灜子、清麗純美的白蘋、婉約沉靜的海倫、好脾氣愛讀書的徐……，他們如何在詭譎多變的大時代底下相聚？男歡女愛，女女相惜，誰會料到複雜愛情背後夾纏著美日間諜的國家機密？個人的愛情，人生的夢想、國家民族的大義，如何抉擇或妥協？上海孤島驚險諜報愛情故事，《亞洲周刊》二十世紀中文小說一百強的經典名著！</p>\r\n",
+        "isbn": "9789863262251",
+        "language": "zh-Hant",
+        "main_subject": "文學小說",
+        "publication_date": "2015-04-30T16:00:00Z",
+        "adult_only": false,
+        "urls": {
+          "webpage": "https://readmoo.com/book/210073506000101",
+          "reader": "https://readmoo.com/api/Statistics/preview_log/210073506000101",
+          "toc": "https://cdn.readmoo.com/book/toc/preview/210073506000101.json",
+          "epub": "https://cdn.readmoo.com/book/preview/210073506000101.epub"
+        },
+        "epub": {
+          "rendition": {
+            "layout": "reflowable"
+          },
+          "filesize": 253312,
+          "latest_version": "1.000",
+          "last_modified_at": "2016-11-30T16:00:00Z"
+        },
+        "suspend": false,
+        "own": true,
+        "prices": [
+          {
+            "PriceType": "02",
+            "PriceAmount": 175,
+            "CurrencyCode": "TWD"
+          },
+          {
+            "PriceType": "04",
+            "PriceAmount": 175,
+            "CurrencyCode": "TWD"
+          },
+          {
+            "PriceType": "99",
+            "PriceAmount": 350,
+            "CurrencyCode": "TWD"
+          }
+        ],
+        "count": {
+          "unit": "words",
+          "amount": 122730
+        }
+      },
+      "relationships": {
+        "publisher": {
+          "data": {
+            "type": "publishers",
+            "id": "211"
+          }
+        },
+        "categories": {
+          "data": [
+            {
+              "type": "categories",
+              "id": "127"
+            }
+          ]
+        },
+        "contributors": {
+          "data": [
+            {
+              "type": "contributors",
+              "id": "27710",
+              "meta": {
+                "role": "A01",
+                "description": "作者"
+              }
+            }
+          ]
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/books/210073506000101"
+      }
+    },
+    {
+      "type": "readings",
+      "id": "1138372",
+      "attributes": {
+        "state": "reading",
+        "privacy": "self",
+        "created_at": "2018-01-02T14:55:42Z",
+        "started_at": "2018-01-02T14:56:35Z",
+        "touched_at": "2018-03-26T02:11:10Z",
+        "duration": 13980,
+        "progress": 0.002,
+        "comments_count": 2,
+        "highlights_count": 9,
+        "position": 0.002,
+        "position_updated_at": "2018-03-26T02:11:10Z",
+        "location": "/6/4!/4/2/1:1",
+        "rating": 0
+      },
+      "relationships": {
+        "book": {
+          "data": {
+            "type": "books",
+            "id": "210073506000101"
+          }
+        },
+        "bookmarks": {
+          "links": {
+            "related": "https://api.readmoo.com/read/v2/me/readings/1138372/bookmarks"
+          }
+        },
+        "highlights": {
+          "links": {
+            "related": "https://api.readmoo.com/read/v2/me/readings/1138372/highlights"
+          }
+        },
+        "review": {
+          "data": null
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/me/readings/1138372"
+      }
+    }
+  ]
+}

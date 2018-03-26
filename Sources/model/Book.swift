@@ -22,12 +22,20 @@ public struct Book: ResourceType {
     public let mainSubject: String
     public let publicationDate: String?
     public let isAdultOnly: Bool
+    public let urls: Urls
     public let epub: EpubData
     public let isSuspend: Bool
     public let isOwn: Bool
     public let prices: [Price]
     public let count: CountData
 
+    public struct Urls {
+      public let webpage: String?
+      public let reader: String?
+      public let toc: String?
+      public let epub: String?
+    }
+    
     public struct Price {
       // e.g. "02", "04", "12", "99"
       public let type: String
@@ -79,6 +87,7 @@ extension Book.Attributes: Argo.Decodable {
     
     let tmp4 = tmp3
       <*> json <| "adult_only"
+      <*> json <| "urls"
       <*> json <| "epub"
       <*> json <| "suspend"
     
@@ -86,6 +95,16 @@ extension Book.Attributes: Argo.Decodable {
       <*> (json <| "own" <|> .success(false))
       <*> json <|| "prices"
       <*> json <| "count"
+  }
+}
+
+extension Book.Attributes.Urls: Argo.Decodable {
+  public static func decode(_ json: JSON) -> Decoded<Book.Attributes.Urls> {
+    return curry(Book.Attributes.Urls.init)
+      <^> json <|? "webpage"
+      <*> json <|? "reader"
+      <*> json <|? "toc"
+      <*> json <|? "epub"
   }
 }
 

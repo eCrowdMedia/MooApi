@@ -430,6 +430,7 @@
 				2DECC7571E78344300FB815C /* CategoryTests.swift */,
 				2DD0B2A41E826B190053B8F5 /* CommentTests.swift */,
 				2DECC7581E78344300FB815C /* ContributorTests.swift */,
+				441E719B2063655D00A6FC28 /* DocumentTests.swift */,
 				2DD0B2981E825B600053B8F5 /* HighlightTests.swift */,
 				2DD0B29A1E825B720053B8F5 /* MarathonTests.swift */,
 				2DD0B29B1E825B720053B8F5 /* MeTests.swift */,
@@ -439,7 +440,6 @@
 				2DECC75B1E78344300FB815C /* ReviewTests.swift */,
 				2DECC75C1E78344300FB815C /* SubscriptionTests.swift */,
 				2DD0B29E1E825B7B0053B8F5 /* UserTests.swift */,
-				441E719B2063655D00A6FC28 /* DocumentTests.swift */,
 				2DECC7751E7834B900FB815C /* resources */,
 			);
 			path = Tests;

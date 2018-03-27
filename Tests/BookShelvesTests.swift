@@ -28,15 +28,27 @@ final internal class BookShelvesTests: XCTestCase {
     let result = ApiDocumentEnvelope<Bookshelf>.decode(json)
     
     // Test data
-    if result.value?.data == nil {
+    guard let dataList = result.value?.data else {
       XCTFail("\(result.error.debugDescription)")
       return
     }
     
-    if result.value?.included == nil {
+    guard let included = result.value?.included else {
       XCTFail("\(result.error.debugDescription)")
       return
     }
+    
+    if included.books.count != dataList.count {
+      XCTFail("\(result.error.debugDescription)")
+      return
+    }
+    
+    if included.readings.count != dataList.count {
+      XCTFail("\(result.error.debugDescription)")
+      return
+    }
+    
+    
   }
   
 }

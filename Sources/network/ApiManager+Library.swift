@@ -49,8 +49,10 @@ extension ApiManager {
             success([], syncDate)
             return
           }
-          // 有 data 沒 included 在書櫃不應該發生
-          guard let includedData = value.included else {
+          // 有 data 沒 included 在書櫃不應該發生, 同時 readings & books 數量對不上也有問題。
+          guard let includedData = value.included,
+            includedData.readings.count == value.data.count,
+            includedData.books.count == value.data.count else {
             failure(ServiceError.dataNotExisted)
             return
           }
@@ -103,8 +105,10 @@ extension ApiManager {
         case .failure(let error):
           failure(error)
         case .success(let value):
-          
-          guard let includedData = value.included else {
+          // 有 data 沒 included 在書櫃不應該發生, 同時 readings & books 數量對不上也有問題。
+          guard let includedData = value.included,
+            includedData.readings.count == value.data.count,
+            includedData.books.count == value.data.count  else {
             failure(ServiceError.dataNotExisted)
             return
           }

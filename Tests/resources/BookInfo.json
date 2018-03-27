@@ -1,164 +1,37 @@
 {
   "data": {
     "type": "books",
-    "id": "210073506000101",
+    "id": "220086892000101",
     "attributes": {
-      "title": "風蕭蕭（上）",
+      "title": "RDE英語閱刊 04月號/2018 第11期",
       "subtitle": "",
-      "cover": {
-        "small": {
-          "href": "https://cdn.readmoo.com/cover/8g/67dalfg_120x180.jpg?v=0",
-          "meta": {
-            "width": 120,
-            "resize": "fit"
-          }
-        },
-        "medium": {
-          "href": "https://cdn.readmoo.com/cover/8g/67dalfg_210x315.jpg?v=0",
-          "meta": {
-            "width": 210,
-            "resize": "fit"
-          }
-        },
-        "large": {
-          "href": "https://cdn.readmoo.com/cover/8g/67dalfg_460x580.jpg?v=0",
-          "meta": {
-            "width": 460,
-            "resize": "fit"
-          }
-        }
-      },
-      "author": "徐訏",
-      "short_description": "四○年代上海孤島驚險諜報愛情故事 五十萬字一氣呵成 兩度改拍電視劇\r\n",
-      "description": "<p>一部將海派文學注入現代性的巔峰之作－－四○年代的上海租界孤島，是戰火洗禮下的紙醉金迷，風流不羈的公子哥史蒂芬、豔麗逼人的梅灜子、清麗純美的白蘋、婉約沉靜的海倫、好脾氣愛讀書的徐……，他們如何在詭譎多變的大時代底下相聚？男歡女愛，女女相惜，誰會料到複雜愛情背後夾纏著美日間諜的國家機密？個人的愛情，人生的夢想、國家民族的大義，如何抉擇或妥協？上海孤島驚險諜報愛情故事，《亞洲周刊》二十世紀中文小說一百強的經典名著！</p>\r\n",
-      "isbn": "9789863262251",
+      "author": "阿滴|滴妹",
+      "short_description": "“Better a witty fool than a foolish wit.”\r\n俗話說：「被騙一次，其錯在人；被騙兩次，其錯在己。」愚人節用這句話形容，實在是再適合不過了。在四月一日這天，不僅你身邊的人會想辦法整你，連網路世界都有辦法以假亂真，本期除了有今年愚人節影片的幕後製作故事外，還有最火紅的整人影片及Google過去最厲害的惡作劇，看了包準你會瞠目結舌、嚇到吃手手！\r\n \r\n",
+      "description": "<p>“Better a witty fool than a foolish wit.”<br>\r\n俗話說：「被騙一次，其錯在人；被騙兩次，其錯在己。」愚人節用這句話形容，實在是再適合不過了。在四月一日這天，不僅你身邊的人會想辦法整你，連網路世界都有辦法以假亂真，本期除了有今年愚人節影片的幕後製作故事外，還有最火紅的整人影片及Google過去最厲害的惡作劇，看了包準你會瞠目結舌、嚇到吃手手！<br>\r\n </p>\r\n\r\n<p><b>作者介紹</b></p>\r\n\r\n<p><b>阿滴、滴妹</b></p>\r\n\r\n<p>一對兄妹在工作和課業之餘，在自家臥室架起攝影機，開始透過鏡頭分享各種主題的英文教學，希望傳達給更多人「要喜歡英文，才能夠學好英文」的核心價值理念；因為這份熱忱而慢慢形成的「阿滴英文」，現在依舊持續地用活潑有趣的影片教學，讓英文不再只是單單的考試或科目，而是實際可運用於生活中的語言。<br>\r\n從 2015 年 1 月上傳的第一支影片開始，至今已累積 200 部以上的教學影片。在去年 2016 年時，更成為 YouTube 台灣大使，並也在今年的 7 月成為台灣第一個破百萬的教學性頻道。目前仍努力在各個社群平台推廣英文學習，總追蹤人數合計已有上百萬，影響力更是突破上千萬人次。</p>\r\n",
+      "isbn": "",
       "language": "zh-Hant",
-      "main_subject": "文學小說",
-      "publication_date": "2015-04-30T16:00:00Z",
+      "main_subject": "雜誌",
+      "publication_date": "2018-03-31T16:00:00Z",
       "adult_only": false,
       "urls": {
-        "webpage": "https://readmoo.com/book/210073506000101",
-        "reader": "https://readmoo.com/api/Statistics/preview_log/210073506000101",
-        "toc": "https://cdn.readmoo.com/book/toc/preview/210073506000101.json",
-        "epub": "https://cdn.readmoo.com/book/preview/210073506000101.epub"
+        "webpage": "https://readmoo.com/book/220086892000101",
+        "reader": "https://readmoo.com/api/Statistics/preview_log/220086892000101",
+        "toc": "https://cdn.readmoo.com/book/toc/preview/220086892000101.json",
+        "epub": "https://cdn.readmoo.com/book/preview/220086892000101.epub"
       },
       "epub": {
         "rendition": {
-          "layout": "reflowable"
+          "layout": "pre-paginated"
         },
-        "filesize": 253312,
+        "filesize": 15562228,
         "latest_version": "1.000",
-        "last_modified_at": "2016-11-30T16:00:00Z"
+        "last_modified_at": "2018-03-26T08:59:08Z"
       },
       "suspend": false,
-      "own": true,
-      "prices": [
-        {
-          "PriceType": "02",
-          "PriceAmount": 175,
-          "CurrencyCode": "TWD"
-        },
-        {
-          "PriceType": "04",
-          "PriceAmount": 175,
-          "CurrencyCode": "TWD"
-        },
-        {
-          "PriceType": "99",
-          "PriceAmount": 350,
-          "CurrencyCode": "TWD"
-        }
-      ],
-      "count": {
-        "unit": "words",
-        "amount": 122730
-      }
-    },
-    "relationships": {
-      "publisher": {
-        "data": {
-          "type": "publishers",
-          "id": "211"
-        }
-      },
-      "categories": {
-        "data": [
-          {
-            "type": "categories",
-            "id": "127"
-          }
-        ]
-      },
-      "contributors": {
-        "data": [
-          {
-            "type": "contributors",
-            "id": "27710",
-            "meta": {
-              "role": "A01",
-              "description": "作者"
-            }
-          }
-        ]
-      }
+      "own": true
     },
     "links": {
-      "self": "https://api.readmoo.com/read/v2/books/210073506000101"
+      "self": "https://api.readmoo.com/read/v2/books/220086892000101"
     }
-  },
-  "included": [
-    {
-      "type": "publishers",
-      "id": "211",
-      "attributes": {
-        "name": "釀出版"
-      },
-      "links": {
-        "self": "https://api.readmoo.com/read/v2/publishers/211"
-      }
-    },
-    {
-      "type": "categories",
-      "id": "3",
-      "attributes": {
-        "name": "文學小說"
-      },
-      "relationships": {
-        "parent": {
-          "data": null
-        }
-      },
-      "links": {
-        "self": "https://api.readmoo.com/read/v2/categories/3"
-      }
-    },
-    {
-      "type": "categories",
-      "id": "127",
-      "attributes": {
-        "name": "小說"
-      },
-      "relationships": {
-        "parent": {
-          "data": {
-            "type": "categories",
-            "id": "3"
-          }
-        }
-      },
-      "links": {
-        "self": "https://api.readmoo.com/read/v2/categories/127"
-      }
-    },
-    {
-      "type": "contributors",
-      "id": "27710",
-      "attributes": {
-        "name": "徐訏"
-      },
-      "links": {
-        "self": "https://api.readmoo.com/read/v2/contributors/27710"
-      }
-    }
-  ]
+  }
 }

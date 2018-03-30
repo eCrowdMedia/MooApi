@@ -16,10 +16,10 @@ extension ApiManager {
     }
     ///取得使用者書櫃內全部標籤的資料 success：回傳 TagResult Array & syncDateString
     public static func syncTags(auth: Authorization,
-                                        lastModifiedTime: String?,
-                                        isDevelopment: Bool = false,
-                                        failure: @escaping (ServiceError) -> Void,
-                                        success: @escaping ([TagResult], String) -> Void)
+                                lastModifiedTime: String?,
+                                isDevelopment: Bool = false,
+                                failure: @escaping (ServiceError) -> Void,
+                                success: @escaping ([TagResult], String) -> Void)
     {
       
       let service = Service(ServiceMethod.get,

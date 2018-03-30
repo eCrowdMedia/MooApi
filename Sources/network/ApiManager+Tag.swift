@@ -15,21 +15,17 @@ extension ApiManager {
       }
     }
     ///取得使用者書櫃內全部標籤的資料 success：回傳 TagResult Array & syncDateString
-    public static func syncPublications(auth: Authorization,
+    public static func syncTags(auth: Authorization,
                                         lastModifiedTime: String?,
                                         isDevelopment: Bool = false,
                                         failure: @escaping (ServiceError) -> Void,
                                         success: @escaping ([TagResult], String) -> Void)
     {
-      var params:[String: String] = ["page[count]": "500"]
-      if let modifiedTime = lastModifiedTime {
-        params["filter[modified_since]"] = modifiedTime
-      }
       
       let service = Service(ServiceMethod.get,
                             api: ServiceApi.meTags(nil),
                             authorization: auth,
-                            parameters: params,
+                            parameters: nil,
                             isDevelopment: isDevelopment)
       
       service.fetchJSONModelArrayAndHeader(queue: nil) { (result: Result<ApiDocumentEnvelope<Tag>, ServiceError>, allHeader) in
@@ -59,7 +55,7 @@ extension ApiManager {
             return
           }
           
-          downloadBooks(
+          downloadTags(
             auth: auth,
             nextURL: nextPageUrl,
             results: resultArray,
@@ -77,7 +73,7 @@ extension ApiManager {
       
     }
     
-    static func downloadBooks(auth: Authorization,
+    static func downloadTags(auth: Authorization,
                               nextURL: URL,
                               results: [TagResult],
                               isDevelopment: Bool = false,
@@ -94,13 +90,6 @@ extension ApiManager {
         case .failure(let error):
           failure(error)
         case .success(let value):
-          // 有 data 沒 included 在書櫃不應該發生, 同時 readings & books 數量對不上也有問題。
-          guard let includedData = value.included,
-            includedData.readings.count == value.data.count,
-            includedData.books.count == value.data.count  else {
-              failure(ServiceError.dataNotExisted)
-              return
-          }
           
           var newResults = results
           let result = TagResult(TagArray: value.data)
@@ -116,7 +105,7 @@ extension ApiManager {
             return
           }
           
-          downloadBooks(
+          downloadTags(
             auth: auth,
             nextURL: nextPageUrl,
             results: newResults,

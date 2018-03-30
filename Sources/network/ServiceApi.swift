@@ -6,6 +6,7 @@ public enum ServiceApi: ApiProtocol {
   case meLibraryMagazines(String?)
   case meLibraryPublications
   case meLibrarySubscriptions(String?)
+  case meTags(String?)
   case meDocuments(String?)
   case marathons(String?)
   case meReadings(String?)
@@ -47,6 +48,8 @@ public enum ServiceApi: ApiProtocol {
       return "/me/library/publications"
     case let .meLibrarySubscriptions(id):
       return "/me/library/subscriptions" + format(id)
+    case let .meTags(id):
+      return "/me/tags" + format(id)
     case let .meDocuments(id):
       return "/me/documents" + format(id)
     case let .marathons(id):

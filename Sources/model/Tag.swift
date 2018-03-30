@@ -16,7 +16,7 @@ public struct Tag: ResourceType {
   }
   
   public struct Relationships {
-    public let libraryItemBooks: ResourceIdentifier
+    public let libraryItemBooks: [ResourceIdentifier]
   }
 
   public struct Links {
@@ -47,7 +47,7 @@ extension Tag.Attributes: Argo.Decodable {
 extension Tag.Relationships: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Tag.Relationships> {
     return curry(Tag.Relationships.init)
-      <^> json <| ["library_item-books", "data"]
+      <^> (json <|| ["library_item-books", "data"] <|> .success([]))
   }
 }
 

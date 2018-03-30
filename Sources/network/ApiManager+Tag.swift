@@ -19,7 +19,7 @@ extension ApiManager {
                                 lastModifiedTime: String?,
                                 isDevelopment: Bool = false,
                                 failure: @escaping (ServiceError) -> Void,
-                                success: @escaping ([TagResult], String) -> Void)
+                                success: @escaping ([TagResult]) -> Void)
     {
       
       let service = Service(ServiceMethod.get,
@@ -28,25 +28,20 @@ extension ApiManager {
                             parameters: nil,
                             isDevelopment: isDevelopment)
       
-      service.fetchJSONModelArrayAndHeader(queue: nil) { (result: Result<ApiDocumentEnvelope<Tag>, ServiceError>, allHeader) in
-        
-        guard let allHeader = allHeader, let syncDate = allHeader["Date"] as? String else {
-          failure(ServiceError.dateNotFound)
-          return
-        }
+      service.fetchJSONModelArray(queue: nil) { (result: Result<ApiDocumentEnvelope<Tag>, ServiceError>) in
         
         switch result {
         case .success(let value):
           //代表 lastSync 沒資料可以更新，也是成功
           if value.data.count == 0 {
-            success([], syncDate)
+            success([])
             return
           }
           
           let resultArray:[TagResult] = [TagResult(TagArray: value.data)]
           
           guard let nextUrlString = value.paginationLinks?.next else {
-            success(resultArray, syncDate)
+            success(resultArray)
             return
           }
           
@@ -64,7 +59,7 @@ extension ApiManager {
               failure(error)
           },
             then: { (closureResults) in
-              success(closureResults, syncDate)
+              success(closureResults)
           })
         case .failure(let error):
           failure(error)

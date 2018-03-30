@@ -7,11 +7,16 @@ public struct Tag: ResourceType {
   public let type: String
   public let id: String
   public let attributes: Attributes
+  public let relationships: Relationships
   public let links: Links
 
   public struct Attributes {
     public let name: String
     public let count: String
+  }
+  
+  public struct Relationships {
+    public let libraryItemBooks: ResourceIdentifier
   }
 
   public struct Links {
@@ -26,6 +31,7 @@ extension Tag: Argo.Decodable {
       <^> json <| "type"
       <*> json <| "id"
       <*> json <| "attributes"
+      <*> json <| "relationships"
       <*> json <| "links"
   }
 }
@@ -35,6 +41,13 @@ extension Tag.Attributes: Argo.Decodable {
     return curry(Tag.Attributes.init)
       <^> json <| "name"
       <*> json <| "count"
+  }
+}
+
+extension Tag.Relationships: Argo.Decodable {
+  public static func decode(_ json: JSON) -> Decoded<Tag.Relationships> {
+    return curry(Tag.Relationships.init)
+      <^> json <| ["library_item-books", "data"]
   }
 }
 

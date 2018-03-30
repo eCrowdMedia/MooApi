@@ -21,11 +21,15 @@ extension ApiManager {
                                 failure: @escaping (ServiceError) -> Void,
                                 success: @escaping ([TagResult]) -> Void)
     {
+      let params:[String: String] = [
+        "fields[books]"                   : "cover",
+        "page[library_item-books][count]" : "6"
+      ]
       
       let service = Service(ServiceMethod.get,
                             api: ServiceApi.meTags(nil),
                             authorization: auth,
-                            parameters: nil,
+                            parameters: params,
                             isDevelopment: isDevelopment)
       
       service.fetchJSONModelArray(queue: nil) { (result: Result<ApiDocumentEnvelope<Tag>, ServiceError>) in

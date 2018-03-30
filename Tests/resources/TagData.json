@@ -1,0 +1,142 @@
+{
+  "data": [
+    {
+      "type": "tags",
+      "id": "5",
+      "attributes": {
+        "name": "舞林秘笈",
+        "count": 0
+      },
+      "relationships": {
+        "library_item-books": {
+          "data": [],
+          "meta": {
+            "total_count": 0
+          },
+          "links": {
+            "self": "https://api.readmoo.com/read/v2/me/tags/5/relationships/library_item-books",
+            "related": "https://api.readmoo.com/read/v2/me/tags/5/library_item-books"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/me/tags/5"
+      }
+    },
+    {
+      "type": "tags",
+      "id": "607",
+      "attributes": {
+        "name": "犢月刊",
+        "count": 0
+      },
+      "relationships": {
+        "library_item-books": {
+          "data": [],
+          "meta": {
+            "total_count": 0
+          },
+          "links": {
+            "self": "https://api.readmoo.com/read/v2/me/tags/607/relationships/library_item-books",
+            "related": "https://api.readmoo.com/read/v2/me/tags/607/library_item-books"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/me/tags/607"
+      }
+    },
+    {
+      "type": "tags",
+      "id": "1598",
+      "attributes": {
+        "name": "遠景",
+        "count": 0
+      },
+      "relationships": {
+        "library_item-books": {
+          "data": [],
+          "meta": {
+            "total_count": 0
+          },
+          "links": {
+            "self": "https://api.readmoo.com/read/v2/me/tags/1598/relationships/library_item-books",
+            "related": "https://api.readmoo.com/read/v2/me/tags/1598/library_item-books"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/me/tags/1598"
+      }
+    },
+    {
+      "type": "tags",
+      "id": "1735",
+      "attributes": {
+        "name": "大唐雙龍傳",
+        "count": 0
+      },
+      "relationships": {
+        "library_item-books": {
+          "data": [],
+          "meta": {
+            "total_count": 0
+          },
+          "links": {
+            "self": "https://api.readmoo.com/read/v2/me/tags/1735/relationships/library_item-books",
+            "related": "https://api.readmoo.com/read/v2/me/tags/1735/library_item-books"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/me/tags/1735"
+      }
+    },
+    {
+      "type": "tags",
+      "id": "82576",
+      "attributes": {
+        "name": "經理人月刊",
+        "count": 0
+      },
+      "relationships": {
+        "library_item-books": {
+          "data": [],
+          "meta": {
+            "total_count": 0
+          },
+          "links": {
+            "self": "https://api.readmoo.com/read/v2/me/tags/82576/relationships/library_item-books",
+            "related": "https://api.readmoo.com/read/v2/me/tags/82576/library_item-books"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/me/tags/82576"
+      }
+    },
+    {
+      "type": "tags",
+      "id": "91873",
+      "attributes": {
+        "name": "APP測試",
+        "count": 0
+      },
+      "relationships": {
+        "library_item-books": {
+          "data": [],
+          "meta": {
+            "total_count": 0
+          },
+          "links": {
+            "self": "https://api.readmoo.com/read/v2/me/tags/91873/relationships/library_item-books",
+            "related": "https://api.readmoo.com/read/v2/me/tags/91873/library_item-books"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/me/tags/91873"
+      }
+    }
+  ]
+}

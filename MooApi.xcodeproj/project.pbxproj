@@ -130,6 +130,9 @@
 		4475B83B2032A3A00046AE08 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4475B83A2032A3A00046AE08 /* ApiManager.swift */; };
 		44EBD45C2068AC7A0087642C /* DocumentInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 44EBD45B2068AC7A0087642C /* DocumentInfo.json */; };
 		44EBD45E2068ACEC0087642C /* BookshelvesData.json in Resources */ = {isa = PBXBuildFile; fileRef = 44EBD45D2068ACEC0087642C /* BookshelvesData.json */; };
+		5603DD30206DECC200113300 /* TagData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5603DD2E206DECB900113300 /* TagData.json */; };
+		5603DD32206DECE300113300 /* TagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5603DD31206DECE300113300 /* TagTests.swift */; };
+		5603DD34206DF5CD00113300 /* ApiManager+Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5603DD33206DF5CD00113300 /* ApiManager+Tag.swift */; };
 		5E502D504847D3B53A1DC0E9 /* Pods_MooApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1912B8AFB0B5DB47E4381079 /* Pods_MooApi.framework */; };
 		A339B429A5D2887CE6AD42DB /* Pods_MooApiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5A744F978B0521FE178C904 /* Pods_MooApiTests.framework */; };
 /* End PBXBuildFile section */
@@ -275,6 +278,9 @@
 		4475B83A2032A3A00046AE08 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		44EBD45B2068AC7A0087642C /* DocumentInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DocumentInfo.json; sourceTree = "<group>"; };
 		44EBD45D2068ACEC0087642C /* BookshelvesData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BookshelvesData.json; sourceTree = "<group>"; };
+		5603DD2E206DECB900113300 /* TagData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TagData.json; sourceTree = "<group>"; };
+		5603DD31206DECE300113300 /* TagTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagTests.swift; sourceTree = "<group>"; };
+		5603DD33206DF5CD00113300 /* ApiManager+Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApiManager+Tag.swift"; sourceTree = "<group>"; };
 		E5A744F978B0521FE178C904 /* Pods_MooApiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MooApiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -439,6 +445,7 @@
 				2DECC75A1E78344300FB815C /* ReadingTests.swift */,
 				2DECC75B1E78344300FB815C /* ReviewTests.swift */,
 				2DECC75C1E78344300FB815C /* SubscriptionTests.swift */,
+				5603DD31206DECE300113300 /* TagTests.swift */,
 				2DD0B29E1E825B7B0053B8F5 /* UserTests.swift */,
 				2DECC7751E7834B900FB815C /* resources */,
 			);
@@ -465,6 +472,7 @@
 				2DD0B2A21E825E330053B8F5 /* ReadingLogInfo.json */,
 				2DECC7631E78344300FB815C /* ReviewInfo.json */,
 				2DECC7641E78344300FB815C /* SubscriptionInfo.json */,
+				5603DD2E206DECB900113300 /* TagData.json */,
 				2DD0B28F1E825AFD0053B8F5 /* UserInfo.json */,
 			);
 			path = resources;
@@ -538,6 +546,7 @@
 				183EFB341FAC2A1500C84CD5 /* DownloadEpubOperation.swift */,
 				4475B83A2032A3A00046AE08 /* ApiManager.swift */,
 				442EDA2820492B87008C8D76 /* ApiManager+Library.swift */,
+				5603DD33206DF5CD00113300 /* ApiManager+Tag.swift */,
 				444803CF2060E560009B0014 /* ApiManager+User.swift */,
 				4441011C20634CAB0071BA5F /* ApiManager+Document.swift */,
 			);
@@ -682,6 +691,7 @@
 				2DD0B2971E825B520053B8F5 /* RangeInfo.json in Resources */,
 				2DECC76D1E78344300FB815C /* BookInfo.json in Resources */,
 				2DD0B2A31E825E330053B8F5 /* ReadingLogInfo.json in Resources */,
+				5603DD30206DECC200113300 /* TagData.json in Resources */,
 				2DECC76F1E78344300FB815C /* CategoryInfo.json in Resources */,
 				2DECC7731E78344300FB815C /* ReviewInfo.json in Resources */,
 				2DECC7711E78344300FB815C /* PublisherInfo.json in Resources */,
@@ -844,6 +854,7 @@
 				2DECC73A1E78342C00FB815C /* ApiDocument.swift in Sources */,
 				187804411FD6AA1D0087AB74 /* StoreBookCoverItem.swift in Sources */,
 				2DECC73E1E78342C00FB815C /* ApiDocumentMeta.swift in Sources */,
+				5603DD34206DF5CD00113300 /* ApiManager+Tag.swift in Sources */,
 				187804431FD6AA8D0087AB74 /* StoreBookRenditionItem.swift in Sources */,
 				2DD0B28A1E825AD10053B8F5 /* Range.swift in Sources */,
 				2D5C3B181EC1783C000F01C1 /* Authorization.swift in Sources */,
@@ -902,6 +913,7 @@
 				444803D5206108F3009B0014 /* CharacterSet+Extension.swift in Sources */,
 				2DD0B29D1E825B720053B8F5 /* MeTests.swift in Sources */,
 				441E719C2063655D00A6FC28 /* DocumentTests.swift in Sources */,
+				5603DD32206DECE300113300 /* TagTests.swift in Sources */,
 				2DECC7661E78344300FB815C /* BookTests.swift in Sources */,
 				2DECC7681E78344300FB815C /* ContributorTests.swift in Sources */,
 				2DD0B2AD1E8281E70053B8F5 /* BookmarkTests.swift in Sources */,

@@ -14,7 +14,7 @@ final internal class TagTests: XCTestCase {
     do {
       _ = try JSONDecoder().decode(TagResponse.self, from: data)
     } catch {
-      XCTFail(error.localizedDescription)
+      XCTFail("\(error)")
     }
     
   }

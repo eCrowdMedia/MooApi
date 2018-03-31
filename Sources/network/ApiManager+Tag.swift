@@ -22,7 +22,7 @@ extension ApiManager {
                                 lastModifiedTime: String?,
                                 isDevelopment: Bool = false,
                                 failure: @escaping (ServiceError) -> Void,
-                                success: @escaping (TagResponse) -> Void)
+                                success: @escaping ([TagResult]) -> Void)
     {
       let params:[String: String] = [
         "fields[books]"                   : "cover",
@@ -43,20 +43,16 @@ extension ApiManager {
         }
         
         guard let response = response else {
-          print("TagResponse is no exist")
+          failure(.dataNotExisted)
           return
         }
         
         let tagArray = response.data
-        if tagArray.count == 0 {
-          success(response)
-          return
-        }
         
         let resultArray: [TagResult] = [TagResult(tagArray)]
         
         guard let nextUrlString = response.links?.next else {
-          success(response)
+          success(resultArray)
           return
         }
         
@@ -87,7 +83,7 @@ extension ApiManager {
                               results: [TagResult],
                               isDevelopment: Bool = false,
                               failure: @escaping (ServiceError) -> Void,
-                              then: @escaping (TagResponse) -> Void)
+                              then: @escaping ([TagResult]) -> Void)
     {
       let service = Service(ServiceMethod.get,
                             url: nextURL,
@@ -101,7 +97,7 @@ extension ApiManager {
         }
         
         guard let response = response else {
-          print("TagResponse is no exist")
+          failure(.dataNotExisted)
           return
         }
         
@@ -110,7 +106,7 @@ extension ApiManager {
         newResults.append(result)
         
         guard let nextUrlString = response.links?.next else {
-          then(response)
+          then(newResults)
           return
         }
         

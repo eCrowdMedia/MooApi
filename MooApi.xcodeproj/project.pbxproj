@@ -92,7 +92,6 @@
 		2DECC74E1E78342C00FB815C /* ReadingLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DECC7331E78342C00FB815C /* ReadingLog.swift */; };
 		2DECC74F1E78342C00FB815C /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DECC7341E78342C00FB815C /* Review.swift */; };
 		2DECC7501E78342C00FB815C /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DECC7351E78342C00FB815C /* Subscription.swift */; };
-		2DECC7511E78342C00FB815C /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DECC7361E78342C00FB815C /* Tag.swift */; };
 		2DECC7521E78342C00FB815C /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DECC7371E78342C00FB815C /* Service.swift */; };
 		2DECC7531E78342C00FB815C /* ServiceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DECC7381E78342C00FB815C /* ServiceApi.swift */; };
 		2DECC7541E78342C00FB815C /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DECC7391E78342C00FB815C /* ServiceError.swift */; };
@@ -133,6 +132,7 @@
 		5603DD30206DECC200113300 /* TagData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5603DD2E206DECB900113300 /* TagData.json */; };
 		5603DD32206DECE300113300 /* TagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5603DD31206DECE300113300 /* TagTests.swift */; };
 		5603DD34206DF5CD00113300 /* ApiManager+Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5603DD33206DF5CD00113300 /* ApiManager+Tag.swift */; };
+		5603DD37206F212F00113300 /* TagResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5603DD36206F212F00113300 /* TagResponse.swift */; };
 		5E502D504847D3B53A1DC0E9 /* Pods_MooApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1912B8AFB0B5DB47E4381079 /* Pods_MooApi.framework */; };
 		A339B429A5D2887CE6AD42DB /* Pods_MooApiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5A744F978B0521FE178C904 /* Pods_MooApiTests.framework */; };
 /* End PBXBuildFile section */
@@ -240,7 +240,6 @@
 		2DECC7331E78342C00FB815C /* ReadingLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadingLog.swift; sourceTree = "<group>"; };
 		2DECC7341E78342C00FB815C /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		2DECC7351E78342C00FB815C /* Subscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
-		2DECC7361E78342C00FB815C /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		2DECC7371E78342C00FB815C /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		2DECC7381E78342C00FB815C /* ServiceApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceApi.swift; sourceTree = "<group>"; };
 		2DECC7391E78342C00FB815C /* ServiceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
@@ -281,6 +280,7 @@
 		5603DD2E206DECB900113300 /* TagData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TagData.json; sourceTree = "<group>"; };
 		5603DD31206DECE300113300 /* TagTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagTests.swift; sourceTree = "<group>"; };
 		5603DD33206DF5CD00113300 /* ApiManager+Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApiManager+Tag.swift"; sourceTree = "<group>"; };
+		5603DD36206F212F00113300 /* TagResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagResponse.swift; sourceTree = "<group>"; };
 		E5A744F978B0521FE178C904 /* Pods_MooApiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MooApiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -414,6 +414,7 @@
 		2DECC7021E78341900FB815C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				5603DD35206F210800113300 /* Response */,
 				444803D2206108E0009B0014 /* Extension */,
 				2DECC7781E78EA3000FB815C /* core */,
 				2D01B29C1E8128DD00583A7C /* helper */,
@@ -513,7 +514,6 @@
 				2DECC7331E78342C00FB815C /* ReadingLog.swift */,
 				2DECC7341E78342C00FB815C /* Review.swift */,
 				2DECC7351E78342C00FB815C /* Subscription.swift */,
-				2DECC7361E78342C00FB815C /* Tag.swift */,
 				2D01B2841E80DBFA00583A7C /* User.swift */,
 				18CB970A1FC3FF12007D5405 /* Devices.swift */,
 				18074E3C1FFC97220005C40D /* LCPL */,
@@ -559,6 +559,14 @@
 				444803D3206108F3009B0014 /* CharacterSet+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		5603DD35206F210800113300 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				5603DD36206F212F00113300 /* TagResponse.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 		C3972CC81F7208F9E82194F7 /* Frameworks */ = {
@@ -809,7 +817,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DECC7511E78342C00FB815C /* Tag.swift in Sources */,
 				18CB970D1FC41072007D5405 /* StoreApi.swift in Sources */,
 				18CB97641FC56220007D5405 /* StoreBaseType.swift in Sources */,
 				181C80FD1FC8200000BE280B /* StoreDataBaseBookItem.swift in Sources */,
@@ -864,6 +871,7 @@
 				1842E7F71FDE5D8200C1C671 /* StoreBookPages.swift in Sources */,
 				181C80FF1FC821FE00BE280B /* StoreDataBasePageItem.swift in Sources */,
 				18CB97631FC56220007D5405 /* StoreBanner.swift in Sources */,
+				5603DD37206F212F00113300 /* TagResponse.swift in Sources */,
 				444803D4206108F3009B0014 /* CharacterSet+Extension.swift in Sources */,
 				18074E401FFCAA4E0005C40D /* LCPLLink.swift in Sources */,
 				2DECC7481E78342C00FB815C /* Category.swift in Sources */,

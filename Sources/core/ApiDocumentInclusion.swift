@@ -20,7 +20,6 @@ final public class ApiDocumentInclusion {
   public internal(set) var readingLogs   = [ReadingLog]()
   public internal(set) var reviews       = [Review]()
   public internal(set) var subscriptions = [Subscription]()
-  public internal(set) var tags          = [Tag]()
   public internal(set) var users         = [User]()
   
   fileprivate enum IncludedType: String {
@@ -40,7 +39,6 @@ final public class ApiDocumentInclusion {
     case readingLogs   = "readinglogs"
     case reviews       = "reviews"
     case subscriptions = "subscriptions"
-    case tags          = "tags"
     case users         = "users"
   }
   
@@ -156,12 +154,6 @@ extension ApiDocumentInclusion: Argo.Decodable {
       case .subscriptions:
         if let item = Subscription.decode(jsonObject).value {
           included.subscriptions.append(item)
-        } else {
-          NSLog("can't decode: \(jsonObject)")
-        }
-      case .tags:
-        if let item = Tag.decode(jsonObject).value {
-          included.tags.append(item)
         } else {
           NSLog("can't decode: \(jsonObject)")
         }

@@ -6,6 +6,17 @@ extension ApiManager {
   
   public class TagApi {
     
+    public typealias Tag = TagResponse.Data
+    
+    public struct TagResult {
+      public let TagArray: [Tag]
+      
+      init(_ TagArray: [Tag])
+      {
+        self.TagArray = TagArray
+      }
+    }
+    
     ///取得使用者書櫃內全部標籤的資料 success：回傳 TagResponse
     public static func syncTags(auth: Authorization,
                                 lastModifiedTime: String?,
@@ -36,6 +47,14 @@ extension ApiManager {
           return
         }
         
+        let tagArray = response.data
+        if tagArray.count == 0 {
+          success(response)
+          return
+        }
+        
+        let resultArray: [TagResult] = [TagResult(tagArray)]
+        
         guard let nextUrlString = response.links?.next else {
           success(response)
           return
@@ -49,7 +68,7 @@ extension ApiManager {
         downloadTags(
           auth: auth,
           nextURL: nextPageUrl,
-          results: response.data,
+          results: resultArray,
           isDevelopment: isDevelopment,
           failure: { (error) in
             failure(error)
@@ -65,7 +84,7 @@ extension ApiManager {
     
     static func downloadTags(auth: Authorization,
                               nextURL: URL,
-                              results: [TagResponse.Data],
+                              results: [TagResult],
                               isDevelopment: Bool = false,
                               failure: @escaping (ServiceError) -> Void,
                               then: @escaping (TagResponse) -> Void)
@@ -87,8 +106,8 @@ extension ApiManager {
         }
         
         var newResults = results
-        let result = response.data
-        newResults.append(contentsOf: result)
+        let result = TagResult(response.data)
+        newResults.append(result)
         
         guard let nextUrlString = response.links?.next else {
           then(response)

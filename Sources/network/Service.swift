@@ -148,7 +148,7 @@ extension Service {
     }
   }
   
-  public func fetchJSONModel<T: ApiDecodable>(
+  public func fetchJSONModel<T: Codable>(
     queue: DispatchQueue?,
     completion: @escaping (T?, ServiceError?) -> Void)
   {

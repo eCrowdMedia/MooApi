@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "MooApi"
-  s.version      = "0.4.11"
+  s.version      = "0.4.12"
 
   s.summary      = "Readmoo JSON:API framework for iOS in Swift."
   s.homepage     = "https://github.com/eCrowdMedia/MooApi"

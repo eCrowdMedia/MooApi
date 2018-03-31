@@ -9,7 +9,20 @@
       },
       "relationships": {
         "library_item-books": {
-          "data": [],
+          "data": [
+            {
+              "type": "books",
+              "id": "210020447000101"
+            },
+            {
+              "type": "books",
+              "id": "210020454000101"
+            },
+            {
+              "type": "books",
+              "id": "210020455000101"
+            }
+          ],
           "meta": {
             "total_count": 0
           },
@@ -32,7 +45,20 @@
       },
       "relationships": {
         "library_item-books": {
-          "data": [],
+          "data": [
+            {
+              "type": "books",
+              "id": "220035099000101"
+            },
+            {
+              "type": "books",
+              "id": "220058349000101"
+            },
+            {
+              "type": "books",
+              "id": "220066538000101"
+            }
+          ],
           "meta": {
             "total_count": 0
           },
@@ -55,7 +81,20 @@
       },
       "relationships": {
         "library_item-books": {
-          "data": [],
+          "data": [
+            {
+              "type": "books",
+              "id": "210010466000101"
+            },
+            {
+              "type": "books",
+              "id": "210006162000101"
+            },
+            {
+              "type": "books",
+              "id": "210034800000101"
+            }
+          ],
           "meta": {
             "total_count": 0
           },
@@ -78,7 +117,20 @@
       },
       "relationships": {
         "library_item-books": {
-          "data": [],
+          "data": [
+            {
+              "type": "books",
+              "id": "210001283000101"
+            },
+            {
+              "type": "books",
+              "id": "210020114000101"
+            },
+            {
+              "type": "books",
+              "id": "210020113000101"
+            }
+          ],
           "meta": {
             "total_count": 0
           },
@@ -101,7 +153,20 @@
       },
       "relationships": {
         "library_item-books": {
-          "data": [],
+          "data": [
+            {
+              "type": "books",
+              "id": "220066215000101"
+            },
+            {
+              "type": "books",
+              "id": "220040977000101"
+            },
+            {
+              "type": "books",
+              "id": "220060644000101"
+            }
+          ],
           "meta": {
             "total_count": 0
           },
@@ -124,7 +189,20 @@
       },
       "relationships": {
         "library_item-books": {
-          "data": [],
+          "data": [
+            {
+              "type": "books",
+              "id": "210001881000101"
+            },
+            {
+              "type": "books",
+              "id": "210001879000101"
+            },
+            {
+              "type": "books",
+              "id": "210001880000101"
+            }
+          ],
           "meta": {
             "total_count": 0
           },
@@ -136,6 +214,224 @@
       },
       "links": {
         "self": "https://api.readmoo.com/read/v2/me/tags/91873"
+      }
+    }
+  ],
+  "included": [
+    {
+      "type": "books",
+      "id": "210020447000101",
+      "attributes": {
+        "cover": {
+          "small": "https://cdn.readmoo.com/cover/pp/hoqqumm_120x180.jpg?v=1497244427"
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/books/210020447000101"
+      }
+    },
+    {
+      "type": "books",
+      "id": "210020454000101",
+      "attributes": {
+        "cover": {
+          "small": "https://cdn.readmoo.com/cover/eb/eaalnbf_120x180.jpg?v=1497244303"
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/books/210020454000101"
+      }
+    },
+    {
+      "type": "books",
+      "id": "210020455000101",
+      "attributes": {
+        "cover": {
+          "small": "https://cdn.readmoo.com/cover/fl/ehcbmdg_120x180.jpg?v=1497434008"
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/books/210020455000101"
+      }
+    },
+    {
+      "type": "books",
+      "id": "220035099000101",
+      "attributes": {
+        "cover": {
+          "small": "https://cdn.readmoo.com/cover/jb/pbdqrep_120x180.jpg?v=0"
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/books/220035099000101"
+      }
+    },
+    {
+      "type": "books",
+      "id": "220058349000101",
+      "attributes": {
+        "cover": {
+          "small": "https://cdn.readmoo.com/cover/mr/mloztji_120x180.jpg?v=0"
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/books/220058349000101"
+      }
+    },
+    {
+      "type": "books",
+      "id": "220066538000101",
+      "attributes": {
+        "cover": {
+          "small": "https://cdn.readmoo.com/cover/im/qfbkpkq_120x180.jpg?v=1495761794"
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/books/220066538000101"
+      }
+    },
+    {
+      "type": "books",
+      "id": "210010466000101",
+      "attributes": {
+        "cover": {
+          "small": "https://cdn.readmoo.com/cover/8f/cf38l92_120x180.jpg?v=0"
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/books/210010466000101"
+      }
+    },
+    {
+      "type": "books",
+      "id": "210006162000101",
+      "attributes": {
+        "cover": {
+          "small": "https://cdn.readmoo.com/cover/8d/g4egl38_120x180.jpg?v=0"
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/books/210006162000101"
+      }
+    },
+    {
+      "type": "books",
+      "id": "210034800000101",
+      "attributes": {
+        "cover": {
+          "small": "https://cdn.readmoo.com/cover/64/22d3gbe_120x180.jpg?v=0"
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/books/210034800000101"
+      }
+    },
+    {
+      "type": "books",
+      "id": "210001283000101",
+      "attributes": {
+        "cover": {
+          "small": "https://cdn.readmoo.com/cover/a5/a48ci53_120x180.jpg?v=0"
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/books/210001283000101"
+      }
+    },
+    {
+      "type": "books",
+      "id": "210020114000101",
+      "attributes": {
+        "cover": {
+          "small": "https://cdn.readmoo.com/cover/8d/g526lf7_120x180.jpg?v=1492403912"
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/books/210020114000101"
+      }
+    },
+    {
+      "type": "books",
+      "id": "210020113000101",
+      "attributes": {
+        "cover": {
+          "small": "https://cdn.readmoo.com/cover/76/fdgdhd6_120x180.jpg?v=1492403927"
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/books/210020113000101"
+      }
+    },
+    {
+      "type": "books",
+      "id": "220066215000101",
+      "attributes": {
+        "cover": {
+          "small": "https://cdn.readmoo.com/cover/fh/bgajmnk_120x180.jpg?v=0"
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/books/220066215000101"
+      }
+    },
+    {
+      "type": "books",
+      "id": "220040977000101",
+      "attributes": {
+        "cover": {
+          "small": "https://cdn.readmoo.com/cover/7b/c35eh2g_120x180.jpg?v=0"
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/books/220040977000101"
+      }
+    },
+    {
+      "type": "books",
+      "id": "220060644000101",
+      "attributes": {
+        "cover": {
+          "small": "https://cdn.readmoo.com/cover/be/gdfbkc4_120x180.jpg?v=1520244881"
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/books/220060644000101"
+      }
+    },
+    {
+      "type": "books",
+      "id": "210001881000101",
+      "attributes": {
+        "cover": {
+          "small": "https://cdn.readmoo.com/cover/ll/jgnhq99_120x180.jpg?v=1517309175"
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/books/210001881000101"
+      }
+    },
+    {
+      "type": "books",
+      "id": "210001879000101",
+      "attributes": {
+        "cover": {
+          "small": "https://cdn.readmoo.com/cover/fk/kkbjmen_120x180.jpg?v=1515567335"
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/books/210001879000101"
+      }
+    },
+    {
+      "type": "books",
+      "id": "210001880000101",
+      "attributes": {
+        "cover": {
+          "small": "https://cdn.readmoo.com/cover/hb/j9kmom8_120x180.jpg?v=1515570679"
+        }
+      },
+      "links": {
+        "self": "https://api.readmoo.com/read/v2/books/210001880000101"
       }
     }
   ]

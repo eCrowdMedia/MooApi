@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct StoreDetailBookData: ApiDecodable {
+public struct StoreDetailBookData: Codable {
   public enum CodingKeys: String, CodingKey {
     case data = "data"
   }

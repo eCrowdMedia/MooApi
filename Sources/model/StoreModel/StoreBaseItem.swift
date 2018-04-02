@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct StoreBaseItem: ApiDecodable {
+public struct StoreBaseItem: Codable {
   
   public enum CodingKeys: String, CodingKey {
     case partial = "partial"

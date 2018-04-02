@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct LCPLLink: ApiDecodable {
+public struct LCPLLink: Codable {
   
   public enum CodingKeys: String, CodingKey {
     case rel    = "rel"

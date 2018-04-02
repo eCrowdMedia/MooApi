@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct StoreCollectionItem: ApiDecodable {
+public struct StoreCollectionItem: Codable {
   public let title: String
   public let description: String?
   public let logo: String?

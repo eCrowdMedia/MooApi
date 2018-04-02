@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct StoreSearchBook: ApiDecodable {
+public struct StoreSearchBook: Codable {
   
   public enum CodingKeys: String, CodingKey {
     case isOwn = "own"

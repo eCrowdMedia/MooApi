@@ -8,9 +8,9 @@
 
 import Foundation
 
-public struct LCPLEncryption: ApiDecodable {
+public struct LCPLEncryption: Codable {
 
-  public struct ContentKey: ApiDecodable {
+  public struct ContentKey: Codable {
     
     public enum CodingKeys: String, CodingKey {
       case encryptedValue = "encrypted_value"
@@ -21,7 +21,7 @@ public struct LCPLEncryption: ApiDecodable {
     public let algorithm: String
   }
   
-  public struct UserKey: ApiDecodable {
+  public struct UserKey: Codable {
     
     public enum CodingKeys: String, CodingKey {
       case textHint = "text_hint"

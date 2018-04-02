@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct StoreNavRectangle: StoreDataProtocal {
+public struct StoreNavRectangle: Codable, StoreDataProtocal {
   
   public enum CodingKeys: String, CodingKey {
     case title = "title"

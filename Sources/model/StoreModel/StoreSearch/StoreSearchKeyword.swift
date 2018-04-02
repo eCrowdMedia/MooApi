@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct StoreSearchKeyword: ApiDecodable {
+public struct StoreSearchKeyword: Codable {
   public let total: Int
   public let pagination: StorePagination
   public let data: [StoreSearchBook]

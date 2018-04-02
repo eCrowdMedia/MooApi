@@ -43,7 +43,6 @@
 		18CB976A1FC56220007D5405 /* StoreDataColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB975F1FC5621F007D5405 /* StoreDataColumn.swift */; };
 		18CB976B1FC56220007D5405 /* StoreNavCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB97601FC5621F007D5405 /* StoreNavCircle.swift */; };
 		18CB976C1FC56220007D5405 /* StoreNavRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB97611FC56220007D5405 /* StoreNavRectangle.swift */; };
-		18CB976E1FC5835F007D5405 /* ApiDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB976D1FC5835F007D5405 /* ApiDecodable.swift */; };
 		2D01B2851E80DBFA00583A7C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D01B2841E80DBFA00583A7C /* User.swift */; };
 		2D01B2871E80DFBA00583A7C /* ImageMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D01B2861E80DFBA00583A7C /* ImageMeta.swift */; };
 		2D01B2921E8123B300583A7C /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D01B2881E8123B300583A7C /* Comment.swift */; };
@@ -186,7 +185,6 @@
 		18CB975F1FC5621F007D5405 /* StoreDataColumn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreDataColumn.swift; sourceTree = "<group>"; };
 		18CB97601FC5621F007D5405 /* StoreNavCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreNavCircle.swift; sourceTree = "<group>"; };
 		18CB97611FC56220007D5405 /* StoreNavRectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreNavRectangle.swift; sourceTree = "<group>"; };
-		18CB976D1FC5835F007D5405 /* ApiDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiDecodable.swift; sourceTree = "<group>"; };
 		1912B8AFB0B5DB47E4381079 /* Pods_MooApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MooApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B902AC683F22B3462417513 /* Pods-MooApi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MooApi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MooApi/Pods-MooApi.debug.xcconfig"; sourceTree = "<group>"; };
 		2D01B2841E80DBFA00583A7C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -488,7 +486,6 @@
 				2DECC71F1E78342C00FB815C /* ApiDocumentLinks.swift */,
 				2DECC7201E78342C00FB815C /* ApiDocumentMeta.swift */,
 				2DD0B2B41E8375BC0053B8F5 /* ApiDocumentErrorEnvelope.swift */,
-				18CB976D1FC5835F007D5405 /* ApiDecodable.swift */,
 			);
 			path = core;
 			sourceTree = "<group>";
@@ -840,7 +837,6 @@
 				4441011D20634CAB0071BA5F /* ApiManager+Document.swift in Sources */,
 				18CB976A1FC56220007D5405 /* StoreDataColumn.swift in Sources */,
 				4441012C2063593E0071BA5F /* ReadingAttributes.swift in Sources */,
-				18CB976E1FC5835F007D5405 /* ApiDecodable.swift in Sources */,
 				2DECC74B1E78342C00FB815C /* Marathon.swift in Sources */,
 				4441012020634E3F0071BA5F /* Document.swift in Sources */,
 				18CB970B1FC3FF12007D5405 /* Devices.swift in Sources */,

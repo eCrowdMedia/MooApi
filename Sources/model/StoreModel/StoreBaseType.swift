@@ -7,7 +7,7 @@
 //
 
 import Foundation
-public enum StoreBaseType: String {
+public enum StoreBaseType: String, Codable {
   case bannerSet = "banner_set"
   case navCircle = "nav_circle"
   case dataColumn = "data_column"

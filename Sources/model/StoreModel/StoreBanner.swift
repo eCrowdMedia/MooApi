@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct StoreBanner: StoreDataProtocal {
+public struct StoreBanner: Codable, StoreDataProtocal {
   
   public enum CodingKeys: String, CodingKey {
     case title = "title"

@@ -10,7 +10,7 @@ import Foundation
 
 import Foundation
 
-public struct StoreFooter: StoreDataProtocal {
+public struct StoreFooter: Codable, StoreDataProtocal {
   
   public enum CodingKeys: String, CodingKey {
     case title = "title"

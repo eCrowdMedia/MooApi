@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct StoreBookRenditionItem: Decodable {
+public struct StoreBookRenditionItem: Codable {
   public enum CodingKeys: String, CodingKey {
     case layout = "layout"
   }

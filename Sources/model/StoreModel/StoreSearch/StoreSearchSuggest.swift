@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct StoreSearchSuggest: ApiDecodable {
+public struct StoreSearchSuggest: Codable {
   public let value: String
   public let type: String
   public let id: String

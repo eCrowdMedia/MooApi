@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct StoreBannerSet: StoreDataProtocal {
+public struct StoreBannerSet: Codable, StoreDataProtocal {
   
   public enum CodingKeys: String, CodingKey {
     case title = "title"
@@ -25,4 +25,3 @@ public struct StoreBannerSet: StoreDataProtocal {
   public var page: StoreDataBasePageItem
  
 }
-

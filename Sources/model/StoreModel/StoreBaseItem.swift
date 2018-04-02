@@ -13,6 +13,7 @@ public struct StoreBaseItem: ApiDecodable {
   public enum CodingKeys: String, CodingKey {
     case partial = "partial"
     case data = "data"
+    case type = "type"
   }
   
   public var partial: String
@@ -46,5 +47,8 @@ public struct StoreBaseItem: ApiDecodable {
     
   }
   
+  public func encode(to encoder: Encoder) throws {
+    
+  }
   
 }

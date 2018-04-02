@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct StoreDataBasePageItem: Decodable {
+public struct StoreDataBasePageItem: Codable {
   public enum CodingKeys: String, CodingKey {
     case type = "type"
     case id = "id"

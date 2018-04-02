@@ -8,6 +8,8 @@
 
 import Foundation
 
-public protocol StoreDataProtocal: Decodable {
+public protocol StoreDataProtocal{
+  
+  func encode(to encoder: Encoder) throws
   
 }

@@ -1,6 +1,6 @@
 import Foundation
 ///帳號裝置的資料
-public struct DeviceData: Encodable {
+public struct DeviceData: Codable {
   
   public enum CodingKeys: String, CodingKey {
     case data       = "data"
@@ -34,7 +34,7 @@ public struct DeviceData: Encodable {
 
 extension DeviceData {
   
-  public struct ParameterData: Encodable {
+  public struct ParameterData: Codable {
     
     public enum CodingKeys: String, CodingKey {
       case type       = "type"
@@ -71,7 +71,7 @@ extension DeviceData {
 
 extension DeviceData.ParameterData {
   
-  public struct Attributes: Encodable {
+  public struct Attributes: Codable {
     
     public enum CodingKeys: String, CodingKey {
       case name       = "name"
@@ -108,7 +108,7 @@ extension DeviceData.ParameterData {
 }
 extension DeviceData.ParameterData.Attributes {
   
-  public struct Key: Encodable {
+  public struct Key: Codable {
     
     public enum CodingKeys: String, CodingKey {
       case algorithm = "algorithm"

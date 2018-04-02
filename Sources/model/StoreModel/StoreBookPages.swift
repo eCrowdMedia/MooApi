@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct StoreBookPages: Decodable {
+public struct StoreBookPages: Codable {
   public let type: String
   public let total: Int
 }

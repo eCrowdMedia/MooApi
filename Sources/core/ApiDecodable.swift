@@ -1,3 +1,3 @@
-public protocol ApiDecodable: Decodable {
-  
+public protocol ApiDecodable: Codable {
+
 }

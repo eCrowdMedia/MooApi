@@ -37,7 +37,7 @@ extension ApiManager {
       
       
       service.fetchJSONModel(queue: nil) { (response: TagResponse?, serviceError) in
-        guard serviceError != nil else {
+        if serviceError != nil {
           failure(serviceError!)
           return
         }

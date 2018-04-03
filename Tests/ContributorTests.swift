@@ -13,23 +13,21 @@ final internal class ContributorTests: XCTestCase {
     let result = ApiDocument<MooApi.Contributor>.decode(json)
     
     
-    guard let contributor = result.value?.data else {
+    if result.error != nil {
       XCTFail("\(result.error.debugDescription)")
       return
     }
-
-    let attributes = contributor.attributes
-    let links = contributor.links
-
-    // Test type and id
-    XCTAssertEqual(contributor.type, "contributors")
-    XCTAssertEqual(contributor.id, "20441")
-
-    // Test attributes
-    XCTAssertEqual(attributes.name, "戴夫．卓特")
-
-    // Test links
-    XCTAssertEqual(links.selfLink, "https://api.readmoo.com/read/v2/contributors/20441")
+    
+    if result.value?.data == nil {
+      XCTFail("\(result.error.debugDescription)")
+      return
+    }
+    
+    if result.value?.data.attributes == nil {
+      XCTFail("\(result.error.debugDescription)")
+      return
+    }
+    
   }
   
 }

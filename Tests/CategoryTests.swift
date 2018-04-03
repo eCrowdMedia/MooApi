@@ -19,7 +19,6 @@ final internal class CategoryTests: XCTestCase {
 
     let attributes = category.attributes
     let relationships = category.relationships
-    let links = category.links
 
     // Test type and id
     XCTAssertEqual(category.type, "categories")
@@ -31,9 +30,6 @@ final internal class CategoryTests: XCTestCase {
     // Test relationships
     XCTAssertEqual(relationships.parent?.type, "categories")
     XCTAssertEqual(relationships.parent?.id, "181")
-
-    // Test links
-    XCTAssertEqual(links.selfLink, "https://api.readmoo.com/read/v2/categories/182")
 
     // Test included
     guard let inclusion = result.value?.included else {

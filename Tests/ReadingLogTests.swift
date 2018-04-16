@@ -24,7 +24,6 @@ final internal class ReadingLogTests: XCTestCase {
 
     let attributes = readingLog.attributes
     let relationships = readingLog.relationships
-    let links = readingLog.links
 
     // Test type and id
     XCTAssertEqual(readingLog.type, "readinglogs")
@@ -55,8 +54,6 @@ final internal class ReadingLogTests: XCTestCase {
     XCTAssertEqual(relationships.reading.id, "51924")
 //    XCTAssertEqual(relationships.reading.links?.related, "https://api.readmoo.com/read/v2/me/readinglogs/3272563/reading")
 
-    // test links
-    XCTAssertEqual(links.selfLink, "https://api.readmoo.com/read/v2/me/readinglogs/3272563")
   }
   
 }

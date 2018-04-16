@@ -7,7 +7,6 @@ public struct Review: ResourceType {
   public let type: String
   public let id: String
   public let attributes: Attributes
-  public let links: Links
 
   public struct Attributes {
     public let privacy: String
@@ -19,9 +18,6 @@ public struct Review: ResourceType {
     public let latestModifiedAt: String
   }
 
-  public struct Links {
-    public let selfLink: String
-  }
 }
 
 extension Review: Argo.Decodable {
@@ -30,7 +26,6 @@ extension Review: Argo.Decodable {
       <^> json <| "type"
       <*> json <| "id"
       <*> json <| "attributes"
-      <*> json <| "links"
   }
 }
 
@@ -49,9 +44,3 @@ extension Review.Attributes: Argo.Decodable {
   }
 }
 
-extension Review.Links: Argo.Decodable {
-  public static func decode(_ json: JSON) -> Decoded<Review.Links> {
-    return curry(Review.Links.init)
-      <^> json <| "self"
-  }
-}

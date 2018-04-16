@@ -8,7 +8,6 @@ public struct Bookmark: ResourceType {
   public let id: String
   public let attributes: Attributes
   public let relationships: Relationships
-  public let links: Links
   
   public struct Attributes {
     public let title: String?
@@ -26,10 +25,6 @@ public struct Bookmark: ResourceType {
     public let path: ResourceIdentifier
   }
   
-  public struct Links {
-    public let selfLink: String
-  }
-  
 }
 
 // MARK: - Decodable
@@ -40,7 +35,6 @@ extension Bookmark: Argo.Decodable {
       <*> json <| "id"
       <*> json <| "attributes"
       <*> json <| "relationships"
-      <*> json <| "links"
   }
 }
 
@@ -63,12 +57,5 @@ extension Bookmark.Relationships: Argo.Decodable {
       <*> json <| ["user", "data"]
       <*> json <| ["reading", "data"]
       <*> json <| ["path", "data"]
-  }
-}
-
-extension Bookmark.Links: Argo.Decodable {
-  public static func decode(_ json: JSON) -> Decoded<Bookmark.Links> {
-    return curry(Bookmark.Links.init)
-      <^> json <| "self"
   }
 }

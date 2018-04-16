@@ -7,15 +7,11 @@ public struct Event: ResourceType {
   public let type: String
   public let id: String
   public let attributes: Attributes
-  public let links: Links
 
   public struct Attributes {
     public let name: String
   }
 
-  public struct Links {
-    public let selfLink: String
-  }
 }
 
 // MARK: - Decodable
@@ -25,7 +21,6 @@ extension Event: Argo.Decodable {
       <^> json <| "type"
       <*> json <| "id"
       <*> json <| "attributes"
-      <*> json <| "links"
   }
 }
 
@@ -36,9 +31,3 @@ extension Event.Attributes: Argo.Decodable {
   }
 }
 
-extension Event.Links: Argo.Decodable {
-  public static func decode(_ json: JSON) -> Decoded<Event.Links> {
-    return curry(Event.Links.init)
-      <^> json <| "self"
-  }
-}

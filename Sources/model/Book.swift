@@ -8,7 +8,6 @@ public struct Book: ResourceType {
   public let id: String
   public let attributes: Attributes
   public let relationships: Relationships
-  public let links: Links
   
   public struct Attributes {
     public let title: String
@@ -50,10 +49,6 @@ public struct Book: ResourceType {
     public let categories: [ResourceIdentifier]
   }
 
-  public struct Links {
-    public let selfLink: String
-  }
-
 }
 
 extension Book: Argo.Decodable {
@@ -63,7 +58,6 @@ extension Book: Argo.Decodable {
       <*> json <| "id"
       <*> json <| "attributes"
       <*> json <| "relationships"
-      <*> json <| "links"
   }
 }
 
@@ -123,12 +117,5 @@ extension Book.Relationships: Argo.Decodable {
       <^> json <| ["publisher", "data"]
       <*> (json <|| ["contributors", "data"] <|> .success([]))
       <*> (json <|| ["categories", "data"] <|> .success([]))
-  }
-}
-
-extension Book.Links: Argo.Decodable {
-  public static func decode(_ json: JSON) -> Decoded<Book.Links> {
-    return curry(Book.Links.init)
-      <^> json <| "self"
   }
 }

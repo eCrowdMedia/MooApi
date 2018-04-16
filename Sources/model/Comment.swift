@@ -8,7 +8,6 @@ public struct Comment: ResourceType {
   public let id: String
   public let attributes: Attributes
   public let relationships: Relationships
-  public let links: Links
 
   public struct Attributes {
     public let content: String
@@ -22,9 +21,6 @@ public struct Comment: ResourceType {
     public let review: ResourceIdentifier?
   }
 
-  public struct Links {
-    public let selfLink: String
-  }
 }
 
 extension Comment: Argo.Decodable {
@@ -34,7 +30,6 @@ extension Comment: Argo.Decodable {
       <*> json <| "id"
       <*> json <| "attributes"
       <*> json <| "relationships"
-      <*> json <| "links"
   }
 }
 
@@ -53,12 +48,5 @@ extension Comment.Relationships: Argo.Decodable {
       <*> json <| ["commentator", "data"]
       <*> json <| ["highlight", "links"]
       <*> json <|? ["review", "data"]
-  }
-}
-
-extension Comment.Links: Argo.Decodable {
-  public static func decode(_ json: JSON) -> Decoded<Comment.Links> {
-    return curry(Comment.Links.init)
-      <^> json <| "self"
   }
 }

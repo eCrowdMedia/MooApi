@@ -17,6 +17,10 @@ final internal class DocumentTests: XCTestCase {
       XCTFail("\(result.error.debugDescription)")
     }
     
+    if result.value?.data.attributes == nil {
+      XCTFail("\(result.error.debugDescription)")
+    }
+    
   }
     
 }

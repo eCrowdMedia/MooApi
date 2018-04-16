@@ -7,7 +7,6 @@ public struct Range: ResourceType {
   public let type: String
   public let id: String
   public let attributes: Attributes
-  public let links: Links
 
   public struct Attributes {
     public let fileVersion: String
@@ -22,9 +21,6 @@ public struct Range: ResourceType {
     public let referencedCount: Int
   }
 
-  public struct Links {
-    public let selfLink: String
-  }
 }
 
 extension Range: Argo.Decodable {
@@ -33,7 +29,6 @@ extension Range: Argo.Decodable {
       <^> json <| "type"
       <*> json <| "id"
       <*> json <| "attributes"
-      <*> json <| "links"
   }
 }
 
@@ -57,9 +52,3 @@ extension Range.Attributes: Argo.Decodable {
   }
 }
 
-extension Range.Links: Argo.Decodable {
-  public static func decode(_ json: JSON) -> Decoded<Range.Links> {
-    return curry(Range.Links.init)
-      <^> json <| "self"
-  }
-}

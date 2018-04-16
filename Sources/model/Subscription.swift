@@ -8,11 +8,10 @@ public struct Subscription: ResourceType {
   public let id: String
   public let attributes: Attributes
   public let relationships: Relationships
-  public let links: Links
 
   public struct Attributes {
     public let name: String
-    public let period: String?
+    public let period: String
     public let content: String
     public let productType: String
     public let isAdultOnly: Bool
@@ -20,17 +19,19 @@ public struct Subscription: ResourceType {
     public let delivered: Int
     public let remaining: Int
     public let isAutoRenew: Bool
+    public let urls: Urls?
+    
+    public struct Urls {
+      public let webpage: String?
+    }
+    
   }
+  
 
   public struct Relationships {
     public let publisher: ResourceIdentifier
-    public let mainSubject: ResourceIdentifier
+    public let categories: [ResourceIdentifier]
     public let bookshelves: [ResourceIdentifier]
-  }
-
-  public struct Links {
-    public let selfLink: String
-    public let site: String
   }
 
 }
@@ -43,7 +44,6 @@ extension Subscription: Argo.Decodable {
       <*> json <| "id"
       <*> json <| "attributes"
       <*> json <| "relationships"
-      <*> json <| "links"
   }
 }
 
@@ -51,7 +51,7 @@ extension Subscription.Attributes: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Subscription.Attributes> {
     let tmp1 = curry(Subscription.Attributes.init)
       <^> json <| "name"
-      <*> json <|? "period"
+      <*> json <| "period"
       <*> json <| "content"
       <*> json <| "product_type"
     
@@ -63,6 +63,14 @@ extension Subscription.Attributes: Argo.Decodable {
       
     return tmp2
       <*> json <| "auto_renew"
+      <*> json <|? "urls"
+  }
+}
+
+extension Subscription.Attributes.Urls: Argo.Decodable {
+  public static func decode(_ json: JSON) -> Decoded<Subscription.Attributes.Urls> {
+    return curry(Subscription.Attributes.Urls.init)
+      <^> json <|? "webpage"
   }
 }
 
@@ -70,15 +78,8 @@ extension Subscription.Relationships: Argo.Decodable {
   public static func decode(_ json: JSON) -> Decoded<Subscription.Relationships> {
     return curry(Subscription.Relationships.init)
       <^> json <| ["publisher", "data"]
-      <*> json <| ["main_subject", "data"]
+      <*> (json <|| ["categories", "data"] <|> .success([]))
       <*> (json <|| ["library_items", "data"] <|> .success([]))
   }
 }
 
-extension Subscription.Links: Argo.Decodable {
-  public static func decode(_ json: JSON) -> Decoded<Subscription.Links> {
-    return curry(Subscription.Links.init)
-      <^> json <| "self"
-      <*> json <| "site"
-  }
-}

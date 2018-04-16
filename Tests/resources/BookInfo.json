@@ -5,6 +5,29 @@
     "attributes": {
       "title": "RDE英語閱刊 04月號/2018 第11期",
       "subtitle": "",
+      "cover": {
+        "small": {
+          "href": "https://cdn.readmoo.com/cover/nm/njmhzpj_120x180.jpg?v=0",
+          "meta": {
+            "width": 120,
+            "resize": "fit"
+          }
+        },
+        "medium": {
+          "href": "https://cdn.readmoo.com/cover/nm/njmhzpj_210x315.jpg?v=0",
+          "meta": {
+            "width": 210,
+            "resize": "fit"
+          }
+        },
+        "large": {
+          "href": "https://cdn.readmoo.com/cover/nm/njmhzpj_460x580.jpg?v=0",
+          "meta": {
+            "width": 460,
+            "resize": "fit"
+          }
+        }
+      },
       "author": "阿滴|滴妹",
       "short_description": "“Better a witty fool than a foolish wit.”\r\n俗話說：「被騙一次，其錯在人；被騙兩次，其錯在己。」愚人節用這句話形容，實在是再適合不過了。在四月一日這天，不僅你身邊的人會想辦法整你，連網路世界都有辦法以假亂真，本期除了有今年愚人節影片的幕後製作故事外，還有最火紅的整人影片及Google過去最厲害的惡作劇，看了包準你會瞠目結舌、嚇到吃手手！\r\n \r\n",
       "description": "<p>“Better a witty fool than a foolish wit.”<br>\r\n俗話說：「被騙一次，其錯在人；被騙兩次，其錯在己。」愚人節用這句話形容，實在是再適合不過了。在四月一日這天，不僅你身邊的人會想辦法整你，連網路世界都有辦法以假亂真，本期除了有今年愚人節影片的幕後製作故事外，還有最火紅的整人影片及Google過去最厲害的惡作劇，看了包準你會瞠目結舌、嚇到吃手手！<br>\r\n </p>\r\n\r\n<p><b>作者介紹</b></p>\r\n\r\n<p><b>阿滴、滴妹</b></p>\r\n\r\n<p>一對兄妹在工作和課業之餘，在自家臥室架起攝影機，開始透過鏡頭分享各種主題的英文教學，希望傳達給更多人「要喜歡英文，才能夠學好英文」的核心價值理念；因為這份熱忱而慢慢形成的「阿滴英文」，現在依舊持續地用活潑有趣的影片教學，讓英文不再只是單單的考試或科目，而是實際可運用於生活中的語言。<br>\r\n從 2015 年 1 月上傳的第一支影片開始，至今已累積 200 部以上的教學影片。在去年 2016 年時，更成為 YouTube 台灣大使，並也在今年的 7 月成為台灣第一個破百萬的教學性頻道。目前仍努力在各個社群平台推廣英文學習，總追蹤人數合計已有上百萬，影響力更是突破上千萬人次。</p>\r\n",
@@ -28,10 +51,129 @@
         "last_modified_at": "2018-03-26T08:59:08Z"
       },
       "suspend": false,
-      "own": true
+      "own": true,
+      "prices": [
+        {
+          "PriceType": "02",
+          "PriceAmount": 150,
+          "CurrencyCode": "TWD"
+        },
+        {
+          "PriceType": "04",
+          "PriceAmount": 150,
+          "CurrencyCode": "TWD"
+        },
+        {
+          "PriceType": "99",
+          "PriceAmount": 150,
+          "CurrencyCode": "TWD"
+        }
+      ],
+      "count": {
+        "unit": "pages",
+        "amount": 48
+      }
     },
-    "links": {
-      "self": "https://api.readmoo.com/read/v2/books/220086892000101"
+    "relationships": {
+      "publisher": {
+        "data": {
+          "type": "publishers",
+          "id": "1023"
+        }
+      },
+      "categories": {
+        "data": [
+          {
+            "type": "categories",
+            "id": "187"
+          }
+        ]
+      },
+      "contributors": {
+        "data": [
+          {
+            "type": "contributors",
+            "id": "28093",
+            "meta": {
+              "role": "A01",
+              "description": "作者"
+            }
+          },
+          {
+            "type": "contributors",
+            "id": "28094",
+            "meta": {
+              "role": "A01",
+              "description": "作者"
+            }
+          }
+        ]
+      }
     }
-  }
+  },
+  "included": [
+    {
+      "type": "publishers",
+      "id": "1023",
+      "attributes": {
+        "name": "阿滴英文"
+      }
+    },
+    {
+      "type": "categories",
+      "id": "22",
+      "attributes": {
+        "name": "雜誌"
+      },
+      "relationships": {
+        "parent": {
+          "data": null
+        }
+      }
+    },
+    {
+      "type": "categories",
+      "id": "181",
+      "attributes": {
+        "name": "中文雜誌"
+      },
+      "relationships": {
+        "parent": {
+          "data": {
+            "type": "categories",
+            "id": "22"
+          }
+        }
+      }
+    },
+    {
+      "type": "categories",
+      "id": "187",
+      "attributes": {
+        "name": "語言學習"
+      },
+      "relationships": {
+        "parent": {
+          "data": {
+            "type": "categories",
+            "id": "181"
+          }
+        }
+      }
+    },
+    {
+      "type": "contributors",
+      "id": "28093",
+      "attributes": {
+        "name": "阿滴"
+      }
+    },
+    {
+      "type": "contributors",
+      "id": "28094",
+      "attributes": {
+        "name": "滴妹"
+      }
+    }
+  ]
 }

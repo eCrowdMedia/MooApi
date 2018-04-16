@@ -7,7 +7,6 @@ public struct Devices: ResourceType {
   public let type: String
   public let id: String
   public let attributes: Attributes
-  public let links: Links
   
   public struct Attributes {
     public let name: String
@@ -16,9 +15,6 @@ public struct Devices: ResourceType {
     public let registeredAt: String?
   }
   
-  public struct Links {
-    public let selfLink: String
-  }
 }
 
 extension Devices: Argo.Decodable {
@@ -27,7 +23,6 @@ extension Devices: Argo.Decodable {
       <^> json <| "type"
       <*> json <| "id"
       <*> json <| "attributes"
-      <*> json <| "links"
   }
 }
 
@@ -41,9 +36,3 @@ extension Devices.Attributes: Argo.Decodable {
   }
 }
 
-extension Devices.Links: Argo.Decodable {
-  public static func decode(_ json: JSON) -> Decoded<Devices.Links> {
-    return curry(Devices.Links.init)
-      <^> json <| "self"
-  }
-}

@@ -93,21 +93,10 @@ extension TagResponse {
       
     }
     
-    public struct Links: Codable {
-      
-      public let selfLink: String
-      
-      public enum CodingKeys: String, CodingKey {
-        case selfLink = "self"
-      }
-      
-    }
-    
     public let type         : String
     public let id           : String
     public let attributes   : Attributes
     public let relationships: Relationships
-    public let links        : Links
   }
   
 }

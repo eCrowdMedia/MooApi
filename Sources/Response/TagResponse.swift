@@ -60,7 +60,7 @@ extension TagResponse {
     
     public struct Relationships: Codable {
       
-      public struct LibraryItemBooks: Codable {
+      public struct LibraryBooks: Codable {
         
         public struct Data: Codable {
           
@@ -85,10 +85,10 @@ extension TagResponse {
         public let links: Links?
       }
       
-      public let libraryIitemBooks: LibraryItemBooks?
+      public let libraryBooks: LibraryBooks?
       
       public enum CodingKeys: String, CodingKey {
-        case libraryIitemBooks = "library_item-books"
+        case libraryBooks = "library_books"
       }
       
     }

@@ -18,7 +18,6 @@ final internal class PublisherTests: XCTestCase {
     }
 
     let attributes = publisher.attributes
-    let links = publisher.links
 
     // Test type and id
     XCTAssertEqual(publisher.type, "publishers")
@@ -27,8 +26,6 @@ final internal class PublisherTests: XCTestCase {
     // Test attributes
     XCTAssertEqual(attributes.name, "iFit 愛瘦身")
 
-    // test links
-    XCTAssertEqual(links.selfLink, "https://api.readmoo.com/read/v2/publishers/111")
   }
   
 }

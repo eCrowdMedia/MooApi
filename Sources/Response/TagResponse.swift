@@ -135,3 +135,22 @@ extension TagResponse {
   }
   
 }
+
+// Get Parameters
+extension TagResponse {
+  
+  static func getParams() -> [String : String] {
+    
+    let fieldsParamKey       = "fields[books]"
+    let libraryBooksParamKey = TagResponse.Data.Relationships.CodingKeys.libraryBooks.stringValue
+    let pageParamKey         = "page[\(libraryBooksParamKey)][count]"
+    
+    return
+      [
+        fieldsParamKey : "cover",
+        pageParamKey   : "6"
+      ]
+  }
+  
+}
+

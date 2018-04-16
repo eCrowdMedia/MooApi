@@ -24,10 +24,7 @@ extension ApiManager {
                                 failure: @escaping (ServiceError) -> Void,
                                 success: @escaping ([TagResult]) -> Void)
     {
-      let params:[String: String] = [
-        "fields[books]"                   : "cover",
-        "page[library_item-books][count]" : "6"
-      ]
+      let params:[String: String] = TagResponse.getParams()
       
       let service = Service(ServiceMethod.get,
                             api: ServiceApi.meTags(nil),
